@@ -4,8 +4,8 @@
 # The "image" is a URL that is relative to your site root.
 # The title and image are required.  If you do not want a slogan, change it to
 # "null" (_without_ the quotes).
-title: "Lagunita Theme"
-slogan: "A Dreamweaver-enabled HTML theme for Stanford websites"
+title: "Globus @ Stanford"
+slogan: "Research data management simplified.  For you.  For free."
 image: "assets/lagunita/images/block-s-logo@2x.png"
 
 # This section has site owner information.  It is used in a few places:
@@ -13,29 +13,29 @@ image: "assets/lagunita/images/block-s-logo@2x.png"
 # * The "Connect With Us" block at the bottom of each page.
 owner:
   # The owner name must be provided.
-  name: "My Group, My Department, Stanford University"
+  name: "Stanford Research Computing Center"
 
   # Next up is social media handles.  If you don't have one, use the word
   # "null", but without the quotes.
 
   # If you have a Facebook page, put your account name here.
   # Example, if your Facebook URL is https://facebook.com/xyz, put "xyz".
-  facebook: "Stanford"
+  facebook: null
 
   # If you have a Google Plus page, put in the page ID number.
-  gplus: 102312438958695854492
+  gplus: null
 
   # If you have a Twitter handle, put it here, _without_ the leading at-sign.
-  twitter: "Stanford"
+  twitter: "StanfordCompute"
 
   # If you have an Instagram account, put it here.
-  instagram: "stanford"
+  instagram: null
 
   # If you have a YouTube account, put your account name here.
   youtube: "StanfordUniversity"
 
   # If you have a GitHub org, put the name here.
-  github: null
+  github: "stanford-rc"
 
   # If you have a Slack (which your visitors can join), put the workspace name
   # here.  Example: If you are at xyz.slack.com, put "xyz".
