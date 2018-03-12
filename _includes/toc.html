@@ -1,0 +1,35 @@
+{% assign toc_found = false %}
+{% for toc in site.data.toc %}
+  {% if toc.id == include.id %}
+    {% assign header = toc.header %}
+    {% assign items  = toc.items %}
+    {% assign toc_found = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="sidebar-nav">    
+  {% if toc_found == false %}
+  <b>TOC {{ include.id }} not found!</b>
+  {% else %}
+  <h2>{{ header }}</h2>
+  <ul class="nav" role="navigation">
+    {% for item in items %}
+      {% if item.target == "" %}
+        {% assign target="index.html" %}
+      {% else %}
+        {% assign target=item.target %}
+      {% endif %}
+      {% if target == page.path %}
+        {% comment %}
+          Escaping quotes can be annoying sometimes, so we do a capture here.
+        {% endcomment %}
+        {% capture a_class %} class="toc_current"{% endcapture %}
+      {% else %}
+        {% assign a_class = "" %}
+      {% endif %}
+      <li><a href="{{ target | absolute_url }}"{{ a_class }}>{{ item.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+</div>

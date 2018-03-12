@@ -1,0 +1,46 @@
+---
+layout: index
+title_line: false
+---
+{% comment %}
+The index layout is similar to the left-sidebar layout.
+The main content comes first.
+
+NOTE: The "title_line" parameter above, which normally defaults to "true",
+is set to "false" here because this is our main page, and we don't want a
+page title to appear above our content.
+{% endcomment %}
+<h2 class="headline">Welcome!</h2>
+<p>This is where you can put content!  Introduce your group, introduce your
+service, make yourself known to the Stanford community.</p>
+
+<h3>Announcements</h3>
+<p>This is a sample area for latest news and announcements. Items below use a "postcard" layout which allows you to float a thumbnail image to the left of your text.</p>
+
+{% comment %}
+This include is what displays the list of "blog posts".
+{% endcomment %}
+{% include blog.html %}
+
+{% comment %}
+Once the main content is done, use the following include to mark the
+transition from main content to left sidebar.
+{% endcomment %}
+{% include index/transition.html %}
+
+<div class="well">
+  <h2>About Stanford Lagunita</h2>
+  <p>Stanford Lagunita is available both as HTML / Dreamweaver templates and as a WordPress theme. It can be used for any Stanford-related website and is ready to use without any additional styling.</p>
+  <p><a class="more-link" href="http://wordpressthemes.stanford.edu/"><i class="fa fa-chevron-circle-right"></i> <span>See demo WordPress site</span></a></p>
+
+  <p><a class="more-link" href="https://stanford.box.com/lagunita-theme"><i class="fa fa-chevron-circle-right"></i> <span>Download HTML Theme</span></a></p>
+</div>
+
+<div class="well">
+  <h2>In the Spotlight</h2>
+  <img src="{{ "assets/lagunita/images/samples/LemonsNTower1170.jpg" | absolute_url }}" alt="" />
+  <p class="caption">This is an optional image caption.</p>
+  <p>This is a display element called a "well".  It can be used in either sidebar to highlight content in a shaded box.</p>
+  <p>A <em>well</em> is perfect for featuring an event or calling out highlighted information.</p>
+  <p><a class="more-link" href="#"><i class="fa fa-chevron-circle-right"></i> <span>More information</span></a></p>
+</div>

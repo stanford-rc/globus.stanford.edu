@@ -1,0 +1,18 @@
+{% if include.icon == nil %}
+  {% assign icon = "info-circle" %}
+{% else %}
+  {% assign icon = include.icon %}
+{% endif %}
+<div class="info-box">
+  <div class="icon-container"> <i class="fa fa-{{ icon }} fa-4x"></i> </div>
+  <div class="text-container">
+    {% if include.raw != nil %}
+      {{ include.raw }}
+    {% else %}
+    <h2>{{ include.header }}</h2>
+    <ul>
+      <li>{{ include.content }}</li>
+    </ul>
+    {% endif %}
+  </div>
+</div>

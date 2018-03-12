@@ -1,0 +1,11 @@
+<div id="hero-image">
+  <img src="{{ include.src | absolute_url }}" alt="{{ include.alt }}" />
+  {% if include.caption-overlay == true %}
+  <div class="image-caption overlay">
+  {% else %}
+  <div class="image-caption">
+  {% endif %}
+    <h4>{{ include.caption-header }}</h4>
+    <p>{{ include.caption-text }}</p>
+  </div>
+</div>

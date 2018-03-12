@@ -1,0 +1,5 @@
+The Lagunita theme is Copyright (C) 2013, 2017 The Board of Trusteed of the
+Leland Stanford Junior University.
+
+This theme is only to be used by recognized Stanford Schools, Departments, and
+Groups.

@@ -1,0 +1,42 @@
+# This file is used to define the site menu.
+# It is a YAML file, where the top-level structure is an array.
+#
+# You are limited to eight menu items.  If you need more, use dropdowns.
+#
+# Each array item needs a "name" key, which is what gets displayed on-screen.
+# Each array item also needs EITHER a "target" key OR a "dropdown" key.
+#
+# * If the "target" key is used, then this menu item is a path to another page.
+#
+#   The path you provide must be relative to the site root.  Jekyll will
+#   automatically fill in the appropriate prefix during HTML generation.
+#
+#   If the "target" is set to an empty string, that will be replaced with
+#   the path to the site's home page.
+#
+# * If the "dropdown" key is used, then this menu item is a dropdown.
+# 
+#   With a dropdown, you have another YAML array, of "name" and "target" pairs.
+#   In this case, BOTH "name" and "target" are required.
+#   Nested dropdowns (that is, dropdowns in dropdowns) are not supported.
+
+- name: "Home"
+  target: ""
+- name: "Right Sidebar"
+  target: "right-sidebar.html"
+- name: "Left Sidebar"
+  target: "left-sidebar.html"
+- name: "Two Sidebars"
+  target: "two-sidebars.html"
+- name: "No Sidebars"
+  target: "no-sidebars.html"
+- name: "Dropdown"
+  dropdown:
+    - name: "wide"
+      target: "wide.html"
+    - name: "hi"
+      target: "yo"
+    - name: "karl"
+      target: "boom"
+    - name: "index"
+      target: ""

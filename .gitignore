@@ -1,0 +1,7 @@
+# Ignore Jekyll output
+_site
+
+# Ignore Jekyll dev
+.bundle
+vendor
+Gemfile.lock

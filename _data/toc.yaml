@@ -1,0 +1,45 @@
+# This file is used to define Tables of Contents (ToCs).
+# It is a YAML file, where the top-level structure is an array.
+#
+# Each entry in the top-level array (that is, each ToC entry) has three keys:
+#
+# NOTE: All keys are required!
+#
+# * "id" is a simple string.  When you use {% include toc.html id="..." %}
+#   to bring the ToC into your page, this is what identifies which ToC you want
+#   to bring in.
+#
+# * "header" is a text string, which is used as the header of your ToC.
+#   NOTE: You are responsible for capitalization (small-caps/auto-caps is not
+#   used).
+#
+# * "items" is an array of ToC items.
+#
+#   Each item in the "items" array has two keys:
+#
+#   NOTE: All keys are required!
+#
+#   * "name" is the name of the ToC entry.
+#
+#   * "target" is the destination path, relative to the site root.
+#     NOTE: If an empty string is used, it will be replaced with "index.html".
+#
+#   The order of your "items" array is used to determine the order in which
+#   items will appear in the ToC.  The current page will automatically be
+#   hilighted.
+
+- id: "contents"
+  header: "CONTENTS"
+  items:
+    - name: "Wide"
+      target: "wide.html"
+    - name: "Home"
+      target: ""
+    - name: "Right Sidebar"
+      target: "right-sidebar.html"
+    - name: "Two Sidebars"
+      target: "two-sidebars.html"
+    - name: "Left Sidebar"
+      target: "left-sidebar.html"
+    - name: "No Sidebars"
+      target: "no-sidebars.html"

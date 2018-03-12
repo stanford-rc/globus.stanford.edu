@@ -1,0 +1,96 @@
+
+# The title and slogan are for the entire site.
+# The "slogan" appears directly below the title, in smaller italics.
+# The "image" is a URL that is relative to your site root.
+# The title and image are required.  If you do not want a slogan, change it to
+# "null" (_without_ the quotes).
+title: "Lagunita Theme"
+slogan: "A Dreamweaver-enabled HTML theme for Stanford websites"
+image: "assets/lagunita/images/block-s-logo@2x.png"
+
+# This section has site owner information.  It is used in a few places:
+# * Page metadata, used by search engines and social tools.
+# * The "Connect With Us" block at the bottom of each page.
+owner:
+  # The owner name must be provided.
+  name: "My Group, My Department, Stanford University"
+
+  # Next up is social media handles.  If you don't have one, use the word
+  # "null", but without the quotes.
+
+  # If you have a Facebook page, put your account name here.
+  # Example, if your Facebook URL is https://facebook.com/xyz, put "xyz".
+  facebook: "Stanford"
+
+  # If you have a Google Plus page, put in the page ID number.
+  gplus: 102312438958695854492
+
+  # If you have a Twitter handle, put it here, _without_ the leading at-sign.
+  twitter: "Stanford"
+
+  # If you have an Instagram account, put it here.
+  instagram: "stanford"
+
+  # If you have a YouTube account, put your account name here.
+  youtube: "StanfordUniversity"
+
+  # If you have a GitHub org, put the name here.
+  github: null
+
+  # If you have a Slack (which your visitors can join), put the workspace name
+  # here.  Example: If you are at xyz.slack.com, put "xyz".
+  slack: null
+
+# The index.html page of the site defaults to being your site's "blog page".
+# (Altough the example calls it "Announcements", it's kindof the same thing.)
+# By default, the full list of posts are split into pages of three posts per
+# page.  For each additional page, a complete copy of index.html will be
+# created, but with a different list of posts.
+#
+# You can change the number to whatever you want.  If you want to disable
+# pagination entirely (and so have all posts appear on the main page), comment
+# out the line below.
+paginate: 3
+
+# These defaults apply when a matching page variable is not set.
+# NOTE: You should set most of these in page-specific YAML.
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      title: "Page Title"
+      description: null
+      layout: null
+      sitemap: true
+      social:
+        # The title to use when Twitter et al show a link to your site.
+        # When set to null, Jekyll will generate the string
+        # "PAGE_TITLE — SITE_TITLE".
+        title: null
+
+        # The image to show when someone expands a Twitter post with your page
+        # linked.  This should be a path relative to your site root.  If not
+        # set, your site's image will be used instead.
+        image: null
+
+# These are Jekyll plugins that we enable.
+# NOTE: We can only use plugins that GitHub makes available.
+# The list is here: https://pages.github.com/versions/
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# This is a list of files that should be excluded from the _site directory.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.txt
+  - README.md
+  - jekyll-theme-stanford-lagunita.gemspec
+  - vendor
+
+# These are some Jekyll defaults, which should be left alone.
+timezone: America/Los_Angeles
+encoding: utf-8
+safe: true

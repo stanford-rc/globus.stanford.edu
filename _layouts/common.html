@@ -1,0 +1,385 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+{% comment %} Page title (either set or auto-generated) {% endcomment %}
+{% if page.social.title == nil %}
+{%   assign social_title = page.title | append: " — " | append: site.title %}
+{% else %}
+{%   assign social_title = page.social.title %}
+{% endif %}
+<meta property="og:title" content="{{ social_title }}" />
+<meta name="twitter:title" content="{{ social_title }}" />
+<title>{{ page.title }}</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:type" content="website" />
+
+{% comment %} Site owner info & social media handles {% endcomment %}
+<meta name="author" content="{{ site.owner.name }}" />
+{% if site.owner.twitter != nil %}
+<meta name="twitter:site" content="@{{ site.owner.twitter }}" />
+{% endif %}
+{% if site.owner.gplus != nil %}
+<link rel="publisher" href="https://plus.google.com/{{ site.owner.gplus }}" />
+{% endif %}
+
+{% comment %} Page description (if set) {% endcomment %}
+{% if page.social.description != nil %}
+<meta name="description" content="{{ page.social.description }}" />
+<meta property="og:description" content="{{ page.social.description }}" />
+<meta name="twitter:description" content="{{ page.social.description }}" />
+{% endif %}
+
+{% comment %} Twitter-specific metadata (if set) {% endcomment %}
+<meta name="twitter:card" content="summary_large_image" />
+{% if page.social.image != nil %}
+<meta name="twitter:image" content="{{ page.social.image | absolute_url }}" />
+{% else %}
+<meta name="twitter:image" content="{{ site.image | absolute_url }}" />
+{% endif %}
+
+<!-- CSS -->
+<link rel="stylesheet" href="{{ "assets/lagunita/css/bootstrap.min.css" | absolute_url }}" type="text/css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="{{ "assets/lagunita/css/base.min.css?v=0.1" | absolute_url }}" type="text/css" />
+<link rel="stylesheet" href="{{ "assets/lagunita/css/custom.css?v=0.1" | absolute_url }}" type="text/css"/>
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/lagunita/css/ie/ie8.css" | absolute_url }}" />
+<![endif]-->
+<!--[if IE 7]>
+   <link rel="stylesheet" type="text/css" href="{{ "assets/lagunita/css/ie/ie7.css" | absolute_url }}" />
+<![endif]-->
+<!-- JS and jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="{{ "assets/lagunita/js/modernizr.custom.17475.js" | absolute_url }}"></script>
+<script src="{{ "assets/lagunita/js/bootstrap.min.js" | absolute_url }}"></script>
+
+<!--[if lt IE 9]>
+    <script src="{{ "assets/lagunita/js/respond.js" | absolute_url }}"></script>
+<![endif]-->
+
+<!-- custom JS -->
+<script src="{{ "assets/lagunita/js/base.js?v=1.0" | absolute_url }}"></script>
+<script src="{{ "assets/lagunita/js/custom.js" | absolute_url }}"></script>
+</head>
+
+<!-- Customization Options:                       
+     body class:   "home", "nav-1", "nav-2", etc. - specifies which item in the top nav to underline
+                   "site-slogan" - display a site slogan in the header signature
+     logo, h1  :   "hide" - hides the logo or H1 element, eg <h1 class="hide">
+ -->
+{% comment %}
+  Our <body> tag has one or two classes.  First up is a class identifying if
+  the page we're on corresponds to a menu item.  If our page's path matches
+  a menu item's patch, then set the appropriate class, so that the appropriate
+  menu item is underlines.
+
+  We also handle the special case where the target is set to "", and we are
+  showing the site's index.html page.
+
+  TODO: Handle when we are showing a page that's in a dropdown.
+{% endcomment %}
+{% assign body_classes = "" | split: " " %}
+{% assign menu_classes = "home nav-1 nav-2 nav-3 nav-4 nav-5 nav-6 nav-7" | split: " " %}
+{% for menu_item in site.data.menu %}
+  {% comment %}
+    NOTE: We do not support underlining for dropdown menu items.
+    This is intentional.
+    The problem is, if we underline the dropdown menu, we end up underlining
+    all of the dropdown menu's menu items.
+    If you're curious what the Jekyll code was here, see Git commit aa1d5ff.
+  {% endcomment %}
+  {% if menu_item.target == "" %}
+    {% assign comparison_target = "index.html" %}
+  {% else %}
+    {% assign comparison_target = menu_item.target %}
+  {% endif %}
+  {% if comparison_target == page.path %}
+    {% comment %} Ugh, Liquid arrays are annoying! {% endcomment %}
+    {% assign menu_item_class = menu_classes[forloop.index0] | split: " " %}
+    {% assign body_classes = body_classes | concat: menu_item_class %}
+  {% endif %}
+{% endfor %}
+
+{% comment %}
+  If the site has a slogan (which is something appearing directly under the
+  site title), then we have to add the site-slogan class.
+{% endcomment %}
+{% if site.slogan == nil or site.slogan == '' %}
+{%   assign site.slogan = '' %}
+{% else %}
+{%   comment %} Ugh, Liquid arrays are annoying! {% endcomment %}
+{%   assign site_slogan_class = 'site-slogan' | split: ' ' %}
+{%   assign body_classes = body_classes | concat: site_slogan_class %}
+{% endif %}
+<body class="{{ body_classes | join: ' ' }}">
+<!-- class="home" underlines the Home link in the top nav -->
+<div id="su-wrap"> <!-- used to force footer to bottom of short pages -->
+  <div id="su-content"> <!-- used to force footer to bottom of short pages --> 
+  
+    <!--=== Top ===-->
+    <div id="top">
+      <div class="container"> 
+        <!--=== Skip links ===-->
+        <div id="skip"> <a href="#content" onClick="$('#content').focus()">Skip to content</a> </div>
+        <!-- /Skip links --> 
+      </div>
+    </div>
+    <!--/top--> 
+
+    <!-- Brandbar snippet start -->
+    <div id="brandbar">
+        <div class="container"> <a href="http://www.stanford.edu"> <img src="{{ "assets/lagunita/images/brandbar-stanford-logo@2x.png" | absolute_url }}" alt="Stanford University" width="152" height="23"> </a> </div>
+      <!-- .container end --> 
+    </div>
+    <!-- #brandbar end --> 
+    <!-- Brandbar snippet end --> 
+
+    <!--=== Header ===-->
+    <div id="header" class="clearfix" role="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8"> 
+            <!-- Logo -->
+            <div id="logo" class="clearfix"> <a href="#"><img class="img-responsive" src="{{ site.image | absolute_url }}"  alt="site logo" /></a> </div>
+            <!-- /logo -->
+            <div id="signature">
+                <div id="site-name"> <a href="{{ "/" | absolute_url }}"> <span id="site-name-1">{{ site.title }}</span>  </a> </div>
+                <div id="site-slogan"><a href="{{ "/" | absolute_url }}"><span id="site-name-2">{{ site.slogan }}</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Menu -->
+    <div id="mainmenu" class="clearfix" role="navigation">
+      <div class="container">
+        <div class="navbar navbar-default"> 
+          
+          <!-- main navigation -->
+          <button type="button" class="navbar-toggle btn-navbar" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="menu-text">Menu</span></button>
+          <!-- /nav-collapse -->
+          
+          <div class="navbar-collapse collapse"> 
+            <!--search box-->
+            <div id="nav-search" role="search">
+              <form action="http://www.stanford.edu/search" method="get" id="search-form" accept-charset="UTF-8">
+                <h2 class="hidden">Search form</h2>
+                <label class="hidden" for="search-field">Search term</label>
+                <input name="cx" type="hidden" value="003265255082301896483:sq5n7qoyfh8">
+                <input name="cof" type="hidden" value="FORID:9">
+                <input name="ie" type="hidden" value="UTF-8">
+                <!-- replace value in next line with your site URL -->
+                <input name="as_sitesearch" type="hidden" value="www.stanford.edu">
+                <input title="Search string" class="input-medium" placeholder="Search this site&hellip;" type="text" id="search-field" name="q" value="" size="15" maxlength="128" />
+                <button id="search-btn" type="submit" name="submit"  aria-label="Search" formmethod="get"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+            <div  role="navigation">
+              <div id="primary-nav">
+                <ul class="nav navbar-nav" aria-label="primary navigation">
+                  {% assign menu_max = site.data.menu | size | minus: 1 %}
+                  {% for i in (0..menu_max) %}
+                    {% comment %}
+                      First, let's put together the list item.
+                      The first item gets the "home" ID; other get numbers.
+                      We can only handle seven menu items.
+                    {% endcomment %}
+                    {% assign menu_item = site.data.menu[i] %}
+                    {% if i == 0 %}
+                      <li id="nav-home">
+                    {% elsif i <= 6 %}
+                      <li id="nav-{{ i }}">
+                    {% else %}
+                      <li><p>Too many menu items!</p>
+                    {% endif %}
+
+                    {% if menu_item.name == nil %}
+                      <p>Menu item is missing a name!</p>
+                    {% endif %}
+
+                    {% comment %}
+                      Now, we either have a target, or we have a dropdown.
+                      Error if we have neither or both.
+                      If we have an empty-string target, send users to index.
+                      If we have a non-empty-string target, send users there.
+                      Otherwise, we have a dropdown.
+                    {% endcomment %}
+                    {% if     menu_item.target == nil
+                          and menu_item.dropdown == nil
+                    %}
+                      <p>Menu {{ menu_item.name }} needs a target or a
+                      dropdown.</p>
+                    {% elsif     menu_item.target != nil
+                             and menu_item.dropdown != nil
+                    %}
+                      <p>Menu {{ menu_item.name }} cannot have a target
+                      <b>and</b> a dropdown!</p>
+                    {% elsif menu_item.target == "" %}
+                      <a href="{{ "/" | absolute_url }}">
+                        {{ menu_item.name }}
+                      </a>
+                    {% elsif menu_item.target != nil %}
+                      <a href="{{ menu_item.target | absolute_url }}">
+                        {{ menu_item.name }}
+                      </a>
+                    {% else %}
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {{ menu_item.name }} <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu">
+                        {% comment %}
+                          Doing a dropdown is just a mini version of doing a
+                          normal menu item, but without having to think about
+                          stuff like indexes.
+                        {% endcomment %}
+                        {% for dropdown_item in menu_item.dropdown %}
+                        <li>
+                          {% if dropdown_item.name == nil %}
+                            <p>Dropdown is missing a name!</p>
+                          {% endif %}
+                          {% if dropdown_item.target == nil %}
+                            <p>Dropdown {{ dropdown_item.name }} is missing a
+                            target!</p>
+                          {% elsif dropdown_item.target == "" %}
+                            <a href="{{ "/" | absolute_url }}">{{ dropdown_item.name }}</a>
+                          {% else %}
+                            <a href="{{ dropdown_item.target | absolute_url }}">{{ dropdown_item.name }}</a>
+                          {% endif %}
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% comment %}
+              Old Nav code, as static HTML.  Kept for reference.
+              <div id="primary-nav">
+                <ul class="nav navbar-nav" aria-label="primary navigation">
+                  <li id="nav-home"> <a href="./">Home</a></li>
+                  <li id="nav-1"> <a href="right-sidebar">Right Sidebar</a> </li>
+                  <li id="nav-2"> <a href="left-sidebar">Left Sidebar</a> </li>
+                  <li id="nav-3"> <a href="two-sidebars">Two Sidebars</a> </li>
+                  <li id="nav-4"> <a href="no-sidebars">No Sidebars</a> </li>
+                  <li id="nav-5"> <a href="wide">Wide</a> </li>
+                  <li id="nav-6"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a  href="#">Submenu 1</a></li>
+                      <li><a  href="#">Submenu 2</a></li>
+                      <li><a  href="#">Submenu 3</a></li>
+                      <li><a  href="#">Submenu 4</a></li>
+                      <li><a  href="#">Submenu 5</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              {% endcomment %}
+            </div>
+          </div>
+          <!-- /nav-collapse --> 
+        </div>
+        <!-- /navbar --> 
+        
+      </div>
+      <!-- /container --> 
+    </div>
+    <!-- /mainmenu --> 
+
+    {{ content }}
+
+  </div>
+  <!-- #su-content --> 
+</div>
+<!-- #su-wrap --> 
+
+<!-- BEGIN footer -->
+<div id="footer" class="clearfix footer" role="contentinfo"> 
+  <!-- Fat footer start -->
+  <div class="container">
+    <div id="footer-content" class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-push-3">
+        {% include bottom-middle.html %}
+      </div>
+      <div class="col-xs-12 col-sm-3 col-sm-push-3">
+        {% include bottom-right.html %}
+      </div>
+      {% comment %}
+      Only show the social block if we have at least one social thing to show.
+      {% endcomment %}
+      {% if    site.owner.facebook  != nil
+            or site.owner.gplus     != nil
+            or site.owner.twitter   != nil
+            or site.owner.instagram != nil
+            or site.owner.youtube   != nil
+            or site.owner.github    != nil
+            or site.owner.slack     != nil
+      %}
+        <div id="social-icons" class="col-xs-12 col-sm-3 col-sm-pull-9">
+          <h3>Connect with us</h3>
+          {% if site.owner.facebook != nil %}
+            <a href="http://facebook.com/{{ site.owner.facebook }}"><img alt="Facebook" src="{{ "assets/lagunita/images/social/facebook@2x.png" | absolute_url }}" /></a>
+          {% endif %}{% if site.owner.gplus != nil %}
+            <a href="http://plus.google.com/{{ site.owner.gplus }}"><img alt="Google+" src="{{ "assets/lagunita/images/social/gplus@2x.png" | absolute_url }}" /></a>
+          {% endif %}{% if site.owner.twitter != nil %}
+            <a href="http://twitter.com/{{ site.owner.twitter }}"><img alt="Twitter" src="{{ "assets/lagunita/images/social/twitter@2x.png" | absolute_url }}" /></a>
+          {% endif %}{% if site.owner.instagram != nil %}
+            <a href="http://instagram.com/{{ site.owner.instagram }}"><img alt="Instagram" src="{{ "assets/lagunita/images/social/instagram@2x.png" | absolute_url }}" /></a>
+          {% endif %}{% if site.owner.youtube != nil %}
+            <a href="http://youtube.com/user/{{ site.owner.youtube }}"><img alt="YouTube" src="{{ "assets/lagunita/images/social/youtube@2x.png" | absolute_url }}" /></a>
+          {% endif %}{% if site.owner.github != nil %}
+            <a href="https://github.com/{{ site.owner.github }}"><img alt="GitHub" src="{{ "assets/lagunita/images/social/github@2x.png" | absolute_url }}" /></a>
+          {% endif %}{% if site.owner.slack != nil %}
+            <a href="http://{{ site.owner.slack}}.slack.com/"><img alt="Slack" src="{{ "assets/lagunita/images/social/slack@2x.png" | absolute_url }}" /></a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <!-- Fat footer end --> 
+  
+  <!-- Global footer snippet start -->
+  <div id="global-footer">
+    <div class="container">
+      <div class="row">
+        <div id="bottom-logo" class="col-xs-6 col-sm-2"> <a href="http://www.stanford.edu"> <img src="{{ "assets/lagunita/images/footer-stanford-logo@2x.png" | absolute_url }}" alt="Stanford University" width="105" height="49"/> </a> </div>
+        <!-- #bottom-logo end -->
+        <div id="bottom-text" class="col-xs-6 col-sm-10">
+          <ul>
+            <li class="home"><a href="http://www.stanford.edu">SU Home</a></li>
+            <li class="maps alt"><a href="http://visit.stanford.edu/plan/maps.html" class="su-link" data-ua-action="visit.stanford.edu/plan/maps" data-ua-label="global-footer">Maps &amp; Directions</a></li>
+            <li class="search-stanford"><a href="http://stanford.edu/search/">Search Stanford</a></li>
+            <li class="terms alt"><a href="http://www.stanford.edu/site/terms.html">Terms of Use</a></li>
+            <li class="emergency-info"><a href="http://emergency.stanford.edu/" class="su-link" data-ua-label="global-footer">Emergency Info</a></li>
+          </ul>
+        </div>
+        <!-- .bottom-text end -->
+        <div class="clear"></div>
+        <p class="copyright vcard col-sm-10">&copy; <span class="fn org">Stanford University</span>.&nbsp; <span class="adr"> <span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span></span>. <span id="termsofuse"><a href="http://www.stanford.edu/group/security/dmca.html" class="su-link" data-ua-action="copyright-complaints" data-ua-label="global-footer">Copyright Complaints</a>&nbsp;&nbsp;&nbsp;<a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" class="su-link" data-ua-action="trademark-notice" data-ua-label="global-footer">Trademark Notice</a></span></p>
+      </div>
+      <!-- .row end --> 
+    </div>
+    <!-- .container end --> 
+  </div>
+  <!-- Global footer snippet end --> 
+  
+</div>
+<!-- END footer -->
+
+</body>
+</html>
