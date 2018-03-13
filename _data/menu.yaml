@@ -24,6 +24,8 @@
   target: ""
 - name: "How Do I…?"
   target: "scenarios"
+- name: "Accounts"
+  target: "accounts"
 - name: "Client"
   target: "client"
 - name: "Server"
