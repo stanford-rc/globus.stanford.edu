@@ -16,11 +16,36 @@
   <ul class="nav" role="navigation">
     {% for item in items %}
       {% if item.target == "" %}
-        {% assign target="index.html" %}
+        {% assign target="index" %}
       {% else %}
         {% assign target=item.target %}
       {% endif %}
-      {% if target == page.path %}
+
+      {% comment %}
+      Ugh, this is SO ANNOYING!
+    
+      We need to support multiple input formats, not just HTML.  That means our
+      file extension is going to be different on the input side, but on the output
+      side it's always going to be "html").
+    
+      So, our menu (and ToC) item targets must omit the ".html".  We will add
+      ".html" to the link's path ourselves.
+    
+      And then, we need to take page.path, and strip off the file extension (the
+      ".html" or ".md" or whatever), before we do the comparison.
+      {% endcomment %}
+      {% assign path_segments = page.path | split: "." %}
+      {% assign path_number_of_segments = path_segments | size %}
+      {% if path_number_of_segments <= 2 %}
+        {% assign comparison_path = path_segments[0] %}
+      {% else %}
+        {% assign path_last_segment = path_segments.last %}
+        {% assign path_last_segment_length = path_last_segment | size | plus: 1 %}
+        {% assign new_length = page.path | size | minus: path_last_segment_length %}
+        {% assign comparison_path = page.path | truncate: new_length, "" %}
+      {% endif %}
+    
+      {% if target == comparison_path %}
         {% comment %}
           Escaping quotes can be annoying sometimes, so we do a capture here.
         {% endcomment %}
