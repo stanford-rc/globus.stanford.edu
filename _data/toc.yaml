@@ -28,18 +28,14 @@
 #   items will appear in the ToC.  The current page will automatically be
 #   hilighted.
 
-- id: "contents"
-  header: "CONTENTS"
+- id: "accounts"
+  header: "Globus Account Topics"
   items:
-    - name: "Wide"
-      target: "wide.html"
-    - name: "Home"
-      target: ""
-    - name: "Right Sidebar"
-      target: "right-sidebar.html"
-    - name: "Two Sidebars"
-      target: "two-sidebars.html"
-    - name: "Left Sidebar"
-      target: "left-sidebar.html"
-    - name: "No Sidebars"
-      target: "no-sidebars.html"
+    - name: "About Globus Accounts"
+      target: "accounts"
+    - name: "Create a Globus Account"
+      target: "accounts/create"
+    - name: "Link Additional Email Addresses"
+      target: "accounts/link"
+    - name: "Leaving Stanford"
+      target: "accounts/leaving"
