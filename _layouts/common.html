@@ -103,11 +103,36 @@ layout: null
     If you're curious what the Jekyll code was here, see Git commit aa1d5ff.
   {% endcomment %}
   {% if menu_item.target == "" %}
-    {% assign comparison_target = "index.html" %}
+    {% assign comparison_target = "index" %}
   {% else %}
     {% assign comparison_target = menu_item.target %}
   {% endif %}
-  {% if comparison_target == page.path %}
+
+  {% comment %}
+  Ugh, this is SO ANNOYING!
+
+  We need to support multiple input formats, not just HTML.  That means our
+  file extension is going to be different on the input side, but on the output
+  side it's always going to be "html").
+
+  So, our menu (and ToC) item targets must omit the ".html".  We will add
+  ".html" to the link's path ourselves.
+
+  And then, we need to take page.path, and strip off the file extension (the
+  ".html" or ".md" or whatever), before we do the comparison.
+  {% endcomment %}
+  {% assign path_segments = page.path | split: "." %}
+  {% assign path_number_of_segments = path_segments | size %}
+  {% if path_number_of_segments <= 2 %}
+    {% assign comparison_path = path_segments[0] %}
+  {% else %}
+    {% assign path_last_segment = path_segments.last %}
+    {% assign path_last_segment_length = path_last_segment | size | plus: 1 %}
+    {% assign new_length = page.path | size | minus: path_last_segment_length %}
+    {% assign comparison_path = page.path | truncate: new_length, "" %}
+  {% endif %}
+
+  {% if comparison_target == comparison_path %}
     {% comment %} Ugh, Liquid arrays are annoying! {% endcomment %}
     {% assign menu_item_class = menu_classes[forloop.index0] | split: " " %}
     {% assign body_classes = body_classes | concat: menu_item_class %}
@@ -234,7 +259,7 @@ layout: null
                         {{ menu_item.name }}
                       </a>
                     {% elsif menu_item.target != nil %}
-                      <a href="{{ menu_item.target | absolute_url }}">
+                      <a href="{{ menu_item.target | append: ".html" | absolute_url }}">
                         {{ menu_item.name }}
                       </a>
                     {% else %}
@@ -258,7 +283,7 @@ layout: null
                           {% elsif dropdown_item.target == "" %}
                             <a href="{{ "/" | absolute_url }}">{{ dropdown_item.name }}</a>
                           {% else %}
-                            <a href="{{ dropdown_item.target | absolute_url }}">{{ dropdown_item.name }}</a>
+                            <a href="{{ dropdown_item.target | append: ".html" |absolute_url }}">{{ dropdown_item.name }}</a>
                           {% endif %}
                         </li>
                         {% endfor %}
