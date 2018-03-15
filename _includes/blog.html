@@ -21,7 +21,7 @@
     <p class="descriptor">{{ post.date | date: "%B %e, %Y" }}</p>
     {% endif %}
     {{ post.excerpt }}
-    <p><a href="{{ post.url }}">Read More</a></p>
+    <p><a href="{{ post.url | relative_url }}">Read More</a></p>
   </div>
 </div>
 {% endfor %}
