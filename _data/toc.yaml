@@ -37,5 +37,25 @@
       target: "accounts/create"
     - name: "Link Additional Email Addresses"
       target: "accounts/link"
+    - name: "Globus IDs"
+      target: "accounts/globus_id"
     - name: "Leaving Stanford"
       target: "accounts/leaving"
+
+- id: "client"
+  header: "Globus Connect Personal"
+  items:
+    - name: "Install and Activate"
+      target: "client/install"
+    - name: "Enable Globus Plus"
+      target: "client/plus"
+
+- id: "server"
+  header: "Globus Connect Server"
+  items:
+    - name: "Site Prep and Installation"
+      target: "server/install"
+    - name: "Configuration: CILogon and SUNetID Auth"
+      target: "server/cilogon"
+    - name: "Configuration: MyProxy and Local Auth"
+      target: "server/myproxy"
