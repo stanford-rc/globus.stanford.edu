@@ -14,7 +14,7 @@
   <div class="postcard-image"><img src="{{ post.image | absolute_url }}" alt="" /></div>
   {% endif %}
   <div class="postcard-text">
-    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
     {% if post.author != nil %}
     <p class="descriptor">{{ post.date | date: "%B %e, %Y" }} by {{ post.author }}</p>
     {% else %}
@@ -27,8 +27,8 @@
 {% endfor %}
 
 {% if paginator.previous_page %}
-  <a href="{{ paginator.previous_page_path }}" title="Read Newer Announcements"><i class="fa fa-arrow-left fa-2x"></i></a>
+  <a href="{{ paginator.previous_page_path | relative_url }}" title="Read Newer Announcements"><i class="fa fa-arrow-left fa-2x"></i></a>
 {% endif %}
 {% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path }}" title="Read Older Announcements" ><i class="fa fa-arrow-right fa-2x"></i></a>
+  <a href="{{ paginator.next_page_path | relative_url }}" title="Read Older Announcements" ><i class="fa fa-arrow-right fa-2x"></i></a>
 {% endif %}
