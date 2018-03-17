@@ -37,8 +37,6 @@
       target: "accounts/create"
     - name: "Link Additional Email Addresses"
       target: "accounts/link"
-    - name: "Globus IDs"
-      target: "accounts/globus_id"
     - name: "Leaving Stanford"
       target: "accounts/leaving"
 
