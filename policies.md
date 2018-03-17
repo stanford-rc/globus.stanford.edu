@@ -2,24 +2,31 @@
 layout: wide
 title: Globus @ Stanford Policies
 ---
+
+<div class="well">
 As is the case with many cloud services, one name (in this case, Globus) can
 refer to many products.  This page spells out exactly what is available, who
 can use it, and under what conditions.
+</div>
 
 The following Globus services are available for free from Globus, without a
 subscription:
 
 * [Globus Connect Personal](https://www.globus.org/globus-connect-personal)
 
-* [Globus Connect Server](https://www.globus.org/globus-connect-server) (not
-  managed)
+* [Globus Connect Server](https://www.globus.org/globus-connect-server),
+  with the following limitations:
+
+  * Transfer management and reports are unavailable.
+
+  * Only local users may perform transfers — creating shares is disabled.
 
 Stanford's Globus subscription covers the following services:
 
 * [Globus Plus](https://www.globus.org/researchers/plus-plans)
 
 * [Globus Connect Server](https://www.globus.org/globus-connect-server),
-  managed (includes the management console and usage reports)
+  managed (includes the unavailable features listed above)
 
 * [Globus Publish](https://www.globus.org/data-sharing)
 
@@ -42,20 +49,20 @@ Finally, there are a few additional conditions:
   not have a Stanford email address, ask your contact about getting a
   [sponsored account](https://uit.stanford.edu/service/sponsorship/sponsoredservices).
 
-* Support is provided by Stanford first.
+* Access to Globus support is limited.
 
-  If you have problems, please [contact us]({{ "support.html" | absolute_url
-  }}) first.  We will do the initial information-gathering; and if we are
-  unable to help you, we will escalate the issue to Globus.
+  If you have problems, only a few people at Stanford are supposed to initiate
+  contact with support.  So, please [contact us]({{ "support.html" |
+  absolute_url }}) first.  We will do the initial information-gathering; and if
+  we are unable to help you, we will escalate the issue to Globus.
 
 * A few groups are not covered by our subscription.
 
   Our Globus subscription covers everyone who reports up to the President.  The
-  complete list is best represented by the charts contained in Admin Guide
-  Chapter 9.
+  complete list is best represented by the charts contained in [Admin Guide
+  Chapter 9](https://adminguide.stanford.edu/chapter-9).
 
-  This means some entities are not covered; also, one entity is explicitly
-  excluded from the above list:
+  The groups excluded from Stanford's Globus Subscription are:
 
   * Stanford Health Care.
 
