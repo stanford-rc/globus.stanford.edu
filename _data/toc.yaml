@@ -57,6 +57,8 @@
       target: "server/install"
     - name: "Initial Configuration"
       target: "server/configure"
+    - name: "Authentication and Sharing"
+      target: "server/auth"
     - name: "Configuration: CILogon and SUNetID Auth"
       target: "server/cilogon"
     - name: "Configuration: MyProxy and Local Auth"
