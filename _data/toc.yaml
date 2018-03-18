@@ -35,7 +35,7 @@
       target: "accounts"
     - name: "Create a Globus Account"
       target: "accounts/create"
-    - name: "Link Additional Email Addresses"
+    - name: "Linked Identities"
       target: "accounts/link"
     - name: "Leaving Stanford"
       target: "accounts/leaving"
