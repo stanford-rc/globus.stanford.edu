@@ -63,3 +63,5 @@
       target: "server/cilogon"
     - name: "Configuration: MyProxy and Local Auth"
       target: "server/myproxy"
+    - name: "Finishing Configuration"
+      target: "server/finish"
