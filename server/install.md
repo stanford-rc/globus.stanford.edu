@@ -20,15 +20,13 @@ setup to be done.
    Risk data."
 %}
 
-"Site Prep and Installation" includes four steps:
+"Site Prep and Installation" includes three steps:
 
 * Configuring the firewall.
 
 * Getting (and activating) a Globus ID.
 
 * Installing Globus Connect Server.
-
-* Starting to create the configuration.
 
 &nbsp;
 
@@ -109,17 +107,24 @@ ID activated.
 
 ## Globus ID Activation
 
-As described [on the Globus IDs page]({{ "accounts/globus_id.html" |
-relative_url }}), a Globus ID is normally only needed for entities.  Although
-Globus Connect Server endpoints are administered by people, they are "owned" by
-an entity, and so they must be associated with (and initially registered by) a
-Globus ID.
+People may not own Globus Connect Server endpoints directly.  Globus Connect
+Server endpoints are owned by entities, with people acting as the
+administrators and users.  The Globus ID exists as a way for entities to have a
+Globus identity, and directly own Globus Connect Server endpoints.
+
+{% include info-box.html
+   header="Globus ID for Humans"
+   content="A Globus ID may also be created by a human for themselves, if the human does not have any recognized instutitional login, and also does not have a Google account."
+%}
+
+To continue, you will need to register a new Globus ID, and get it linked to
+Stanford's subscription.
 
 **Choose wisely!** Your Globus ID will form part of the public identifier for
 your Globus Connect Server endpoint.  For example, if your extremely-important
 cancer research data are being hosted on a Globus Connect Server endpoint named
-`cancer_study`, but your Globus ID is `blargh`, people will forever refer to
-your endpoint as the `blargh#cancer_study` endpoint.
+`cancer_study`, but your Globus ID is `stupid`, people will forever refer to
+your endpoint as the `stupid#cancer_study` endpoint.
 
 {% capture globus-box-content %}
 <p>Several well-known Globus IDs already exist at Stanford, and you may be able
@@ -135,6 +140,26 @@ installation, while also reaching out to the approrpiate group.</p>
    icon="university"
    raw=globus-box-content
 %}
+
+If you have decided to create a Globus ID, go to
+[globusid.org](https://www.globusid.org) and select _create a Globus ID_.  A
+form will be displayed for you to complete.
+
+{% include hero-image.html
+   src="assets/server/GlobusID Create.png"
+   alt="The 'Create a Globus ID' page, with fields filled in."
+   caption-overlay=true
+   caption-header="Globus ID Creation"
+   caption-text=""
+%}
+
+Here are some thing to keep in mind as you fill in the form:
+
+* Use your department's name as your _Full Name_, and use "Stanford University"
+  as your _Organization_.
+
+* Use a mailing list as your email address.  **This is important**; password
+  resets and other important Globus communications will be sent here.
 
 After creating a Globus ID, email <srcc-support@stanford.edu>, asking for your
 Globus ID to be assicated with Stanford's Globus subscription.  In your email,
@@ -160,21 +185,21 @@ time, you should continue setup!
 To install the Globus Connect Server software, you will be installing the
 `globus-connect-server` package for your Linux distribution.  Follow the
 instructions from [Globus Connect Server installation guide Section
-3.1](https://docs.globus.org/globus-connect-server-installation-guide/#install_globus_connect_server).  Once you are done, come back here.
+3.1](https://docs.globus.org/globus-connect-server-installation-guide/#install_globus_connect_server).
 
-_A note for Red Hat, Fedora, CentOS, and Scientific Linux users_: On these
-distributions, Globus Connect Server requires the `udt` package from EPEL.  If
-you are not comfortable enabling the entire EPEL repository on your system, you
-should use the appropraite EPEL repository from
-[http://yum.stanford.edu/mrepo](yum.stanford.edu).  The EPEL repository there
-is a curated subset of the entire EPEL repository, and includes the `udt`
-package.
+{% include info-box.html
+   icon="list-ul"
+   header="Expect Many Packages"
+   content="The `globus-connect-server` package has a large number of dependencies, because Globus Connect Server consists of multiple products (GridFTP, MyProxy, etc.).  It may be possible to only install a subset of packages, but this has not been documented.  Assistance is welcomed in this area!"
+%}
 
-&nbsp;
+{% include info-box.html
+   header="Red Hat, Fedora, CentOS, and Scientific Linux users"
+   content="On these distributions, Globus Connect Server requires the `udt` package from EPEL.  If you are not comfortable enabling the entire EPEL repository on your system, you should use the appropraite EPEL repository from [http://yum.stanford.edu/mrepo](yum.stanford.edu).  The EPEL repository there is a curated subset of the entire EPEL repository, and includes the `udt` package."
+%}
 
-## Partial Configuration
-
-TBD
+Once packages are installed, you are ready for [initial configuration]({{
+"server/configure.html" | relative_url }})!
 
 {% include left-sidebar/transition.md %}
 
