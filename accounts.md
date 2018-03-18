@@ -28,7 +28,7 @@ his email addresses.
 
 {% include info-box.html
    header="Got an XSEDE Allocation?"
-   content="If you have access to any XSEDE resources, you should link your XSEDE account.  All XSEDE clusters (including XStream) use your XSEDE account for authentication."
+   content="If you have access to any XSEDE resources, you should link your XSEDE account.  All XSEDE clusters (including XStream) use XSEDE accounts for authentication."
 %}
 
 {% include info-box.html
