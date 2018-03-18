@@ -55,6 +55,8 @@
   items:
     - name: "Site Prep and Installation"
       target: "server/install"
+    - name: "Initial Configuration"
+      target: "server/configure"
     - name: "Configuration: CILogon and SUNetID Auth"
       target: "server/cilogon"
     - name: "Configuration: MyProxy and Local Auth"
