@@ -22,9 +22,10 @@ account at The Ohio State University, and his personal email address, as linked
 identities.  Karl was able to add his personal email address because he has a
 Google account.
 
-Karl can now log in to Globus using any of his identities.  If someone wants to
-share something with Karl, or add him to a group, they can do so using any of
-his email addresses.
+Karl can now log in to Globus using his Ohio State or Google accounts, in
+addition to his Stanford account.  If someone wants to share something with
+Karl, or add him to a group, they can do so using any of his linked email
+addresses (not just his Stanford address).
 
 {% include info-box.html
    header="Got an XSEDE Allocation?"
