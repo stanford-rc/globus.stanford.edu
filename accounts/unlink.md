@@ -138,8 +138,7 @@ lead you through the normal account-creation process.
 ### Step 4: Add Other Linked Identities
 
 Use the [identity-linking process]({{ "accounts/link.html" | relative_url }})
-to link all of your other identities to your new primary identity, _including
-your previously-primary identity_.
+to link all of your other identities to your new primary identity.
 
 {% include info-box.html
    header="Keep your previously-primary identity"
