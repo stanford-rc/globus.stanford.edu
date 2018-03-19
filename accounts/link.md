@@ -20,6 +20,12 @@ the person's _primary identity_.
    content="If you have an account with one of these services—even if you registered with your personal email address—you can link them.  This is the best way to use your personal email address with Globus."
 %}
 
+{% include info-box.html
+   icon="window-close"
+   header="Do not link your entity's Globus ID"
+   content="If your group owns, or has access to, a Globus ID for the group, you <b>must not</b> link it to your primary identity.  Those Globus IDs are for entities, and may not be linked to individual people."
+%}
+
 To link an identity, go to [globus.org/app](https://globus.org/app).  If you
 are not already logged in, then you will be presented with the login page:
 
