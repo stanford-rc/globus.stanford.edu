@@ -37,6 +37,8 @@
       target: "accounts/create"
     - name: "Linked Identities"
       target: "accounts/link"
+    - name: "Unlink or Demote Identities"
+      target: "accounts/unlink"
     - name: "Leaving Stanford"
       target: "accounts/leaving"
 
