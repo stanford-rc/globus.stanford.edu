@@ -123,14 +123,15 @@ see endpoints which you administer.
    caption-text=""
 %}
 
-For each endpoint, you need to decide if you want to delete it, or if you want
-to transfer it to someone else.
+For each endpoint, you need to decide if you want to <a href="#delete">delete
+it</a>, or if you want to <a href="#transfer">transfer it to someone else</a>.
 
 {% include info-box.html
    header="Globus Connect Personal"
    content="Globus Connect Peronsal endpoints, and shared endpoints created from Globus Connect Personal endpoints, may only be deleted."
 %}
 
+<a name="delete"></a>
 ### Step 3a: Delete Endpoint
 
 {% include info-box.html
@@ -166,6 +167,7 @@ button, and the endpoint will be deleted.
 You will need to repeat this step (either deletion, or transfer) for each
 endpoint you administer.
 
+<a name="transfer"></a>
 ### Step 3b: Transfer Endpoint
 
 To transfer an endpoint to someone else, click on the endpoint's name.  You
