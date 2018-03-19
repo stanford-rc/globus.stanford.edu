@@ -35,7 +35,7 @@
       target: "accounts"
     - name: "Create a Globus Account"
       target: "accounts/create"
-    - name: "Linked Identities"
+    - name: "Link Identities"
       target: "accounts/link"
     - name: "Unlink or Demote Identities"
       target: "accounts/unlink"
