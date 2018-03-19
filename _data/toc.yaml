@@ -61,6 +61,8 @@
       target: "server/auth"
     - name: "Configuration: CILogon and SUNetID Auth"
       target: "server/cilogon"
+    - name: "Configuration: MyProxy OAuth and Local Auth"
+      target: "server/oauth"
     - name: "Configuration: MyProxy and Local Auth"
       target: "server/myproxy"
     - name: "Finishing Configuration"
