@@ -53,6 +53,8 @@
 - id: "server"
   header: "Globus Connect Server"
   items:
+    - name: "About Globus Connect Server"
+      target: "server"
     - name: "Site Prep and Installation"
       target: "server/install"
     - name: "Initial Configuration"
