@@ -26,6 +26,9 @@ layout: null
 
 {% comment %} Site owner info & social media handles {% endcomment %}
 <meta name="author" content="{{ site.owner.name }}" />
+{% if site.google_site_verification != nil %}
+<meta name="google-site-verification" content="@{{ site.google_site_verification }}" />
+{% endif %}
 {% if site.owner.twitter != nil %}
 <meta name="twitter:site" content="@{{ site.owner.twitter }}" />
 {% endif %}

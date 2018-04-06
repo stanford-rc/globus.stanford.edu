@@ -41,6 +41,27 @@ owner:
   # here.  Example: If you are at xyz.slack.com, put "xyz".
   slack: null
 
+# If you would like to use the Google Search Console (also known as Google
+# Webmaster Tools) with your site, you can provide your
+# 'google-site-verification' code here.  See the instructions below:
+#
+# NOTE: Do not enable this until after your site is live at your preferred
+# domain!
+#
+# 1) Go to https://google.com/webmasters/tools, signing in with your
+#    Stanford Google account.
+# 2) Choose "Add A Property", and paste in your web site's URL.
+# 3) When asked for verification, go to the "Alternate methods tab" and
+#    choose "HTML tag".
+# 4) Examine the <meta> tag that Google wants you to add.  The tag's name
+#    should be "google-site-verification".  Take the tag's content, and put
+#    it here.
+#
+#    For example, if your tag says...
+#       <meta name="google-site-verification" content="12545asbcdgre" />
+#    ... then you would put in "12345asbcdgre" (_including_ the quotes).
+google-site-verification: null
+
 # The index.html page of the site defaults to being your site's "blog page".
 # (Altough the example calls it "Announcements", it's kindof the same thing.)
 # By default, the full list of posts are split into pages of three posts per
