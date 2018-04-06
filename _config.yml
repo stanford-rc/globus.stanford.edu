@@ -65,6 +65,20 @@ owner:
 #    If Google can't verify your site, wait a few minutes and try again.
 google-site-verification: "p6RHSiRbb4jA-IduSWo_kMGNiMYRXKDEwxB6Zfx468g"
 
+# For pages which live on GitHub, the _de rigeur_ thing to do is to provide
+# users an opportunity to improve your site.  The idea is, if people see that
+# something is wrong with the page, giving them the ability to fix it
+# themselves may make them more likely to do it.
+#
+# If this option is set to a string, that string will appear in the
+# bottom-right of every page, with a link to the source file on GitHub.  To
+# disable this, change the setting to "null" (without the quotes).
+#
+# NOTE: When you are testing changes locally, the link URL will not be
+# accurate.  It will only be correct when pages are being served from GitHub.
+# 
+github-edit-text: "Improve This Page"
+
 # The index.html page of the site defaults to being your site's "blog page".
 # (Altough the example calls it "Announcements", it's kindof the same thing.)
 # By default, the full list of posts are split into pages of three posts per

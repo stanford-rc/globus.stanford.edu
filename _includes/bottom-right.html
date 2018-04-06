@@ -10,5 +10,7 @@ It is best used to provide links to related content.
   <li><a href="https://www.globus.org/">Globus</a></li>
 </ul>
 
+{% if site.github-edit-text != nil %}
 <h3><a href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch
-}}/{{ page.path }}">Improve This Page</a></h3>
++}}/{{ page.path }}">{{ site.github-edit-text }}</a></h3>
+{% endif %}
