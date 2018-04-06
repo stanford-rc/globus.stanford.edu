@@ -193,7 +193,7 @@ input:-ms-input-placeholder {
   height: auto;
 }
 .info-box {
-  margin: 0 15px 30px;
+  margin: 0px 15px 10px;
   display: table;
 }
 .info-box .icon-container,
