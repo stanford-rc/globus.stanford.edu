@@ -54,7 +54,7 @@ layout: null
 <!-- CSS -->
 <link rel="stylesheet" href="{{ "assets/lagunita/css/bootstrap.min.css" | absolute_url }}" type="text/css" />
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{{ "assets/lagunita/css/base.min.css?v=0.1" | absolute_url }}" type="text/css" />
+<link rel="stylesheet" href="{{ "assets/lagunita/css/base.css" | absolute_url }}" type="text/css" />
 <link rel="stylesheet" href="{{ "assets/lagunita/css/custom.css?v=0.1" | absolute_url }}" type="text/css"/>
 <!--[if lt IE 9]>
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -78,81 +78,11 @@ layout: null
 <script src="{{ "assets/lagunita/js/custom.js" | absolute_url }}"></script>
 </head>
 
-<!-- Customization Options:                       
-     body class:   "home", "nav-1", "nav-2", etc. - specifies which item in the top nav to underline
-                   "site-slogan" - display a site slogan in the header signature
-     logo, h1  :   "hide" - hides the logo or H1 element, eg <h1 class="hide">
- -->
-{% comment %}
-  Our <body> tag has one or two classes.  First up is a class identifying if
-  the page we're on corresponds to a menu item.  If our page's path matches
-  a menu item's patch, then set the appropriate class, so that the appropriate
-  menu item is underlines.
-
-  We also handle the special case where the target is set to "", and we are
-  showing the site's index.html page.
-
-  TODO: Handle when we are showing a page that's in a dropdown.
-{% endcomment %}
-{% assign body_classes = "" | split: " " %}
-{% assign menu_classes = "home nav-1 nav-2 nav-3 nav-4 nav-5 nav-6 nav-7" | split: " " %}
-{% for menu_item in site.data.menu %}
-  {% comment %}
-    NOTE: We do not support underlining for dropdown menu items.
-    This is intentional.
-    The problem is, if we underline the dropdown menu, we end up underlining
-    all of the dropdown menu's menu items.
-    If you're curious what the Jekyll code was here, see Git commit aa1d5ff.
-  {% endcomment %}
-  {% if menu_item.target == "" %}
-    {% assign comparison_target = "index" %}
-  {% else %}
-    {% assign comparison_target = menu_item.target %}
-  {% endif %}
-
-  {% comment %}
-  Ugh, this is SO ANNOYING!
-
-  We need to support multiple input formats, not just HTML.  That means our
-  file extension is going to be different on the input side, but on the output
-  side it's always going to be "html").
-
-  So, our menu (and ToC) item targets must omit the ".html".  We will add
-  ".html" to the link's path ourselves.
-
-  And then, we need to take page.path, and strip off the file extension (the
-  ".html" or ".md" or whatever), before we do the comparison.
-  {% endcomment %}
-  {% assign path_segments = page.path | split: "." %}
-  {% assign path_number_of_segments = path_segments | size %}
-  {% if path_number_of_segments <= 2 %}
-    {% assign comparison_path = path_segments[0] %}
-  {% else %}
-    {% assign path_last_segment = path_segments.last %}
-    {% assign path_last_segment_length = path_last_segment | size | plus: 1 %}
-    {% assign new_length = page.path | size | minus: path_last_segment_length %}
-    {% assign comparison_path = page.path | truncate: new_length, "" %}
-  {% endif %}
-
-  {% if comparison_target == comparison_path %}
-    {% comment %} Ugh, Liquid arrays are annoying! {% endcomment %}
-    {% assign menu_item_class = menu_classes[forloop.index0] | split: " " %}
-    {% assign body_classes = body_classes | concat: menu_item_class %}
-  {% endif %}
-{% endfor %}
-
-{% comment %}
-  If the site has a slogan (which is something appearing directly under the
-  site title), then we have to add the site-slogan class.
-{% endcomment %}
 {% if site.slogan == nil or site.slogan == '' %}
-{%   assign site.slogan = '' %}
+<body class="site-slogan">
 {% else %}
-{%   comment %} Ugh, Liquid arrays are annoying! {% endcomment %}
-{%   assign site_slogan_class = 'site-slogan' | split: ' ' %}
-{%   assign body_classes = body_classes | concat: site_slogan_class %}
+<body>
 {% endif %}
-<body class="{{ body_classes | join: ' ' }}">
 <!-- class="home" underlines the Home link in the top nav -->
 <div id="su-wrap"> <!-- used to force footer to bottom of short pages -->
   <div id="su-content"> <!-- used to force footer to bottom of short pages --> 
@@ -227,10 +157,108 @@ layout: null
                       We can only handle seven menu items.
                     {% endcomment %}
                     {% assign menu_item = site.data.menu[i] %}
+
+                    {% comment %}
+                    We need to figure out if our item is for the
+                    currently-active page.
+
+                    There are two things to check:
+
+                    * If our item is a dropdown, then we need to look at all of
+                      the pages included in the dropdown.  If our current page
+                      is one of the pages included in the dropdown, then our
+                      item is active.
+                    * If our item is not a dropdown, then just check that the
+                      page's path matches.
+                    {% endcomment %}
+                    {% assign item_active = false %}
+
+                    {% comment %}
+                    Since only one of menu_item.dropdown and menu_item.target
+                    should be set for any given menu_item, we can simply look
+                    at both.  Check menu_item.target first.
+
+                    Ugh, this is SO ANNOYING!
+
+                    We need to support multiple input formats, not just HTML.
+                    That means our file extension is going to be different on
+                    the input side, but on the output side it's always going to
+                    be "html").
+
+                    So, our menu (and ToC) item targets must omit the ".html".
+                    We will add ".html" to the link's path ourselves.
+
+                    And then, we need to take page.path, and strip off the file
+                    extension (the ".html" or ".md" or whatever), before we do
+                    the comparison.
+                    {% endcomment %}
+                    {% assign path_segments = page.path | split: "." %}
+                    {% assign path_number_of_segments = path_segments | size %}
+                    {% if path_number_of_segments <= 2 %}
+                      {% assign comparison_path = path_segments[0] %}
+                    {% else %}
+                      {% assign path_last_segment = path_segments.last %}
+                      {% assign path_last_segment_length = path_last_segment | size | plus: 1 %}
+                      {% assign new_length = page.path | size | minus: path_last_segment_length %}
+                      {% assign comparison_path = page.path | truncate: new_length, "" %}
+                    {% endif %}
+                    {% comment %}
+                    We also have to be careful about the target.  If the target
+                    is set to the empty string, then it is actually pointing to
+                    index.html
+                    {% endcomment %}
+                    {% if menu_item.target == "" %}
+                      {% assign comparison_target = "index" %}
+                    {% else %}
+                      {% assign comparison_target = menu_item.target %}
+                    {% endif %}
+                    {% if comparison_target == comparison_path %}
+                      {% assign item_active = true %}
+                    {% endif %}
+
+                    {% comment %}
+                    Since only one of menu_item.dropdown and menu_item.target
+                    should be valid for any given menu_item, we can use a for
+                    loop.  If we are not in a dropdown, then this won't loop!
+                    {% endcomment %}
+                    {% for dropdown_item in menu_item.dropdown %}
+                      <!-- Checking dropdown -->
+                      {% assign path_segments = page.path | split: "." %}
+                      {% assign path_number_of_segments = path_segments | size %}
+                      {% if path_number_of_segments <= 2 %}
+                        {% assign comparison_path = path_segments[0] %}
+                      {% else %}
+                        {% assign path_last_segment = path_segments.last %}
+                        {% assign path_last_segment_length = path_last_segment | size | plus: 1 %}
+                        {% assign new_length = page.path | size | minus: path_last_segment_length %}
+                        {% assign comparison_path = page.path | truncate: new_length, "" %}
+                      {% endif %}
+                      {% if menu_item.target == "" %}
+                        {% assign comparison_target = "index" %}
+                      {% else %}
+                        {% assign comparison_target = dropdown_item.target %}
+                      {% endif %}
+                      {% if comparison_target == comparison_path %}
+                        {% assign item_active = true %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {% comment %}
+                    Now we can actually output the item!
+                    {% endcomment %}
                     {% if i == 0 %}
-                      <li id="nav-home">
+                      {% if item_active %}
+                        <li id="nav-home" class="active">
+                      {% else %}
+                        <!-- {{ menu_item.target }} && {{ page.path }} -->
+                        <li id="nav-home">
+                      {% endif %}
                     {% elsif i <= 6 %}
-                      <li id="nav-{{ i }}">
+                      {% if item_active %}
+                        <li id="nav-{{ i }}" class="active">
+                      {% else %}
+                        <li id="nav-{{ i }}">
+                      {% endif %}
                     {% else %}
                       <li><p>Too many menu items!</p>
                     {% endif %}
@@ -275,7 +303,22 @@ layout: null
                           stuff like indexes.
                         {% endcomment %}
                         {% for dropdown_item in menu_item.dropdown %}
-                        <li>
+                          {% assign path_segments = page.path | split: "." %}
+                          {% assign path_number_of_segments = path_segments | size %}
+                          {% if path_number_of_segments <= 2 %}
+                            {% assign comparison_path = path_segments[0] %}
+                          {% else %}
+                            {% assign path_last_segment = path_segments.last %}
+                            {% assign path_last_segment_length = path_last_segment | size | plus: 1 %}
+                            {% assign new_length = page.path | size | minus: path_last_segment_length %}
+                            {% assign comparison_path = page.path | truncate: new_length, "" %}
+                          {% endif %}
+
+                          {% if dropdown_item.target == comparison_path %}
+                            <li class="active">
+                          {% else %}
+                            <li>
+                          {% endif %}
                           {% if dropdown_item.name == nil %}
                             <p>Dropdown is missing a name!</p>
                           {% endif %}

@@ -38,5 +38,3 @@
       target: "yo"
     - name: "karl"
       target: "boom"
-    - name: "index"
-      target: ""

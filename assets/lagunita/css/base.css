@@ -1218,6 +1218,12 @@ body:before {
   body.nav-6 #nav-6 > a {
     border-bottom: 5px solid #8c1515;
   }
+
+  ul.navbar-nav > .active > a,
+  ul.navbar-nav > .dropdown-toggle > .active {
+    border-bottom: 5px solid #8c1515;
+  }
+
   .dropdown-menu > .active > a,
   .dropdown-menu > .active > a:hover,
   .dropdown-menu > .active > a:focus {
