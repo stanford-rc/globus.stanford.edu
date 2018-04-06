@@ -9,3 +9,8 @@ It is best used to provide links to related content.
   <li><a href="#">Useful in certain circumstances</a></li>
   <li><a href="#">Purely tangential information</a></li>
 </ul>
+
+{% if site.github-edit-text != nil %}
+<h3><a href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch
++}}/{{ page.path }}">{{ site.github-edit-text }}</a></h3>
+{% endif %}

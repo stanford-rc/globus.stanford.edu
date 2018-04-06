@@ -1033,14 +1033,15 @@ body:before {
     color: #5f574f;
     font-size: .9em;
   }
-  body.home #nav-home a,
-  body.nav-1 #nav-1 a,
-  body.nav-2 #nav-2 a,
-  body.nav-3 #nav-3 a,
-  body.nav-4 #nav-4 a,
-  body.nav-5 #nav-5 a,
-  body.nav-6 #nav-6 a {
-    color: #820000;
+  body.home #nav-home > a,
+  body.nav-1 #nav-1 > a,
+  body.nav-2 #nav-2 > a,
+  body.nav-3 #nav-3 > a,
+  body.nav-4 #nav-4 > a,
+  body.nav-5 #nav-5 > a,
+  body.nav-6 #nav-6 > a {
+    color: #fbfbf9;
+    background-color: #820000;
     border-bottom: none;
   }
   .navbar .menu-text {
@@ -1151,7 +1152,9 @@ body:before {
   }
   .nav .dropdown-menu li a:hover,
   .nav .dropdown-menu li a:focus {
-    border-bottom: solid 5px #820000 !important;
+    border-bottom: solid 5px #f8f7f2 !important;
+    font-weight: bold;
+    background-color: #f8f7f2;
   }
   #global-footer .clear {
     clear: none;
@@ -1192,10 +1195,10 @@ body:before {
     float: right;
     margin: -100px 0 0 0;
   }
-  .navbar .nav li a {
+  .navbar .nav > li > a {
     border-bottom: 5px solid #f8f7f2;
   }
-  .navbar .nav li a:hover {
+  .navbar .nav > li > a:hover {
     border-bottom: 5px solid #820000;
   }
   .two-column {
@@ -1206,14 +1209,21 @@ body:before {
     column-count: 2;
     column-gap: 20px;
   }
-  body.home #nav-home a,
-  body.nav-1 #nav-1 a,
-  body.nav-2 #nav-2 a,
-  body.nav-3 #nav-3 a,
-  body.nav-4 #nav-4 a,
-  body.nav-5 #nav-5 a,
-  body.nav-6 #nav-6 a {
+  body.home #nav-home > a,
+  body.nav-1 #nav-1 > a,
+  body.nav-2 #nav-2 > a,
+  body.nav-3 #nav-3 > a,
+  body.nav-4 #nav-4 > a,
+  body.nav-5 #nav-5 > a,
+  body.nav-6 #nav-6 > a {
     border-bottom: 5px solid #8c1515;
+  }
+  .dropdown-menu > .active > a,
+  .dropdown-menu > .active > a:hover,
+  .dropdown-menu > .active > a:focus {
+    background-color: #f8f7f2;
+    color: #820000;
+    font-weight: bold;
   }
   .image-caption.overlay {
     opacity: 0;

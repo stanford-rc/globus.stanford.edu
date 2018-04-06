@@ -53,7 +53,7 @@
       {% else %}
         {% assign a_class = "" %}
       {% endif %}
-      <li><a href="{{ target | absolute_url }}"{{ a_class }}>{{ item.name }}</a></li>
+      <li><a href="{{ target | append: ".html" | absolute_url }}"{{ a_class }}>{{ item.name }}</a></li>
     {% endfor %}
   </ul>
 {% endif %}

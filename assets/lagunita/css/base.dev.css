@@ -1245,18 +1245,19 @@ body:before {
     color: #5f574f;
     font-size: .9em;
   }
-  /* line 122, themes/lagunita/less/_base-responsive.less */
-  body.home #nav-home a,
-  body.nav-1 #nav-1 a,
-  body.nav-2 #nav-2 a,
-  body.nav-3 #nav-3 a,
-  body.nav-4 #nav-4 a,
-  body.nav-5 #nav-5 a,
-  body.nav-6 #nav-6 a {
-    color: #820000;
+  /* line 126, themes/lagunita/less/_base-responsive.less */
+  body.home #nav-home > a,
+  body.nav-1 #nav-1 > a,
+  body.nav-2 #nav-2 > a,
+  body.nav-3 #nav-3 > a,
+  body.nav-4 #nav-4 > a,
+  body.nav-5 #nav-5 > a,
+  body.nav-6 #nav-6 > a {
+    color: #fbfbf9;
+    background-color: #820000;
     border-bottom: none;
   }
-  /* line 132, themes/lagunita/less/_base-responsive.less */
+  /* line 135, themes/lagunita/less/_base-responsive.less */
   .navbar .menu-text {
     display: inline;
     text-transform: uppercase;
@@ -1267,7 +1268,7 @@ body:before {
     font-size: 0.85em;
     font-weight: 700;
   }
-  /* line 143, themes/lagunita/less/_base-responsive.less */
+  /* line 146, themes/lagunita/less/_base-responsive.less */
   .navbar .navbar-toggle {
     background-color: #8c1515;
     border: none;
@@ -1277,36 +1278,36 @@ body:before {
     margin-top: 1px;
     padding: 7px 10px;
   }
-  /* line 152, themes/lagunita/less/_base-responsive.less */
+  /* line 155, themes/lagunita/less/_base-responsive.less */
   .navbar .navbar-toggle span.icon-bar {
     background-color: white;
   }
-  /* line 157, themes/lagunita/less/_base-responsive.less */
+  /* line 160, themes/lagunita/less/_base-responsive.less */
   .navbar .navbar-toggle:hover {
     background-color: #5f574f;
   }
-  /* line 161, themes/lagunita/less/_base-responsive.less */
+  /* line 164, themes/lagunita/less/_base-responsive.less */
   .navbar button.collapsed {
     background-color: #8c1515 !important;
   }
-  /* line 164, themes/lagunita/less/_base-responsive.less */
+  /* line 167, themes/lagunita/less/_base-responsive.less */
   .navbar .navbar-collapse {
     width: 100%;
   }
-  /* line 167, themes/lagunita/less/_base-responsive.less */
+  /* line 170, themes/lagunita/less/_base-responsive.less */
   .navbar .navbar-collapse.in {
     overflow-y: visible;
   }
-  /* line 172, themes/lagunita/less/_base-responsive.less */
+  /* line 175, themes/lagunita/less/_base-responsive.less */
   .navbar .nav {
     margin: 8px 0 15px 0;
   }
-  /* line 175, themes/lagunita/less/_base-responsive.less */
+  /* line 178, themes/lagunita/less/_base-responsive.less */
   .navbar .nav > li {
     display: block;
     padding-right: 0;
   }
-  /* line 179, themes/lagunita/less/_base-responsive.less */
+  /* line 182, themes/lagunita/less/_base-responsive.less */
   .navbar .nav > li > a,
   .navbar .nav > li > a:focus,
   .navbar .nav > li > a:hover {
@@ -1316,37 +1317,37 @@ body:before {
     margin-right: 0;
     width: 100%;
   }
-  /* line 188, themes/lagunita/less/_base-responsive.less */
+  /* line 191, themes/lagunita/less/_base-responsive.less */
   .navbar .nav > li > a:hover,
   .navbar .nav > li > a:focus {
     background-color: #820000;
     color: #f8f7f2;
     border-bottom: none;
   }
-  /* line 198, themes/lagunita/less/_base-responsive.less */
+  /* line 201, themes/lagunita/less/_base-responsive.less */
   .navbar .nav .dropdown-menu li a {
     font-weight: 600;
     font-size: 1.15em;
   }
-  /* line 202, themes/lagunita/less/_base-responsive.less */
+  /* line 205, themes/lagunita/less/_base-responsive.less */
   .navbar .nav .dropdown-menu li a:hover,
   .navbar .nav .dropdown-menu li a:focus {
     background-color: #820000 !important;
     color: #f8f7f2 !important;
     border-bottom: none;
   }
-  /* line 214, themes/lagunita/less/_base-responsive.less */
+  /* line 217, themes/lagunita/less/_base-responsive.less */
   #sidebar-first,
   #sidebar-second {
     border-top: 2px solid #8c1515;
     padding-top: 15px;
     margin-top: 30px;
   }
-  /* line 221, themes/lagunita/less/_base-responsive.less */
+  /* line 224, themes/lagunita/less/_base-responsive.less */
   #feature-banner {
     position: relative;
   }
-  /* line 224, themes/lagunita/less/_base-responsive.less */
+  /* line 227, themes/lagunita/less/_base-responsive.less */
   #feature-banner .feature-caption {
     background-color: #f2f1eb;
     color: inherit;
@@ -1356,14 +1357,14 @@ body:before {
     text-align: left;
     padding: 10px;
   }
-  /* line 233, themes/lagunita/less/_base-responsive.less */
+  /* line 236, themes/lagunita/less/_base-responsive.less */
   #feature-banner .feature-caption h3,
   #feature-banner .feature-caption h4,
   #feature-banner .feature-caption p {
     display: inline;
     margin: 0;
   }
-  /* line 238, themes/lagunita/less/_base-responsive.less */
+  /* line 241, themes/lagunita/less/_base-responsive.less */
   #feature-banner .feature-caption h3,
   #feature-banner .feature-caption h4 {
     font-size: 1em;
@@ -1374,32 +1375,34 @@ body:before {
   }
 }
 @media (min-width: 768px) {
-  /* line 256, themes/lagunita/less/_base-responsive.less */
+  /* line 259, themes/lagunita/less/_base-responsive.less */
   .nav .dropdown-menu {
     background-color: #f8f7f2;
   }
-  /* line 260, themes/lagunita/less/_base-responsive.less */
+  /* line 263, themes/lagunita/less/_base-responsive.less */
   .nav .dropdown-menu li a {
     border-bottom: solid 5px #f8f7f2;
   }
-  /* line 263, themes/lagunita/less/_base-responsive.less */
+  /* line 266, themes/lagunita/less/_base-responsive.less */
   .nav .dropdown-menu li a:hover,
   .nav .dropdown-menu li a:focus {
-    border-bottom: solid 5px #820000 !important;
+    border-bottom: solid 5px #f8f7f2 !important;
+    font-weight: bold;
+    background-color: #f8f7f2;
   }
-  /* line 273, themes/lagunita/less/_base-responsive.less */
+  /* line 278, themes/lagunita/less/_base-responsive.less */
   #global-footer .clear {
     clear: none;
   }
-  /* line 277, themes/lagunita/less/_base-responsive.less */
+  /* line 282, themes/lagunita/less/_base-responsive.less */
   #global-footer #bottom-logo {
     margin: -5px 0 10px;
   }
-  /* line 281, themes/lagunita/less/_base-responsive.less */
+  /* line 286, themes/lagunita/less/_base-responsive.less */
   #global-footer #bottom-text {
     margin-top: 2px;
   }
-  /* line 284, themes/lagunita/less/_base-responsive.less */
+  /* line 289, themes/lagunita/less/_base-responsive.less */
   #global-footer #bottom-text ul li {
     width: auto;
     margin: 0 15px 3px 0;
@@ -1408,42 +1411,42 @@ body:before {
     clear: left;
     display: inline-block;
   }
-  /* line 294, themes/lagunita/less/_base-responsive.less */
+  /* line 299, themes/lagunita/less/_base-responsive.less */
   #global-footer p.copyright {
     text-align: left;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 303, themes/lagunita/less/_base-responsive.less */
+  /* line 308, themes/lagunita/less/_base-responsive.less */
   .size-detect-sm {
     display: inline;
   }
-  /* line 304, themes/lagunita/less/_base-responsive.less */
+  /* line 309, themes/lagunita/less/_base-responsive.less */
   .col-sm-1-4 {
     float: left;
     width: 18%;
     margin-right: 2%;
   }
-  /* line 310, themes/lagunita/less/_base-responsive.less */
+  /* line 315, themes/lagunita/less/_base-responsive.less */
   #search-form #search-btn {
     left: 190px;
   }
 }
 @media (min-width: 992px) {
-  /* line 319, themes/lagunita/less/_base-responsive.less */
+  /* line 324, themes/lagunita/less/_base-responsive.less */
   #nav-search {
     float: right;
     margin: -100px 0 0 0;
   }
-  /* line 325, themes/lagunita/less/_base-responsive.less */
-  .navbar .nav li a {
+  /* line 330, themes/lagunita/less/_base-responsive.less */
+  .navbar .nav > li > a {
     border-bottom: 5px solid #f8f7f2;
   }
-  /* line 328, themes/lagunita/less/_base-responsive.less */
-  .navbar .nav li a:hover {
+  /* line 333, themes/lagunita/less/_base-responsive.less */
+  .navbar .nav > li > a:hover {
     border-bottom: 5px solid #820000;
   }
-  /* line 333, themes/lagunita/less/_base-responsive.less */
+  /* line 338, themes/lagunita/less/_base-responsive.less */
   .two-column {
     -moz-column-count: 2;
     -moz-column-gap: 20px;
@@ -1452,17 +1455,25 @@ body:before {
     column-count: 2;
     column-gap: 20px;
   }
-  /* line 343, themes/lagunita/less/_base-responsive.less */
-  body.home #nav-home a,
-  body.nav-1 #nav-1 a,
-  body.nav-2 #nav-2 a,
-  body.nav-3 #nav-3 a,
-  body.nav-4 #nav-4 a,
-  body.nav-5 #nav-5 a,
-  body.nav-6 #nav-6 a {
+  /* line 348, themes/lagunita/less/_base-responsive.less */
+  body.home #nav-home > a,
+  body.nav-1 #nav-1 > a,
+  body.nav-2 #nav-2 > a,
+  body.nav-3 #nav-3 > a,
+  body.nav-4 #nav-4 > a,
+  body.nav-5 #nav-5 > a,
+  body.nav-6 #nav-6 > a {
     border-bottom: 5px solid #8c1515;
   }
-  /* line 350, themes/lagunita/less/_base-responsive.less */
+  /* line 355, themes/lagunita/less/_base-responsive.less */
+  .dropdown-menu > .active > a,
+  .dropdown-menu > .active > a:hover,
+  .dropdown-menu > .active > a:focus {
+    background-color: #f8f7f2;
+    color: #820000;
+    font-weight: bold;
+  }
+  /* line 362, themes/lagunita/less/_base-responsive.less */
   .image-caption.overlay {
     opacity: 0;
     filter: alpha(opacity=0);
@@ -1473,33 +1484,33 @@ body:before {
     color: #fbfbf9;
     background-color: rgba(0, 0, 0, 0.6);
   }
-  /* line 359, themes/lagunita/less/_base-responsive.less */
+  /* line 371, themes/lagunita/less/_base-responsive.less */
   .image-caption.overlay h4,
   .image-caption.overlay p {
     color: #fbfbf9;
   }
-  /* line 364, themes/lagunita/less/_base-responsive.less */
+  /* line 376, themes/lagunita/less/_base-responsive.less */
   #hero-image:hover .overlay {
     opacity: 1;
     filter: alpha(opacity=100);
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 375, themes/lagunita/less/_base-responsive.less */
+  /* line 387, themes/lagunita/less/_base-responsive.less */
   .size-detect-md {
     display: inline;
   }
-  /* line 377, themes/lagunita/less/_base-responsive.less */
+  /* line 389, themes/lagunita/less/_base-responsive.less */
   .navbar .nav > li {
     padding: 0 10px 0 0;
   }
-  /* line 380, themes/lagunita/less/_base-responsive.less */
+  /* line 392, themes/lagunita/less/_base-responsive.less */
   .navbar .nav > li > a {
     font-size: 1.3em;
   }
 }
 @media (min-width: 1200px) {
-  /* line 390, themes/lagunita/less/_base-responsive.less */
+  /* line 402, themes/lagunita/less/_base-responsive.less */
   .size-detect-lg {
     display: inline;
   }
