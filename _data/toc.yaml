@@ -45,6 +45,8 @@
 - id: "client"
   header: "Globus Connect Personal"
   items:
+    - name: "About Globus Connect Personal"
+      target: "client"
     - name: "Install and Activate"
       target: "client/install"
     - name: "Enable Globus Plus"
