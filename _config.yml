@@ -60,6 +60,9 @@ owner:
 #    For example, if your tag says...
 #       <meta name="google-site-verification" content="12545asbcdgre" />
 #    ... then you would put in "12345asbcdgre" (_including_ the quotes).
+# 5) Push your changes to GitHub, and wait a few minutes.
+# 6) Go back to your web browser, and click the "Verify" button.
+#    If Google can't verify your site, wait a few minutes and try again.
 google-site-verification: null
 
 # The index.html page of the site defaults to being your site's "blog page".
