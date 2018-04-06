@@ -1,11 +1,11 @@
 ---
 layout:      left-sidebar
-title:       Globus Connect Personal
+title:       Globus Plus
 title_line:  false
-description: Main page for Globus client information.
+description: Enabling Globus Plus
 ---
 
-# Globus Connect Personal
+# Globus Plus
 
 # Sorry, nothing is here yet!
 

@@ -1,11 +1,11 @@
 ---
 layout:      left-sidebar
-title:       Globus Connect Personal
+title:       Install Globus Connect Personal
 title_line:  false
-description: Main page for Globus client information.
+description: Installation instructions for the Globus client.
 ---
 
-# Globus Connect Personal
+# Installing Globus Connect Personal
 
 # Sorry, nothing is here yet!
 
