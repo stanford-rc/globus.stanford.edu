@@ -39,7 +39,7 @@ software, and configuring both the software and your new endpoint.
 {% include info-box.html
    icon="globe"
    header="Network Access Required"
-   content="Globus Connect Personal needs to be able to make outbound Internet connections.  Connections must be allowed out to 54.237.254.192/29 port 2223 (for control traffic), and to any Internet host on TCP ports 50000-51000 (for data transfer)."
+   content="Globus Connect Personal needs to be able to make outbound Internet connections.  Connections must be allowed out to 54.237.254.192/29 port 2223 (for control traffic), and to any Internet host on TCP ports 50000-51000 (for data transfer).  Connections must also be allowed to AWS S3 on TCP port 443 (HTTPS), for the new version check to succeed."
 %}
 
 {% include info-box.html
