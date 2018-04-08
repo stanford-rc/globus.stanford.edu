@@ -291,6 +291,16 @@ and perform some tests:
 If you encounter issues which you cannot resolve yourself, then you
 should reach out to [Support]({{ "support.html" | relative_url }}).
 
+# Monitor!
+
+You should also ensure [Qualys](https://uit.stanford.edu/service/qualys) is
+scanning your endpoint for vulnarabilities, and that you are regularly checking
+reports and acting on the results.  If your server is maintained by someone
+else, you should contact them.  If you are also the server admin, and you need
+more information on Qualys, reach out to your
+[LNA](https://web.stanford.edu/group/networking/dist/sunet.reports/LNA.html) or
+to your [ISO](https://uit.stanford.edu/organization/iso) Consultant.
+
 **Congratulations, you have reached the end of the Server setup pages!**  We,
 SRCC, the contributors to this site, and other Stanford Globus users hope that
 you will make good use of your new endpoint.
