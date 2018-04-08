@@ -188,6 +188,12 @@ instructions from [Globus Connect Server installation guide Section
 3.1](https://docs.globus.org/globus-connect-server-installation-guide/#install_globus_connect_server).
 
 {% include info-box.html
+   icon="arrow-alt-circle-up"
+   header="Use the Repo"
+   content="Be sure to get packages directly from the Globus repository, instead of trying to download and install them manually.  Doing so ensures that Globus will be updated whenever you do regular server patching."
+%}
+
+{% include info-box.html
    icon="list-ul"
    header="Expect Many Packages"
    content="The `globus-connect-server` package has a large number of dependencies, because Globus Connect Server consists of multiple products (GridFTP, MyProxy, etc.).  It may be possible to only install a subset of packages, but this has not been documented.  Assistance is welcomed in this area!"

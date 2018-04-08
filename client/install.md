@@ -133,6 +133,12 @@ correct, the Setup window will close, and Globus will start waiting for
 instructions.  The Globus icon <img src="{{ "assets/client/Toolbar Icon.png" |
 relative_url }}" alt="" /> will appear in the toolbar.
 
+{% include info-box.html
+   icon="arrow-alt-circle-up"
+   header="Keep the box checked"
+   content="From time to time, Globus releases software updates.  By default, Globus Connect Personal will check for updates, and let you know when new software is available.  Please do not disable the update check!"
+%}
+
 You should now go back to the Globus web site, where you will finish
 configuring your endpoint.
 
