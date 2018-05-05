@@ -293,6 +293,13 @@ should reach out to [Support]({{ "support.html" | relative_url }}).
 
 # Monitor!
 
+Globus logs to two or three different paths, depending on authentication
+method.  If you are using MyProxy or MyProxy OAuth authentications, MyProxy
+logs its activity to syslog.  If you are using MyProxy OAuth, OAuth activity is
+logged in Apache logs.  Finally, all GridFTP activity is logged at
+`/var/log/gridftp.log`.  You should ensure that Globus logs are handled the
+same as other system/application logs in your group.
+
 You should also ensure [Qualys](https://uit.stanford.edu/service/qualys) is
 scanning your endpoint for vulnarabilities, and that you are regularly checking
 reports and acting on the results.  If your server is maintained by someone
