@@ -161,6 +161,11 @@ Here are some thing to keep in mind as you fill in the form:
 * Use a mailing list as your email address.  **This is important**; password
   resets and other important Globus communications will be sent here.
 
+ * Remember to **practice password complexity**!  Your Globus ID only uses a
+   static password, so be sure to consult the [Password Requirements Quick
+   Guide](https://uit.stanford.edu/service/accounts/passwords/quickguide) to
+   find out how long your password should be.
+
 After creating a Globus ID, email <srcc-support@stanford.edu>, asking for your
 Globus ID to be assicated with Stanford's Globus subscription.  In your email,
 provide the following information:
