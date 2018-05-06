@@ -366,6 +366,11 @@ more information on Qualys, reach out to your
 [LNA](https://web.stanford.edu/group/networking/dist/sunet.reports/LNA.html) or
 to your [ISO](https://uit.stanford.edu/organization/iso) Consultant.
 
+Finally, every quarter, you should go to your [list of endpoints you
+administer](https://www.globus.org/app/endpoints?scope=administered-by-me), and
+heck for any endpoints that you do not use anymore.  Those endpoints should be
+removed.
+
 **Congratulations, you have reached the end of the Server setup pages!**  We,
 SRCC, the contributors to this site, and other Stanford Globus users hope that
 you will make good use of your new endpoint.
