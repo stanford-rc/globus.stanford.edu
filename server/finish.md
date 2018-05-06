@@ -7,8 +7,65 @@ description: Finish your Globus Connect Server Installation
 
 # Finishing Configuration
 
-Now that Globus Connect Server is running, some final endpoint configuraion
-must be performed on the [Globus web site](https://www.globus.org/app).  
+It is now time to finish the endpoint's configuration!  This assumes that you
+have already performed all of the [initial setup]({{ "server/configure.html" |
+relative_url }}), and that you have followed the instructions for your chosen
+[authentication method]({{ "server/auth.html" | relative_url }}).
+
+To finish your endpoint's configuration, you will need to do some work on the
+server, followed by some work on the Globus web site.
+
+## Additional GridFTP Configuration
+
+When you ran `globus-connect-server-setup`, most of GridFTP's configuration was
+done for you automatically.  But, some additional configuration is needed to
+meet [MinSec](https://minsec.stanford.edu) requirements for Medium Risk data.
+The following five commands, run as `root`, will take care of the configuration
+for you:
+
+    echo 'log_transfer /var/log/gridftp_transfer.log' > /var/lib/globus-connect-server/gridftp.d/transfer-logging
+    ln -s /var/lib/globus-connect-server/gridftp.d/transfer-logging /etc/gridftp.d/transfer-logging
+    sed -e 's|/var/log/gridftp.log|/var/log/gridftp.log /var/log/gridftp_transfer.log|' -e 's|postrotate|sharedscripts\n   postrotate|' -i /etc/logrotate.d/globus-connect-server
+    sed -e 's|MIN_TLS_PROTOCOL=.*|MIN_TLS_PROTOCOL=TLS1_1_VERSION|' -i /etc/grid-security/gsi.conf
+    /etc/init.d/globus-gridftp-server restart
+
+The above commands make two major changes:
+
+1. Transfer logging is enabled.  This logs every file transfer to
+   `/var/log/gridftp_transfer.log`.
+   
+   Each file-transfer log entry includes the unique ID of the Task the user
+   submitted, the file being transferred, and the IP address of the other end
+   of the transfer.
+
+   This is implemented by creating a file in
+   `/var/lib/globus-connect-server/gridftp.d/transfer-logging`, with a symlink
+   from `/etc/gridftp.d/transfer-logging`.  The file contains the line
+   `log_transfer /var/log/gridftp_transfer.log`.
+
+   The existing log-rotation configuration is also updated to account for this
+   new log file.
+
+2. TLS 1.1 is set as the minimum TLS version for all GridFTP and MyProxy
+   communications.  This includes all communications between Globus and MyProxy
+   (when legacy MyProxy authentication is in use), all communications between
+   the MyProxy OAuth server and MyProxy (when MyProxy OAuth authentication is
+   in use), all communications between Globus and the GridFTP service (for
+   metadata activity and transfer coordination), and—when transfer encryption
+   is enabled—all data traffic between endpoints.
+   
+   The normal default is to use TLS 1.0 and later.  Regardless of this setting,
+   normal TLS negotiation processes are used, so if both ends support a more
+   modern TLS version, that will end up being used.
+
+   This is implemented by editing `/etc/grid-security/gsi.conf`, setting
+   `MIN_TLS_PROTOCOL` to `TLS1_1_VERSION`.
+
+## Accessing the Endpoint
+
+Now that Globus Connect Server is running, and GridFTP's configuration has been
+updated, some final endpoint configuraion must be performed on the [Globus web
+site](https://www.globus.org/app).  
 
 {% include info-box.html
    icon="asterisk"
@@ -296,9 +353,10 @@ should reach out to [Support]({{ "support.html" | relative_url }}).
 Globus logs to two or three different paths, depending on authentication
 method.  If you are using MyProxy or MyProxy OAuth authentications, MyProxy
 logs its activity to syslog.  If you are using MyProxy OAuth, OAuth activity is
-logged in Apache logs.  Finally, all GridFTP activity is logged at
-`/var/log/gridftp.log`.  You should ensure that Globus logs are handled the
-same as other system/application logs in your group.
+logged in Apache logs.  Finally, GridFTP warnings and errors are logged at
+`/var/log/gridftp.log`, with file-transfer records being logged at
+`/var/log/gridftp_transfer.log`.  You should ensure that Globus logs are
+handled the same as other system/application logs in your group.
 
 You should also ensure [Qualys](https://uit.stanford.edu/service/qualys) is
 scanning your endpoint for vulnarabilities, and that you are regularly checking
