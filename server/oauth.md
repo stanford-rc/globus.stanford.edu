@@ -54,9 +54,16 @@ The MyProxy OAuth service allows a little customization, in the form of custom
 CSS and a logo.  Before you continue configuration, you should download those
 files:
 
-* Download XXXXX to `/etc/globus-myproxy-oauth-stylesheet.css` on the server.
+* Download [this CSS file]({{ "server/oauth.css" | relative_url }}) to
+  `/etc/globus-myproxy-oauth-stylesheet.css` on the server.
 
-* Download XXXXX to `/etc/globus-myproxy-oauth-logo.png`.
+* Download [the all-red Block S with
+  Tree](https://identity.stanford.edu/downloads/SU_New_BlockStree_Red.png) logo
+  to `/etc/globus-myproxy-oauth-logo.png` on the server.
+
+The logo lives on the Stanford Identity site, which requires that you log in to
+download logos.  So, you will have to download it manually, and copy it to the
+server.  The CSS file may be download directly using `wget`, `curl`, etc..
 
 ## Globus Configuration
 
@@ -138,7 +145,10 @@ The _Server_ and _ServerBehindNAT_ entries should be set to exactly the same
 values as what appears in the MyProxy section (you should just copy/paste them
 from one section to the other).
 
-ddd
+The logo is the "Block S (1 Color, Red, Dark Background)" logo, meant to be
+placed on a Stanford-red background.  The stylesheet is what configures this
+background.  It also enables the use of the Source Sans Pro font family, one of
+the two preferred font families for header and body text.
 
 Once `globus-connect-server.conf` has been completed, it is now time to run
 `globus-connect-server-setup`!
