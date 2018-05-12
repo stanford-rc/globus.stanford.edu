@@ -62,7 +62,7 @@ files:
 
 To use MyProxy OAuth authentication, you will be making additions to the
 `globus-connect-server.conf` file that you first filled in during [initial
-configuration]({{ "server/configure.html" }}).
+configuration]({{ "server/configure.html" | relative_url }}).
 
 {% include info-box.html
    icon="hand-paper"
