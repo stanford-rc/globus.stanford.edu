@@ -44,3 +44,5 @@ on how to prepare your system, and how to install Globus Connect Server.
 {% include left-sidebar/transition.md %}
 
 {% include toc.html id="server" %}
+
+<!-- <a href="{{ "server5.html" | relative_url }}"><em>Looking for GCS version 5?</em></a> -->
