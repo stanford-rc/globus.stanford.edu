@@ -14,10 +14,10 @@ setup to be done.
 
 {% include info-box.html
    icon="lock-open"
-   header="Low-Risk Data Only"
-   content="Globus may only be used at Stanford with Low Risk data.  Please
-   do not install this software on systems which have access to Medium or High
-   Risk data."
+   header="No High-Risk Data"
+   content="Globus may only be used at Stanford with Low or Medium Risk data.
+   Please do not install this software on systems which have access to any form
+   of High Risk data (including PCI and PHI data)."
 %}
 
 "Site Prep and Installation" includes three steps:
@@ -178,7 +178,7 @@ provide the following information:
 * Contact information for the people who will be maintaining the Globus Connect
   server(s).
 
-* Confirmation that you will only use Globus for Low Risk data.
+* Confirmation that you will only use Globus for Low or Medium Risk data.
 
 Once submitted, you should hear back within two business days.  In the mean
 time, you should continue setup!

@@ -19,10 +19,10 @@ users have data (even if they can not log in directly).
 
 {% include info-box.html
    icon="lock-open"
-   header="Low-Risk Data Only"
-   content="Globus may only be used at Stanford with Low Risk data.  Please
-   do not install this software on systems which have access to Medium or High
-   Risk data."
+   header="No High-Risk Data"
+   content="Globus may only be used at Stanford with Low or Medium Risk data.
+   Please do not install this software on systems which have access to any form
+   of High Risk data (including PCI and PHI data)."
 %}
 
 Globus Connect Server requires:
