@@ -100,6 +100,11 @@ If you also filter _outbound_ traffic, you need to open the following ports:
   [downloads.globus.org](https://downloads.globus.org).  It needs to be open
   long enough for software packages to be downloaded.
 
+* To `54.237.254.192/29` (in the `untrust` zone), on port 443.
+
+  This is where Globus' API servers live in AWS.  Globus Connect Server
+  communicates back to Globus during endpoint setup and maintenance.
+
 Once firewall rules have been submitted, you should proceed to get your Globus
 ID activated.
 
