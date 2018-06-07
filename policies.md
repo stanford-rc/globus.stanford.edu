@@ -132,6 +132,12 @@ been evaluated for handling data rated as High Risk.  As always, it is up to
 the data owners to determine the [Risk
 Classification](http://dataclass.stanford.edu/) for their data. 
 
+**Only Low Risk data may be used with Globus Search.**  Globus Search is a
+component of the [Globus Publish](https://publish.globus.org) platform, a
+platform for identifying, searching, and sharing data sets.  This limitation is
+because the cloud-based component of Globus Search does not encrypt data at
+rest.
+
 Globus Connect Server and Globus Connect Personal are licensed under the terms
 described on the [Globus Software Agreement
 page](https://www.globus.org/legal/software-license).
