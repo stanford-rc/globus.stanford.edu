@@ -48,6 +48,58 @@ When Globus communicates with your endpoint, it uses the client cert issued by
 MyProxy, which contains the end user's local username.  That is how your
 endpoint knows who is using Globus.
 
+## Apache Configuration
+
+MyProxy OAuth is a Python WSGI application, which uses Apache as the gateway
+between the user and the application.  Although Apache has already been
+installed (as part of installing the MyProxy OAuth packages); you still need to
+configure Apache's SSL settings, and obtain a certificate.
+
+Basic configuration guides are available, [for
+RHEL/CentOS](https://wiki.centos.org/HowTos/Https) and [for
+Debian/Ubuntu](https://www.linode.com/docs/security/ssl/ssl-apache2-debian-ubuntu/).
+
+For the server certificate, you can get one from [University
+IT](https://uit.stanford.edu/service/ssl), or you can get one from [Let's
+Encrypt](https://letsencrypt.org).  Both are free, and both have tradeoffs: A
+certificate from University IT lasts for up to two years, but can take a
+business day to be issued, and you have to remember to renew it.  A certificate
+from Let's Encrypt will last indefinitely as long as you have auto-renewal in
+place, but there are limits on how many new certs are issued per day, so you
+might have to wait.
+
+Either way, until you have a certificate, MyProxy OAuth authentication may not
+work.
+
+Besides getting a certificate, you will also need to configure your server's
+SSL settings.  The best tool to use is the [Mozilla SSL Configuration
+Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/).
+You will need to provide your version of the "server" (that is, Apache) and of
+OpenSSL; you can get these from the list below:
+
+* **RHEL/CentOS 6**: Server 2.2.15 and OpenSSL 1.0.1e
+* **RHEL/CentOS 7**: Server 2.4.6 and OpenSSL 1.0.1e
+* **Debian 8**: Server 2.4.10 and OpenSSL 1.0.1t
+* **Debian 9**: Server 2.4.25 and OpenSSL 1.1.0f
+* **Ubuntu 16.04**: Server 2.4.18 and OpenSSL 1.0.2g
+* **Ubuntu 18.04**: Server 2.4.29 and OpenSSL 1.1.0g
+
+Once your set your server and OpenSSL versions, if the _Modern_ option is
+available, then select it.  Otherwise, select _Intermediate_.  Also, make sure
+_HSTS Enabled_ is selected.  At this point, the appropriate configuraion will be
+displayed, which you can copy to the appropriate Apache configuration file.  The
+guides linked at the start of this section will help you locate the right
+configuration file.
+
+{% include info-box.html
+   icon="lock"
+   header="Is TLS 1.0 disabled?"
+   content="Before you move on, check the `SSLProtocol` line in your new SSL configuration, and make sure '-TLSv1' appears on that line.  If it is missing, add it to the end of the line."
+%}
+
+Now that the web server has been configured, you can move on to configuring
+Globus!
+
 ## Download Files
 
 The MyProxy OAuth service allows a little customization, in the form of custom
@@ -64,6 +116,7 @@ files:
 The logo lives on the Stanford Identity site, which requires that you log in to
 download logos.  So, you will have to download it manually, and copy it to the
 server.  The CSS file may be download directly using `wget`, `curl`, etc..
+
 
 ## Globus Configuration
 
