@@ -75,6 +75,11 @@ names are for systems behind a network firewall):
   same vsys, if there are Globus endpoints in those other zones, they will need
   to be able to connect to you.
 
+  _If you are in the School of Medicine_, or your network firewall is
+  controlled by MedIRT, when you submit your firewall request, tell them to use
+  the "ssl application", not the "gridftp application".  If MedIRT have any
+  questions, ask them to refer to "SNOW incident INC00282086".
+
 If you use MyProxy OAuth, one more inbound port will be needed:
 
 * From _any IP address_ (in the `untrust` zone), to TCP port `443`.
