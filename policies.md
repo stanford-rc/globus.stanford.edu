@@ -66,6 +66,8 @@ Chapter 9](https://adminguide.stanford.edu/chapter-9).
 
 The groups excluded from Stanford's Globus Subscription are:
 
+* Carnegie Institution.
+
 * Stanford Health Care.
 
 * Stanford Children's Health.
