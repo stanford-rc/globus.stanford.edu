@@ -767,11 +767,28 @@ home directories?</em></p>
 
 <p>Files uploaded to a Globus Connect Server endpoint are owned by the user
 who activated the endpoint.  Files uploaded to a shared endpoint are owned by
-the user who created the shared endpoint.</p>
+the user who created the shared endpoint.  The file's group will be set to the
+owning user's primary group.</p>
 
-<p>File permissions are set based on the umask of the GridFTP server; this
-normally defaults to 0022, which allows read access to all users.  If you want
-to change this, you will have to modify the
+<p>File permissions are set based on the GridFTP server's umask, and its
+default permissions.  GridFTP's default permissions are <code>644</code>
+(read/write for owner; read-only for everyone else).  To change GridFTP's
+default permissions, edit <code>/etc/gridftp.conf</code>, adding the following
+line:
+
+<pre>
+perms 664
+</pre>
+
+<p>(Change <code>664</code> to whatever value is appropriate for your
+situation.)</p>
+
+<p>GridFTP's umask is set by your system's service-management software
+(normally either SysV init, or systemd).  It is normally set to
+<code>022</code>.  This umask means, regardless of the permissions you set,
+group and world write access will always be disabled.</p>
+
+<p>If you want to change the umask, you will have to modify the
 <code>/etc/init.d/globus-gridftp-server</code> script in two ways:</p>
 
 <ol>
