@@ -211,7 +211,7 @@ instructions from [Globus Connect Server installation guide Section
 
 {% include info-box.html
    header="Red Hat, Fedora, CentOS, and Scientific Linux users"
-   content="On these distributions, Globus Connect Server requires the `udt` package from EPEL.  If you are not comfortable enabling the entire EPEL repository on your system, you should use the appropraite EPEL repository from [http://yum.stanford.edu/mrepo](yum.stanford.edu).  The EPEL repository there is a curated subset of the entire EPEL repository, and includes the `udt` package."
+   content="On these distributions, Globus Connect Server requires the `udt` package from EPEL.  If you are not comfortable enabling the entire EPEL repository on your system, you should use the appropraite EPEL repository from http://yum.stanford.edu/mrepo; Stanford's EPEL mirror is a curated subset of the entire EPEL repository, and includes the `udt` package."
 %}
 
 Once packages are installed, you are ready for [initial configuration]({{
