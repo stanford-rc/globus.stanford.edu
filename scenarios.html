@@ -1038,4 +1038,138 @@ endpoint</a> to test transfer performance to your storage.</p>
 
 <!-- Next item is s22 -->
 
+<p>&nbsp;</p>
+
+<h2><a name="policies">Policies &amp; Support</a></h2>
+
+
+    {% capture p2 %}
+
+<p>At this time, Stanford pays for a <a href="https://www.globus.org/subscriptions" title="Globus Subscriptions">Globus Standard subscription</a>.</p>
+
+<p>We have not paid for the High Assurance—which would likely be required for
+transferring with High Risk data—or HIPAA BAA—which would be required for
+transferring PHI—levels.  If you are interested in helping fund the cost,
+please <a href="mailto:srcc-support@stanford.edu">let us know</a>!</p>
+
+    {% endcapture %}
+
+  {% include panel.html
+     parent="scenario"
+     id="p2"
+     scenario="What does Stanford pay for?"
+     content=p2
+  %}
+
+    {% capture p1 %}
+
+<p>Anyone can use the free portions of Globus (such as Globus Connect
+Personal), regardless of Stanford affiliation.</p>
+
+<p>For the parts of Globus that Stanford pays for, the license is
+"campus-wide".  Some notable exclusions from "campus-wide" are the Carnegie
+Institution, SLAC, Stanford Children's Health, and Stanford Health Care (the
+adult hospital).  For people affiliated with those entities.</p>
+
+<p>It does not matter if you are a student, staff, postdoc, or whatever: If
+your group is not part of one of the excluded entities, you can take advantage
+of our campus subscription!</p>
+
+<p>For full details, see the <a href="{{ "policies.html" | relative_url }}"
+title="Globus @ Stanford Policies & Agreements">policies page</a>.</p>
+
+<p>
+
+    {% endcapture %}
+
+  {% include panel.html
+     parent="scenario"
+     id="p1"
+     scenario="Who can use this?"
+     content=p1
+  %}
+
+    {% capture p3 %}
+
+<p>There is only one limit on the type of data: <b>No High Risk data may be
+transferred using Globus.</b>  Other than that limit, there is no limit on
+the types of data you can transfer.  (For example, some services—not
+Globus—have exclusions on administrative data.  That is <em>not</em> the case
+here.)</p>
+
+<p>There is one caveat: If you are working with Medium Risk data, there are
+certain things you have to do as part of setting up Globus.  For example, you
+have to make sure that encryption is required for all transfers, and that TLS
+1.0 is disabled.  The instructions on this site take all of this into
+account.</p>
+
+<p>There are <b>absolutely no limits</b> on the quantity of data that you may
+transfer under our subscription.  The only limits are those that are naturally
+imposed by your storage space, and your network connection.</p>
+
+    {% endcapture %}
+
+  {% include panel.html
+     parent="scenario"
+     id="p3"
+     scenario="Are there any limits on the type or quantity of data that I can transfer?"
+     content=p3
+  %}
+
+    {% capture p4 %}
+
+<p>Yes, but it has to be paid for.  The cost is $5000 per year for each
+"connector" (S3, Drive, and GCP are separate connectors).  Once funding is
+identitied, the feature would be turned on for everyone.</p>
+
+<p>If you are interested in helping fund the cost of a connector, please
+<a href="mailto:srcc-support@stanford.edu">let us know</a>!</p>
+
+    {% endcapture %}
+
+  {% include panel.html
+     parent="scenario"
+     id="p4"
+     scenario="Can I use this with Amazon S3, Google Drive, or GCP Object Store?"
+     content=p4
+  %}
+
+    {% capture p5 %}
+
+<p>Your best starting point is <a href="{{ "support.html" | relative_url  }}"
+title="Globus @ Stanford Support">the support page</a>.  This page has
+pointers to various common problems, places where you can get in-person help,
+and pointers to local support contacts.  There are also several mailing lists
+that are run by Globus.  Finally, if your issue is particularly weird, there
+are several people on-campus who have direct access to Globus support.</p>
+
+    {% endcapture %}
+
+  {% include panel.html
+     parent="scenario"
+     id="p5"
+     scenario="Where do I go for support?"
+     content=p5
+  %}
+
+    {% capture p6 %}
+
+<p>The Globus Standard subscription is currently paid for by <a
+href="https://uit.stanford.edu/organization/it-services" title="Stanford IT
+Services">IT Services</a>, part of <a
+href="https://uit.stanford.edu" title="Stanford University IT">University
+IT</a>.  The initial subscription was a result of work done by the "Ivy Plus"
+scools.</p>
+
+    {% endcapture %}
+
+  {% include panel.html
+     parent="scenario"
+     id="p6"
+     scenario="Who pays for this?"
+     content=p6
+  %}
+
+<!-- Next item is p7 -->
+
 </div>
