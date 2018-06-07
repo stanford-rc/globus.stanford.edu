@@ -36,7 +36,8 @@ Globus Connect Server requires a public IP address, which means your system is
 at least going to be behind a host firewall.  For Globus Connect Server to
 work, certain inbound and outbound ports will need to be opened.
 
-If you filter _inbound_ traffic, here is what you will need to open:
+If you filter _inbound_ traffic, here is what you will need to open (the zone
+names are for systems behind a network firewall):
 
 {% include info-box.html
    header="Don't forget the network firewall"
