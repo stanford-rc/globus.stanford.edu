@@ -134,17 +134,18 @@ layout: null
           <div class="navbar-collapse collapse"> 
             <!--search box-->
             <div id="nav-search" role="search">
-              <form action="http://www.stanford.edu/search" method="get" id="search-form" accept-charset="UTF-8">
-                <h2 class="hidden">Search form</h2>
-                <label class="hidden" for="search-field">Search term</label>
-                <input name="cx" type="hidden" value="003265255082301896483:sq5n7qoyfh8">
-                <input name="cof" type="hidden" value="FORID:9">
-                <input name="ie" type="hidden" value="UTF-8">
-                <!-- replace value in next line with your site URL -->
-                <input name="as_sitesearch" type="hidden" value="www.stanford.edu">
-                <input title="Search string" class="input-medium" placeholder="Search this site&hellip;" type="text" id="search-field" name="q" value="" size="15" maxlength="128" />
-                <button id="search-btn" type="submit" name="submit"  aria-label="Search" formmethod="get"><i class="fa fa-search"></i></button>
-              </form>
+              <script>
+              (function() {
+                var cx = '010851431846915890049:dijq_vqrtmc';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+              </script>
+              <gcse:search></gcse:search>
             </div>
             <div  role="navigation">
               <div id="primary-nav">
