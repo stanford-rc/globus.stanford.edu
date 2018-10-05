@@ -38,5 +38,3 @@
       target: "about"
     - name: "Policies"
       target: "policies"
-    - name: "Globus Security"
-      target: "security"
