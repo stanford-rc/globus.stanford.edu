@@ -140,8 +140,8 @@ Stanford's subscription.
 **Choose wisely!** Your Globus ID will form part of the public identifier for
 your Globus Connect Server endpoint.  For example, if your extremely-important
 cancer research data are being hosted on a Globus Connect Server endpoint named
-`cancer_study`, but your Globus ID is `stupid`, people will forever refer to
-your endpoint as the `stupid#cancer_study` endpoint.
+`cancer_study`, but your Globus ID is `annoying`, people will forever refer to
+your endpoint as the `annoying#cancer_study` endpoint.
 
 {% capture globus-box-content %}
 <p>Several well-known Globus IDs already exist at Stanford, and you may be able
