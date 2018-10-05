@@ -130,8 +130,8 @@ administrators and users.  The Globus ID exists as a way for entities to have a
 Globus identity, and directly own Globus Connect Server endpoints.
 
 {% include info-box.html
-   header="Globus ID for Humans"
-   content="A Globus ID may also be created by a human for themselves, if the human does not have any recognized instutitional login, and also does not have a Google account."
+   header="Last-Resort Globus ID for Humans"
+   content="A Globus ID may also be created by a human for themselves—instead of for an entity—if the human does not have any recognized instutitional login (and also does not have a Google account)."
 %}
 
 To continue, you will need to register a new Globus ID, and get it linked to
