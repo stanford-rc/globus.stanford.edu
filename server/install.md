@@ -46,6 +46,7 @@ names are for systems behind a network firewall):
 
 {% include info-box.html
    header="Don't forget the network firewall"
+   icon="exclamation-circle"
    content="Not only do these ports need to be opened on your server, they need
    also to be opened on the network firewall.  If you need help, talk to your
    LNA."
