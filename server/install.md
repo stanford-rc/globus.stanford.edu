@@ -40,6 +40,11 @@ If you filter _inbound_ traffic, here is what you will need to open (the zone
 names are for systems behind a network firewall):
 
 {% include info-box.html
+   header="Do you use firewalld?"
+   content="If you use firewalld, go to our <a href=\"firewalld.html\">firewalld page</a> for an easier way to configure your host firewall."
+%}
+
+{% include info-box.html
    header="Don't forget the network firewall"
    content="Not only do these ports need to be opened on your server, they need
    also to be opened on the network firewall.  If you need help, talk to your
