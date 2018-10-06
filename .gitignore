@@ -3,6 +3,7 @@ _site
 
 # Ignore Jekyll dev
 .bundle
+.jekyll-metadata
 vendor
 Gemfile.lock
 
