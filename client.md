@@ -39,9 +39,9 @@ outbound connections to certain ports on the outside Internet.
    header="Blocked?  Try the VPN"
    content="If you are at a location that limits outside connectivity (such as a hotel), try using the <em>Full Traffic (non-split-tunnel)</em> <a href=\"https://uit.stanford.edu/service/vpn\">VPN</a> to bypass the block." %}
 
-To begin, read the [Install and Activate](client/install.html) guide for
-instructions on how to set up Globus Connect Personal on your desktop or
-laptop.
+To begin, read the [Install and Activate]({{ "client/install.html" |
+relative_url }}) guide for instructions on how to set up Globus Connect
+Personal on your desktop or laptop.
 
 {% include left-sidebar/transition.md %}
 
