@@ -478,7 +478,25 @@ which routes all network traffic through the VPN.
        content=c6
     %}
 
-<!-- Next item is c6 -->
+    {% capture c7 %}
+
+<p>If you have a full-service (or full-sponsored) SUNetID (in other words, if
+you have Stanford email service), you can have the <em>Globus Plus</em> feature
+enabled on your account.  If you already have a Globus Connect Personal
+endpoint, Globus Plus allows you to share part of it with others.</p>
+
+<p><a href="{{ "client/plus.html" | relative_url }}"
+title="Globus Plus">Read about Globus Plus</a>.</p>
+
+    {% endcapture %}
+    {% include panel.html
+       parent="scenario"
+       id="c7"
+       scenario="How do I allow sharing?"
+       content=c7
+    %}
+
+<!-- Next item is c8 -->
 
 <p>&nbsp;</p>
 
