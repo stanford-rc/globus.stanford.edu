@@ -318,6 +318,36 @@ title="Globus Connect Personal">Globus Connect Personal </a>.</p>
      content=c1
   %}
 
+    {% capture c8 %}
+
+<p>There is no ready-made, pre-approved solution for using Globus with High
+Risk data.  Stanford does not have a BAA with Globus or the University of
+Chicago, and
+Stanford's use of Globus has not undergone a 
+<a href="https://uit.stanford.edu/security/dra"
+title="How to Request and Complete a Data Risk Assessment, Information Security,
+Stanford University IT">Data Risk Assessment</a>.</p>
+
+<p>Your best route forward may be to get your data into a form that is Low or
+Medium Risk, and onto systems that are also Low or Medium Risk, and install
+Globus Connect Personal (or Globus Connect Server) there.  You should reach out
+to your IT people to assist, or <a href="mailto:srcc-support@stanford.edu"
+title="Contact SRCC">engage with us</a>.</p>
+
+<p>If you are set on using Globus with High Risk data, or on a system that is
+exposed to High Risk data, you should expect to
+bear substantial costs in both money and time.  <a
+href="mailto:srcc-support@stanford.edu" title="Contact SRCC">Reach out</a> if
+you are still interested!</p>
+
+    {% endcapture %}
+    {% include panel.html
+       parent="scenario"
+       id="c8"
+       scenario="My laptop or desktop handles High Risk (including PCI / PHI) data.  Can I use Globus on it?"
+       content=c8
+  %}
+
 	{% capture c5 %}
 
 <p>Only outbound ports.  Globus Connect Personal does not need to accept
@@ -496,7 +526,7 @@ title="Globus Plus">Read about Globus Plus</a>.</p>
        content=c7
     %}
 
-<!-- Next item is c8 -->
+<!-- Next item is c9 -->
 
 <p>&nbsp;</p>
 
