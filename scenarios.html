@@ -447,6 +447,37 @@ terminated.</p>
 		 content=c3
 	%}
 
+    {% capture c6 %}
+
+<p>When you transfer files between a Globus Connect Personal endpoint and a
+Globus Connect Server endpoint, regardless of the direction of the transfer,
+the Globus Connect Personal endpoint is always the one that opens the
+connection (so that all connections are outbound from your endpoint).  This is
+done because Globus Connect Server administrators make sure that inbound
+connections are allowed.</p>
+
+<p>When both ends of a transfer are running Globus Connect Personal, one end
+has to allow an incoming connection, and that is not always possible.  For
+example, if one laptop is on a home network (behind a router), and another
+laptop is on a different home network (behind a different router), the two
+routers will block inbound connections.</p>
+
+<p>In a case like this, both ends of the connection should be brought onto a
+common network, in order for the data transfer to succeed.  One way of doing
+this is by putting both endpoints onto the
+<a href="https://uit.stanford.edu/service/vpn"
+title="Stanford University IT VPN Service">Stanford VPN</a>.  If that still
+does not work, try using the <em>Full Traffic (non-split-tunnel) mode</em>,
+which routes all network traffic through the VPN.
+
+    {% endcapture %}
+    {% include panel.html
+       parent="scenario"
+       id="c6"
+       scenario="I am having problems transferring files between two Globus Connect Personal endpoints.  How do I fix this?"
+       content=c6
+    %}
+
 <!-- Next item is c6 -->
 
 <p>&nbsp;</p>
