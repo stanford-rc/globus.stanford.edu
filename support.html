@@ -7,9 +7,11 @@ description: How to get help using Globus at Stanford.
 
 <h1>How Can We Help You?</h1>
 
-<p>The support available depends on the kind of problem you are having:</p>
+<p>General information is available for broad categories of issues:</p>
 
-<h2><a name="accounts"></a>I'm having problems with my account.</h2>
+<div class="panel-group" id="support" role="tablist" aria-multiselectable="true">
+
+{% capture s1 %}
 
 <p>If you have questions or problems regarding Globus accounts, the first thing
 you should do is read the page <a href="{{ "accounts.html" | relative_url
@@ -34,10 +36,16 @@ Stanford">we have a page for that, too</a>!</p>
 trying to do, the problems you are having (error messages and screen shots are
 helpful!), and what goal you are trying to achieve.</p>
 
-<p><a href="#content">[back to top]</a></p>
+{% endcapture %}
 
-<h2><a name="client"></a>I'm having problems With Globus on My Computer (Globus
-Connect Personal)</h2>
+{% include panel.html
+   parent="support"
+   id="accounts"
+   scenario="I'm having problems with my Globus account."
+   content=s1
+%}
+
+{% capture s2 %}
 
 <p>TBD!</p>
 
@@ -52,10 +60,16 @@ account.  Other users, as well as Globus staff, monitor this list.</p>
 do, the problems you are having (error messages and screen shots are helpful!),
 and what goal you are trying to achieve.</p>
 
-<p><a href="#content">[back to top]</a></p>
+{% endcapture %}
 
-<h2><a name="external"></a>I'm having problems with someone else's endpoint
-    (such as listing a directory, or transfer errors from a remote host)</h2>
+{% include panel.html
+   parent="support"
+   id="client"
+   scenario="I'm having problems with Globus on my computer (Globus Connect Personal)."
+   content=s2
+%}
+
+{% capture s3 %}
 
 <p>Sometimes, you might be having problems with someone else's endpoint.  For
 example, you might be unable to transfer a file, even though you think you
@@ -107,10 +121,16 @@ person, group, or web site who referred you to the endpoint.  Let them know
 about the problems your were experiencing, and where you got the instructions
 you were following.</p>
 
-<p><a href="#content">[back to top]</a></p>
+{% endcapture %}
 
-<h2><a name="server"></a>I'm having problems with my server (Globus Connect
-    Server)</h2>
+{% include panel.html
+   parent="support"
+   id="external"
+   scenario="I'm having problems with someone else's endpoint (such as listing a directory, or transfer errors from a remote host)."
+   content=s3
+%}
+
+{% capture s4 %}
 
 <p>This is probably the most complicated area, because Globus Connect Server can
 be set up in so many ways.</p>
@@ -161,18 +181,32 @@ that applies to all users.</p>
 do, the problems you are having (error messages and screen shots are helpful!),
 and what goal you are trying to achieve.</p>
 
-<p><a href="#content">[back to top]</a></p>
+{% endcapture %}
 
-<h2><a name="shared"></a>I need help with a shared endpoint</h2>
+{% include panel.html
+   parent="support"
+   id="server"
+   scenario="I'm having problems with my server (Globus Connect Server)."
+   content=s4
+%}
+
+{% capture s5 %}
 
 <p>If you are having problem with a shared endpoint you own, you should contact
 the owner of the host endpoint.  If you are having problems with someone else's
 endpoint, refer to <a href="#external"><em>I need help with someone else's
         endpoint</em></a>.
 
-<p><a href="#content">[back to top]</a></p>
+{% endcapture %}
 
-<h2><a name="dev"></a>I need help with software development</h2>
+{% include panel.html
+   parent="support"
+   id="shared"
+   scenario="I need help with a shared endpoint."
+   content=s5
+%}
+
+{% capture s6 %}
 
 <p>If you are developing software that interacts with Globus, you should always
 have the <a href="https://docs.globus.org/api/">Globus API documentation</a>
@@ -212,6 +246,19 @@ issue, there is some information that you <em>must</em> include:</p>
 
 <p>With that information, we will let you know if any information is missing,
 and then open a case with Globus!</p>
+
+{% endcapture %}
+
+{% include panel.html
+   parent="support"
+   id="dev"
+   scenario="I need help with software development."
+   content=s6
+%}
+
+</div><!-- close out the panel-group -->
+
+<p>If none of that was helpful, there are several direct-support options.</p>
 
 <h2>Office Hours</h2>
 
