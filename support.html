@@ -9,33 +9,209 @@ description: How to get help using Globus at Stanford.
 
 <p>The support available depends on the kind of problem you are having:</p>
 
+<h2><a name="accounts"></a>I'm having problems with my account.</h2>
+
+<p>If you have questions or problems regarding Globus accounts, the first thing
+you should do is read the page <a href="{{ "accounts.html" | relative_url
+}}">About Globus Accounts</a>.  That page has an overview of Globus identities,
+and how one person can have multiple identities, all linked together.</p>
+
+<p>If you need information on how to create an account, <a href="{{
+"accounts/create.html" | relative_url }}" title="Create a Globus Account">we
+have a page for that</a>.</p>
+
+<p>If you are able to log in to Globus, but you constantly have to log out and
+log in with different email addresses and passwords, then you probably need to
+<a href="{{ "accounts/link.html" | relative_url }}">link your
+identities</a>.</p>
+
+<p>If you aren't sure about what to do when you are getting ready to leave
+Stanford, <a href="{{ "accounts/leaving.html" | relative_url }}" title="Leaving
+Stanford">we have a page for that, too</a>!</p>
+
+<p>If you are still having issues, reach out to your <a href="#local">local
+    support contact</a>.  When you reach out, please tell us what you are
+trying to do, the problems you are having (error messages and screen shots are
+helpful!), and what goal you are trying to achieve.</p>
+
+<p><a href="#content">[back to top]</a></p>
+
+<h2><a name="client"></a>I'm having problems With Globus on My Computer (Globus
+Connect Personal)</h2>
+
+<p>TBD!</p>
+
+<p>The next place to go for help is the Globus <a
+    href="https://groups.google.com/a/globus.org/forum/#!forum/user-discuss/home">User
+    Discuss list</a>.  This is a Google group, which you can join using your
+Stanford University Google account, or (if you have one) your personal Google
+account.  Other users, as well as Globus staff, monitor this list.</p>
+
+<p>If all else fails, reach out to your <a href="#local">local support
+    contact</a>.  When you reach out, please tell us what you are trying to
+do, the problems you are having (error messages and screen shots are helpful!),
+and what goal you are trying to achieve.</p>
+
+<p><a href="#content">[back to top]</a></p>
+
+<h2><a name="external"></a>I'm having problems with someone else's endpoint
+    (such as listing a directory, or transfer errors from a remote host)</h2>
+
+<p>Sometimes, you might be having problems with someone else's endpoint.  For
+example, you might be unable to transfer a file, even though you think you
+should be able to.</p>
+
+<p>The best way to get help is to reach out to the endpoint owner
+directly.  To do that, look at the endpoint's information page.</p>
+
+{% include hero-image.html
+   src="assets/server/Endpoint Overview.png"
+   alt="A Globus endpoint's 'Overview' page, showing endpoint details"
+   caption-overlay=true
+   caption-header="Endpoint overview"
+   caption-text=""
+%}
+
+<p>In the endpoint's information page, there should be a <em>Contact
+    E-mail</em>.  That is who you should email for assistance.</p>
+
+<p>If no contact email is listed, or the email address did not work, then what
+you should do depends on if the endpoint is a Stanford endpoint.</p>
+
+{% capture endpoints-list %}
+<p>If an endpoint's <em>Owner</em> is on the following list, it is a
+Stanford University endpoint:</p>
+<ul>
+  <li>scgpm@globusid.org</li>
+  <li>srcc@globusid.org</li>
+  <li>stanfordlibraries@globusid.org</li>
+  <li>stanford@globusid.org</li>
+</ul>
+{% endcapture %}
+{% include info-box.html
+   raw=endpoints-list
+%}
+
+<p>If the endpoint is a Stanford endpoint, and there is no contact information,
+please <a href="mailto:srcc-support@stanford.edu">let us know</a>.  Your email
+should include as much information about the endpoint as possible.  The
+UUID—which you can find on the endpoint's information page—is especially
+helpful, because that is an endpoint's unique identifier.  You should also tell
+us what information is missing.  We will figure out who owns the endpoint, ask
+them to update their contact information, and let them know about your
+problem.</p>
+
+<p>If the endpoint is <em>not</em> a Stanford endpoint, then unfortunately
+there is not much we can do to help.  Instead, you should go back to the
+person, group, or web site who referred you to the endpoint.  Let them know
+about the problems your were experiencing, and where you got the instructions
+you were following.</p>
+
+<p><a href="#content">[back to top]</a></p>
+
+<h2><a name="server"></a>I'm having problems with my server (Globus Connect
+    Server)</h2>
+
+<p>This is probably the most complicated area, because Globus Connect Server can
+be set up in so many ways.</p>
+
+<p>First of all, if you made <em>any</em> changes to server-side configuration
+in <code>/etc/globus-connect-server.conf</code>, you will need to re-run
+<code>globus-connect-server-setup</code> for those changes to take effect.</p>
+
+<p>If you do make a change that involves running
+<code>globus-connect-server-setup</code>, existing transfers and shares might
+be disrupted.  You should pause and unpause all transfers, and ask shared
+endpoint owners to make sure their shared endpoints are still working.</p>
+
+{% include info-box.html
+   icon="exclamation-triangle"
+   header="Changing encryption silently kills transfers."
+   content="If you endable encryption on an endpoint that did not have encryption before, all active transfers will silently start failing, and will time out after a day or so.  In that case, you should cancel all in-progress transfers after enabling encryption."
+%}
+
+<p>If clients are having problems connecting, or Globus itself is having
+problems connecting to your sever, first make sure your server's <a href="{{
+"server/configure.html" | relative_url }}">initial configuration</a> is OK
+(particularly the parts about the firewall).  You should also make sure that
+your host's information is correct in public DNS.</p>
+
+<p>If users are having problems authenticating, you should check that your
+<a href="{{ "server/auth.html" | relative_url }}">authentication
+   configuraion</a> is correct.  If it is, then consult
+   <code>/var/log/messages</code> (or <code>/var/log/syslog</code>),
+   <code>/var/log/gridftp.log</code>; and possibly also
+   <code>/var/log/myproxy.log</code> (for legacy MyProxy auth) or your web
+   server's error log (for MyProxy OAuth) for clues.</p>
+
+<p>The next resource to check is Globus' <a
+    href="https://docs.globus.org/globus-connect-server-installation-guide/">Globus
+    Connect Server Installation Guide</a>.  This guide is the generic guide
+that applies to all users.</p>
+
+<p>The next place to go for help is the Globus
+<a
+     href="https://groups.google.com/a/globus.org/forum/#!forum/admin-discuss/home">Admin
+     Discuss list</a>.  This is a Google group, which you can join using your
+ Stanford University Google account, or (if you have one) your personal Google
+ account.  Other sysadmins, as well as Globus staff, monitor this list.</p>
+
+<p>If all else fails, reach out to your <a href="#local">local support
+    contact</a>.  When you reach out, please tell us what you are trying to
+do, the problems you are having (error messages and screen shots are helpful!),
+and what goal you are trying to achieve.</p>
+
+<p><a href="#content">[back to top]</a></p>
+
+<h2><a name="shared"></a>I need help with a shared endpoint</h2>
+
+<p>If you are having problem with a shared endpoint you own, you should contact
+the owner of the host endpoint.  If you are having problems with someone else's
+endpoint, refer to <a href="#external"><em>I need help with someone else's
+        endpoint</em></a>.
+
+<p><a href="#content">[back to top]</a></p>
+
+<h2><a name="dev"></a>I need help with software development</h2>
+
+<p>If you are developing software that interacts with Globus, you should always
+have the <a href="https://docs.globus.org/api/">Globus API documentation</a>
+close at hand.  That is the first place to go, when you are unsure about the
+details of the API.  In particular, if you are working with the Java or Python
+SDKs, you should always consult the REST API documentation to get full details
+on API operations (most of the time, SDK documentations will refer you to the
+REST API docs).</p>
+
+<p>Your next destination should be the <a
+    href="https://groups.google.com/a/globus.org/forum/#!forum/developer-discuss/home">Developer
+    Discuss</a> list.  This is a Google group, which you can join using your
+Stanford University Google account, or (if you have one) your personal Google
+account.  Other developers, as well as Globus staff, monitor this list.</p>
+
+<p>If you find a problem with the API, where it does something that should not
+happen, you should <a href="mailto:srcc-support@stanford.edu">email us</a>, so
+that we can get a ticket opened directly to Globus.  When you report your
+issue, there is some information that you <em>must</em> include:</p>
+
 <ul>
 
-    <li><a href="#accounts">Problems with your account</a>.  This includes
-        problems logging in to the Globus web site.</li>
+    <li>A pointer to the API operation that is having a problem.  That includes
+        the name of the operation, and a URL to the API's <a
+            href="https://docs.globus.org/api">documentation page</a>.</li>
 
-    <li><a href="#client">Problems on your personal machine</a>.  This includes
-        downloading and installing Globus Connect Personal onto your desktop or
-        laptop, as well as using Globus Plus.</li>
+    <li>A <em>reduced test case</em>.  This is a script or program, which takes
+        a Globus client ID (and if appropriate, a client secret) and is able to
+        reproduce the problem in as few steps as possible.<br />
 
-    <li><a href="#external">Problems with someone else's endpoint</a>.  This is
-        for when you are trying to do something with someone else's endpoint
-        (like transfer a file, or view the contents of a directory).</li>
-
-    <li><a href="#server">Problems with your server endpoint</a>.  This
-        includes anything to do with Globus Connect Server setup and
-        operation.</li>
-
-    <li>Problems with your shared endpoint.  If you are having a problem with a
-        shared endpoint you own, you should contact the owner of the host
-        endpoint.  See <a href="#external"><em>Problems with someone else's
-    endpoint</em></a>.</li>
-
-    <li><a href="#dev">Software development problems</a>.  This includes
-        problems you are having with the Globus REST API, or the Java or Python
-        SDKs.</li>
+        When you submit your reduced test case, you should have some
+        <b>temporary</b> Globus credentials hard-coded in the test case.  You
+    should create a fresh client ID and client secret, which you can delete
+    once your problem has been resolved.</li>
 
 </ul>
+
+<p>With that information, we will let you know if any information is missing,
+and then open a case with Globus!</p>
 
 <h2>Office Hours</h2>
 
@@ -93,197 +269,3 @@ your group, Department, or School is on this list:</p>
    header="Support is Business-Hours Only"
    content="Globus support is provided during business hours during the calendar year, excluding Stanford holidays and Winter Close.  Some groups may also operate on a reduced schedule during breaks, and during Summer quarter."
 %}
-
-<a href="#content">[back to top]</a>
-
-<h2><a name="external"></a>Problems with Someone Else's Endpoint</h2>
-
-<p>Sometimes, you might be having problems with someone else's endpoint.  For
-example, you might be unable to transfer a file, even though you think you
-should be able to.</p>
-
-<p>The best way to get help is to reach out to the endpoint owner
-directly.  To do that, look at the endpoint's information page.</p>
-
-{% include hero-image.html
-   src="assets/server/Endpoint Overview.png"
-   alt="A Globus endpoint's 'Overview' page, showing endpoint details"
-   caption-overlay=true
-   caption-header="Endpoint overview"
-   caption-text=""
-%}
-
-<p>In the endpoint's information page, there should be a <em>Contact
-    E-mail</em>.  That is who you should email for assistance.</p>
-
-<p>If no contact email is listed, or the email address did not work, then what
-you should do depends on if the endpoint is a Stanford endpoint.</p>
-
-{% capture endpoints-list %}
-<p>If an endpoint's <em>Owner</em> is on the following list, it is a
-Stanford University endpoint:</p>
-<ul>
-  <li>scgpm@globusid.org</li>
-  <li>srcc@globusid.org</li>
-  <li>stanfordlibraries@globusid.org</li>
-  <li>stanford@globusid.org</li>
-</ul>
-{% endcapture %}
-{% include info-box.html
-   raw=endpoints-list
-%}
-
-<p>If the endpoint is a Stanford endpoint, and there is no contact information,
-please <a href="mailto:srcc-support@stanford.edu">let us know</a>.  Your email
-should include as much information about the endpoint as possible.  The
-UUID—which you can find on the endpoint's information page—is especially
-helpful, because that is an endpoint's unique identifier.  You should also tell
-us what information is missing.  We will figure out who owns the endpoint, ask
-them to update their contact information, and let them know about your
-problem.</p>
-
-<p>If the endpoint is <em>not</em> a Stanford endpoint, then unfortunately
-there is not much we can do to help.  Instead, you should go back to the
-person, group, or web site who referred you to the endpoint.  Let them know
-about the problems your were experiencing, and where you got the instructions
-you were following.</p>
-
-<a href="#content">[back to top]</a>
-
-<h2><a name="accounts"></a>Account Problems</h2>
-
-<p>If you have questions or problems regarding Globus accounts, the first thing
-you should do is read the page <a href="{{ "accounts.html" | relative_url
-}}">About Globus Accounts</a>.  That page has an overview of Globus identities,
-and how one person can have multiple identities, all linked together.</p>
-
-<p>If you need information on how to create an account, <a href="{{
-"accounts/create.html" | relative_url }}" title="Create a Globus Account">we
-have a page for that</a>.</p>
-
-<p>If you are able to log in to Globus, but you constantly have to log out and
-log in with different email addresses and passwords, then you probably need to
-<a href="{{ "accounts/link.html" | relative_url }}">link your
-identities</a>.</p>
-
-<p>If you aren't sure about what to do when you are getting ready to leave
-Stanford, <a href="{{ "accounts/leaving.html" | relative_url }}" title="Leaving
-Stanford">we have a page for that, too</a>!</p>
-
-<p>If you are still having issues, reach out to your <a href="#local">local
-    support contact</a>.  When you reach out, please tell us what you are
-trying to do, the problems you are having (error messages and screen shots are
-helpful!), and what goal you are trying to achieve.</p>
-
-<a href="#content">[back to top]</a>
-
-<h2><a name="client"></a>Problems With Your Computer</h2>
-
-<p>TBD!</p>
-
-<p>The next place to go for help is the Globus <a
-    href="https://groups.google.com/a/globus.org/forum/#!forum/user-discuss/home">User
-    Discuss list</a>.  This is a Google group, which you can join using your
-Stanford University Google account, or (if you have one) your personal Google
-account.  Other users, as well as Globus staff, monitor this list.</p>
-
-<p>If all else fails, reach out to your <a href="#local">local support
-    contact</a>.  When you reach out, please tell us what you are trying to
-do, the problems you are having (error messages and screen shots are helpful!),
-and what goal you are trying to achieve.</p>
-
-<a href="#content">[back to top]</a>
-
-<h2><a name="server"></a>Server Problems</h2>
-
-<p>This is probably the most complicated area, because Globus Connect Server can
-be set up in so many ways.</p>
-
-<p>First of all, if you made <em>any</em> changes to server-side configuration
-in <code>/etc/globus-connect-server.conf</code>, you will need to re-run
-<code>globus-connect-server-setup</code> for those changes to take effect.</p>
-
-<p>If you do make a change that involves running
-<code>globus-connect-server-setup</code>, existing transfers and shares might
-be disrupted.  You should pause and unpause all transfers, and ask shared
-endpoint owners to make sure their shared endpoints are still working.</p>
-
-{% include info-box.html
-   icon="exclamation-triangle"
-   header="Changing encryption silently kills transfers."
-   content="If you endable encryption on an endpoint that did not have encryption before, all active transfers will silently start failing, and will time out after a day or so.  In that case, you should cancel all in-progress transfers after enabling encryption."
-%}
-
-<p>If clients are having problems connecting, or Globus itself is having
-problems connecting to your sever, first make sure your server's <a href="{{
-"server/configure.html" | relative_url }}">initial configuration</a> is OK
-(particularly the parts about the firewall).  You should also make sure that
-your host's information is correct in public DNS.</p>
-
-<p>If users are having problems authenticating, you should check that your
-<a href="{{ "server/auth.html" | relative_url }}">authentication
-   configuraion</a> is correct.  If it is, then consult
-   <code>/var/log/messages</code> (or <code>/var/log/syslog</code>),
-   <code>/var/log/gridftp.log</code>; and possibly also
-   <code>/var/log/myproxy.log</code> (for legacy MyProxy auth) or your web
-   server's error log (for MyProxy OAuth) for clues.</p>
-
-<p>The next resource to check is Globus' <a
-    href="https://docs.globus.org/globus-connect-server-installation-guide/">Globus
-    Connect Server Installation Guide</a>.  This guide is the generic guide
-that applies to all users.</p>
-
-<p>The next place to go for help is the Globus
-<a
-     href="https://groups.google.com/a/globus.org/forum/#!forum/admin-discuss/home">Admin
-     Discuss list</a>.  This is a Google group, which you can join using your
- Stanford University Google account, or (if you have one) your personal Google
- account.  Other sysadmins, as well as Globus staff, monitor this list.</p>
-
-<p>If all else fails, reach out to your <a href="#local">local support
-    contact</a>.  When you reach out, please tell us what you are trying to
-do, the problems you are having (error messages and screen shots are helpful!),
-and what goal you are trying to achieve.</p>
-
-<a href="#content">[back to top]</a>
-
-<h2><a name="dev"></a>Software Development Support</h2>
-
-<p>If you are developing software that interacts with Globus, you should always
-have the <a href="https://docs.globus.org/api/">Globus API documentation</a>
-close at hand.  That is the first place to go, when you are unsure about the
-details of the API.  In particular, if you are working with the Java or Python
-SDKs, you should always consult the REST API documentation to get full details
-on API operations (most of the time, SDK documentations will refer you to the
-REST API docs).</p>
-
-<p>Your next destination should be the <a
-    href="https://groups.google.com/a/globus.org/forum/#!forum/developer-discuss/home">Developer
-    Discuss</a> list.  This is a Google group, which you can join using your
-Stanford University Google account, or (if you have one) your personal Google
-account.  Other developers, as well as Globus staff, monitor this list.</p>
-
-<p>If you find a problem with the API, where it does something that should not
-happen, you should <a href="mailto:srcc-support@stanford.edu">email us</a>, so
-that we can get a ticket opened directly to Globus.  When you report your
-issue, there is some information that you <em>must</em> include:</p>
-
-<ul>
-
-    <li>A pointer to the API operation that is having a problem.  That includes
-        the name of the operation, and a URL to the API's <a
-            href="https://docs.globus.org/api">documentation page</a>.</li>
-
-    <li>A <em>reduced test case</em>.  This is a script or program, which takes
-        a Globus client ID (and if appropriate, a client secret) and is able to
-        reproduce the problem in as few steps as possible.<br />
-
-        When you submit your reduced test case, you should have some
-        <b>temporary</b> Globus credentials hard-coded in the test case.  You
-    should create a fresh client ID and client secret, which you can delete
-    once your problem has been resolved.</li>
-
-</ul>
-
-<p>With that information, we will let you know if any information is missing,
-and then open a case with Globus!</p>
