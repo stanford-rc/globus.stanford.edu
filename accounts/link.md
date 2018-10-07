@@ -12,7 +12,7 @@ the person's _primary identity_.
 
 {% include info-box.html
    header="Got an XSEDE Allocation?"
-   content="If you have access to any XSEDE resources, you should link your XSEDE account.  All XSEDE clusters (including XStream) use XSEDE accounts for authentication."
+   content="If you have access to any XSEDE resources, you should link your XSEDE account.  All XSEDE clusters use XSEDE accounts for authentication."
 %}
 
 {% include info-box.html

@@ -29,20 +29,14 @@ addresses (not just his Stanford address).
 
 {% include info-box.html
    header="Got an XSEDE Allocation?"
-   content="If you have access to any XSEDE resources, you should link your XSEDE account.  All XSEDE clusters (including XStream) use XSEDE accounts for authentication."
-%}
-
-{% include info-box.html
-   icon="globe"
-   header="International Institutions"
-   content="Although many domestic institutions can be authenticated to through Globus, international coverage is thinner.  Interested institutions should join through one of the <a href=\"https://technical.edugain.org/status\" title=\"eduGAIN technical site\">eduGAIN federations</a>.  Also, <a href=\"https://docs.globus.org/faq/security/#how_do_i_get_my_organization_added_as_an_option_to_log_into_globus\" title=\"Globus Security FAQ\">certain information</a> will need to be made available to Globus."
+   content="If you have access to any XSEDE resources, you should link your XSEDE account.  All XSEDE clusters use XSEDE accounts for authentication."
 %}
 
 For people without any institutional affiliation (or, at least, any institution
 that Globus recognizes), you can get a [Globus ID](https://www.globusid.org).
-It is mainly used for entities (like programs) do not have a normal
-institutional account.  It is also the last-resort option if you want to link a
-personal email address.
+It is mainly used for entities do not have a normal institutional account (like
+an entire group), and for software leveraging the Globus infrastructure.  It is
+also the last-resort option if you want to link a personal email address.
 
 {% include info-box.html
    header="Google, ORCID, United ID"

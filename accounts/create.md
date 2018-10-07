@@ -8,17 +8,11 @@ title_line: false
 
 {% include info-box.html
    icon="envelope"
-   header="Is your email public?"
-   content="Although not required, Globus works better when it knows your email address.  For that to happen, your email address must be public in <a href=\"https://stanfordyou.stanford.edu\" title=\"StanfordYou\">StanfordYou</a>."
-%}
-
-{% include info-box.html
-   icon="exclamation-circle"
    header="Do you have a sponsored account?"
    content="If you have a sponsored account that does not include Stanford email, please go to <a href=\"https://stanfordyou.stanford.edu\" title=\"StanfordYou\">StanfordYou</a> and put an email address in the SU Contact Info section.  Wait ten minutes for this change to take effect, and then continue!"
 %}
 
-Creating a Globus account happens automatically when you first log in to
+Your Globus account is created automatically when you first log in to
 Globus.
 
 To begin, go to [globus.org/app](https://globus.org/app).  You will be
@@ -98,11 +92,6 @@ Click the _Allow_ button, and you will be taken to the Globus transfer page.
 
 Congratulations!  You have successfully logged in to Globus, and your Stanford
 account has been associated with an identity.
-
-In the future, on this browser, Globus will always send you through Stanford's
-login.  To stop Globus from doing this, you should explicitly [log out]({{
-"accounts/logout" | relative_url }}).  When you log in, you will be taken
-directly to the Globus transfer page.
 
 {% include left-sidebar/transition.md %}
 

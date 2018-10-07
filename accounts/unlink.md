@@ -27,12 +27,6 @@ When you do find yourself needing to unlink an identity, follow this procedure.
    content="When you unlink an identity, all active transfers authenticated by that identity will be cancelled.  You should wait for active transfers to complete before you proceed."
 %}
 
-{% include info-box.html
-   icon="exclamation-triangle"
-   header="Endpoints may be lost"
-   content="If your soon-to-be-unlinked identity is an administrator of any endpoints, you will lose access to those endpoints.  If your soon-to-be-unlinked identity is the owner of a Globus Connect Personal endpoint, you will lose access to the endpoint."
-%}
-
 To unlink an identity, [log in to Globus](https://www.globus.org/app/transfer)
 and click on the _Account_ link (in the upper-right corner of the page).
 
