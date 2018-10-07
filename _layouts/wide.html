@@ -3,7 +3,9 @@ layout: common
 ---
 <!-- Content -->
 <div id="content" class="container" role="main" tabindex="0">
+  {% if page.title_line == nil or page.title_line == true %}
   <h1 class="">{{ page.title }}</h1>
+  {% endif %}
   <div class="row"> 
     
     <!--  #main-content (Center) -->
