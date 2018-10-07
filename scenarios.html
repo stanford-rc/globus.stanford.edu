@@ -6,13 +6,11 @@ description: Describes different data transfer scenarios, and how Globus can hel
 
 <p>Everyone who wants to use Globus has to start somewhere, and that place is
 here.  You might have been told "Oh, you need to do X", or you might not be
-sure what you need to do, and this is where this page is meant to help!</p>
+sure what you need to do.  This page is for you!</p>
 
 <p>This page contains common Globus scenarios and questions.  Each answer
-either contains a direct answer to your question (which might be "No, but…"),
-or a link to a different part of the site.  Especially when a question requires
-a detailed answer, it will only be answered here if it is not answered
-elsewhere.</p>
+either contains a direct answer to your question
+or a link to a different part of the site.</p>
 
 <p>The entries are grouped into four sections: <a href="#accounts">Accounts
 (and Globus ID)</a>, the <a href="#web">Globus Web Site</a>, the <a
@@ -41,8 +39,9 @@ Support">Support</a>.</p>
 <p>Creating a Globus account is easy!  If you have never used Globus before,
 just go to <a href="{{ "accounts/create.html" | relative_url }}" title="Create
 a Globus Account">Create a Globus Account</a> and follow the instructions
-there.</p><p>If you <em>have</em> used Globus before, then you should log in to
-that account, and <a href="{{ "accounts/link.html" | relative_url }}"
+there.</p><p>If you have used Globus before (for example, at another
+institution), then you should first log in to Globus using that institution's
+credentials, and <a href="{{ "accounts/link.html" | relative_url }}"
 title="Link Identities">link your Stanford identity</a>.</p>
 
   {% endcapture %}
@@ -75,7 +74,8 @@ primary email address is what Globus will see.</p>
   {% capture a3 %}
 
 <p>If you change your Stanford email address (in <a
-href="https://accounts.stanford.edu" title="Stanford Accounts">Accounts</a>),
+href="https://accounts.stanford.edu" title="Stanford Accounts">Accounts</a>
+or <a href="https://stanfordyou.stanford.edu">StanfordYou</a>),
 Globus will get the new email address a few days after the change, once you log
 back in to the Globus web site.</p>
 
@@ -93,13 +93,14 @@ you will still be discoverable in Globus by your SUNetID.</p>
   %}
 
   {% capture a4 %}
-<p><em>Globus ID</em> is a form of identity—similar to your Stanford
-identity—for entities, and for users who can not get an identity through other
-means.  At Stanford, a Globus ID is only needed when you want to run a Globus
-Connect Server, because Globus Connect Server instances can only be owned by
-entities (like your group), not by people.  Globus IDs are also used at
-Stanford by developers, so that their Globus-using applications are not tied to
-individuals.</p>
+
+<p><em>Globus ID</em> is a form of identity—similar to your Stanford identity,
+but for entities (like labs and departments) and for users who can not get an
+identity through other means.  At Stanford, a Globus ID is only needed when you
+want to run a Globus Connect Server, because Globus Connect Server instances
+can only be owned by entities (like your group), not by people.  Globus IDs are
+also used at Stanford by developers, so that their Globus-using applications
+are not tied to individuals.</p>
 
 <p>Getting a Globus ID for Globus Connect Server use is covered in the <a
 href="{{ "server.html" | relative_url }}" title="Globus Connect Server">Globus
@@ -176,6 +177,11 @@ example, endpoints normally only accept logins through their institution.  So,
 if you have accounts at Stanford and UC Santa Cruz, your UC
 credentials will not let you in to a Stanford endpoint.</p>
 
+<p>(If you have multiple logins to Globus, you might be logged in with the
+wrong one.  You should <a href="{{
+"accounts/link.html" | relative_url }}" title="Link Identities">Link
+Identities</a> to keep that from happening again.)
+
 <p>If your credentials are being accepted; but you are getting <em>permission
 denied</em> when you try to do a directory listing, or when you are trying to
 transfer data <em>from</em> the endpoint, then the endpoint's configuration is
@@ -187,10 +193,11 @@ the directory.  See the Globus Connect Personal <a href="{{
 Installation">installation instructions</a> (specifically, the <em>Add Allowed
 Paths</em> section).</p>
 
-<p>If directory listing work, but as soon as you start a transfer of data
-<em>to</em> the endpoint,  then you probably only have read-only access to the
-directory.  Again, the solution is: Either talk to the endpoint administrator,
-or check your endpoint configuration.</p>
+<p>If you get <em>permission denied</em> errors when transferring data
+<em>to</em> an endpoint, then you probably only have read-only access to the
+directory.  You either need to talk to the endpoint administrator (for Shared
+endpoints and Globus Connect Server endpoints), or check your endpoint
+configuration (for Globus Connect Personal endpoints).</p>
 
 	{% endcapture %}
   {% include panel.html
@@ -214,7 +221,11 @@ Personal: Globus Plus">Read more about Globus Plus</a>.</p>
 <p>If your host endpoint is a Globus Connect Server endpoint,
 the endpoint administrator may have disabled sharing.  Or, the endpoint might
 not be a <em>managed endpoint</em> (which requires access to the Stanford
-campus Globus subscription).</p>
+campus Globus subscription).  In the latter case, the endpoint administrator
+should read our guides for Globus Connect Server, specifically the pages on
+<a href="{{ "server/install.html" | relative_url }}">Site Prep and
+    Installation</a> and <a href="{{ "server/finish.html" | relative_url
+    }}">Finishing Installation</a>.</p>
 
 <p>The other possible reason is, sharing might not be allowed for the directory
 you are trying to share.  For Globus Connect Personal-hosted endpoints, you must
@@ -350,10 +361,10 @@ you are still interested!</p>
 
 	{% capture c5 %}
 
-<p>Only outbound ports.  Globus Connect Personal does not need to accept
-connections from the outside.  Instead, all connections are initiated by
-Globus Connect Personal.  But, if you firewall outbound connection, then
-some ports will need to be opened.</p>
+<p>No, but if you firewall outbound connection, then some ports will need to be
+opened.  Globus Connect Personal does not need to accept connections from the
+outside, except in some cases when performing a transfer between two Globus
+Connect Personal endpoints.</p>
 
 <p>Read more in <a href="{{ "client/install.html" | relative_url }}"
 title="Installing Globus Connect Personal">the installation instructions</a>.</p>
@@ -385,7 +396,7 @@ the level of power-saving.</li>
 
 <li>Use a wired connection.  With a wireless network, your traffic has to
 contend with all of the other laptops, phones, and other devices in the local
-area, along with other miscellaneous forms of interference (like, for example,
+area, along with other miscellaneous forms of interference (such as
 walls and microwaves).  Using a wired connections removes these forms of
 interference.</li>
 
@@ -399,6 +410,11 @@ residence that does not have ports on the wall (for example, because you have a
 cable modem), you should plug in the router.</li>
 
 </ul>
+
+<p>If you routinely need to perform large (multi-TB) data transfers, you should
+consider taking advantage of the <a
+href="https://srcc.stanford.edu/stanford-research-network-srn" title="Stanford
+Research Network">Stanford Research Network</a>.</p>
 
 	{% endcapture %}
   {% include panel.html
@@ -426,7 +442,7 @@ title="Local Network Administrators by Department">LNA</a>.</p>
 
 <p>If you are unable to get your firewall changed, then your last-resort
 option is to use the <a href="https://uit.stanford.edu/service/vpn"
-title="Stanford University IT VPN Service">Stanford VPN</a>, <em>but</em>
+title="Stanford University IT VPN Service">Stanford VPN</a>, but
 you must use <em>Full Traffic (non-split-tunnel)</em> mode, which sends all
 traffic (even non-Stanford traffic) through the VPN.</p>
 
@@ -550,8 +566,8 @@ Transfer Files</a> page, where they can search for your endpoint, activate it
 How do I access it?</em>.</p>
 
 <p>If your users want to transfer files to/from another environment (like, for
-example, another lab's storage), then that other environment will also need a
-Globus Connect Server; you should point the lab's IT person to this question.
+example, another lab's storage), then that other environment will also need
+Globus Connect Server; you should direct the lab's IT person to this question.
 Once a Globus Connect Server is up and running there, your users will need that
 server's information (a name, a UUID, etc., just like with your endpoint).</p>
 
@@ -617,9 +633,11 @@ users.</p>
 
 	{% capture s11 %}
 
-<p>Simply follow the <a href="{{ "server/medium.html" | relative_url }}"
-title="Globus Connect Server Medium-Risk Checklist">Medium-Risk
-Checklist</a>!</p>
+<p>To meet the requirements for Medium Risk data, simply follow the normal
+installation instructions on the <a href="{{ "server.html" | relative_url }}">
+Globus Connect Server</a> pages, but <em>be sure to use SUNetID Auth with
+CILogon</em>.  Other than that, the installation instructions will mention the
+settings which need to be in place for Medium Risk environments.</p>
 
 	{% endcapture %}
   {% include panel.html
@@ -674,9 +692,9 @@ mapping—or change everyone's usernames—and then use CILogon.</li>
 <li>If your data are Low Risk, and your users are not using SUNetIDs as
 usernames, then you can set up MyProxy OAuth authentication.</li>
 
-<li>If you get pushback about opening a web server to the world, which you are
-unable to overcome, and you are willing to accept the lower security that comes
-with it, then use legacy MyProxy.</li>
+<li>If you get pushback about opening a web server to the world (which is
+required for MyProxy OAuth authentication), and you trust Globus enough to
+handle your user's credentials, then use legacy MyProxy.</li>
 
 </ol>
 
@@ -696,8 +714,8 @@ Security Standards">MinSec</a>, using MyProxy OAuth is more secure than using
 legacy MyProxy.  It all has to do with where your password goes.</p>
 
 <p>With legacy MyProxy, your username and password are sent to Globus, which
-sends it to the MyProxy service running on your endpoint.  Although each
-connection—from you to Globus, and from Globus to MyProxy—uses TLS, it still
+passes it on to the MyProxy service running on your endpoint.  Although each
+connection (from you to Globus, and from Globus to MyProxy) uses TLS, it still
 means that your username and password are being held (albeit temporarily) by a
 third-party (Globus).</p>
 
@@ -802,8 +820,7 @@ GitHub</a>.</p>
 	{% capture s7 %}
 
 <p>Happily, in this scenario, nothing else needs to be done!  That is because,
-with CILogon, the authentication (also known as "authn") and authorization
-("authz") functions are separate.</p>
+with CILogon, the authentication and authorization functions are separate.</p>
 
 <p>With CILogon, authentication is handled by <a
 href="https://uit.stanford.edu/service/saml" title="Stanford UIT SAML
@@ -863,15 +880,15 @@ situation.)</p>
 
 <p>GridFTP's umask is set by your system's service-management software
 (normally either SysV init, or systemd).  It is normally set to
-<code>022</code>.  This umask means, regardless of the permissions you set,
-group and world write access will always be disabled.</p>
+<code>022</code>.  This umask means group and world write access will always
+be disabled, regardless of the permissions you set.</p>
 
 <p>If you want to change the umask, you will have to modify the
 <code>/etc/init.d/globus-gridftp-server</code> script in two ways:</p>
 
 <ol>
 
-<li>First, look for this block…<br />
+<li>First, look for this block of code in the script…<br />
 
 <pre>
 lsb=""
@@ -915,17 +932,19 @@ its umask.  Once the changes are made, restart GridFTP, and test.</p>
 	{% capture s13 %}
 
 <p>When the 'encrypt transfer' box is checked, at the start of a transfer,
-Globus generates a 1024-bit RSA key, and a temporary SSL certificate valid for
+Globus generates a 2048-bit RSA key, and a temporary SSL certificate valid for
 two days.  The key and cert are given to both endpoints involved in the
 transfer.</p>
 
 <p>When one endpoint connects to the other, it immediately opens a TLS
 connection, using the key and certificate provided.  The default cipher list is
-the OpenSSL <code>HIGH</code> cipher list, but containing only the RSA
-key-exchange ciphers.</p>
+the OpenSSL <code>HIGH</code> cipher list, which means the endpoints will
+generatlly use Elliptic-Curve Diffie-Hellman Ephemeral (ECDHE) symmetric-key
+negotiation (falling back to RSA key negotiation if needed), and some form of
+AES symmetric encryption.</p>
 
 <p>If necessary (for example, for transfers which take more than two days to
-complete), Globus will generate a new key and cert.</p>
+complete), Globus will automatically generate a new key and cert.</p>
 
 	{% endcapture %}
   {% include panel.html
@@ -1104,7 +1123,10 @@ transfer node should be in a Stanford data center, where it will be able to
 connect as close as possible to the network core.  The next-best option would
 be to have it in a building room with switches that connect directly back to an
 ECH.  Either way, it is best if your endpoint bypasses normal rack switches, as
-most rack switches only have a 10 or 20 Gbps link back to the core.</li>
+most rack switches only have a 10 or 20 Gbps link back to the core.  One way
+of doing this is connecting your host to the <a
+    href="https://srcc.stanford.edu/stanford-research-network-srn">Stanford
+    Research Network</a>.</li>
 
 <li><b>Consider multiple servers.</b>  If all of the above options have been
 exhausted, and your back-end storage still has available throughput capacity,
@@ -1199,7 +1221,7 @@ have to make sure that encryption is required for all transfers, and that TLS
 account.</p>
 
 <p>Also, Globus Search (one component of the <a
-href="https://publish.globus.org">Globus Publish</a> platform, only supports
+href="https://publish.globus.org">Globus Publish</a> platform) only supports
 Low Risk data.  This is OK, because it is meant for searching public data
 sets.</p>
 
