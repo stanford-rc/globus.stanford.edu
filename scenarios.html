@@ -340,7 +340,7 @@ title="How to Request and Complete a Data Risk Assessment, Information Security,
 Stanford University IT">Data Risk Assessment</a>.</p>
 
 <p>Your best route forward may be to get your data into a form that is Low or
-Medium Risk, and onto systems that are also Low or Medium Risk, and install
+Moderate Risk, and onto systems that are also Low or Moderate Risk, and install
 Globus Connect Personal (or Globus Connect Server) there.  You should reach out
 to your IT people to assist, or <a href="mailto:srcc-support@stanford.edu"
 title="Contact SRCC">engage with us</a>.</p>
@@ -633,17 +633,17 @@ users.</p>
 
 	{% capture s11 %}
 
-<p>To meet the requirements for Medium Risk data, simply follow the normal
+<p>To meet the requirements for Moderate Risk data, simply follow the normal
 installation instructions on the <a href="{{ "server.html" | relative_url }}">
 Globus Connect Server</a> pages, but <em>be sure to use SUNetID Auth with
 CILogon</em>.  Other than that, the installation instructions will mention the
-settings which need to be in place for Medium Risk environments.</p>
+settings which need to be in place for Moderate Risk environments.</p>
 
 	{% endcapture %}
   {% include panel.html
      parent="scenario"
      id="s11"
-     scenario="How do I use Globus for Medium Risk data?"
+     scenario="How do I use Globus for Moderate Risk data?"
      content=s11
   %}
 
@@ -658,7 +658,7 @@ title="How to Request and Complete a Data Risk Assessment, Information Security,
 Stanford University IT">Data Risk Assessment</a>.</p>
 
 <p>Your best route forward may be to get your data into a form that is Low or
-Medium Risk, and onto systems that are also Low or Medium Risk, and
+Moderate Risk, and onto systems that are also Low or Moderate Risk, and
 do your transfers from there.  You should reach out to your IT people to
 assist, or <a href="mailto:srcc-support@stanford.edu" title="Contact SRCC">
 engage with us</a>.</p>
@@ -685,7 +685,7 @@ you are still interested!</p>
 <li>In your environment, are your users using SUNetIDs as usernames?  Then use
 CILogon.</li>
 
-<li>If your data are Medium Risk, and your users are <em>not</em> using
+<li>If your data are Moderate Risk, and your users are <em>not</em> using
 SUNetIDs as usernames, then you will need to set up some form of username
 mapping—or change everyone's usernames—and then use CILogon.</li>
 
@@ -737,11 +737,11 @@ procedures, you should remain reasonably secure.</p>
 
 	{% capture s4 %}
 
-<p>Right now, it is not possible to handle Medium Risk data in Globus without
+<p>Right now, it is not possible to handle Moderate Risk data in Globus without
 using CILogon.  The reason is, <a
 href="https://uit.stanford.edu/guide/securitystandards#security-standards-applications"
 title="Stanford Minimum Security Standards for Applications">MinSec for
-Applications</a> for Medium Risk applications requires that Duo two-step
+Applications</a> for Moderate Risk applications requires that Duo two-step
 authentication be used for all interactive user logins, and many end-user
 Globus activities are interactive.</p>
 
@@ -753,7 +753,7 @@ to the limitations of the MyProxy protocol.</p>
   {% include panel.html
      parent="scenario"
      id="s4"
-     scenario="How can I handle Medium Risk data without using CILogon?"
+     scenario="How can I handle Moderate Risk data without using CILogon?"
      content=s4
   %}
 
@@ -1214,7 +1214,7 @@ the types of data you can transfer.  (For example, some services—not
 Globus—have exclusions on administrative data.  That is <em>not</em> the case
 here.)</p>
 
-<p>There is one caveat: If you are working with Medium Risk data, there are
+<p>There is one caveat: If you are working with Moderate Risk data, there are
 certain things you have to do as part of setting up Globus.  For example, you
 have to make sure that encryption is required for all transfers, and that TLS
 1.0 is disabled.  The instructions on this site take all of this into

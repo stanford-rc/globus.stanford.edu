@@ -129,7 +129,7 @@ All information logged is handled in accordance with [Admin Guide Chapter
 
 # Other Policies & Agreements
 
-**Only Low and Medium Risk data may be accessed using Globus.**  Globus has not
+**Only Low and Moderate Risk data may be accessed using Globus.**  Globus has not
 been evaluated for handling data rated as High Risk.  As always, it is up to
 the data owners to determine the [Risk
 Classification](http://dataclass.stanford.edu/) for their data. 

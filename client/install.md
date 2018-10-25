@@ -45,7 +45,7 @@ software, and configuring both the software and your new endpoint.
 {% include info-box.html
    icon="lock-open"
    header="No High Risk Data"
-   content="Globus may only be used at Stanford with Low or Medium Risk data.
+   content="Globus may only be used at Stanford with Low or Moderate Risk data.
    Please do not install this software on systems which have access to any form
    of High Risk data (including PCI and PHI data)."
 %}
@@ -179,7 +179,7 @@ _Edit Attributes_ button, and make the following changes:
   _Department_ to be the name of your Group (such as your Lab), your
   Department, or your School.
 
-* If your endpoint has access to Medium Risk data, _Force encryption_ must be
+* If your endpoint has access to Moderate Risk data, _Force encryption_ must be
   set to `Yes`.  Otherwise, the setting is is optional.
 
 Once you save changes, then configuration is complete!  **Congratulations!**

@@ -19,7 +19,7 @@ server, followed by some work on the Globus web site.
 
 When you ran `globus-connect-server-setup`, most of GridFTP's configuration was
 done for you automatically.  But, some additional configuration is needed to
-meet [MinSec](https://minsec.stanford.edu) requirements for Medium Risk data.
+meet [MinSec](https://minsec.stanford.edu) requirements for Moderate Risk data.
 The following five commands, run as `root`, will take care of the configuration
 for you:
 
@@ -150,7 +150,7 @@ All of the fields should be filled in.  Here are some guidelines:
   1. When you did your [initial configuration]({{ "server/configure.html" |
      relative_url }}), you had set `RequireEncryption` to `True`; or…
 
-  2. Your endpoint has access to Medium Risk data.
+  2. Your endpoint has access to Moderate Risk data.
 
   If none of the above conditions are met, then you can set this to `Yes` if
   you wish.

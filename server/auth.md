@@ -83,8 +83,8 @@ To summarize the three options:
 
 {% include info-box.html
    icon="lock"
-   header="Medium Risk?  Use CILogon"
-   content="If you have Medium Risk data, then two-step is required.  That means you must use the CILogon authentication method (it is the only one which supports two-step at this time)."
+   header="Moderate Risk?  Use CILogon"
+   content="If you have Moderate Risk data, then two-step is required.  That means you must use the CILogon authentication method (it is the only one which supports two-step at this time)."
 %}
 
 If you are not sure about which method to choose, [get in touch with us]({{

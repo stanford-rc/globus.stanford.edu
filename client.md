@@ -27,7 +27,7 @@ machines that are used primarily by one person (such as desktops and laptops).
 {% include info-box.html
    icon="lock-open"
    header="No High-Risk Data"
-   content="Globus may only be used at Stanford with Low or Medium Risk data.  Please do not install this software on systems which have access to any form of High Risk data (including PCI and PHI data)."
+   content="Globus may only be used at Stanford with Low or Moderate Risk data.  Please do not install this software on systems which have access to any form of High Risk data (including PCI and PHI data)."
 %}
 
 Globus Connect Personal does not require a dedicated or public IP address.  It

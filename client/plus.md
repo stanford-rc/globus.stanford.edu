@@ -41,7 +41,7 @@ enabled by adding you to a special group in the Globus infrastructure.
 You only need to do this once, even if you have multiple Globus Connect
 Personal endpoints.
 
-To get Globus Plus enabled on your account, email [srcc-support@stanford.edu](mailto:srcc-support@stanford.edu?subject=Please Enable Globus Plus&body=Hello!  My SUNetID is X.  Please add me to the Stanford Globus Plus Group, so that I can use Globus Connect Personal to share Low- and Medium-Risk files that I have on my endpoint.).
+To get Globus Plus enabled on your account, email [srcc-support@stanford.edu](mailto:srcc-support@stanford.edu?subject=Please Enable Globus Plus&body=Hello!  My SUNetID is X.  Please add me to the Stanford Globus Plus Group, so that I can use Globus Connect Personal to share Low- and Moderate-Risk files that I have on my endpoint.).
 Provide your SUNetID, and say that you would like to be added to the Stanford
 Globus Plus group.  You should receive a response within two business days.
 
