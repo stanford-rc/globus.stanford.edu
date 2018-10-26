@@ -169,7 +169,40 @@ your host's information is correct in public DNS.</p>
     Connect Server Installation Guide</a>.  This guide is the generic guide
 that applies to all users.</p>
 
-<p>The next place to go for help is the Globus
+<p>At this point, you will probably need to start gathering detailed logs.</p>
+
+<p>If you are using MyProxy OAuth or Legacy MyProxy authentication, then you
+should look at logs for the MyProxy server, which can be found in your normal
+syslog file (normally either `/var/log/messages` or `/var/log/syslog`).  For
+MyProxy OAuth authentication, warnings and errors often go to both the normal
+syslog file and to Apache's error log.</p>
+
+<p>For CILogon authentication, there is no local authentication service
+running, so there is nothing to log.  In this case, you will have to ask the
+end user to send you any debugging information that they can find through the
+Globus web site.</p>
+
+<p>As for metadata and transfer operations, they are all handled in GridFTP,
+which logs to `/var/log/gridftp.log`.  By default, GridFTP only logs errors.
+If you want GridFTP to log more information, edit the file at path
+`/etc/gridftp.conf`, and insert the following line:</p>
+
+<pre>
+log_level error,warn,info
+</pre>
+
+<p>GridFTP has four types of logs: <code>error</code>, <code>warn</code>,
+<code>info</code>, and <code>dump</code>.  Contrary to most logging methods,
+with GridFTP if you want detailed logging, you must also enable all of the
+less-verbose log levels, or else some messages will not be logged.  The
+<code>dump</code> level of logging logs actual GridFTP messages (minus
+encryption).  If you want to log everything, you may use <code>all</code>
+instead of writing <code>error,warn,info,dump</code>.</p>
+
+<p>After changing the log level, restart the <code>globus-gridftp-server</code>
+service for changes to take effect.</p>
+
+<p>Once you have logs, the next place to go for help is the Globus
 <a
      href="https://groups.google.com/a/globus.org/forum/#!forum/admin-discuss/home">Admin
      Discuss list</a>.  This is a Google group, which you can join using your
