@@ -47,9 +47,36 @@ helpful!), and what goal you are trying to achieve.</p>
 
 {% capture s2 %}
 
-<p>TBD!</p>
+<p>When you are having problems with Globus Connect Personal (GCP), the first thing
+to check is, is GCP able to communicate with Globus?  To
+check this, go to the <a href="https://www.globus.org/app">Globus Web Site</a>
+and try to access your endpoint.  When you attempt an access, the GCP icon {{ "assets/client/Toolbar Icon.png" | relative_url }}
+should start to animate.  If the Globus web site returns an error, and you do
+not see the icon animating, then GCP is not properly
+communicating with Globus.  Try quitting and re-launching GCP.</p>
 
-<p>The next place to go for help is the Globus <a
+<p>If GCP is still not communicating with Globus, or if GCP tells you that it
+is having problems connecting to `relay.globusonline.org`, then connections
+might be blocked by the network you are on.  To work around this, use the
+<a href="http://uit.stanford.edu/service/vpn">Stanford VPN</a>,
+but <em>make sure you are using the Full Traffic (non-split-tunnel) mode</em>,
+to ensure that all traffic goes through the VPN.</p>
+
+<p>If GCP is working; but you get errors when doing directory listings; or, if
+transfers <em>from</em> your endpoint work, but transfers <em>to</em>
+your endpoint are failing; then your list of allowed paths needs to be changed.
+Remember, GCP is <em>deny-by-default</em>, so you must explicitly tell it which
+paths may be read from or written to.  See the end of the
+<a href="{{ "client/install.html" | relative_url }}" title="Installing Globus
+Connect Personal">GCP installation instructions</a> for help.</p>
+
+<p>If you have problems making or using a shared endpoint that is being hosted
+by Globus Connect Personal, then you should confirm that Globus Plus is enabled
+for you, and that you have enabled sharing in GCP.  See the
+<a href="{{ "client/plus.html" | relative_url" title="Globus Plus">Globus Plus
+instructions</a> for more information.</p>
+
+<p>If none of that helps, the next place to go for help is the Globus <a
     href="https://groups.google.com/a/globus.org/forum/#!forum/user-discuss/home">User
     Discuss list</a>.  This is a Google group, which you can join using your
 Stanford University Google account, or (if you have one) your personal Google
