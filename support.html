@@ -253,10 +253,29 @@ and what goal you are trying to achieve.</p>
 
 {% capture s5 %}
 
-<p>If you are having problem with a shared endpoint you own, you should contact
-the owner of the host endpoint.  If you are having problems with someone else's
-endpoint, refer to <a href="#external"><em>I need help with someone else's
-        endpoint</em></a>.
+<p>For problems with shared endpoints, you often have to get someone else
+involved.  For example, if the shared endpoint in question is owned by someone
+else, then you should consult the section <em>I'm having problems with someone
+else's endpoint</em>.</p>
+
+<p>If your shared endpoint is being hosted on a Globus Connect Personal
+endpoint, then you need to make sure Globus Plus is configured properly.  That
+means making sure you have Globus Plus enabled on your Globus identity, and
+that you have enabled sharing in Globus Connect Personal's configuration.
+See the
+<a href="{{ "client/plus.html" | relative_url }}" title="Globus Plus">Globus
+Plus installation instructions</a> for more information.</p>
+
+<p>If your shared endpoint is being hosted on a Globus Connect Server endpoint,
+then you will need to contact the administrator of that server endpoint.
+Again, consult the section <em>I'm having problems with someone else's
+endpoint</em>.  Globus Connect Server endpoint administrators have control over
+which host paths are allowed to be shared, and this may be blocking you.</p>
+
+<p>If all else fails, reach out to your <a href="#local">local support
+contact</a>.  When you reach out, please tell us the name and UUID of your
+shared endpoint, as well as the name and UUID of the host endpoint (either a
+Globus Connect Personal endpoint or a Globus Connect Server endpoint).</p>
 
 {% endcapture %}
 
