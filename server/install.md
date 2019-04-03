@@ -40,8 +40,8 @@ If you filter _inbound_ traffic, here is what you will need to open (the zone
 names are for systems behind a network firewall):
 
 {% include info-box.html
-   header="Do you use firewalld?"
-   content="If you use firewalld, go to our <a href=\"firewalld.html\">firewalld page</a> for an easier way to configure your host firewall."
+   header="Do you use firewalld or ufw?"
+   content="If you use firewalld or ufw, go to our <a href=\"firewalld.html\">firewalld page</a> or our <a href=\"ufw.html\">ufw page</a> for an easier way to configure your host firewall."
 %}
 
 {% include info-box.html
