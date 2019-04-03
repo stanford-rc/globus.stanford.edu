@@ -32,12 +32,18 @@ setup to be done.
 
 ## Firewall Configuration
 
-Globus Connect Server requires a public IP address, which means your system is
+Globus Connect Server requires a public IPv4 address, which means your system is
 at least going to be behind a host firewall.  For Globus Connect Server to
 work, certain inbound and outbound ports will need to be opened.
 
 If you filter _inbound_ traffic, here is what you will need to open (the zone
 names are for systems behind a network firewall):
+
+{% include info-box.html
+   header="IPv6 Support"
+   icon="globe"
+   content="At this time, Globus does not use IPv6.  If your site uses IPv6, you may certainly allocate an IPv6 address to your server, and it might be used for data connections, but all control connections from Globus will come from an IPv4 address."
+%}
 
 {% include info-box.html
    header="Do you use firewalld or ufw?"
