@@ -27,19 +27,19 @@ When you do find yourself needing to unlink an identity, follow this procedure.
    content="When you unlink an identity, all active transfers authenticated by that identity will be cancelled.  You should wait for active transfers to complete before you proceed."
 %}
 
-To unlink an identity, [log in to Globus](https://www.globus.org/app/transfer)
-and click on the _Account_ link (in the upper-right corner of the page).
+To unlink an identity, [log in to Globus](https://app.globus.org/)
+and click on the **<i class="fas fa-user-circle"></i> Account** link (near the bottom-right corner of the page).
 
 {% include hero-image.html
    src="assets/accounts/Transfer Page.png"
    alt="Globus transfer screen"
    caption-overlay=true
    caption-header="The Globus 'Transfer Files' screen"
-   caption-text="The 'Account' link is in the upper-right corner of the page."
+   caption-text="The 'Account' link is in the bottom-left corner of the page."
 %}
 
 The Account page displays your primary and linked identities.  Near the
-upper-right of the page, locate and click on the _Manage Your Identities_ link.
+upper-right of the page, locate and click on the **<i class="fas fa-id-card"></i> Manage Identities** link.
 
 {% include hero-image.html
    src="assets/accounts/Account Management.png"
@@ -103,7 +103,7 @@ this whenever you change your primary institutional affiliation.
 
 ### Step 1: Check Your Endpoints
 
-Check all of the endpoints and shares you administer, making sure that your
+Check all of the endpoints (including shared endpoints) you administer, making sure that your
 _current_ primary identity is on the list of administrators.  Globus Connect
 Personal endpoints—and shared endpoints created from Globus Connect Personal
 endpoints—are excluded from this step, because they can not have multiple

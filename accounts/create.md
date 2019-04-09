@@ -15,7 +15,7 @@ title_line: false
 Your Globus account is created automatically when you first log in to
 Globus.
 
-To begin, go to [globus.org/app](https://globus.org/app).  You will be
+To begin, go to [app.globus.org](https://app.globus.org/).  You will be
 presented with the login page:
 
 {% include hero-image.html

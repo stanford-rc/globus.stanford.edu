@@ -76,10 +76,9 @@ First, you should check on the endpoints you administer.  [Log in to Globus](htt
    caption-text=""
 %}
 
-In the upper-right quadrant of the page are the _Recent Activity_ icons.  The
-circle, triangle, and octagon represent transfers which are OK, transfers that
-have warnings, and transfers which have been cancelled.  Make sure there are no
-transfers in progress.
+In the left-side menu is the **Activity** option.  If any transfers are
+in progress, a number will appear on top of the icon.  You should only continue
+when there are no transfers in progress.
 
 ### Step 2: Uninstall Globus Connect
 
@@ -101,7 +100,7 @@ server.
 You will now need to either delete any endpoints that you administer, or
 transfer them to someone else.
 
-Click on the _Endpoints_ link (also located in the upper-right quadrant).  You
+Click on the **Endpoints** option (also located in the left-side menu).  You
 should be taken to the list of recently-used endpoints.
 
 {% include hero-image.html
@@ -150,7 +149,7 @@ taken to the endpoint's overview page.
    caption-text=""
 %}
 
-Next, click on the _Delete Endpoint_ button, located on the right side of the
+Next, click on the **<i class="fas fa-times-circle"></i>Delete Endpoint** button, located on the right side of the
 page.  A warning will appear.
 
 {% include hero-image.html
@@ -161,7 +160,7 @@ page.  A warning will appear.
    caption-text=""
 %}
 
-If you are sure about deleting the endpoint, click on the _Delete endpoint_
+If you are sure about deleting the endpoint, click on the **Delete endpoint**
 button, and the endpoint will be deleted.
 
 You will need to repeat this step (either deletion, or transfer) for each

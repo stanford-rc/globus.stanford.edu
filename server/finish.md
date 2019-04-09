@@ -65,7 +65,7 @@ The above commands make two major changes:
 
 Now that Globus Connect Server is running, and GridFTP's configuration has been
 updated, some final endpoint configuraion must be performed on the [Globus web
-site](https://www.globus.org/app).  
+site](https://app.globus.org/).
 
 {% include info-box.html
    icon="asterisk"
@@ -73,7 +73,7 @@ site](https://www.globus.org/app).
    content="Since we are performing endpoint configuration, you will need to log in using the same Globus ID and password that you used during endpoint setup.  If you are using one of the common Globus IDs, talk to the owner of the Globus ID, who will work with you to finish configuration."
 %}
 
-Log in, and go to the Endpoints page.
+Log in, and go to the **Endpoints** page.
 
 {% include hero-image.html
    src="assets/server/Recent Endpoints.png"
@@ -84,7 +84,7 @@ Log in, and go to the Endpoints page.
 %}
 
 When you reach the Endpoints page, at the top of the list of endpoints, click
-on _administered by me_.  The list of endpoints will switch to show endpoints
+on **Administered By You**.  The list of endpoints will switch to show endpoints
 administered by your Globus ID.
 
 {% include hero-image.html
@@ -100,7 +100,7 @@ will be taken to the Endpoint Overview page.
 
 ## Endpoint Overview
 
-Click on the _Edit Attributes_ button, so that you can fill in the missing
+Click on the **Edit Attributes** button, so that you can fill in the missing
 endpoint information.
 
 {% include hero-image.html
@@ -148,7 +148,7 @@ All of the fields should be filled in.  Here are some guidelines:
   are true:
 
   1. When you did your [initial configuration]({{ "server/configure.html" |
-     relative_url }}), you had set `RequireEncryption` to `True`; or…
+     relative_url }}), you had set `RequireEncryption` to `True`.
 
   2. Your endpoint has access to Moderate Risk data.
 
@@ -217,7 +217,7 @@ obtain the correct value.
 {% include info-box.html
    icon="list-ul"
    header="Settings still missing?"
-   content="If the _Server_ or _Identity Provider_ settings are wrong, you can also try fixing them by re-running the `globus-connect-server-setup` command.  If you still have issues, then you should reach out to Support."
+   content="If the <em>Server</em> or <em>Identity Provider</em> settings are wrong, you can also try fixing them by re-running the <pre>globus-connect-server-setup</pre> command.  If you still have issues, then you should reach out to Support."
 %}
 
 To finish this tab, go up to the second section, contains the _Network Use_

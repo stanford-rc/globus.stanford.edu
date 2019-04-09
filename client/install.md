@@ -39,7 +39,7 @@ software, and configuring both the software and your new endpoint.
 {% include info-box.html
    icon="globe"
    header="Network Access Required"
-   content="Globus Connect Personal needs to be able to make outbound Internet connections.  Connections must be allowed out to 54.237.254.192/29 port 2223 (for control traffic), and to any Internet host on TCP ports 50000-51000 (for data transfer).  Connections must also be allowed to AWS S3 on TCP port 443 (HTTPS), for the new version check to succeed."
+   content="Globus Connect Personal needs to be able to make outbound Internet connections.  If Globus Connect Personal reports problems connecting, talk to your IT contact.  Connections must be allowed out to 54.237.254.192/29 port 2223 (for control traffic), and to any Internet host on TCP ports 50000-51000 (for data transfer).  Connections must also be allowed to AWS S3 on TCP port 443 (HTTPS), for the new version check to succeed."
 %}
 
 {% include info-box.html
@@ -52,7 +52,7 @@ software, and configuring both the software and your new endpoint.
    
 # Create an Endpoint
 
-To begin, [log in to Globus](https://www.globus.org/app) and go to the
+To begin, [log in to Globus](https://app.globus.org/) and go to the
 _Endpoints_ page.
 
 {% include hero-image.html
@@ -63,8 +63,9 @@ _Endpoints_ page.
    caption-text=""
 %}
 
-On the _Endpoints_ page, click on _add Globus Connect Personal endpoint_ (in
-the top-center of the page).  You will be taken to the endpoint creation page.
+On the **Endpoints** page, click on **Create New Endpoint** (in the upper-right
+of the page), and then click on **Globus Connect Personal**.  You will be taken
+to the endpoint creation page.
 
 {% include hero-image.html
    src="assets/client/Create Personal Endpoint.png"
@@ -83,7 +84,14 @@ site.
    content="It is preferable to provide detail here, especially when you are trying to find your endpoint in the future."
 %}
 
-Once you have decided on a display name, click the _Generate Setup Key_ button.
+{% include info-box.html
+   icon="lock-open"
+   header="High Assurance Endpoints"
+   content="At this time, Stanford does not have the Globus subscription needed to support High Risk data.  So, please leave the <em>high assurance endpoint</em> option off for now."
+%}
+
+Once you have decided on a display name, make sure your @stanford.edu email
+address is selected, and click the **Generate Setup Key** button.
 
 {% include hero-image.html
    src="assets/client/Endpoint Setup Key.png"
@@ -159,8 +167,7 @@ site has been continuing to show your setup key:
 
 At the time the setup key was generated, Globus created an endpoint for you.
 To view the endpoint's information, click on your endpoint's name, which
-appears to the right of the <i class="fas fa-check" title="green check mark"
-style="color: green"></i>.
+appears inside the green box.
 
 {% include hero-image.html
    src="assets/client/New Endpoint Overview.png"
@@ -171,7 +178,7 @@ style="color: green"></i>.
 %}
 
 Most of the fields are empty, and a few should be filled in.  Click on the
-_Edit Attributes_ button, and make the following changes:
+**<i class="fas fa-pencil-alt"></i> Edit Attributes** button, and make the following changes:
 
 * Change the _Contact E-mail_ to be your email address.
 

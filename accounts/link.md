@@ -26,7 +26,7 @@ the person's _primary identity_.
    content="If your group owns, or has access to, a Globus ID for the group, you <b>must not</b> link it to your primary identity.  Those Globus IDs are for entities, and may not be linked to individual people."
 %}
 
-To link an identity, go to [globus.org/app](https://globus.org/app).  If you
+To link an identity, go to [app.globus.org](https://app.globus.org).  If you
 are not already logged in, then you will be presented with the login page:
 
 {% include hero-image.html
@@ -47,7 +47,7 @@ Log in as normal, and you will arrive at the transfer page:
    caption-text=""
 %}
 
-Click on the *Account* link (in the upper-right corner of the page).  This will
+Click on the **<i class="fas fa-user-circle"></i> Account** option (near the bottom-left corner of the page).  This will
 take you to the Account Management page:
 
 {% include hero-image.html
@@ -59,11 +59,9 @@ take you to the Account Management page:
 %}
 
 The Account Management page displays your current primary identity (likely your
-Stanford identity), any linked identites, as well as your [Globus Plus]({{
-"accounts/plus.html" | relative_link }}) status.
+Stanford identity) and any linked identites.
 
-To link a new identity, click on _Add Linked Identity_, near the upper-right of
-the page.
+To link a new identity, click on **<i class="fas fa-id-card"></i><i class="fas fa-plus-circle"></i> Link Another Identity**, on the right of the page.
 
 {% include hero-image.html
    src="assets/accounts/Add Linked Identity.png"

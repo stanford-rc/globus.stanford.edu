@@ -81,7 +81,7 @@ page](https://www.globus.org/app/account).
    alt="The 'Globus Account' page, showing that Globus Plus is active."
    caption-overlay=false
    caption-header="This person has access to Globus Plus."
-   caption-text="If the person was affiliated with multiple institutions, then she might have had access to Globus Plus through multiple affiliations.  In this case, only one is showin."
+   caption-text="If the person was affiliated with multiple institutions, then she might have had access to Globus Plus through multiple affiliations.  In this case, only one is active (the other was used for a training session, and has been disabled)."
 %}
 
 Remember, you only need Globus Plus enabled once.  Even if you have multiple
