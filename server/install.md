@@ -28,9 +28,18 @@ setup to be done.
 
 * Installing Globus Connect Server.
 
-&nbsp;
+{% include info-box.html
+   header="IPv6 Support"
+   icon="globe"
+   content="At this time, Globus does not use IPv6.  All IP addresses should be entered using IPv4."
+%}
 
 ## Firewall Configuration
+
+{% include info-box.html
+   header="Do you use firewalld or ufw?"
+   content="If you use firewalld or ufw, go to our <a href=\"firewalld.html\">firewalld page</a> or our <a href=\"ufw.html\">ufw page</a> for an easier way to configure your host firewall."
+%}
 
 Globus Connect Server requires a public IPv4 address, which means your system is
 at least going to be behind a host firewall.  For Globus Connect Server to
@@ -38,17 +47,6 @@ work, certain inbound and outbound ports will need to be opened.
 
 If you filter _inbound_ traffic, here is what you will need to open (the zone
 names are for systems behind a network firewall):
-
-{% include info-box.html
-   header="IPv6 Support"
-   icon="globe"
-   content="At this time, Globus does not use IPv6.  All IP addresses should be entered using IPv4."
-%}
-
-{% include info-box.html
-   header="Do you use firewalld or ufw?"
-   content="If you use firewalld or ufw, go to our <a href=\"firewalld.html\">firewalld page</a> or our <a href=\"ufw.html\">ufw page</a> for an easier way to configure your host firewall."
-%}
 
 {% include info-box.html
    header="Don't forget the network firewall"
