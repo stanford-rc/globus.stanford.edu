@@ -42,7 +42,7 @@ names are for systems behind a network firewall):
 {% include info-box.html
    header="IPv6 Support"
    icon="globe"
-   content="At this time, Globus does not use IPv6.  If your site uses IPv6, you may certainly allocate an IPv6 address to your server, and it might be used for data connections, but all control connections from Globus will come from an IPv4 address."
+   content="At this time, Globus does not use IPv6.  All IP addresses should be entered using IPv4."
 %}
 
 {% include info-box.html
