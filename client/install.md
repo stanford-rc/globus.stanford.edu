@@ -114,17 +114,23 @@ provided by Globus.
 The installation procedure for Globus Connect Personal is different for each
 OS:
 
-* On macOS, Globus Connect Personal is delivered as an application in a Disk
-  Image (.dmg) file.  To install, open the Disk Image and drag the application
-  to your Applications folder.  Mac OS X 10.4 or later (Intel CPUs only) is
-  required.
+* [Download Globus Connect Personal for **macOS**](https://downloads.globus.org/globus-connect-personal/v3/mac/stable/globusconnectpersonal-3-latest.dmg)
 
-* On Windows, Globus Connect Personal comes delivered as an executable (.exe)
+  Once downloaded, double-click on the disk image (.dmg) file, and then 
+  drag the Globus Connect Personal application into your _Applications_ folder.
+  Mac OS X 10.4 or later is required.  If you are running Mac OS X 10.4 or
+  10.5, only Intel CPUs are supported.
+
+* [Download Globus Connect Personal for **Windows**](https://downloads.globus.org/globus-connect-personal/v3/windows/stable/globusconnectpersonal-3-latest.exe)
+
+  Simply run the downloaded executable (.exe) installer.
+  On Windows, Globus Connect Personal comes delivered as an executable (.exe)
   installer.  To install, download and run the executable.  A recent version of
   Windows is required.
 
-* On Linux, Globus Connect Personal ships as an archive (a .tgz file).
-  Expand and un-tar the directory, and then run `globusconnect`.  Python 2
+* [Download Globus Connect Personal for **Linux**](https://downloads.globus.org/globus-connect-personal/v3/linux/stable/globusconnectpersonal-3-latest.tgz)
+
+  Expand and un-tar the .tgz file, and then run `globusconnect`.  Python 2
   is required; and to use the GUI, Tcl/Tk 8.4 or later is needed.
 
 Once Globus Connect Personal is installed and started, you will be asked to
