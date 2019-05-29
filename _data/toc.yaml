@@ -71,6 +71,8 @@
       target: "server/myproxy"
     - name: "Finishing Configuration"
       target: "server/finish"
+    - name: "Configuration Backup"
+      target: "server/backup"
 
 - id: "server5"
   header: "Globus Connect Server 5"
