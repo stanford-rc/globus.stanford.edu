@@ -41,6 +41,8 @@
       target: "accounts/unlink"
     - name: "Leaving Stanford"
       target: "accounts/leaving"
+    - name: "The Globus ID"
+      target: "accounts/globusid"
 
 - id: "client"
   header: "Globus Connect Personal"

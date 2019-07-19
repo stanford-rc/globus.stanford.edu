@@ -43,9 +43,8 @@ also the last-resort option if you want to link a personal email address.
    content="If you have an account with one of these services—even if you registered with your personal email address—you can link them.  This is preferable to creating a Globus ID."
 %}
 
-Globus IDs for entities are covered more in the [Globus Connect Server]({{
-"server" | relative_url }}) [Site Prep and Installation]({{
-"server/install.html" | relative_url }}) page.
+Globus IDs for entities are covered more in the [Globus ID]({{
+"accounts/globusid.html" | relative_url }}) page.
 
 {% include left-sidebar/transition.md %}
 
