@@ -5,12 +5,10 @@ title_line:  false
 description: Instructions on how to prepare your environment for Globus Connect Server.
 ---
 
-# Site Prep and Installation
+# Pre-Installation Planning
 
-This page explains how to prepare your environment for Globus Connect Server.
-Most of this work can be done within an hour, but in some cases (when you need
-to reach out to other groups), it may take a few business days for all the
-setup to be done.
+Before installing Globus Connect Server, you need to make a few decisions about
+how users will access your server, and what they should be allowed to access.
 
 {% include info-box.html
    icon="lock-open"
@@ -20,13 +18,22 @@ setup to be done.
    of High Risk data (including PCI and PHI data)."
 %}
 
-"Site Prep and Installation" includes three steps:
+Before continuing on with this page, we suggest that you allocate some space in
+your favorite note-taking medium.  You will need to answer the following
+questions:
 
-* Configuring the firewall.
 
-* Getting (and activating) a Globus ID.
+* **Which Globus ID do I use?**
 
-* Installing Globus Connect Server.
+* **What auth method will users use?**
+
+* **What should users be allowed to access?**
+
+* **Will sharing be allowed?**
+
+* **What is my IP address?**
+
+This page will help you to answer each of those questions.
 
 {% include info-box.html
    header="IPv6 Support"
