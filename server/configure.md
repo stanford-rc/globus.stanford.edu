@@ -323,6 +323,17 @@ the public hostname of the system.
    content="It is extremely important that you <em>do not</em> route your GridFTP traffic through a proxy or packet filter.  GridFTP uses extensions to the FTP protocol, and if a proxy or filter is unable to handle the GridFTP extensions, transfers may not work at all."
 %}
 
+## Next Steps
+
+Your next step is to perform configuration that is specific to the
+authentication method you decided to use.
+
+* [Click here to configure CILogon Authentication]({{ "server/cilogon.html" | relative_url }})
+
+* [Click here to configure MyProxy OAuth]({{ "server/oauth.html" | relative_url }})
+
+* [Click here to configure legacy MyProxy]({{ "server/myproxy.html" | relative_url }})
+
 {% include left-sidebar/transition.md %}
 
 {% include toc.html id="server" %}
