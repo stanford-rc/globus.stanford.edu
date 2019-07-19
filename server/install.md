@@ -95,6 +95,86 @@ prerequisite.
 
 &nbsp;
 
+# Choosing an Authentication Method
+
+The [introduction to Globus accounts]({{ "accounts.html" | relative_url }})
+explained how Globus understands that individuals often have multiple
+identities at different institutions.  Globus Connect Server needs to map
+Globus identities to local users on the endpoint.  The specific method used
+depends on how easily the translation can be made.
+
+**In the ideal case, all local accounts use SUNetIDs**.  When all local
+accounts use SUNetIDs, the **CILogon authenticaion method** should be used.
+This method relies on University IT's [SAML
+(Authentication)](http://uit.stanford.edu/service/saml) service to handle the
+work of authentication, and uses the [CILogon platform](http://www.cilogon.org)
+to convert a successful authentication into a set of temporary access
+credentials.  This is the same method that Globus uses when you log in to
+[www.globus.org](https://globus.org).
+
+{% include info-box.html
+   icon="globe"
+   header="Local accounts for outside users?"
+   content="If you only create local accounts for non-Stanford users to share data, you should strongly using CILogon authentication for Stanford users, and replacing non-Stanford local accounts with shared endpoints.  If that is not possible, then you can get free base-level sponsored SUNetIDs for your outside collaborators."
+%}
+
+If your users are all Stanford users, but you do not use SUNetIDs, you should
+consider taking the time to change usernames to match SUNetIDs.
+
+{% include info-box.html
+   header="SUNetID Authentication is not required"
+   content="The only requirement for CILogon is that you use SUNetIDs as usernames.  Although CILogon will use SUNetID passwords (and two-step) for authentication, you do not have to use SUNetID passwords (or Kerberos) in the rest of your environment."
+%}
+
+If you absolutely cannot rely on SUNetIDs as usernames in your environment, the
+next-best option is to use the **MyProxy OAuth** method.  This method runs a
+world-accessible OAuth service on your Globus Connect Server endpoint.  When
+needed, Globus will send your users to this service, and they will
+authenticate with their local username and password.  On a successful
+authentication, a set of temporary credentials is given to Globus.
+
+{% include info-box.html
+   icon="exclamation-triangle"
+   header="Patching is important!"
+   content="Since this method exposes a web server to the world, you must ensure that the server is patched on a regular basis."
+%}
+
+The downside of the MyProxy OAuth method is that you need to run a web server
+that is open to the world.  If you (or your security group) are unwilling to
+accept this, then the last option is to use the **legacy MyProxy** method.
+With this method, when Globus needs your credentials, it will ask you directly.
+You give Globus your username and password, which Globus exchanges for
+temporary credentials.  You will still be running a MyProxy (non-OAuth) service
+on your endpoint, but it only needs to be accessible by Globus.  This means you
+are trusting Globus with your username and password, although only for a short
+time.
+
+To summarize the three options:
+
+1. **CILogon**: Most secure, and easiest to use, but requires that all local
+   users use their SUNetID as their username.
+
+2. *MyProxy OAuth*: More secure when SUNetIDs can not be used, but requires
+   running a web server.
+
+3. legacy MyProxy:  Works when SUNetIDs can not be used, and does not require a
+   web server, but exposes your credentials to Globus.
+
+{% include info-box.html
+   icon="lock"
+   header="Moderate Risk?  Use CILogon"
+   content="If you have Moderate Risk data, then two-step is required.  That means you must use the CILogon authentication method (it is the only one which supports two-step at this time)."
+%}
+
+If you are not sure about which method to choose, [get in touch with us]({{
+"support.html" | relative_url }}).
+
+*Congratulations!*  You now have your authentication method selected.  This is
+the second prerequisite.  The decision you have made here effects what you do
+next, as you get a public IP address and perform firewall configuration.
+
+&nbsp;
+
 ## Firewall Configuration
 
 {% include info-box.html
