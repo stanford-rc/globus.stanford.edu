@@ -27,11 +27,11 @@ questions:
 
 * **What auth method will users use?**
 
+* **What is my IP address and firewall configuration?**
+
 * **What should users be allowed to access?**
 
 * **Will sharing be allowed?**
-
-* **What is my IP address?**
 
 This page will help you to answer each of those questions.
 
