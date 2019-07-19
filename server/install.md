@@ -206,30 +206,6 @@ time, you should continue setup!
 
 &nbsp;
 
-## Software Installation
-
-To install the Globus Connect Server software, you will be installing the
-`globus-connect-server` package for your Linux distribution.  Follow the
-instructions from [Globus Connect Server installation guide Section
-3.1](https://docs.globus.org/globus-connect-server-installation-guide/#install_globus_connect_server).
-
-{% include info-box.html
-   icon="arrow-alt-circle-up"
-   header="Use the Repo"
-   content="Be sure to get packages directly from the Globus repository, instead of trying to download and install them manually.  Doing so ensures that Globus will be updated whenever you do regular server patching."
-%}
-
-{% include info-box.html
-   icon="list-ul"
-   header="Expect Many Packages"
-   content="The <code>globus-connect-server</code> package has a large number of dependencies, because Globus Connect Server consists of multiple products (GridFTP, MyProxy, etc.).  It may be possible to only install a subset of packages, but this has not been documented.  Assistance is welcomed in this area!"
-%}
-
-{% include info-box.html
-   header="Red Hat, Fedora, CentOS, and Scientific Linux users"
-   content="On these distributions, Globus Connect Server requires the <code>udt</code> package from EPEL.  If you are not comfortable enabling the entire EPEL repository on your system, you should use the appropraite EPEL repository from <a href=\"http://yum.stanford.edu/mrepo\">yum.stanford.edu</a>; Stanford's EPEL mirror is a curated subset of the entire EPEL repository, and includes the <code>udt</code> package."
-%}
-
 Once packages are installed, you are ready for [initial configuration]({{
 "server/configure.html" | relative_url }})!
 
