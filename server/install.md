@@ -41,6 +41,60 @@ This page will help you to answer each of those questions.
    content="At this time, Globus does not use IPv6.  All IP addresses should be entered using IPv4."
 %}
 
+## Choosing a Globus ID
+
+People may not own Globus Connect Server endpoints directly.  Globus Connect
+Server endpoints are owned by entities, with people acting as the
+administrators and users.  The [Globus ID]({{ "accounts/globusid.html" |
+relative_url }}) exists as a way for Globus Connect Server endpoints to have a
+Globus identity.
+
+Several well-known Globus IDs already exist at Stanford, and you may be able
+to register your Globus Connect Server under one of them:
+
+* `stanford`, maintained by the [Stanford Research Computing Center](https://srcc.stanford.edu/).
+
+* `sulibraries`, maintained by [Digital Library Systems and Services](https://library.stanford.edu/department/digital-library-systems-and-services-dlss).
+
+To use one of these well-known Globus IDs, reach out to the group using the
+links above.  They will work with you during Globus Connect Server setup, in
+the same way that an Active Directory admin would work with you to join a
+Windows machine to an AD Domain.
+
+If you have decided to create your own Globus ID, refer to the
+[Globus ID]({{
+"accounts/globusid.html" | relative_url }}) page for instructions.  After
+creating a Globus ID, email <srcc-support@stanford.edu>, asking for your Globus
+ID to be assicated with Stanford's Globus subscription.  In your email, provide
+the following information:
+
+* Your Globus ID.
+
+* Information about your group, your relationship to Stanford, and how you plan
+  to use Globus.
+
+* Contact information for the people who will be maintaining the Globus Connect
+  server(s).
+
+* Confirmation that you will only use Globus for Low or Moderate Risk data.
+
+Once submitted, you should hear back within two business days.
+
+{% include info-box.html
+   header="Choose wisely!"
+   icon="exclamation-triangle"
+   content="Your Globus ID will form part of the public identifier for
+your Globus Connect Server endpoint.  For example, if your extremely-important
+cancer research data are being hosted on a Globus Connect Server endpoint named
+`cancer_study`, but your Globus ID is `annoying`, people will forever refer to
+your endpoint as the `annoying#cancer_study` endpoint."
+%}
+
+*Congratulations!*  You now have your Globus ID selected!  This is the first
+prerequisite.
+
+&nbsp;
+
 ## Firewall Configuration
 
 {% include info-box.html
@@ -133,85 +187,6 @@ ID activated.
 
 &nbsp;
 
-## Globus ID Activation
-
-People may not own Globus Connect Server endpoints directly.  Globus Connect
-Server endpoints are owned by entities, with people acting as the
-administrators and users.  The Globus ID exists as a way for entities to have a
-Globus identity, and directly own Globus Connect Server endpoints.
-
-{% include info-box.html
-   header="Last-Resort Globus ID for Humans"
-   content="A Globus ID may also be created by a human for themselves—instead of for an entity—if the human does not have any recognized instutitional login (and also does not have a Google account)."
-%}
-
-To continue, you will need to register a new Globus ID, and get it linked to
-Stanford's subscription.
-
-**Choose wisely!** Your Globus ID will form part of the public identifier for
-your Globus Connect Server endpoint.  For example, if your extremely-important
-cancer research data are being hosted on a Globus Connect Server endpoint named
-`cancer_study`, but your Globus ID is `annoying`, people will forever refer to
-your endpoint as the `annoying#cancer_study` endpoint.
-
-{% capture globus-box-content %}
-<p>Several well-known Globus IDs already exist at Stanford, and you may be able
-to register your Globus Connect Server under one of them.</p>
-<ul>
-  <li>"stanford", maintained by the <a href="https://srcc.stanford.edu/">Stanford Research Computing Center</a>.</li>
-  <li>"sulibraries", maintained by <a href="https://library.stanford.edu/department/digital-library-systems-and-services-dlss">Digital Library Systems and Services</a>.</li>
-</ul>
-<p>To use one of these well-known Globus IDs, skip this section and continue
-installation, while also reaching out to the approrpiate group.</p>
-{% endcapture %}
-{% include info-box.html
-   icon="university"
-   raw=globus-box-content
-%}
-
-If you have decided to create a Globus ID, go to
-[globusid.org](https://www.globusid.org) and select _create a Globus ID_.  A
-form will be displayed for you to complete.
-
-{% include hero-image.html
-   src="assets/server/GlobusID Create.png"
-   alt="The 'Create a Globus ID' page, with fields filled in."
-   caption-overlay=true
-   caption-header="Globus ID Creation"
-   caption-text=""
-%}
-
-Here are some thing to keep in mind as you fill in the form:
-
-* Use your department's name as your _Full Name_, and use "Stanford University"
-  as your _Organization_.
-
-* Use a mailing list as your email address.  **This is important**; password
-  resets and other important Globus communications will be sent here.
-
- * Remember to **practice password complexity**!  Your Globus ID only uses a
-   static password, so be sure to consult the [Password Requirements Quick
-   Guide](https://uit.stanford.edu/service/accounts/passwords/quickguide) to
-   find out how long your password should be.
-
-After creating a Globus ID, email <srcc-support@stanford.edu>, asking for your
-Globus ID to be assicated with Stanford's Globus subscription.  In your email,
-provide the following information:
-
-* Your Globus ID.
-
-* Information about your group, your relationship to Stanford, and how you plan
-  to use Globus.
-
-* Contact information for the people who will be maintaining the Globus Connect
-  server(s).
-
-* Confirmation that you will only use Globus for Low or Moderate Risk data.
-
-Once submitted, you should hear back within two business days.  In the mean
-time, you should continue setup!
-
-&nbsp;
 
 Once packages are installed, you are ready for [initial configuration]({{
 "server/configure.html" | relative_url }})!
