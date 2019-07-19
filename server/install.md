@@ -41,7 +41,7 @@ This page will help you to answer each of those questions.
    content="At this time, Globus does not use IPv6.  All IP addresses should be entered using IPv4."
 %}
 
-## Choosing a Globus ID
+# Choosing a Globus ID
 
 People may not own Globus Connect Server endpoints directly.  Globus Connect
 Server endpoints are owned by entities, with people acting as the
