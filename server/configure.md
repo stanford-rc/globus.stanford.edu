@@ -16,6 +16,12 @@ page.  That means…
 
 * A Globus ID has been chosen (and, if necessary, created and enabled).
 
+{% include info-box.html
+   header="Do you use firewalld or ufw?"
+   content="If you use firewalld or ufw, go to our <a href=\"firewalld.html\">firewalld page</a> or our <a href=\"ufw.html\">ufw page</a> for an easier way to configure your host firewall."
+%}
+
+
 ## Software Installation
 
 To install the Globus Connect Server software, you will be installing the
