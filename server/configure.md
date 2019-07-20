@@ -240,11 +240,80 @@ Remember that in all cases, the OS permissions still apply.
 ;; SharingGroupsAllow =
 ;; SharingUsersDeny =
 ;; SharingGroupsDeny =
-;;SharingStateDir =
 ```
 
-Sharing is covered on the same page as [authentication]({{ "server/auth.html" |
-relative_url }}).
+### GridFTP: Sharing State
+
+```
+;;SharingStateDir = $HOME/.globus/sharing
+```
+
+When an authenticated user creates a shared endpoint, Globus Connect Server
+needs a place to store information about the shared endpoint.
+
+This setting supports the use of `$HOME` (referring to the user's home
+directory) and `$USER` (the username of the authenticated user who is creating
+the share).  The path must point to a valid directory, and although the user
+does _not_ have to own the directory, the user must be able to write to the
+directory.  The default is to store shared endpoint state files in the user's
+home directory, as shown above.
+
+This requirement can be a problem when users do not have home directories.  In
+that case, you will have to perform the following steps to set up a secure
+space for shared endpoint state:
+
+{% include info-box.html
+   icon="exclamation-triangle"
+   header="Keep this directory safe"
+   content="This directory is critical to shared endpoint operation.  It must be backed up, with ownership and permissions preserved.  If you have multiple servers behind a Globus Connect Server endpoint, then this directory must be on shared storage accessible to all the servers behind the endpoint."
+%}
+
+1. Identify a group that all authenticated users are in.  In this example, we
+   will use `operator`.
+
+2. Create a directory somewhere on the system, in a path that authenticated
+   users can normally access.  For example, `/var/lib/globus-sharing`
+   (`/var/lib` is normally world-readable).  This will be the "sharing
+   directory".  Set the owner to `root`, and the group to be the common group.
+
+   ```
+   mkdir /var/lib/globus-sharing
+   chown root:operator /var/lib/globus-sharing
+   ```
+
+3. In your sharing directory, make another directory.  For example,
+   `/var/lib/globus-sharing/state`.  This will be the state directory.
+   Set the owner to `root`, and the group to be the common group.
+
+   ```
+   mkdir /var/lib/globus-sharing/state
+   chown root:operator /var/lib/globus-sharing/state
+   ```
+
+4. Change the sharing directory so that `root` has full permissions, and the
+   group only has execute permissions.  This will allow authenticated users to
+   enter the directory, without seeing its contents or making any changes.
+
+   ```
+   chmod 0710 /var/lib/globus-sharing
+   ```
+
+5. Change the state directory so that `root` has full permissions, the group
+   has write and execute permissions, and the sticky bit is set.  This will
+   allow authenticated users to enter the directory, create files in the
+   directory, and delete the files they create, without seeing the directory's
+   contents.
+
+   ```
+   chmod 01730 /var/lib/globus-sharing/state
+   ```
+
+6. Set `SharingStateDir` to the state directory.
+
+   ```
+   ;; Custom state directory, because we don't have homedirs.
+   SharingStateDir = /var/lib/globus-sharing/state
+   ```
 
 ### GridFTP: Server Connectivity
 
