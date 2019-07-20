@@ -74,6 +74,13 @@ the following information:
 
 Once submitted, you should hear back within two business days.
 
+<i class="fas fa-clipboard-list"></i> For this planning item, you need answers
+to the following questions:
+
+1. Will I be using one of the well-known Globus IDs, or will I choose my own?
+
+2. If I choose my own Globus ID, what will it be?
+
 {% include info-box.html
    header="Choose wisely!"
    icon="exclamation-triangle"
@@ -84,8 +91,8 @@ cancer research data are being hosted on a Globus Connect Server endpoint named
 your endpoint as the `annoying#cancer_study` endpoint."
 %}
 
-*Congratulations!*  You now have your Globus ID selected!  This is the first
-prerequisite.
+<i class="fas fa-clipboard-check"></i> *Congratulations!*  You now have your
+Globus ID selected!  This is the first prerequisite.
 
 &nbsp;
 
@@ -160,12 +167,24 @@ To summarize the three options:
    content="If you have Moderate Risk data, then two-step is required.  That means you must use the CILogon authentication method (it is the only one which supports two-step at this time)."
 %}
 
-If you are not sure about which method to choose, [get in touch with us]({{
-"support.html" | relative_url }}).
+<i class="fas fa-clipboard-list"></i> For this planning item, you need answers
+to the following questions:
 
-*Congratulations!*  You now have your authentication method selected.  This is
-the second prerequisite.  The decision you have made here effects what you do
-next, as you get a public IP address and perform firewall configuration.
+1. Can I use CILogon authentication?
+
+2. If I cannot use CILogon authentication, then can I use MyProxy OAuth, or do
+   I have to fall back to legacy OAuth authentication?
+
+{% include info-box.html
+   icon="question-circle"
+   header="Still not sure?"
+   content="If you are not sure about which method to choose, get in touch with us."
+%}
+
+<i class="fas fa-clipboard-check"></i> *Congratulations!*  You now have your
+authentication method selected.  This is the second prerequisite.  The decision
+you have made here effects what you do next, as you get a public IP address and
+perform firewall configuration.
 
 &nbsp;
 
@@ -247,7 +266,18 @@ If you also filter outbound traffic, you need to open the following ports:
   This is where Globus' API servers live in AWS.  Globus Connect Server
   communicates back to Globus during endpoint setup and maintenance.
 
-*Congratulations!*  You now have your firewall configuration ready.
+<i class="fas fa-clipboard-list"></i> For this planning item, you need answers
+to the following questions:
+
+1. Do I need a public IP address for my server?
+
+2. Do I need to put the server behind a network firewall, or can I rely on just
+   the host-based firewall?
+
+3. Which firewall rules will I need to request/implement?
+
+<i class="fas fa-clipboard-check"></i> *Congratulations!*  You now have your
+firewall configuration ready.
 
 &nbsp;
 
@@ -309,7 +339,16 @@ _except for_ files in a home directory that begin with a dot.  All other
 directories (such as `/tmp`) are blocked, due to the deny-by-default nature of
 the path restrictions.
 
-*Congratulations!*  Your access control regime has been defined.
+<i class="fas fa-clipboard-list"></i> For this planning item, you need answers
+to the following questions:
+
+1. Am I OK relying on just the OS for access-control decisions, or do I need to
+   implement more on top of them?
+
+2. If I want to set path restrictions, what will they be?
+
+<i class="fas fa-clipboard-check"></i> *Congratulations!*  Your access control
+regime has been defined.
 
 &nbsp;
 
