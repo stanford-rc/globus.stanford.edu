@@ -251,6 +251,68 @@ If you also filter outbound traffic, you need to open the following ports:
 
 &nbsp;
 
+# Access Control
+
+Using the authentication method (which you should have already chosen), Globus
+translates a person's Globus identity into a local account.  Once the local
+account has been identified, two methods are used to check for access:
+
+* *The OS*: Globus respects the Operating System's fine-grained access-control
+  infrastructure.
+
+* *Globus Path Restrictions*: You may specify a simple list of paths that are
+  read-only, read-write, or blocked for all users.
+
+In order for a user to read or write at a path, **both OS and Globus
+restrictions must allow it**.
+
+Globus path restrictions are defined as a string of comma-separated
+permissions, which may be empty.  If no Globus path restrictions are set (if
+the string is empty), then everything is allowed, and access will depend solely
+on the Operating System's access-control.
+
+On the other hand, if you define _any_ path restrictions, then Globus' path
+restrictions become _deny-by-default_.
+
+You either need to decide to not implement any path restrictions, or you need
+to decide what paths a Globus user will be allowed to read or write to.
+
+Here is an example path restriction string:
+
+`N/etc,N/usr,R/,N/tmp,N/var,RW/home`
+
+Each restriction item has three components:
+
+* An `R` (for "read-only"), `RW` (read-write), or `N` (explicit deny).
+
+* A tilde (`~`), or a forward-slash (`/`); indicating that the restriction is
+  relative to the authenticated user's home directory, or the root directory,
+  respectively.
+
+* Optionally, a more-specific path, which can contain `*` (for simple wildcard
+  matching).
+
+Permissions on directories automatically inherit the permissions of the parent
+directory.  The order in which entries appear does not matter.
+
+In the above example, Globus will allow read-write access to home directories;
+and read-only access to all other directories *except for* `/etc`, `/usr`,
+`/tmp`, and `/var`; access to those is completely blocked.
+
+Here is another example path restriction string:
+
+`RW/scratch,RW/oak/stanford,N~/.*,RW~`
+
+In this example, read-write access is allowed to `/scratch` and
+`/oak/stanford`.  Read-write access is also allowed to home directories,
+_except for_ files in a home directory that begin with a dot.  All other
+directories (such as `/tmp`) are blocked, due to the deny-by-default nature of
+the path restrictions.
+
+*Congratulations!*  Your access control regime has been defined.
+
+&nbsp;
+
 Once packages are installed, you are ready for [initial configuration]({{
 "server/configure.html" | relative_url }})!
 

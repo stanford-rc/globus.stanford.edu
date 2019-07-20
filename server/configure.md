@@ -215,7 +215,7 @@ access to Low Risk data.
    content="If encryption is disabled, and you decide to enable it, then make sure no transfers are running.  If any transfers to/from this endpoint exist (even if they are paused), enabling encryption will cause those transfers to fail."
 %}
 
-### Path Restrictions
+### GridFTP: Path Restrictions
 
 This part configures the paths that authenticated users are allowed to access
 via Globus.
@@ -224,55 +224,12 @@ via Globus.
 RestrictPaths =
 ```
 
-By default, Globus does not enforce any restrictions, which means OS filesystem
-permissions govern what an authenticated Globus user can access.  For example,
-if an authenticated Globus user will not be able to access `/root`, because
-local system permissions will prevent it.
+This is where you enter the Globus path-restriction string you devised during
+[pre-installation planning]({{ "/server/install.html" | relative_url }}).  If
+you do not want to specify any Globus path restrictions, this field should be
+commented out.
 
-`RestrictPaths`, when not empty, takes a comma-separated list of restrictions.
-Each restriction item has three components:
-
-* An `R` (for "read-only"), `RW` (read-write), or `N` (explicit deny).
-
-* A tilde (`~`), or a forward-slash (`/`); indicating that the restriction is
-  relative to the authenticated user's home directory, or the root directory,
-  respectively.
-
-* Optionally, a more-specific path, which can contain `*` (for simple wildcard
-  matching).
-
-Permissions on directories automatically inherit the permissions of the parent
-directory.  The order in which entries appear does not matter; 
-
-{% include info-box.html
-   header="Disabled, or deny-by-default"
-   content="If this setting has <em>any</em> entries, and the root directory is not explicitly made read-only or read-write, then a `N/` entry will automatically be added to the list.  That makes RestrictPaths, when active, deny-by-default."
-%}
-
-Here are some example entries:
-
-* `N/etc,N/usr,R/,N/tmp,N/var,RW/home`
-
-  Block access to the `/etc`, `/usr`, `/tmp`, and `/var` directories, but allow
-  read-write access to files in `/home`, and read-only access to everything
-  else.
-
-  (Remember, entries can appear in any order.)
-
-* `RW/scratch,RW/oak/stanford,N~/.*,RW~`
-
-  The above example sets the following permissions:
-
-  * Read-write to everything in `/scratch` and `/oak/stanford`.
-
-  * Files and directories that are in the user's home directory, but which
-    start with a dot, are not accessible.
-
-  * Read-write for everything else in the user's home directory.
-
-  (Remember, only the `*` is used as a wildcard.  The dot is a plain old dot.)
-
-Note that in all of these examples, the OS permissions still apply.
+Remember that in all cases, the OS permissions still apply.
 
 ### GridFTP: Sharing
 
