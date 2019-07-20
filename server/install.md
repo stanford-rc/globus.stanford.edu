@@ -35,12 +35,6 @@ questions:
 
 This page will help you to answer each of those questions.
 
-{% include info-box.html
-   header="IPv6 Support"
-   icon="globe"
-   content="At this time, Globus does not use IPv6.  All IP addresses should be entered using IPv4."
-%}
-
 # Choosing a Globus ID
 
 People may not own Globus Connect Server endpoints directly.  Globus Connect
@@ -175,30 +169,29 @@ next, as you get a public IP address and perform firewall configuration.
 
 &nbsp;
 
-## Firewall Configuration
+# IP and Firewall Configuration
+
+Globus Connect Server requires a public IP address.  This is because Globus—and
+any non-Stanford endpoints—will need to connect to your server.  If your chosen
+server does not have a public IP address, you will need to allocate one first.
 
 {% include info-box.html
-   header="Do you use firewalld or ufw?"
-   content="If you use firewalld or ufw, go to our <a href=\"firewalld.html\">firewalld page</a> or our <a href=\"ufw.html\">ufw page</a> for an easier way to configure your host firewall."
+   header="IPv6 Support"
+   icon="globe"
+   content="At this time, Globus does not use IPv6.  You are free to request and configure an IPv6 address on the server, but all IP addresses should be entered in Globus configuration using IPv4."
 %}
 
-Globus Connect Server requires a public IPv4 address, which means your system is
-at least going to be behind a host firewall.  For Globus Connect Server to
-work, certain inbound and outbound ports will need to be opened.
+Globus Connect Server requires a public IPv4 address, which means your IT
+organization may require the server be placed behind a network firewall.  For
+Globus Connect Server to work, certain inbound and outbound ports will need to
+be opened.
 
-If you filter _inbound_ traffic, here is what you will need to open (the zone
-names are for systems behind a network firewall):
-
-{% include info-box.html
-   header="Don't forget the network firewall"
-   icon="exclamation-circle"
-   content="Not only do these ports need to be opened on your server, they need
-   also to be opened on the network firewall.  If you need help, talk to your
-   LNA."
-%}
+If your network firewall filters inbound traffic, here is what you will need to
+allow (the zone names are [netdocs](https://netdocs.stanford.edu/)/Palo Alto
+firewall zone names):
 
 * From `54.237.254.192/29` (in the `untrust` zone), to TCP ports `2811` and
-  `7512`.
+  (in some cases) `7512`.
 
   Port 2811 is used for Globus to issue transfer-related control commands to
   your endpoint.  For example, directory listing, and initiating transfer to
@@ -206,7 +199,8 @@ names are for systems behind a network firewall):
 
   Port 7512 is used for the MyProxy authentication service.  Globus sends
   credentials to MyProxy over this connection, receiving certificates in
-  return.
+  return.  It is required for both the MyProxy and MyProxy OAuth authentication
+  methods.
 
 * From _any IP address, in any zone_, to all TCP and UDP ports from `50000` up
   to and including `51000`.
@@ -216,14 +210,8 @@ names are for systems behind a network firewall):
   TCP, but some legacy transfers may use UDP, so it is helpful to keep that
   open.
 
-  **Please do not change this port range!**  Although Globus does support using
-  a different port range, that can cause problems when exchanging data with a
-  site that also uses a firewall: Their firewall may only be expecting
-  connections to come from—or go to—this port range, and may block
-  everything else.
-
   The "any" zone is used here; in case you have multiple firewall zones in the
-  same vsys, if there are Globus endpoints in those other zones, they will need
+  same vsys, if there are Globus endpoints in those other zones, they may need
   to be able to connect to you.
 
   _If you are in the School of Medicine_, or your network firewall is
@@ -231,20 +219,17 @@ names are for systems behind a network firewall):
   the "ssl application", not the "gridftp application".  If MedIRT have any
   questions, ask them to refer to "SNOW incident INC00282086".
 
-If you use MyProxy OAuth, one more inbound port will be needed:
+If you use MyProxy OAuth authentication method, one more inbound port will be
+needed:
 
 * From _any IP address_ (in the `untrust` zone), to TCP port `443`.
 
-  If you are using the MyProxy OAuth 2.0 server to process user credentials,
-  then this port will need to be open to all of the people who would
-  need to authenticate.
-  
   If only Stanford people will be authenticating, then you _might_ be able to
   get away with limiting this to only campus and VPN IPs (that is, to the "SU
   All Nets" listed in [Stanford Network
   Numbers](https://uit.stanford.edu/guide/lna/network-numbers)).
 
-If you also filter _outbound_ traffic, you need to open the following ports:
+If you also filter outbound traffic, you need to open the following ports:
 
 * To _any IP address, in any zone_, on all TCP and UDP ports from `50000` up to
   and incuding `51000`.
@@ -262,11 +247,9 @@ If you also filter _outbound_ traffic, you need to open the following ports:
   This is where Globus' API servers live in AWS.  Globus Connect Server
   communicates back to Globus during endpoint setup and maintenance.
 
-Once firewall rules have been submitted, you should proceed to get your Globus
-ID activated.
+*Congratulations!*  You now have your firewall configuration ready.
 
 &nbsp;
-
 
 Once packages are installed, you are ready for [initial configuration]({{
 "server/configure.html" | relative_url }})!
