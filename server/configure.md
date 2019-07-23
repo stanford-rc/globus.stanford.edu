@@ -205,6 +205,11 @@ Remember that in all cases, the OS permissions still apply.
 ;; SharingGroupsDeny =
 ```
 
+This is where you enter the Globus sharing settings you worked out during
+[pre-installation planning]({{ "/server/pre-install.html" | relative_url }}).
+If you do not want to restrict paths, users, or groups from sharing, those
+fields should be commented out.
+
 ### GridFTP: Sharing State
 
 ```
