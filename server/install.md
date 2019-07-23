@@ -1,6 +1,6 @@
 ---
 layout:      left-sidebar
-title:       Globus Connect Server Site Prep and Installation
+title:       Globus Connect Server Pre-Installation Planning
 title_line:  false
 description: Instructions on how to prepare your environment for Globus Connect Server.
 ---

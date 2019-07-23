@@ -59,7 +59,7 @@
   items:
     - name: "About Globus Connect Server"
       target: "server"
-    - name: "Site Prep and Installation"
+    - name: "Pre-Installation Planning"
       target: "server/install"
     - name: "Initial Configuration"
       target: "server/configure"
