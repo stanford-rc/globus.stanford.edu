@@ -9,7 +9,7 @@ description: Instructions on how to start configuring Globus Connect Server.
 
 This page explains how to install and perform initial configuration for Globus
 Connect Server.  It assumes that you have already followed the instructions on
-the [Site Prep and Installation]({{ "server/install.html" | relative_url }})
+the [Pre-Installation Planning]({{ "server/pre-install.html" | relative_url }})
 page.  That means…
 
 * Firewall ports—on the network level _and_ on the host—have been opened.
@@ -225,9 +225,9 @@ RestrictPaths =
 ```
 
 This is where you enter the Globus path-restriction string you devised during
-[pre-installation planning]({{ "/server/install.html" | relative_url }}).  If
-you do not want to specify any Globus path restrictions, this field should be
-commented out.
+[pre-installation planning]({{ "/server/pre-install.html" | relative_url }}).
+If you do not want to specify any Globus path restrictions, this field should
+be commented out.
 
 Remember that in all cases, the OS permissions still apply.
 

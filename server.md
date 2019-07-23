@@ -37,7 +37,7 @@ Globus Connect Server requires:
   Even with a single transfer, if configured appropriately, Globus will happily
   saturate a Gigabit or 10 Gigabit link.
 
-Once you have the above items, you should read the [Pre-Installation Planning]({{ "server/install.html" | relative_url }}) guide for information
+Once you have the above items, you should read the [Pre-Installation Planning]({{ "server/pre-install.html" | relative_url }}) guide for information
 on how to prepare your system, and how to install Globus Connect Server.
 
 {% include left-sidebar/transition.md %}

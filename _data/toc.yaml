@@ -60,7 +60,7 @@
     - name: "About Globus Connect Server"
       target: "server"
     - name: "Pre-Installation Planning"
-      target: "server/install"
+      target: "server/pre-install"
     - name: "Initial Configuration"
       target: "server/configure"
     - name: "Authentication and Sharing"
