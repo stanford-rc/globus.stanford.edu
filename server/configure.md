@@ -225,6 +225,12 @@ fields should be commented out.
 When an authenticated user creates a shared endpoint, Globus Connect Server
 needs a place to store information about the shared endpoint.
 
+{% include info-box.html
+   icon="globe"
+   header="No home directory?  Be careful about sharing"
+   content="If users do not have a home directory in your environment, special configuration will be needed if you want to enable sharing.  Continue reading this section for more details."
+%}
+
 This setting supports the use of `$HOME` (referring to the user's home
 directory) and `$USER` (the username of the authenticated user who is creating
 the share).  The path must point to a valid directory, and although the user
