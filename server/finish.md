@@ -7,10 +7,7 @@ description: Finish your Globus Connect Server Installation
 
 # Finishing Configuration
 
-It is now time to finish the endpoint's configuration!  This assumes that you
-have already performed all of the [initial setup]({{ "server/configure.html" |
-relative_url }}), and that you have followed the instructions for your chosen
-[authentication method]({{ "server/auth.html" | relative_url }}).
+It is now time to finish the endpoint's configuration!
 
 To finish your endpoint's configuration, you will need to do some work on the
 server, followed by some work on the Globus web site.

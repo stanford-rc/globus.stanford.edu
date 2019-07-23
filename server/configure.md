@@ -49,15 +49,13 @@ template below:
 {% gist b609c892271fa11fcf0504e07d6ed3f3 %}
 
 If you need additional explanation, continue reading.  Otherwise, you should
-proceed to [choose an authentication method]({{ "server/auth.html" |
-relative_url }}).
+proceed to the end of this page, where you will proceed based on your chosen
+authentication method.
 
 ## Section Explanations
 
 The rest of this page talks about individual sections of the configuration
-presented above.  If the comments in the configuration already make sence, then
-you should feel free to skip this section and [choose an authentication
-method]({{ "server/auth.html" | relative_url }}).
+presented above.
 
 ### Globus
 

@@ -676,7 +676,7 @@ you are still interested!</p>
 
 	{% capture s2 %}
 
-<p>Beyond the documentation on the <a href="{{ "server/auth.html" | relative_url }}" title="Globus Connect Server Authentication and Sharing">Authentication and Sharing</a> page, there is a simple checklist for determining which authentication method to use:</p>
+<p>Beyond the documentation on the <a href="{{ "server/pre-install.html" | relative_url }}" title="Globus Connect Server Pre-Installation Planning">Pre-Installation Planning</a> page, there is a simple checklist for determining which authentication method to use:</p>
 
 <ol>
 
@@ -984,10 +984,7 @@ at the <a href="{{ "server/pre-install.html" | relative_url }}" title="Globus
 Connect Server Pre-Installation Planning">Pre-Installation Planning</a> page
 and go from there.</p>
 
-<p>In the course of installation, you will reach the <em>Sharing</em> section
-of the Globus Connect Server <a href="{{ "server/auth.html" | relative_url }}"
-title="Globus Connect Server Authentication and Sharing">Authentication and
-Sharing</a> page.  That will have the information you need!</p>
+<p>In that section, you will learn about the different sharing capabilities, how to enable them, and how to limit them.  That will have the information you need!</p> 
 
 	{% endcapture %}
   {% include panel.html
@@ -1006,10 +1003,11 @@ the user's home directory, but if users do not have home directories, an
 alternative storage location must be used.</p>
 
 <p>This is a delicate procedure—the layers of permissions are fairly
-complex—but it is doable!  Read more in the <em>Sharing State</em> section of
-the Globus Connect Server <a href="{{ "server/auth.html" | relative_url }}"
-title="Globus Connect Server Authentication and Sharing">Authentication and
-Sharing</a> page.</p>
+complex—but it is doable!  Read more in the <em>GridFTP: Sharing State</em>
+section of the Globus Connect Server
+<a href="{{ "server/configure.html" | relative_url }}"
+title="Globus Connect Server Initial Configuation">Initial Configuration</a>
+page.</p>
 
 	{% endcapture %}
   {% include panel.html
