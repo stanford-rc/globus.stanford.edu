@@ -133,6 +133,12 @@ need to be placed in an initial directory.  This is controlled by the
 _DefaultDirectory_ setting.  The default, `/~/`, means "The user's home
 directory".
 
+{% include info-box.html
+   icon="home"
+   header="No home directory?  Change the endpoint default"
+   content="If users do not have a home directory in your environment, be sure to change the <em>DefaultDirectory</em> setting in your endpoint configuration."
+%}
+
 ### GridFTP
 
 ```
