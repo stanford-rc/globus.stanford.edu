@@ -352,6 +352,105 @@ regime has been defined.
 
 &nbsp;
 
+# Sharing
+
+Sharing is one of the most powerful features provided by Globus Connect Server
+endpoints, and is one of the features enabled by our campus-wide subscription.
+
+Sharing allows an authenticated user to create a new endpoint (a "shared
+endpoint").  In this new endpoint, the root directory is a directory that the
+authenticated user can access through the Globus Connect Server endpoint.  The
+owner of the shared endpoint (the authenticated user) sees this as a
+directory on your Globus Connect Server endpoint; to the shared endpoint's
+users, they see the directory as the root of the endpoint.
+
+For example, if you have an endpoint connected to your lab's storage, and you
+want a directory to be accessible by collaborators at other institutions, one
+of your users can create a shared endpoint rooted in that directory.  You can
+give some collaborators read access, and others write access.  Your lab members
+will continue to use the lab's Globus Connect Server endpoint, while your
+collaborators use the new shared endpoint.
+
+Shared endpoints (or parts thereof) can also be public, allowing anyone access
+to a directory you specify, so long as they can log in to Globus.
+
+{% include info-box.html
+   icon="exclamation-triangle"
+   header="Check your privilege(s)"
+   content="The Globus web site makes permissions read-only, unless the user explicitly allows write access.  Before you allow <em>any</em> access, carefully consider who is being allowed access, and to what."
+%}
+
+{% include info-box.html
+   icon="lock"
+   header="Know your risk (level)"
+   content="Make sure that everyone with write access to the shared directory—either through the shared endpoint or through the Globus Connect Server endpoint—is aware of the Risk Level of the data."
+%}
+
+When deciding to enable sharing, you must decide if you want to restrict which
+paths may be shared.
+
+Sharing path restrictions are expressed as a Globus path restriction string.
+By default, any paths which an authenticated user may access may be shared.
+However, you may set limits on which directories may be shared.  In addition,
+you may decide if the shared endpoint's users may only have read access (even
+if the shared endpoint owner wanted to grant write access).
+
+{% include info-box.html
+   header="Other restrictions still apply"
+   content="The sharing restrictions does not override the Globus path restrictions string, nor does it override OS permissions.  For example, if you allow write access to a path for sharing, but that path is restricted to read-only elsewhere, then only read-only sharing will be possible."
+%}
+
+In addition to restricting the sharing of paths, you may also control which
+local users and groups are allowed to share.
+
+To determine if a user is allowed to create a shared endpoint, Globus Connect
+Server executes the following steps ('user' and 'group' refer to local users
+and groups on the system; read down the list until you get a "blocked" or
+"allowed" result):
+
+1. If a user is explicitly denied, then the user is blocked from sharing.  If
+   not, then continue evaluation.
+
+2. If a user a member of a group that is explicitly denied, then the user is
+   blocked from sharing.  If not, then continue evaluation.
+
+3. If there are no explicitly-allowed users or groups, then the user is allowed
+   to share.  Otherwise, continue evaluation.
+
+4. If the user is explicitly allowed, then the user is allowed to share.  If
+   not, then continue evalation.
+
+5. If the user is a member of a group that is explicitly allowed,
+   then the user is allowed to share.  If not, then continue evalation.
+
+6. The user is blocked from sharing.
+
+You can also think about it in terms of "deny-by-default" and
+"allow-by-default":
+
+* Anyone who is explcitly denied is always blocked.
+
+* Sharing is normally allow-by-default.
+
+* If _anyone_ (user or group) is explicitly allowed, then sharing becomes
+  deny-by-default.
+
+<i class="fas fa-clipboard-list"></i> For this planning item, you need answers
+to the following questions:
+
+1. Should sharing be enabled?  If no, skip the remaining questions.
+
+2. What path restrictions should be in place for sharing (if any)?
+
+3. Should I allow only specific local users or groups to share?  If yes, then
+   whom?
+
+4. Should I explicitly block specific local users or groups from sharing?  If
+   yes, then whom?
+
+<i class="fas fa-clipboard-check"></i> *Congratulations!*  You have finished
+defining your sharing regime.
+
 Once packages are installed, you are ready for [initial configuration]({{
 "server/configure.html" | relative_url }})!
 
