@@ -451,8 +451,8 @@ to the following questions:
 <i class="fas fa-clipboard-check"></i> *Congratulations!*  You have finished
 defining your sharing regime.
 
-Once packages are installed, you are ready for [initial configuration]({{
-"server/configure.html" | relative_url }})!
+Once packages are installed, you are ready for [installation]({{
+"server/install.html" | relative_url }})!
 
 {% include left-sidebar/transition.md %}
 

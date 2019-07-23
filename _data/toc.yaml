@@ -61,6 +61,8 @@
       target: "server"
     - name: "Pre-Installation Planning"
       target: "server/pre-install"
+    - name: "Installation"
+      target: "server/install"
     - name: "Initial Configuration"
       target: "server/configure"
     - name: "Authentication and Sharing"
