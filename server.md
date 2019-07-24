@@ -7,9 +7,11 @@ description: Main page for Globus server information.
 
 # Globus Connect Server
 
-<b>Globus Connect Server</b> is the name of the software.  It is
-meant to be installed on multi-user machines, and on machines where multiple
-users have data (even if they can not log in directly).
+<b>Globus Connect Server</b> is the name of the software used to create Globus
+Connect Server endpoints, for allowing multiple users to access their files on
+a server (or the server's connected storage).  It is meant to be installed on
+multi-user machines, and on machines where multiple users have data (even if
+they can not log in directly).
 
 {% include info-box.html
    icon="arrow-right"
