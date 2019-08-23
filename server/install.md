@@ -40,7 +40,7 @@ Ready-made configurations are available for the following firewall managers:
 
 ## File Permissions and Directory Configuration
 
-Before installing software, a note must be included about how Globus works with
+Before installing software, it is worth noting how Globus works with
 local accounts and file permissions.
 
 Local file permissions apply when Globus tries to read or write files from an
