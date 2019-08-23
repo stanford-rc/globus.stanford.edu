@@ -34,6 +34,11 @@ Globus Connect Server requires:
   Even if you are only doing data transfer within Stanford, your system must be
   able to accept unsolicited connections from Globus.
 
+  It is actually possible to use Globus Connect Server with a private IP
+  address (for example, Globus Connect Server running on an EC2 instance).
+  In this case, you must still have access to a public IP address, which is
+  able to NAT the ports Globus needs.
+
 * Preferably, a server that you can dedicate to doing data transfer.
 
   Even with a single transfer, if configured appropriately, Globus will happily
