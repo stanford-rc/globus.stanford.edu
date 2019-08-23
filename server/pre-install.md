@@ -59,7 +59,7 @@ If you have decided to create your own Globus ID, refer to the
 [Globus ID]({{
 "accounts/globusid.html" | relative_url }}) page for instructions.  After
 creating a Globus ID, email <srcc-support@stanford.edu>, asking for your Globus
-ID to be assicated with Stanford's Globus subscription.  In your email, provide
+ID to be associated with Stanford's Globus subscription.  In your email, provide
 the following information:
 
 * Your Globus ID.
