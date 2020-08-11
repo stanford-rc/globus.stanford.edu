@@ -26,160 +26,83 @@ Identities">demoting your non-Stanford identity</a>.
 %}
 
 Once you have a Globus account for your Stanford identity, you may begin to
-configure Globus Connect personal.  This involves creating a Globus Connect
-Personal endpoint, downloading and installing the Globus Connect Personal
-software, and configuring both the software and your new endpoint.
+configure Globus Connect personal.  This downloading and installing the Globus
+Connect Personal software, performing initial setup, and configuring both the
+software and your new collection.
 
 {% include info-box.html
    icon="desktop"
    header="Admin Access Required"
-   content="You will need administrative access to your endpoint in order to install Globus Connect Personal.  If you do not normally have access to install software, talk to your IT contact before you proceed."
+   content="You will need administrative access to your machine in order to install Globus Connect Personal.  If you do not normally have access to install software, talk to your IT contact before you proceed."
 %}
 
 {% include info-box.html
    icon="globe"
    header="Network Access Required"
-   content="Globus Connect Personal needs to be able to make outbound Internet connections.  If Globus Connect Personal reports problems connecting, talk to your IT contact.  Connections must be allowed out to 54.237.254.192/29 port 2223 (for control traffic), and to any Internet host on TCP ports 50000-51000 (for data transfer).  Connections must also be allowed to AWS S3 on TCP port 443 (HTTPS), for the new version check to succeed."
+   content="Globus Connect Personal needs to be able to make outbound Internet connections.  If Globus Connect Personal reports problems connecting, talk to your IT contact.  Connections must be allowed out to 54.237.254.192/29 port 2223 (for control traffic), and to any Internet host on TCP and UDP ports 50000-51000 (for data transfer).  Connections must also be allowed to AWS S3 on TCP port 443 (HTTPS), for the new version check to succeed."
 %}
+
+# Install Globus Connect Personal
+
+Globus have written a set of detailed installation guides explaining how to
+install Globus Connect Personal:
+
+* [Install Globus Connect Personal for **macOS**](https://docs.globus.org/how-to/globus-connect-personal-mac/)
+
+  Only Mac OS X 10.7 and later versions are supported, on Intel CPUs only.
+
+* [Install Globus Connect Personal for **Windows**](https://docs.globus.org/how-to/globus-connect-personal-windows/)
+
+  A recent version of Windows is required.  If your version of Windows no
+  longer receives patches from Microsoft, Globus Connect Personal may not work.
+
+* [Install Globus Connect Personal for **Linux**](https://docs.globus.org/how-to/globus-connect-personal-linux/)
+
+  A recent Linux distribution is required.  Supported distributions include
+  CentOS, Debian, Fedora, Linux Mint, openSUSE, Red Hat, and Ubuntu.  If the
+  distributor has End-Of-Lifed your distribution, Globus Connect Personal may
+  not work.  To use the GUI frontend to Globus Connect Personal, Tcl/Tk must be
+  installed.
+
+The instructions linked above will walk you through downloading Globus Connect
+Personal, installing it, and creating a collection representing your local
+machine.
 
 {% include info-box.html
-   icon="lock-open"
-   header="No High Risk Data"
-   content="Globus may only be used at Stanford with Low or Moderate Risk data.
-   Please do not install this software on systems which have access to any form
-   of High Risk data (including PCI and PHI data)."
-%}
-   
-# Create an Endpoint
-
-To begin, [log in to Globus](https://app.globus.org/) and go to the
-_Endpoints_ page.
-
-{% include hero-image.html
-   src="assets/server/Recent Endpoints.png"
-   alt="The 'Endpoints' page, showing recently-used endpoints."
-   caption-overlay=true
-   caption-header="Globus Endpoints"
-   caption-text=""
-%}
-
-On the **Endpoints** page, click on **Create New Endpoint** (in the upper-right
-of the page), and then click on **Globus Connect Personal**.  You will be taken
-to the endpoint creation page.
-
-{% include hero-image.html
-   src="assets/client/Create Personal Endpoint.png"
-   alt="The 'Add Globus Connect Personal Endpoint' page, with a display name already filled in."
-   caption-overlay=true
-   caption-header="Create Globus Connect Personal Endpoint"
-   caption-text=""
-%}
-
-On the endpoint-creation screen, enter a display name for your endpoint.  This
-will be the name that you see when you look at your endpoint on the Globus web
-site.
-
-{% include info-box.html
-   header="Detail is good!"
-   content="It is preferable to provide detail here, especially when you are trying to find your endpoint in the future."
+   icon="id-card"
+   header="Unexpected Login Prompt?"
+   content="As part of the setup process, a web browser will be launched and you will be asked to log in to Globus.  If you did not expect this, go back to the top of this page and look at the links in the first paragraph."
 %}
 
 {% include info-box.html
    icon="lock-open"
    header="High Assurance Endpoints"
-   content="At this time, Stanford does not have the Globus subscription needed to support High Risk data.  So, please leave the <em>high assurance endpoint</em> option off for now."
+   content="At this time, Stanford does not have the Globus subscription needed to support High Risk data.  So, please leave the <em>high assurance</em> option off for now, and do not install Globus Connect Personal on a system containing High Risk data."
 %}
-
-Once you have decided on a display name, make sure your @stanford.edu email
-address is selected, and click the **Generate Setup Key** button.
-
-{% include hero-image.html
-   src="assets/client/Endpoint Setup Key.png"
-   alt="The 'Add Globus Connect Personal Endpoint' page, showing an endpoint setup key."
-   caption-overlay=true
-   caption-header="Create Globus Connect Personal Endpoint"
-   caption-text="The display name has been entered, and you are now ready to continue to the next step!"
-%}
-
-The Globus web site has created a Globus Connect Personal endpoint for you, and
-now displays a setup key.  This setup key is a one-time code that links the
-Globus Connect Personal software on your laptop, to the Globus Connect Personal
-endpoint on the Globus web site.
-
-You should now download Globus Connect Personal, using one of the links
-provided by Globus.
-
-# Install Globus Connect Personal
-
-The installation procedure for Globus Connect Personal is different for each
-OS:
-
-* [Download Globus Connect Personal for **macOS**](https://downloads.globus.org/globus-connect-personal/v3/mac/stable/globusconnectpersonal-3-latest.dmg)
-
-  Once downloaded, double-click on the disk image (.dmg) file, and then 
-  drag the Globus Connect Personal application into your _Applications_ folder.
-  Mac OS X 10.4 or later is required.  If you are running Mac OS X 10.4 or
-  10.5, only Intel CPUs are supported.
-
-* [Download Globus Connect Personal for **Windows**](https://downloads.globus.org/globus-connect-personal/v3/windows/stable/globusconnectpersonal-3-latest.exe)
-
-  Simply run the downloaded executable (.exe) installer.
-  On Windows, Globus Connect Personal comes delivered as an executable (.exe)
-  installer.  To install, download and run the executable.  A recent version of
-  Windows is required.
-
-* [Download Globus Connect Personal for **Linux**](https://downloads.globus.org/globus-connect-personal/v3/linux/stable/globusconnectpersonal-3-latest.tgz)
-
-  Expand and un-tar the .tgz file, and then run `globusconnect`.  Python 2
-  is required; and to use the GUI, Tcl/Tk 8.4 or later is needed.
-
-Once Globus Connect Personal is installed and started, you will be asked to
-enter your setup key.
-
-{% include hero-image.html
-   src="assets/client/Enter Setup Key.png"
-   alt="Globus Connect Personal, asking for an endpoint setup key."
-   caption-overlay=true
-   caption-header="Globus Connect Personal Setup"
-   caption-text=""
-%}
-
-Enter the setup key that was generated on the Globus web site.  If your key is
-correct, the Setup window will close, and Globus will start waiting for
-instructions.  The Globus icon <img src="{{ "assets/client/Toolbar Icon.png" |
-relative_url }}" alt="" /> will appear in the toolbar.
-
-{% include info-box.html
-   icon="arrow-alt-circle-up"
-   header="Keep the box checked"
-   content="From time to time, Globus releases software updates.  By default, Globus Connect Personal will check for updates, and let you know when new software is available.  Please do not disable the update check!"
-%}
-
-You should now go back to the Globus web site, where you will finish
-configuring your endpoint.
 
 # Configure your Endpoint
 
-While you have been installing the Globus Connect Personal software, the web
-site has been continuing to show your setup key:
+At the end of the setup, you were shown a _Setup Successful_ screen, with a
+link to "show collection details".  Click on that link.
 
 {% include hero-image.html
-   src="assets/client/Endpoint Setup Key.png"
-   alt="The 'Add Globus Connect Personal Endpoint' page, showing an endpoint setup key."
+   src="assets/client/Setup Complete.png"
+   alt="The Globus Connect Personal setup screen, showing a successful setup."
    caption-overlay=true
-   caption-header="Create Globus Connect Personal Endpoint"
-   caption-text="Notice how the endpoint's name is a clickable link…"
+   caption-header="Successful Globus Connect Personal installation"
+   caption-text="Clicking 'show collection details' will allow you to view the collection you just created."
 %}
 
-At the time the setup key was generated, Globus created an endpoint for you.
-To view the endpoint's information, click on your endpoint's name, which
-appears inside the green box.
+When you click on the link, you will be taken to your collection's information
+page.  The only things filled in will be the name and (optionally) the
+description you entered during initial setup, as well as your Globus identity
+(as the owner of the collection).
 
 {% include hero-image.html
    src="assets/client/New Endpoint Overview.png"
-   alt="The 'Add Globus Connect Personal Endpoint' page, showing an endpoint setup key."
+   alt="The collection overview screen, showing a newly-created personal collection."
    caption-overlay=true
-   caption-header="Create Globus Connect Personal Endpoint"
+   caption-header="A New Personal Collection"
    caption-text="The display name has been entered, and you are now ready to continue to the next step!"
 %}
 
@@ -192,17 +115,17 @@ Most of the fields are empty, and a few should be filled in.  Click on the
   _Department_ to be the name of your Group (such as your Lab), your
   Department, or your School.
 
-* If your endpoint has access to Moderate Risk data, _Force encryption_ must be
+* If your machine has access to Moderate Risk data, _Force encryption_ must be
   set to `Yes`.  Otherwise, the setting is is optional.
 
 Once you save changes, then configuration is complete!  **Congratulations!**
 
-At this time, your Globus Connect Personal endpoint is configured to provide
+At this time, your Globus Connect Personal collection is configured to provide
 access only to you, and only to files that live in your home directory.
 
 If you would like Globus Connect Personal to access other parts of your system,
 read on.  If you would like to give other people access to files on your
-endpoint, first give Globus Connect Personal access to those directories, and
+machine, first give Globus Connect Personal access to those directories, and
 then [enable Globus Plus]({{ "client/plus.html" | relative_url }}).
 
 # Add Allowed Paths
@@ -273,9 +196,9 @@ In the above configuration, Globus will allow write access to all of the `Dropbo
 directory, _except_ for the `X` directory, which will be kept read-only.
 
 That's it!  You now have Globus Connect Personal fully configured.  You can now
-make transfers from—and, if your allowed write access, _to_—your endpoint!
+make transfers from—and, if your allowed write access, _to_—your collection!
 
-If you would like to share files from your endpoint with other people, you
+If you would like to share files from your collection with other people, you
 should now proceed to [enable Globus Plus]({{ "client/plus.html" | relative_url
 }}).
 
