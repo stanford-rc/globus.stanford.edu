@@ -25,7 +25,9 @@ This depends on your OS:
 
   * If you're using Homebrew, run `brew install ruby`.
 
-  * If you're using MacPorts, run `sudo port install rb25-bundler`.
+  * If you're using MacPorts, run `sudo port install ruby31`.
+    If you previously had `rb25-bundler` installed, you can uninstall both it
+    and `ruby25`.
 
 * **On Linux**, install the `bundler` package.
 
@@ -39,24 +41,28 @@ _If you already have the repository checked out, do a "git pull" to update it._
 
 ## Step 3: Get the dependencies
 
-In your Terminal, `cd` to the root of the repositry.  Then, run `bundle install
---path vendor/bundler`.  This will download and install all of the necessary
-Ruby software.
+In your Terminal, `cd` to the root of the repositry.  Then, run `bundle config
+set --local path 'vendor/bundle'`.  That will set the local path where Ruby
+dependencies will be installed.
 
-NOTE: If you are using MacPorts, the command is `bundle-2.5 install --path
-vendor/bundle`.
+NOTE: If you are using MacPorts, the command is `bundle3.1 install`.  You
+should use `bundle3.1` anytime you see `bundle`.
+
+Then, run `bundle install`.  This will download and install all of the
+necessary Ruby software.
+
+NOTE: If you are updating a local copy that already had dependencies installed,
+you can run `bundle update` instead of `bundle install`.
 
 The software it downloads will be installed to the local Git directory, in a
 way that will not interact with the rest of the software on your computer.
-
-_You will only need to do this once._
 
 ## Step 4: Run Jekyll
 
 In your Terminal, `cd` to the root of the repository.  Then, run `bundle exec
 jekyll serve`.  This will run Jekyll, which will build the site.
 
-NOTE: If you are using MacPorts, the command is `bundle-2.5 exec jekyll serve`.
+NOTE: If you are using MacPorts, the command is `bundle3.1 exec jekyll serve`.
 
 Once the static HTML has been built, Jekyll will start a local web server.
 Launch your web browser, and go to the URL provided by Jekyll.  There's the
