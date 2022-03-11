@@ -5,7 +5,6 @@ _site
 .bundle
 .jekyll-metadata
 vendor
-Gemfile.lock
 
 # Ignore editor files
 *.swp
