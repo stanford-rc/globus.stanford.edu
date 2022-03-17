@@ -2,9 +2,7 @@
 
 This is the source code for the Globus @ Stanford web site!
 
-Anything pushed to the `main` branch will go live at [https://stanford-rc.github.io/globus.stanford.edu/](https://stanford-rc.github.io/globus.stanford.edu/).
-
-NOTE: Eventually, this will probably end up being globus.stanford.edu.
+Anything pushed to the `main` branch will go live at [https://globus.stanford.edu/](https://globus.stanford.edu/).
 
 This site uses the [Jekyll](https://jekyllrb.com) template engine.  We do that
 because that is what GitHub Pages uses, and we are using GitHub Pages to
