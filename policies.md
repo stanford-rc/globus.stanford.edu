@@ -133,12 +133,15 @@ not been evaluated for handling data rated as High Risk.  As always, it is up
 to the data owners to determine the [Risk
 Classification](http://dataclass.stanford.edu/) for their data. 
 
-Globus Connect Server and Globus Connect Personal are licensed under the terms
-described on the [Globus Software Agreement
-page](https://www.globus.org/legal/software-license).
+Globus Connect Server and Globus Connect Personal services are made available
+to us under the [Globus Terms of Service](https://www.globus.org/legal/terms),
+and the Globus Customer Agreement negotiated between the University of Chicago
+and Stanford on March 1, 2022.
 
-There may be other legal terms from Globus; you can see the complete list in
-the [Globus Legal page](https://www.globus.org/legal).
+The Globus Connect Server and Globus Connect Personal software—and included
+components—are licensed under the terms listed on the [Globus Software
+Agreement](https://www.globus.org/legal/software-license) page.
+
 
 This web site is hosted on GitHub Pages, which has its own [terms of
 service](https://help.github.com/articles/github-terms-of-service/) and
