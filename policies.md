@@ -142,6 +142,9 @@ The Globus Connect Server and Globus Connect Personal software—and included
 components—are licensed under the terms listed on the [Globus Software
 Agreement](https://www.globus.org/legal/software-license) page.
 
+When you log in to Globus, your login is processed through
+[CILogon](https://www.cilogon.org), whose [Privacy
+Policy](https://www.cilogon.org/privacy) applies.
 
 This web site is hosted on GitHub Pages, which has its own [terms of
 service](https://help.github.com/articles/github-terms-of-service/) and
