@@ -30,6 +30,8 @@
   target: "client"
 - name: "Server"
   target: "server"
+- name: "Cloud"
+  target: "cloud"
 - name: "Help & About"
   dropdown:
     - name: "About Globus"
