@@ -43,8 +43,8 @@ In your Terminal, `cd` to the root of the repositry.  Then, run `bundle config
 set --local path 'vendor/bundle'`.  That will set the local path where Ruby
 dependencies will be installed.
 
-NOTE: If you are using MacPorts, the command is `bundle3.1 install`.  You
-should use `bundle3.1` anytime you see `bundle`.
+NOTE: If you are using MacPorts, the command is `bundle3.1 config set --local
+path 'vendor/bundle'`.  You should use `bundle3.1` anytime you see `bundle`.
 
 Then, run `bundle install`.  This will download and install all of the
 necessary Ruby software.
