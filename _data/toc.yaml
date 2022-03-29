@@ -54,6 +54,14 @@
     - name: "Enable Globus Plus"
       target: "client/plus"
 
+- id: "cloud"
+  header: "Globus & the Cloud"
+  items:
+    - name: "General Information"
+      target: "cloud"
+    - name: "Amazon S3 Details"
+      target: "cloud/s3"
+
 - id: "server"
   header: "Globus Connect Server"
   items:
