@@ -65,6 +65,8 @@ upload objects (which includes managing multi-part uploads), and (optionally)
 delete objects.  Globus' documentation [has an example IAM
 Policy](https://docs.globus.org/premium-storage-connectors/v5.4/aws-s3/#permissions-anchor).
 
+[Go here for detailed information on S3 permissions for Globus]({{ "cloud/s3.html" | absolute_url }}).
+
 Globus for Amazon S3 supports working with buckets in other accounts
 (cross-account access), as long as access is granted directly to your IAM User.
 Access via IAM Roles is _not_ supported.  *Both* you *and* the account owner
