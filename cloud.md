@@ -1,5 +1,5 @@
 ---
-layout:      wide
+layout:      left-sidebar
 title:       Globus and the Cloud
 title_line:  true
 description: Stanford has licensed various cloud add-ons for Globus, described here.
@@ -225,3 +225,7 @@ know](mailto:srcc-support@stanford.edu).
 You will need to do a certain amount of setup work before accessing Wasabi
 through Globus.  [Contact us](mailto:srcc-support@stanford.edu) for more
 information!
+
+{% include left-sidebar/transition.md %}
+
+{% include toc.html id="cloud" %}
