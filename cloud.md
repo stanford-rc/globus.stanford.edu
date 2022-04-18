@@ -43,18 +43,6 @@ in the future.  If you run into problems accessing it, check the announcements
    raw=collection-under-construction
 %}
 
-{% include info-box.html
-   icon="stream"
-   header="Custom Metadata & Permissions Not Supported"
-   content="Globus does not copy or set any custom tags, metadata, versions (other than the latest), ACLs, or additional checksum algorithms from objects it transfers.  Uploaded objects inherit bucket-wide settings and will use the bucket's default storage class and encryption."
-%}
-
-{% include info-box.html
-   icon="folder-open"
-   header="Empty Folders Not Supported"
-   content="Amazon S3 does not support empty folders.  If you try to transfer an empty folder, the transfer will succeed but no folder will be created."
-%}
-
 Amazon S3 buckets—in all regions—may be accessed through the [SRCC SCG AWS
 S3](https://app.globus.org/file-manager/collections/6122aa2f-bd3f-4474-b8bf-691c35397822/overview)
 collection.
@@ -75,6 +63,10 @@ must give your IAM User access to the bucket.
 
 Globus does not support Requester-Pays buckets, but this feature has been
 requested.  An announcement will be posted when this feature is available.
+
+Globus also does not support custom metadata/tags, ACLs, and additional checksum
+algorithms.  Only the latest version of objects will be accessed.  Uploaded
+objects will be placed into the S3 Standard storage class.
 
 # Stanford Box
 
