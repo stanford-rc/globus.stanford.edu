@@ -59,13 +59,14 @@ Amazon S3 buckets—in all regions—may be accessed through the [SRCC SCG AWS
 S3](https://app.globus.org/file-manager/collections/6122aa2f-bd3f-4474-b8bf-691c35397822/overview)
 collection.
 
+[Go here for detailed information on how to use Globus with Amazon S3]({{ "cloud/s3.html" | absolute_url }}).
+
 Using Globus with Amazon S3 requires an IAM User with appropriate permissions
 to list buckets, list objects within buckets, download objects, (optionally)
 upload objects (which includes managing multi-part uploads), and (optionally)
 delete objects.  Globus' documentation [has an example IAM
-Policy](https://docs.globus.org/premium-storage-connectors/v5.4/aws-s3/#permissions-anchor).
-
-[Go here for detailed information on S3 permissions for Globus]({{ "cloud/s3.html" | absolute_url }}).
+Policy](https://docs.globus.org/premium-storage-connectors/v5.4/aws-s3/#permissions-anchor),
+or [see the step-by-step instructions]({{ "cloud/s3.html" | absolute_url }}).
 
 Globus for Amazon S3 supports working with buckets in other accounts
 (cross-account access), as long as access is granted directly to your IAM User.
