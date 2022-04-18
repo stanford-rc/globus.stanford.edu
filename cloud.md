@@ -72,8 +72,6 @@ Globus for Amazon S3 supports working with buckets in other accounts
 Access via IAM Roles is _not_ supported.  *Both* you *and* the account owner
 must give your IAM User access to the bucket.
 
-More details on how to use Globus for S3 will be posted soon!
-
 Globus does not support Requester-Pays buckets, but this feature has been
 requested.  An announcement will be posted when this feature is available.
 
