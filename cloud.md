@@ -202,7 +202,7 @@ Team Drives), and to folders & items Shared With You.
 Globus does not support setting or copying custom permissions.  Uploaded items
 will inherit the permissions of the parent folder.
 
-Globus is also not able to copy Drive Shortcuts.  Drive Shortcuts are syimilar
+Globus is also not able to copy Drive Shortcuts.  Drive Shortcuts are similar
 to shortcuts on Windows or aliases on macOS.  At this time, Globus is not able
 to copy or follow Shortcuts; attempting to copy a Shortcut will create an empty
 file at the destination, and generate a checksum (integrity-checking) error.
