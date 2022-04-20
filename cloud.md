@@ -149,17 +149,24 @@ Google Drive may be accessed through the [Stanford Google Drive
 (DEV)](https://app.globus.org/file-manager/collections/e1c8858b-d5aa-4e36-b97e-95913047ec2b/overview?back=endpoints)
 collection.
 
-{% include info-box.html
-   icon="stream"
-   header="Custom Metadata & Permissions Not Supported"
-   content="Globus does not copy any permissions from items it downloads.  Uploaded items will inherit the permissions of the parent folder."
-%}
+When using Globus with Google Drive, Globus will act on your behalf.  You will
+be able to access files on your own Drive, on Shared Drives (formerly known as
+Team Drives), and to folders & items Shared With You.
 
-{% include info-box.html
-   icon="unlink"
-   header="Google-specific files can not be transferred"
-   content="Globus is not able to properly upload or download 'files' which are created by Google products, such as Docs, Sheets, Slides, etc..  Attempting to transfer such items will result in an error."
-%}
+Globus does not support setting or copying custom permissions.  Uploaded items
+will inherit the permissions of the parent folder.
+
+Globus is also not able to copy Drive Shortcuts.  Drive Shortcuts are syimilar
+to shortcuts on Windows or aliases on macOS.  At this time, Globus is not able
+to copy or follow Shortcuts; attempting to copy a Shortcut will create an empty
+file at the destination, and generate a checksum (integrity-checking) error.
+Support for Shortcuts is currently on Globus' backlog for implementation.
+
+Finally, Globus is not able to copy 'files' which are created by Google
+products, such as Docs, Sheets, Slides, etc..  Google does not actually store
+data for Google products in Drive; instead, Drive holds a 'pointer' to the
+specific Google product.  Attempting to copy these 'files' will generate an
+error.
 
 In order to access Google Drive, you will need to provide two sets of consents:
 
