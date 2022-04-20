@@ -134,10 +134,6 @@ us](mailto:srcc-support@stanford.edu) for more information!
 
 # Google Drive
 
-Google Drive may be accessed through the [Stanford Google Drive
-(DEV)](https://app.globus.org/file-manager/collections/e1c8858b-d5aa-4e36-b97e-95913047ec2b/overview?back=endpoints)
-collection.
-
 {% include info-box.html
    icon="wrench"
    raw=collection-under-construction
@@ -148,6 +144,10 @@ collection.
    header="No High Risk Access allowed"
    content="Some users are able to able to store High Risk data (including PHI) in Google Drive.  If you are part of this group, you are not allowed to use Globus to access that data."
 %}
+
+Google Drive may be accessed through the [Stanford Google Drive
+(DEV)](https://app.globus.org/file-manager/collections/e1c8858b-d5aa-4e36-b97e-95913047ec2b/overview?back=endpoints)
+collection.
 
 {% include info-box.html
    icon="stream"
