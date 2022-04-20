@@ -17,6 +17,7 @@ name for more information.
 | Cloud Service | Supported & Licensed? |
 |---------------|-----------------------|
 | <a href="#amazon-s3">Amazon S3</a> | ✅ |
+| <a href="#s3-compatible-storage">S3-compatible storage</a> | ✅ |
 | <a href="#stanford-box">Stanford Box</a> | ✅ |
 | <a href="#stanford-box">Medicine Box</a> | ❌ |
 | <a href="#ceph">Ceph</a> | ❌ |
@@ -67,6 +68,51 @@ requested.  An announcement will be posted when this feature is available.
 Globus also does not support custom metadata/tags, ACLs, and additional checksum
 algorithms.  Only the latest version of objects will be accessed.  Uploaded
 objects will be placed into the S3 Standard storage class.
+
+# S3-compatible storage
+
+The Globus S3 connector supports more than just Amazon S3.  If you run a
+storage platform that supports the S3 API, the Globus-for-S3 add-on may support
+it.
+
+As of this page's last update, besides Amazon S3, we are aware of the Globus S3
+connector being used with Dell EMC ECS on-prem, and with Wasabi (as mentioned
+later on this page).
+
+If you would like to use the Globus S3 connector with your own storage
+platform, you may do so!  You will need to set up a [Globus Connect Server v5
+endpoint](https://docs.globus.org/globus-connect-server/v5.4/), along with [an
+S3 storage
+gateway](https://docs.globus.org/premium-storage-connectors/v5.4/aws-s3/) and
+at least one mapped collection.
+
+For compability across multiple products, the Globus S3 connector uses a
+limited subset of the S3 REST API.  Your storage platform will need to support
+the following aspects and operations:
+
+* For authentication, v4 signatures are used with Access Keys and Secret Keys.
+
+* Globus uses path-style for bucket access, instead of virtual-host style.
+
+* Globus makes a `GetBucketLocation` call before anything else, to identify
+  which Amazon S3 region's endpoint should be used.  As long as your storage
+  platform returns something (instead of an error), Globus will ignore
+  responses it cannot parse.  If your platform has multiple instances or
+  endpoints, you may need a separate storage gateway for each.
+
+* The `ListObjects` and `GetObject` calls are used for directory listings and
+  downloads, respectively.  Globus follows the convention of using the
+  forward-slash character as a 'directory' separator.
+
+* Uploading objects use the following operations: `PutObject`,
+  `ListMultipartUploads`, `ListParts`, `CreateMultipartUpload`,
+  `CompleteMultipartUpload`, `UploadPart`, and `AbortMultipartUpload`.
+
+* Deleting objects uses the `DeleteObject` operation.
+
+Unfortunately, SRCC are unable to host or administer a Globus endpoint for your
+storage connector, but you may still [contact
+us](mailto:srcc-support@stanford.edu) for general advice.
 
 # Stanford Box
 
