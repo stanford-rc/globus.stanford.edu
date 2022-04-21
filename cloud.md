@@ -207,6 +207,8 @@ Google Drive may be accessed through the [Stanford Google Drive
 (DEV)](https://app.globus.org/file-manager/collections/e1c8858b-d5aa-4e36-b97e-95913047ec2b/overview?back=endpoints)
 collection.
 
+[Go here for detailed information on how to use Globus with Google Drive]({{ "cloud/drive.html" | absolute_url }}).
+
 When using Globus with Google Drive, Globus will act on your behalf.  You will
 be able to access files on your own Drive, on Shared Drives (formerly known as
 Team Drives), and to folders & items Shared With You.
