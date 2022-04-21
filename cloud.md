@@ -163,6 +163,12 @@ us](mailto:srcc-support@stanford.edu) to learn about the costs involved.
 %}
 
 {% include info-box.html
+   icon="id-card"
+   header="Full SUNetID Required"
+   content="To interact with Google services through Stanford, you must have a full or full-sponsored SUNetID.  Therefore, using the Globus Google connector also requires a full (or full-sponsored) SUNetID."
+%}
+
+{% include info-box.html
    icon="biohazard"
    header="No High Risk Access allowed"
    content="Some Google Cloud accounts are allowed to store High Risk data (including PHI).  Such accounts are not allowed to use Globus."
@@ -183,6 +189,12 @@ us](mailto:srcc-support@stanford.edu) for more information!
 {% include info-box.html
    icon="wrench"
    raw=collection-under-construction
+%}
+
+{% include info-box.html
+   icon="id-card"
+   header="Full SUNetID Required"
+   content="To interact with Google services through Stanford, you must have a full or full-sponsored SUNetID.  Therefore, using the Globus Google connector also requires a full (or full-sponsored) SUNetID."
 %}
 
 {% include info-box.html
