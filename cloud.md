@@ -228,23 +228,6 @@ data for Google products in Drive; instead, Drive holds a 'pointer' to the
 specific Google product.  Attempting to copy these 'files' will generate an
 error.
 
-In order to access Google Drive, you will need to provide two sets of consents:
-
-• You will need to provide the standard concent for the Globus web site to
-  access the collection on your behalf.
-
-• You will also be sent to Google to log in and give the collection permission
-  to access Google Drive on your behalf.
-
-Once fully authorized, you will be able to access both your own Drive and the
-Shared Drives to which you have access (through Globus uses the older "Team
-Drive" terminology).  Quick access is also provided to starred items and to
-items which have been shared with you.
-
-When uploading, Globus will respect the permissions set on the destination; if
-you do not have write permission, uploads will fail with a "Permission Denied"
-error.
-
 # iRODS
 
 At this time, Stanford does not have a license for the iRODS community add-on.
