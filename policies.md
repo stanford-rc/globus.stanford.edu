@@ -54,7 +54,7 @@ available:
   for campus use.  If your group is interested, please [reach out]({{
   "support.html" | absolute_url }})!
 
-Our subscription expires on May 25, 2022.  Continued funding by the University
+Our subscription expires on May 25, 2023.  Continued funding by the University
 will depend on us demonstrating use of, and continued need for, the service.
 So, please [keep in touch]({{ "support.html" | absolute_url }}).
 
