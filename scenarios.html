@@ -1158,12 +1158,15 @@ endpoint</a> to test transfer performance to your storage.</p>
 
     {% capture p2 %}
 
-<p>At this time, Stanford pays for a <a href="https://www.globus.org/subscriptions" title="Globus Subscriptions">Globus Standard subscription</a>.</p>
+<p>At this time, Stanford pays for a <a href="https://www.globus.org/subscriptions"
+title="Globus Subscriptions">Globus Standard subscription</a>, and the
+following <a href="https://www.globus.org/connectors" title="Premium Storage
+Connectors">Premium Storage Connectors</a>: Box, Google Cloud Storage, Google
+Drive, and S3.</p>
 
 <p>We have not paid for the High Assurance—which would likely be required for
 transferring with High Risk data—or HIPAA BAA—which would be required for
-transferring PHI—levels.  If you are interested in helping fund the cost,
-please <a href="mailto:srcc-support@stanford.edu">let us know</a>!</p>
+transferring PHI—levels.</p>
 
     {% endcapture %}
 
@@ -1236,19 +1239,15 @@ imposed by your storage space, and your network connection.</p>
 
     {% capture p4 %}
 
-<p>Yes, but it has to be paid for.  The cost is $5000 per year for each
-"connector" (S3, Drive, and GCP are separate connectors).  Once funding is
-identitied, the feature would be turned on for everyone.</p>
-
-<p>If you are interested in helping fund the cost of a connector, please
-<a href="mailto:srcc-support@stanford.edu">let us know</a>!</p>
+<p>Yes, you can!  Check out our <a href="{{ "cloud.html" | relative_url  }}"
+title="Globus and the Cloud">Cloud page</a> to see what we have licensed.</p>
 
     {% endcapture %}
 
   {% include panel.html
      parent="scenario"
      id="p4"
-     scenario="Can I use this with Amazon S3, Google Drive, or GCP Object Store?"
+     scenario="Can I use this with Amazon S3, GCP, or other cloud services?"
      content=p4
   %}
 
