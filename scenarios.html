@@ -30,9 +30,77 @@ Support">Support</a>.</p>
 
 <p><b>Good luck!</b></p>
 
-<h2><a name="accounts">Accounts and Globus ID</a></h3>
-
 <div class="panel-group" id="scenario" role="tablist" aria-multiselectable="true">
+
+  {% capture z1 %}
+
+<p>You are probably here because you've heard about Globus and you want to use
+it for something!</p>
+
+<p>Globus is used to transfer data between two points.  Those two points could
+be a collection of data on a server (such as SCG Lab space), or a personal
+endpoint running on a laptop, or a space in the Cloud.</p>
+
+<p>To get started, you should <a href="{{ "accounts/create.html" | relative_url }}"
+title="Create a Globus Account">create a Globus account</a> by signing in to
+Globus for the first time.  If you have accounts at multiple institutions, you
+should also <a href="{{ "accounts.html" | relative_url }}" title="About Globus
+Accounts">learn about how Globus accounts work</a>, and how to
+<a href="{{ "accounts/link.html" | relative_url }}" title="Link Identities">link
+identies together</a>.</p>
+
+<p>(Here is a side challenge: If you have already registered for <a
+href="https://library.stanford.edu/myorcid" title ="Stanford Libraries: My
+ORCID">your ORCID iD</a>, try linking it to your Stanford Globus identity!)</p>
+
+<p>Now that you have your Globus account, you need to access either the
+collection or the endpoint which has the data you want.
+Every endpoint and collection can be identified either by name, or by unique
+ID.  You can search for both on the <a href="https://app.globus.org/endpoints"
+title="Endpoints">Endpoints search page</a>.  Be careful when searching by
+name, because names are not guaranteed to be unique.
+
+<p>If the source or destination is a server, ask the server administrator for a
+link to the appropriate collection.  (For example, see <a
+href="https://login.scg.stanford.edu/tutorials/data_movement/#globus"
+title="Moving Data to/from SCG: Globus">SCG</a> and <a
+href="https://www.sherlock.stanford.edu/docs/storage/data-transfer/#globus"
+title="Storage on Sherlock: Data Transfer: Globus">Sherlock</a>.)
+If you are the server administrator, you can install <a
+href="https://docs.globus.org/globus-connect-server/" title="Globus Connect
+Server">Globus Connect Server</a> to make your data available.</p>
+
+<p>If the Cloud is one end (or both ends) of the transfer, Stanford supports
+using Globus with a number of cloud providers!  <a
+href="{{ "cloud.html" | relative_url }}" title="Globus and the Cloud">see the
+list of supported cloud services</a>.</p>
+
+<p>If you want to transfer to or from an endpoint (a laptop or desktop), you
+can install <a href="{{ "client.html" | relative_url }}" title="Globus Connect
+Personal">Globus Connect Personal</a>, giving you access to your endpoint's
+storage via Globus.  Globus Connect Personal is smart enough to pause transfers
+when you laptop goes to sleep, and is able to cope with unstable network
+connections.</p>
+
+<p>Once you have identified both ends of your transfer, you can move data!  The
+<a href="https://docs.globus.org/how-to/get-started/#the_file_manager"
+title="How To Log In and Transfer Files with Globus">Globus instructions</a>
+are very helpful here.</p>
+
+  {% endcapture %}
+
+  {% include panel.html
+     parent="scenario"
+     id="z1"
+     scenario="How do I get started?"
+     content=z1
+  %}
+
+<!-- Next item is z2 -->
+
+<p>&nbsp;</p>
+
+<h2><a name="accounts">Accounts and Globus ID</a></h3>
 
   {% capture a1 %}
 
