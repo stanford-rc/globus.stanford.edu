@@ -127,18 +127,17 @@ us](mailto:srcc-support@stanford.edu) for general advice.
    content="Although Stanford has a site license for using the Globus add-on for Box, access to Medicine Box is blocked for security reasons."
 %}
 
-{% include info-box.html
-   icon="stream"
-   header="Custom Metadata & Permissions Not Supported"
-   content="Globus does not copy any custom metadata or permissions from files it downloads.  Uploaded items will inherit the permissions of the parent folder."
-%}
-
 Stanford Box may be accessed through the [Stanford Box
 (DEV)](https://app.globus.org/file-manager/collections/9988335d-9800-47e6-9645-0d2813c4707e/overview)
 collection.
 
+[Go here for detailed information on how to use Globus with Box]({{ "cloud/box.html" | absolute_url }}).
+
 This collection gives you access to your Box files, as well as to folders which
 have been shared with you.
+
+Globus does not copy any custom metadata or permissions from files it
+downloads.  Uploaded items will inherit the permissions of the parent folder.
 
 When uploading, Globus will respect the permissions set on the destination; if
 you do not have write permission, uploads will fail with a "Permission Denied"
