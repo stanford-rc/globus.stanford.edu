@@ -5,16 +5,17 @@ title_line:  false
 description: Globus works with Stanford Box, but with a number of restrictions.
 ---
 
-{% capture collection-under-construction %}
-<h2>Under Construction</h2>
-<p>This collection is still under construction, and is likely going to change
-in the future.  If you run into problems accessing it, check the announcements
-(on the home page) to see if things have changed!</p>
+{% capture globus-ending %}
+<h2>Time is running out…</h2>
+<p>Stanford University Box will be <b>turned off at the end of February</b>.
+Your access to Box, though Globus, will stop working at that time.
+<a href="{{ "2023/02/23/box-deprecation.html" | relative_url }}">Read the announcement</a>.
+</p>
 {% endcapture %}
 
 {% include info-box.html
-   icon="wrench"
-   raw=collection-under-construction
+   icon="clock"
+   raw=globus-ending
 %}
 
 {% include info-box.html
