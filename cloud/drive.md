@@ -5,18 +5,6 @@ title_line:  false
 description: Globus works with Google Drive, but with a number of restrictions.
 ---
 
-{% capture collection-under-construction %}
-<h2>Under Construction</h2>
-<p>This collection is still under construction, and is likely going to change
-in the future.  If you run into problems accessing it, check the announcements
-(on the home page) to see if things have changed!</p>
-{% endcapture %}
-
-{% include info-box.html
-   icon="wrench"
-   raw=collection-under-construction
-%}
-
 {% include info-box.html
    icon="id-card"
    header="Full SUNetID Required"
@@ -26,7 +14,7 @@ in the future.  If you run into problems accessing it, check the announcements
 # Google Drive
 
 Google Drive may be accessed through the [Stanford Google Drive
-(DEV)](https://app.globus.org/file-manager/collections/e1c8858b-d5aa-4e36-b97e-95913047ec2b/overview?back=endpoints)
+](https://app.globus.org/file-manager/collections/e1c8858b-d5aa-4e36-b97e-95913047ec2b/overview?back=endpoints)
 collection.
 
 Before continuing, you will need to do some one-time setup work.  You will need
