@@ -30,9 +30,10 @@ require the use of two-step authentication whenever working with Moderate Risk
 (or higher) data.  The Globus ID does not support two-step authentication on
 its own.  Therefore, when working with Stanford data, you should use one of the
 other methods to identify and authenticate yourself.</p>
-<p>If you are using a Globus ID to create a Globus Connect Server (which is the
-only option available), you must not use the Globus ID for anything else!
-</p>
+<p>You should keep your Globus ID password in an approprite
+<a href="https://uit.stanford.edu/security/password-manager" title="Stanford University IT Password Manager">password manager</a>.</p>
+<p>If you are using a Globus ID to create a Globus Connect Server, you must not
+use the Globus ID for anything else!</p>
 {% endcapture %}
 {% include info-box.html
    icon="lock-open"
