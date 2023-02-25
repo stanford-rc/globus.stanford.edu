@@ -13,18 +13,9 @@ person is identified using the identifier assigned by the institution
 (typically something like "username@university.edu").
 
 If a person does not have an institutional login—or their institution is not
-recognized by Globus—then Globus also accepts three non-institutional
-providers:
+recognized by Globus—then Globus allows people to log in using Google or ORCID.
 
-* *Google*: If you have a Google account (either personally, or through your
-  institution), you may use that.
-
-* *ORCID*: If you have an [ORCID](https://orcid.org), you may use that.
-
-* *United ID*: If you have a [United ID](https://unitedid.org), you may use
-  that.
-
-If a person does not have a login with _any_ of the above providers, then as a
+If even Google and ORCID are not an option, then as a
 last resort a person can create a _Globus ID_.  The Globus ID is an account (a
 username and password) that is only used with Globus services.
 

@@ -16,7 +16,7 @@ the person's _primary identity_.
 %}
 
 {% include info-box.html
-   header="Google, ORCID, United ID"
+   header="Google, ORCID"
    content="If you have an account with one of these services—even if you registered with your personal email address—you can link them.  This is the best way to use your personal email address with Globus."
 %}
 
