@@ -11,8 +11,8 @@ supports having multiple _identites_ per person, with one identity acting as
 the person's _primary identity_.
 
 {% include info-box.html
-   header="Got an XSEDE Allocation?"
-   content="If you have access to any XSEDE resources, you should link your XSEDE account.  All XSEDE clusters use XSEDE accounts for authentication."
+   header="Got an ACCESS Allocation?"
+   content="If you have access to any ACCESS resources, you should link your ACCESS account.  All ACCESS clusters use ACCESS accounts for authentication."
 %}
 
 {% include info-box.html
