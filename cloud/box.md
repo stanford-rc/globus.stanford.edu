@@ -6,15 +6,16 @@ description: Globus works with Stanford Box, but with a number of restrictions.
 ---
 
 {% capture globus-ending %}
-<h2>Time is running out…</h2>
-<p>Stanford University Box will be <b>turned off at the end of February</b>.
-Your access to Box, though Globus, will stop working at that time.
+<h2>Stanford Box has been retired…</h2>
+<p>The <b>Stanford Box service was retired</b> on February 28, 2023.
 <a href="{{ "2023/02/23/box-deprecation.html" | relative_url }}">Read the announcement</a>.
 </p>
+<p>The instructions on this page no longer apply, but the page is being kept
+around, for those who find it via search engine.</p>
 {% endcapture %}
 
 {% include info-box.html
-   icon="clock"
+   icon="info"
    raw=globus-ending
 %}
 

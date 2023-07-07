@@ -18,7 +18,7 @@ name for more information.
 |---------------|-----------------------|
 | <a href="#amazon-s3">Amazon S3</a> | ✅ |
 | <a href="#s3-compatible-storage">S3-compatible storage</a> | ✅ |
-| <a href="#stanford-box">Stanford Box</a> | ✅ |
+| <a href="#stanford-box">Stanford Box</a> | ❌ |
 | <a href="#stanford-box">Medicine Box</a> | ❌ |
 | <a href="#ceph">Ceph</a> | ❌ |
 | <a href="#google-cloud-storage">Google Cloud Storage</a> | ✅ |
@@ -114,27 +114,20 @@ Unfortunately, SRCC are unable to host or administer a Globus endpoint for your
 storage connector, but you may still [contact
 us](mailto:srcc-support@stanford.edu) for general advice.
 
-# Stanford Box
-
-{% include info-box.html
-   icon="wrench"
-   raw=collection-under-construction
-%}
+# Box
 
 {% include info-box.html
    icon="biohazard"
    header="Medicine Box Unavailable"
-   content="Although Stanford has a site license for using the Globus add-on for Box, access to Medicine Box is blocked for security reasons."
+   content="Access to Medicine Box is blocked for security reasons."
 %}
 
-Stanford Box may be accessed through the [Stanford Box
-(DEV)](https://app.globus.org/file-manager/collections/9988335d-9800-47e6-9645-0d2813c4707e/overview)
-collection.
+**The Stanford Box service was retired** on February 28, 2023.  At that time,
+Globus for Box stopped working.  It is no longer possible to access Box through
+Stanford's Globus subscription.
 
-[Go here for detailed information on how to use Globus with Box]({{ "cloud/box.html" | absolute_url }}).
-
-This collection gives you access to your Box files, as well as to folders which
-have been shared with you.
+This collection previously gave you access to your Box files, as well as to
+folders which have been shared with you.
 
 Globus does not copy any custom metadata or permissions from files it
 downloads.  Uploaded items will inherit the permissions of the parent folder.
@@ -262,9 +255,7 @@ created through Stanford University IT are placed into the us-west-1 region by
 default.  If you need access to a different region, [let us
 know](mailto:srcc-support@stanford.edu).
 
-You will need to do a certain amount of setup work before accessing Wasabi
-through Globus.  [Contact us](mailto:srcc-support@stanford.edu) for more
-information!
+[Go here for detailed information on how to use Globus with Wasabi]({{ "cloud/wasabi.html" | absolute_url }}).
 
 {% include left-sidebar/transition.md %}
 
