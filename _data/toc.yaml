@@ -93,7 +93,3 @@
   items:
     - name: "About Globus Connect Server"
       target: "server5"
-    - name: "Site Prep and Installation"
-      target: "server5/install"
-    - name: "GCS 4 to 5 Transition"
-      target: "server5/transition"
