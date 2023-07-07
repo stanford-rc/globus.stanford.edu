@@ -45,8 +45,8 @@ who do not have an institution logon that Globus recognizes, and who also do
 not have a Google account.
 
 {% include info-box.html
-   header="ORCID or United ID?"
-   content="If you do not have a Google account, but you do have an ORCID or United ID (and that ID is linked to your personal email address), then you can link it (instead of creating a Globus ID)."
+   header="Got an ORCID?"
+   content="If you do not have a Google account, but you do have an ORCID (and that ID is linked to your personal email address), then you can link it (instead of creating a Globus ID)."
 %}
 
 Once you are settled in at your new institution, add that institution's login

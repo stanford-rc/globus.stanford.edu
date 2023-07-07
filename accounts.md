@@ -39,8 +39,8 @@ an entire group), and for software leveraging the Globus infrastructure.  It is
 also the last-resort option if you want to link a personal email address.
 
 {% include info-box.html
-   header="Google, ORCID, United ID"
-   content="If you have an account with one of these services—even if you registered with your personal email address—you can link them.  This is preferable to creating a Globus ID."
+   header="Google or ORCID"
+   content="If you have a Google or ORCID account—even if you registered with your personal email address—you can link them.  This is preferable to creating a Globus ID."
 %}
 
 Globus IDs for entities are covered more in the [Globus ID]({{
