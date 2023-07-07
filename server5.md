@@ -14,14 +14,23 @@ Collections*, and can create *Guest Collections* to share with others who do
 not have access.
 
 Globus Connect Server natively supports transferring data to other Globus
-Connect Server collections, as well as to [Globus Connect Personal]({{ "client.html" | relative_url }}) (like the one
-which might be running on your laptop right now).  Globus Connect Server also supports transferring data through a user's web browser,
-though it is not fast.
+Connect Server collections, as well as to [Globus Connect Personal]({{
+"client.html" | relative_url }}) (like the one which might be running on your
+laptop right now).  Globus Connect Server also supports transferring data
+through a user's web browser, though it is not fast.
 
 {% include info-box.html
    icon="wrench"
    header="Under Construction"
-   content="This section is currently under construction.  Not all GCSv5-related pages are published yet.  Once a page's content is finalized, this notice will be removed.  Apologies for the dust!"
+   content="This section is currently under construction.  Not all GCSv5-related pages are published yet.  Once the section's content is finalized, this notice will be removed.  Apologies for the dust!"
+%}
+
+{% include info-box.html
+   icon="lock-open"
+   header="No High Risk Data"
+   content="Globus may only be used at Stanford with Low or Medium Risk data.
+   Please do not install this software on systems which have access to any form
+   of High Risk data (including PCI and PHI data)."
 %}
 
 {% capture gcsv4 %}
@@ -43,25 +52,16 @@ available</a>, though it is not being maintained.</p>
    raw=gcsv4
 %}
 
-New in Globus Connect Server 5 and later, Globus Connect Server takes on the
-role of a *collection provider*.  One instance of Globus Connect Server is able
-to serve 
-
-{% include info-box.html
-   icon="arrow-right"
-   header="Up-To-Date Linux Only"
-   content="Globus Connect Server 5 is only available for the latest version of certain distributions.  The only supported distributions/versions are Debian 9 (Stretch), RHEL/CentOS 7, and Ubuntu 16.04 LTS."
-%}
-
-{% include info-box.html
-   icon="lock-open"
-   header="No High Risk Data"
-   content="Globus may only be used at Stanford with Low or Medium Risk data.
-   Please do not install this software on systems which have access to any form
-   of High Risk data (including PCI and PHI data)."
-%}
-
 Globus Connect Server requires:
+
+* A supported Linux distribution *that still receives vendor support*.
+
+  Globus Connect Server 5 supports running on Debian, Fedora, Red Hat
+  Enterprise Linux 7 through 9 (including derivatives), and Ubuntu.  Support
+  for SuSE is coming soon.
+
+  If you use Red Hat Enterprise Linux (including derivatives), you should
+  expect to pull some packages from EPEL.
 
 * A Public IP address.
 
