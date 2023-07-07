@@ -67,9 +67,9 @@
       target: "cloud/drive"
 
 - id: "server"
-  header: "Globus Connect Server"
+  header: "Globus Connect Server v4"
   items:
-    - name: "About Globus Connect Server"
+    - name: "About Globus Connect Server v4"
       target: "server"
     - name: "Pre-Installation Planning"
       target: "server/pre-install"
