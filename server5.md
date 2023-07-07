@@ -1,29 +1,47 @@
 ---
 layout:      left-sidebar
-title:       Globus Connect Server 5
+title:       Globus Connect Server
 title_line:  false
-description: Main page for Globus server information for versions 5.1 and later.
+description: Main page for Globus server information for versions 5.4 and later.
 ---
 
-# Globus Connect Server 5
-
-{% capture construction %}
-<h2>Under Construction</h2>
-<p>Globus Connect Server 5 is still new, and issues are still being worked out.
-Unless someone in Stanford Research Computing has said that you should use
-Globus Connect Server 5, then please 
-<a href="{{ "server.html" | relative_url }}" title="Globus Connect Server">
-use GCS 4 instead</a>.
-</p>
-{% endcapture %}
-{% include info-box.html
-   icon="wrench"
-   raw=construction
-%}
+# Globus Connect Server
 
 **Globus Connect Server** is software that is meant to be installed on
 multi-user machines, and on machines where multiple users have data (even if
-they can not log in directly).
+they can not log in directly).  Users can access their files through *Mapped
+Collections*, and can create *Guest Collections* to share with others who do
+not have access.
+
+Globus Connect Server natively supports transferring data to other Globus
+Connect Server collections, as well as to [Globus Connect Personal]({{ "client.html" | relative_url }}) (like the one
+which might be running on your laptop right now).  Globus Connect Server also supports transferring data through a user's web browser,
+though it is not fast.
+
+{% include info-box.html
+   icon="wrench"
+   header="Under Construction"
+   content="This section is currently under construction.  Not all GCSv5-related pages are published yet.  Once a page's content is finalized, this notice will be removed.  Apologies for the dust!"
+%}
+
+{% capture gcsv4 %}
+<h2>Looking for Globus Connect Server version 4?</h2>
+
+<p>Globus Connect Server version 4 was deprecated in 2023: It stops receiving
+non-security updates on August 1, and GCSv4 endpoints will stop working
+entirely on December 18.  Refer to the <a href="{{
+"2023/07/07/gcsv4-deprecation.html" | relative_url }}" title="Globus Connect
+Server version 4 Ends in December 2023">news post</a> for more information.</p>
+
+<p>The old Globus @ Stanford documentation <a href="{{ "server.html" |
+relative_url }}" title="Globus Connect Server version 4">is still
+available</a>, though it is not being maintained.</p>
+
+{% endcapture %}
+{% include info-box.html
+   icon="ghost"
+   raw=gcsv4
+%}
 
 New in Globus Connect Server 5 and later, Globus Connect Server takes on the
 role of a *collection provider*.  One instance of Globus Connect Server is able
@@ -48,16 +66,16 @@ Globus Connect Server requires:
 * A Public IP address.
 
   Even if you are only doing data transfer within Stanford, your system must be
-  able to accept unsolicited connections from Globus.
+  able to accept unsolicited connections from Globus HQ, running in the Cloud.
 
 * Preferably, a server that you can dedicate to doing data transfer.
 
   Even with a single transfer, if configured appropriately, Globus will happily
   saturate a Gigabit or 10 Gigabit link.
 
-Once you have the above items, you should read the [Site Prep and
-Installation]({{ "server5/install.html" | relative_url }}) guide for information
-on how to prepare your system, and how to install Globus Connect Server.
+Once you have the above items, you should read the **Terminology Guide**, as
+GCSv5 brings some new terms compared to GCSv4.  After that, you should read the
+**Pre-Installation Planning** guide to prepare your environment for GCSv5.
 
 {% include left-sidebar/transition.md %}
 
