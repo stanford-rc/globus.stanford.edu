@@ -29,7 +29,7 @@
 - name: "Client"
   target: "client"
 - name: "Server"
-  target: "server"
+  target: "server5"
 - name: "Cloud"
   target: "cloud"
 - name: "Help & About"
