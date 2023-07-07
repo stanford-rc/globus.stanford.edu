@@ -1,11 +1,17 @@
 ---
 layout:      left-sidebar
-title:       Globus Connect Server
+title:       Globus Connect Server version 4
 title_line:  false
-description: Main page for Globus server information.
+description: Main page for Globus server information, for the deprecated version 4.
 ---
 
-# Globus Connect Server
+# Globus Connect Server version 4
+
+{% include info-box.html
+   icon="ghost"
+   header="Globus Connect Server v4 ends in December 2023"
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+%}
 
 <b>Globus Connect Server</b> is the name of the software used to create Globus
 Connect Server endpoints, for allowing multiple users to access their files on
@@ -50,5 +56,3 @@ on how to prepare your system, and how to install Globus Connect Server.
 {% include left-sidebar/transition.md %}
 
 {% include toc.html id="server" %}
-
-<!-- <a href="{{ "server5.html" | relative_url }}"><em>Looking for GCS version 5?</em></a> -->

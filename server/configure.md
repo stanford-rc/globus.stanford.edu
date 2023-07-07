@@ -7,6 +7,12 @@ description: Instructions on how to start configuring Globus Connect Server.
 
 # Globus Connect Server Configuration
 
+{% include info-box.html
+   icon="ghost"
+   header="Globus Connect Server version 4 ends in December 2023"
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+%}
+
 This page explains how to install and perform initial configuration for Globus
 Connect Server.  It assumes that you have already followed the instructions on
 the [Pre-Installation Planning]({{ "server/pre-install.html" | relative_url }})

@@ -7,6 +7,12 @@ description: How to configure CILogon authentication.
 
 # CILogon Authentication
 
+{% include info-box.html
+   icon="ghost"
+   header="Globus Connect Server version 4 ends in December 2023"
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+%}
+
 CILogon is the preferred authentication method for Globus Connect Server.  For
 this method to work, your environment must meet two requirements:
 

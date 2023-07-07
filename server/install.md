@@ -1,8 +1,8 @@
 ---
 layout:      left-sidebar
-title:       Globus Connect Server Installation
+title:       Globus Connect Server version 4 Installation
 title_line:  false
-description: Instructions on how to actually install Globus Connect Server.
+description: Instructions on how to actually install Globus Connect Server version 4.
 ---
 
 # Installation
@@ -10,6 +10,12 @@ description: Instructions on how to actually install Globus Connect Server.
 This page explains how to install Globus Connect Server.  It assumes that you
 have already followed the instructions on the [Pre-Installation Planning]({{
 "server/pre-install.html" | relative_url }}) page.
+
+{% include info-box.html
+   icon="ghost"
+   header="Globus Connect Server version 4 ends in December 2023"
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+%}
 
 ## Firewall Configuration
 

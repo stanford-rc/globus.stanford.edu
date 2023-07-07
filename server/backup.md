@@ -2,8 +2,14 @@
 layout:      left-sidebar
 title:       Configuration Backup & Restore
 title_line:  false
-description: Describes how to backup and restore a Globus Connect Server configuration.
+description: Describes how to backup and restore a Globus Connect Server version 4 configuration.
 ---
+
+{% include info-box.html
+   icon="ghost"
+   header="Globus Connect Server version 4 ends in December 2023"
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+%}
 
 If you are backing up a system running Globus Connect Server, no special
 configuration is required.  The most esoteric thing that Globus Connect Server

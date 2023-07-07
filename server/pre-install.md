@@ -1,14 +1,20 @@
 ---
 layout:      left-sidebar
-title:       Globus Connect Server Pre-Installation Planning
+title:       Globus Connect Server version 4 Pre-Installation Planning
 title_line:  false
-description: Instructions on how to prepare your environment for Globus Connect Server.
+description: Instructions on how to prepare your environment for Globus Connect Server version 4.
 ---
 
 # Pre-Installation Planning
 
 Before installing Globus Connect Server, you need to make a few decisions about
 how users will access your server, and what they should be allowed to access.
+
+{% include info-box.html
+   icon="ghost"
+   header="Globus Connect Server version 4 ends in December 2023"
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+%}
 
 {% include info-box.html
    icon="lock-open"

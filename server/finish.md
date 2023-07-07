@@ -1,11 +1,17 @@
 ---
 layout:      left-sidebar
-title:       Globus Connect Server Final Configuration
+title:       Globus Connect Server version 4 Final Configuration
 title_line:  false
-description: Finish your Globus Connect Server Installation
+description: Finish your Globus Connect Server version 4 Installation
 ---
 
 # Finishing Configuration
+
+{% include info-box.html
+   icon="ghost"
+   header="Globus Connect Server version 4 ends in December 2023"
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+%}
 
 It is now time to finish the endpoint's configuration!
 

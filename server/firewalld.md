@@ -1,13 +1,19 @@
 ---
 layout:      left-sidebar
-title:       Globus Connect Server firewalld Configuration
+title:       Globus Connect Server version 4 firewalld Configuration
 title_line:  true
-description: Instructions on how to configure firewalld to work with Globus Connect Server.
+description: Instructions on how to configure firewalld to work with Globus Connect Server version 4.
 ---
 
 If you are running a Linux distribution that includes firewalld, you can use
 firewalld services and ipsets files to simplify firewall configuration on your
 Globus Connect Server endpoint.
+
+{% include info-box.html
+   icon="ghost"
+   header="Globus Connect Server version 4 ends in December 2023"
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+%}
 
 To begin, three files will need to be installed.
 

@@ -2,7 +2,7 @@
 layout:      left-sidebar
 title:       Legacy MyProxy Authentication
 title_line:  false
-description: How to configure legacy MyProxy authentication.
+description: How to configure legacy MyProxy authentication in Globus Connect Server version 4.
 ---
 
 # Legacy MyProxy Authentication
@@ -10,6 +10,12 @@ description: How to configure legacy MyProxy authentication.
 The legacy MyProxy authentication method exchanges end-user credentials for
 special, time-limited credentials that Globus uses to perform transfer-related
 activities on the user's behalf.
+
+{% include info-box.html
+   icon="ghost"
+   header="Globus Connect Server version 4 ends in December 2023"
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+%}
 
 {% include info-box.html
    icon="exclamation-triangle"
