@@ -16,11 +16,13 @@ or to keep Globus working as you transition to another institution.
    content="Although you don't have to do it immediately, for faculty and graduating students, you should complete this process within 120 days of graduation.  For staff, you should complete this process before your last day."
 %}
 
-What you choose to do mainly depends on where you are going: If you are moving
-to another educational institution or Lab, they may be using Globus, and so you
-should <a href="#keep">keep your Globus account</a>.  If you are going to the
-private sector, you probably won't be using Globus anymore, and so you should
-<a href="#close">close your account</a>.
+What you choose to do mainly depends on where you are going
+
+* If you are moving to another educational institution or Lab, they may be
+  using Globus, and so you should <a href="#keep">keep your Globus account</a>.
+
+* If you are going to the private sector, you probably won't be using Globus
+  anymore, and so you should <a href="#close">close your account</a>.
 
 <a name="keep"></a>
 ## Keep your Globus Account
