@@ -23,12 +23,17 @@ subscription:
 
   * Only local users may perform transfers — creating shares is disabled.
 
+  * HTTPS access (uploading and downloading files through a web browser) is
+    unavailable.
+
+  * Only access to local storage ("POSIX storage") is available.
+
 Stanford's Globus subscription covers the following services:
 
 * [Globus Plus](https://www.globus.org/researchers/plus-plans)
 
 * [Globus Connect Server](https://www.globus.org/globus-connect-server),
-  managed (which includes the unavailable features listed above)
+  including all the features listed above.
 
 * The premium connectors for Amazon S3 (including S3-compatible storage
   systems), Box, Google Cloud Storage, and Google Drive.  Since Wasabi speaks
