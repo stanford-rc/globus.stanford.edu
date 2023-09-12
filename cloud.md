@@ -24,8 +24,8 @@ name for more information.
 | <a href="#google-cloud-storage">Google Cloud Storage</a> | ✅ |
 | <a href="#google-drive">Google Drive</a> | ✅ |
 | <a href="#irods">iRODS</a> | ❌ |
-| <a href="#microsoft">Microsoft Azure Blob Storage</a> | ❌ |
-| <a href="#microsoft">Microsoft OneDrive</a> | ❌ |
+| <a href="#microsoft-azure-blob-storage">Microsoft Azure Blob Storage</a> | ❌ |
+| <a href="#microsoft-onedrive">Microsoft OneDrive</a> | ❌ |
 | <a href="#wasabi">Wasabi</a> | ✅ |
 
 &nbsp;
@@ -226,12 +226,19 @@ At this time, Stanford does not have a license for the iRODS community add-on.
 If you are interested in using this add-on, [contact
 us](mailto:srcc-support@stanford.edu) to learn about the costs involved.
 
-# Microsoft
+# Microsoft Azure Blob Storage
 
-At this time, Stanford does not have a license for either the Microsoft Azure
-Blob Storage add-on or the Microsoft OneDrive add-on.  If you are
+At this time, Stanford does not have a license for the Microsoft Azure
+Blob Storage add-on.  If you are
 interested in using this add-on, [contact us](mailto:srcc-support@stanford.edu)
 to learn about the costs involved.
+
+# Microsoft OneDrive
+
+At this time, Stanford does not have a license for the Microsoft OneDrive
+add-on.  If you are interested in using this add-on, [contact
+us](mailto:srcc-support@stanford.edu) to learn about the costs involved.
+
 
 # Wasabi
 
