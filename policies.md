@@ -36,8 +36,10 @@ Stanford's Globus subscription covers the following services:
   including all the features listed above.
 
 * The premium connectors for Amazon S3 (including S3-compatible storage
-  systems), Box, Google Cloud Storage, and Google Drive.  Since Wasabi speaks
-  the S3 protocol, Wasabi is also supported.
+  systems), Box, Ceph, Google Cloud Storage, Google Drive, HDFS, iRODS,
+  Micosoft Azure Blob Storage, Microsoft OneDrive, Quantum ActiveScale, and
+  Spectra BlackPearl.  Since Wasabi speaks the S3 protocol, Wasabi is also
+  supported.
 
 There are no limits on the above services.  You can have an unlimited number of
 endpoints, make as many transfers as you want, and transfer as much data as you
@@ -49,15 +51,9 @@ available:
 * [Globus Premium Storage Connectors](https://www.globus.org/connectors),
   beyond the ones listed above.
 
-  These are add-ons that allow Globus to interact directly with non-POSIX data
-  stores.  Connectors currently exist (or are planned) for Amazon S3 (including
-  S3-compatible storage systems), Box, Ceph RADOS, Google Cloud Storage, Google
-  Drive, Hadoop HDFS, HGST ActiveScale, HPSS, and Spectra Logic BlackPearl.
-
-  Stanford has licensed some of these add-ons.  We are looking for groups
-  interested in helping cover the cost of licensing the remaining connectors
-  for campus use.  If your group is interested, please [reach out]({{
-  "support.html" | absolute_url }})!
+  At this time, we do not have a license for the HPSS premium connector If you
+  have one of these platforms and are interested in using Globus, please [reach
+  out]({{ "support.html" | absolute_url }})!
 
 Our subscription expires on May 25, 2024.  Continued funding by the University
 will depend on us demonstrating use of, and continued need for, the service.
