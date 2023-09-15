@@ -170,6 +170,10 @@ Service](https://cloud.google.com/terms) or the [Google Drive Additional Terms
 of Service](https://www.google.com/drive/terms-of-service/), respectively,
 as modified by any agreements made between Google and Stanford.
 
+If you use Globus to interact with Microsoft Azure Blob Storage or Microsoft
+OneDrive, that access is governed by the agreements made between Microsoft and
+Stanford.
+
 If you use Globus to interact with Wasabi, that access is governed by the terms
 on the [Wasabi Legal page](https://wasabi.com/legal/), as modified by any
 agreements made between Wasabi Technologies and Stanford.
