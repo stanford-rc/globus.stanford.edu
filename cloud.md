@@ -119,7 +119,7 @@ us](mailto:srcc-support@stanford.edu) for general advice.
 {% include info-box.html
    icon="biohazard"
    header="Medicine Box Unavailable"
-   content="Access to Medicine Box is blocked for security reasons."
+   content="Stanford's Globus subscription has not gone through the necessary Security & Privacy reviews for access to High Risk data, so access to Medicine Box is blocked."
 %}
 
 **The Stanford Box service was retired** on February 28, 2023.  At that time,
