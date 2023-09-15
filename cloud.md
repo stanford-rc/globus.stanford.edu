@@ -25,7 +25,7 @@ name for more information.
 | <a href="#google-drive">Google Drive</a> | ✅ |
 | <a href="#irods">iRODS</a> | ❌ |
 | <a href="#microsoft-azure-blob-storage">Microsoft Azure Blob Storage</a> | ❌ |
-| <a href="#microsoft-onedrive">Microsoft OneDrive</a> | ❌ |
+| <a href="#microsoft-onedrive">Microsoft OneDrive</a> | ✅ |
 | <a href="#wasabi">Wasabi</a> | ✅ |
 
 &nbsp;
@@ -235,10 +235,34 @@ to learn about the costs involved.
 
 # Microsoft OneDrive
 
-At this time, Stanford does not have a license for the Microsoft OneDrive
-add-on.  If you are interested in using this add-on, [contact
-us](mailto:srcc-support@stanford.edu) to learn about the costs involved.
+{% include info-box.html
+   icon="id-card"
+   header="Full SUNetID Required"
+   content="To interact with Microsoft services through Stanford, you must have a full or full-sponsored SUNetID.  Therefore, using the Globus OneDrive connector also requires a full (or full-sponsored) SUNetID."
+%}
 
+{% include info-box.html
+   icon="biohazard"
+   header="No High Risk Access allowed"
+   content="Some users are able to able to store High Risk data (including PHI) in Microsoft OneDrive.  If you are part of this group, you are not allowed to use Globus to access that data."
+%}
+
+Microsoft OneDrive may be accessed through the [Stanford OneDrive](https://app.globus.org/file-manager/collections/9beecf19-601f-47b9-a15b-a0f34845abb1/overview)
+collection.
+
+[Go here for detailed information on how to use Globus with Microsoft OneDrive]({{ "cloud/onedrive.html" | absolute_url }}).
+
+When using Globus with Microsoft OneDrive, Globus will act on your behalf.  You
+will be able to access files on your own OneDrive, files shared with you by
+others in Stanford University, and files in Stanford University
+SharePoint sites.
+
+Globus does not support setting or copying custom permissions.  Uploaded items
+will inherit the permissions of the parent folder.
+
+**Globus is not able to access non-University content**.  That includes things
+shared by folks outside of Stanford University, and it also includes things
+shared by members of Stanford Health Care and Stanford Children's Health.
 
 # Wasabi
 
