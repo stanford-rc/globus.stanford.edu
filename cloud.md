@@ -7,14 +7,14 @@ description: Stanford has licensed various cloud add-ons for Globus, described h
 
 <div class="well">
 Globus supports transferring data to and from many different cloud services, as
-add-ons to a standard Globus subscription.  Stanford has licensed some of these
-add-ons for use by the campus community.  
+add-ons to a standard Globus subscription.  Although we have license to use
+them, not all of them are available today.  
 </div>
 
 Here is a list of what is (and is not) supported.  Click on a cloud service's
 name for more information.
 
-| Cloud Service | Supported & Licensed? |
+| Cloud Service | Available Today? |
 |---------------|-----------------------|
 | <a href="#amazon-s3">Amazon S3</a> | ✅ |
 | <a href="#s3-compatible-storage">S3-compatible storage</a> | ✅ |
@@ -140,12 +140,15 @@ error.
 
 {% include info-box.html
    header="Object Storage Only"
-   content="The Ceph add-on for Globus only supports Ceph object storage.  If you want to access Ceph file storage (CephFS), you should use a normal Globus (POSIX) collection (for which we do have a license."
+   content="The Ceph add-on for Globus only supports Ceph object storage.  If you want to access Ceph file storage (CephFS), you should use a normal Globus (POSIX) collection."
 %}
 
-At this time, Stanford does not have a license for the Ceph (object storage)
-add-on.  If you are interested in using this add-on, [contact
-us](mailto:srcc-support@stanford.edu) to learn about the costs involved.
+Although Stanford's subscription does support the Ceph (object storage)
+connector, University IT does not provide Ceph storage as a service.
+
+If you run your own Ceph service, you may be able to [run your own Globus
+endpoint]({{ "server5.html" | relative_url }}) with the Ceph connector.  [Contact
+us](mailto:srcc-support@stanford.edu) if you are interested in this.
 
 # Google Cloud Storage
 
@@ -222,16 +225,25 @@ error.
 
 # iRODS
 
-At this time, Stanford does not have a license for the iRODS community add-on.
-If you are interested in using this add-on, [contact
-us](mailto:srcc-support@stanford.edu) to learn about the costs involved.
+Although Stanford's subscription does support the iRODS connector,
+University IT does not provide iRODS storage as a service.
+
+If you run your own iRODS installation, you may be able to [run your own Globus
+endpoint]({{ "server5.html" | relative_url }}) with the iRODS connector.  [Contact
+us](mailto:srcc-support@stanford.edu) if you are interested in this.
 
 # Microsoft Azure Blob Storage
 
-At this time, Stanford does not have a license for the Microsoft Azure
-Blob Storage add-on.  If you are
-interested in using this add-on, [contact us](mailto:srcc-support@stanford.edu)
-to learn about the costs involved.
+Stanford's subscription supports the Microsoft Azure Blob Storage connector.
+
+Microsoft Azure Blob Storage has unique properties that make it different to
+Amazon S3 and Google Cloud Storage.  For that reason, before we provide an
+Azure Blob Storage Globus service, we would like to hear from existing Azure
+Blob Storage users.
+
+If you use Microsoft Azure Blob Storage within the University, and you are
+interested in accessing it through Globus, please [reach
+out](mailto:srcc-support@stanford.edu)!
 
 # Microsoft OneDrive
 
