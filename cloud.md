@@ -18,8 +18,8 @@ name for more information.
 |---------------|-----------------------|
 | <a href="#amazon-s3">Amazon S3</a> | ✅ |
 | <a href="#s3-compatible-storage">S3-compatible storage</a> | ✅ |
-| <a href="#stanford-box">Stanford Box</a> | ❌ |
-| <a href="#stanford-box">Medicine Box</a> | ❌ |
+| <a href="#box">Stanford Box</a> | ❌ |
+| <a href="#box">Medicine Box</a> | ❌ |
 | <a href="#ceph">Ceph</a> | ❌ |
 | <a href="#google-cloud-storage">Google Cloud Storage</a> | ✅ |
 | <a href="#google-drive">Google Drive</a> | ✅ |
