@@ -21,7 +21,7 @@ name for more information.
 | <a href="#box">Stanford Box</a> | ❌ |
 | <a href="#box">Medicine Box</a> | ❌ |
 | <a href="#ceph">Ceph</a> | ❌ |
-| <a href="#google-cloud-storage">Google Cloud Storage</a> | ✅ |
+| <a href="#google-cloud-storage">Google Cloud Storage</a> | ❌ |
 | <a href="#google-drive">Google Drive</a> | ✅ |
 | <a href="#irods">iRODS</a> | ❌ |
 | <a href="#microsoft-azure-blob-storage">Microsoft Azure Blob Storage</a> | ❌ |
@@ -169,15 +169,15 @@ us](mailto:srcc-support@stanford.edu) if you are interested in this.
    content="Some Google Cloud accounts are allowed to store High Risk data (including PHI).  Such accounts are not allowed to use Globus."
 %}
 
-Access to Google Cloud Storage is possible through region-specific collections.
+Stanford's subscription supports the Google Cloud connector.
 
-**You must use the collection specific to your bucket's region.**  Multi-region
-buckets may be accessed through any region in the area.  If you need access to
-a different region, [let us know](mailto:srcc-support@stanford.edu).
+Google Cloud is organized very differently from Amazon S3, with one identity
+(your Stanford Google account) being used to access everything.  This has
+effects on how Google Cloud Storage is accessed through Globus.
 
-Both you and us will need to do a certain amount of setup work before accessing
-Google Cloud Storage through Globus.  [Contact
-us](mailto:srcc-support@stanford.edu) for more information!
+We are still trying to figure out how to present Google Cloud through Globus.
+If you are interested in learning more, please [reach
+out](mailto:srcc-support@stanford.edu)!
 
 
 # Google Drive
