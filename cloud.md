@@ -179,12 +179,8 @@ Both you and us will need to do a certain amount of setup work before accessing
 Google Cloud Storage through Globus.  [Contact
 us](mailto:srcc-support@stanford.edu) for more information!
 
-# Google Drive
 
-{% include info-box.html
-   icon="wrench"
-   raw=collection-under-construction
-%}
+# Google Drive
 
 {% include info-box.html
    icon="id-card"
@@ -199,7 +195,7 @@ us](mailto:srcc-support@stanford.edu) for more information!
 %}
 
 Google Drive may be accessed through the [Stanford Google Drive
-(DEV)](https://app.globus.org/file-manager/collections/e1c8858b-d5aa-4e36-b97e-95913047ec2b/overview?back=endpoints)
+](https://app.globus.org/file-manager/collections/e1c8858b-d5aa-4e36-b97e-95913047ec2b/overview?back=endpoints)
 collection.
 
 [Go here for detailed information on how to use Globus with Google Drive]({{ "cloud/drive.html" | absolute_url }}).
