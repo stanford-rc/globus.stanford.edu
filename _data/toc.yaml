@@ -65,6 +65,8 @@
       target: "cloud/box"
     - name: "Google Drive Details"
       target: "cloud/drive"
+    - name: "Microsoft OneDrive Details"
+      target: "cloud/onedrive"
 
 - id: "server"
   header: "Globus Connect Server v4"
