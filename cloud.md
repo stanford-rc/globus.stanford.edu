@@ -21,7 +21,7 @@ name for more information.
 | <a href="#box">Stanford Box</a> | ❌ |
 | <a href="#box">Medicine Box</a> | ❌ |
 | <a href="#ceph">Ceph</a> | ❌ |
-| <a href="#google-cloud-storage">Google Cloud Storage</a> | ❌ |
+| <a href="#google-cloud-storage">Google Cloud Storage</a> | ✅ |
 | <a href="#google-drive">Google Drive</a> | ✅ |
 | <a href="#irods">iRODS</a> | ❌ |
 | <a href="#microsoft-azure-blob-storage">Microsoft Azure Blob Storage</a> | ❌ |
@@ -153,11 +153,6 @@ us](mailto:srcc-support@stanford.edu) if you are interested in this.
 # Google Cloud Storage
 
 {% include info-box.html
-   icon="wrench"
-   raw=collection-under-construction
-%}
-
-{% include info-box.html
    icon="id-card"
    header="Full SUNetID Required"
    content="To interact with Google services through Stanford, you must have a full or full-sponsored SUNetID.  Therefore, using the Globus Google connector also requires a full (or full-sponsored) SUNetID."
@@ -169,15 +164,14 @@ us](mailto:srcc-support@stanford.edu) if you are interested in this.
    content="Some Google Cloud accounts are allowed to store High Risk data (including PHI).  Such accounts are not allowed to use Globus."
 %}
 
-Stanford's subscription supports the Google Cloud connector.
+Google Cloud Storage may be accessed through the [Stanford Google
+Cloud](https://app.globus.org/file-manager/collections/1a7d4931-986a-42f5-80fc-1fafe28f9826/overview)
+collection.
 
-Google Cloud is organized very differently from Amazon S3, with one identity
-(your Stanford Google account) being used to access everything.  This has
-effects on how Google Cloud Storage is accessed through Globus.
-
-We are still trying to figure out how to present Google Cloud through Globus.
-If you are interested in learning more, please [reach
-out](mailto:srcc-support@stanford.edu)!
+When using Google Cloud Storage, Globus will act on your behalf.  You will be
+able to access any buckets outside of the VPC Service Perimeter.  In other
+words, you will not be able to access buckets associated with Nero projects,
+and other High Risk projects.
 
 
 # Google Drive
