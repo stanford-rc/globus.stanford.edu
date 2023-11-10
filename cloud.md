@@ -21,6 +21,7 @@ name for more information.
 | <a href="#box">Stanford Box</a> | ❌ |
 | <a href="#box">Medicine Box</a> | ❌ |
 | <a href="#ceph">Ceph</a> | ❌ |
+| <a href="#dropbox">Dropbox</a> | ❌ |
 | <a href="#google-cloud-storage">Google Cloud Storage</a> | ✅ |
 | <a href="#google-drive">Google Drive</a> | ✅ |
 | <a href="#irods">iRODS</a> | ❌ |
@@ -149,6 +150,16 @@ connector, University IT does not provide Ceph storage as a service.
 If you run your own Ceph service, you may be able to [run your own Globus
 endpoint]({{ "server5.html" | relative_url }}) with the Ceph connector.  [Contact
 us](mailto:srcc-support@stanford.edu) if you are interested in this.
+
+# Dropbox
+
+Although Stanford's subscription does support the Dropbox connector, University
+IT does not provide Dropbox storage as a service.
+
+Some groups within the University do use Dropbox.  If you use Dropbox, you may
+be able to [run your own Globus endpoint]({{ "server5.html" | relative_url }})
+with the Dropbox connector.  [Contact us](mailto:srcc-support@stanford.edu) if
+you are interested in this. 
 
 # Google Cloud Storage
 
