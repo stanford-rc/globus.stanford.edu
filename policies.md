@@ -36,7 +36,7 @@ Stanford's Globus subscription covers the following services:
   including all the features listed above.
 
 * The premium connectors for Amazon S3 (including S3-compatible storage
-  systems), Box, Ceph, Google Cloud Storage, Google Drive, HDFS, iRODS,
+  systems), Box, Ceph, Dropbox, Google Cloud Storage, Google Drive, HDFS, iRODS,
   Micosoft Azure Blob Storage, Microsoft OneDrive, Quantum ActiveScale, and
   Spectra BlackPearl.  Since Wasabi speaks the S3 protocol, Wasabi is also
   supported.
@@ -163,6 +163,10 @@ agreements made between Amazon Web Services and Stanford.
 If you use Globus to interact with Box, that access is governed by the [Box
 Terms of Service](https://www.box.com/legal/termsofservice), as modified by any
 agreements made between Box and Stanford.
+
+If you use Globus to interact with Dropbox, that access is governed by the
+[Dropbox Terms of Service](https://www.dropbox.com/terms),
+as modified by any agreements made between Dropbox and Stanford.
 
 If you use Globus to interact with Google Cloud Storage or Google Drive, that
 access is governed by the [Google Cloud Platform Terms of
