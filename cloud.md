@@ -187,6 +187,17 @@ and other High Risk projects.
 
 # Google Drive
 
+{% capture drive-limits %}
+<h2>Incoming Google Drive limits</h2>
+<p>Starting September 1, 2024: Google Drive spaces
+(including your 'My Drive' space and all Shared Drives) will have a 50 GB quota.
+<b><a title="Transitioning to a Sustainable Google Workspace" href="https://uit.stanford.edu/news/transitioning-sustainable-google-workspace">Read the transition announcement</a></b>.</p>
+{% endcapture %}
+{% include info-box.html
+   icon="compress-arrows-alt"
+   raw=drive-limits
+%}
+
 {% include info-box.html
    icon="id-card"
    header="Full SUNetID Required"
