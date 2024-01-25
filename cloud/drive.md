@@ -40,14 +40,25 @@ should review them before starting to use Globus with Drive.
 
 ### Drive Limitations
 
-First, there are some [limits imposed by
+First, per the changes [announced on January
+23](https://uit.stanford.edu/project/google-workspace-optimization#section_3231),
+there is now a 50 GB storage limit on your Stanford Google Drive space (the "My
+Drive" space), as well as a limit of 50 GB for each Shared Drive.  If the
+transfer causes you to hit quota, it will eventually fail.
+
+Next, there are some [limits imposed by
 Google](https://support.google.com/a/answer/172541?hl=en) on all users of
 Drive:
 
-The maximum file size on Google Drive is 5 TB.
+The maximum file size on Google Drive is 5 TB.  However, since the quota for
+all Drive spaces is 50 GB, the maximum file size on Google Drive is effectively
+50 GB.
 
 Users are limited to uploading 750 GB of data to Google Drive per calendar day.
 That includes both your own personal Drive, and all Shared Drive spaces.
+Although individual Drive spaces (your own Google Drive, and Shared drives)
+have a 50 GB quota, you can still reach the upload quota if you upload to many
+different spaces per day.
 Transfers that involve moving more than 750 GB of data into Drive will be
 automatically paused when this limit is reached, and resumed when your limit is
 reset.  Google does not explicitly define when the calendar day resets.
