@@ -31,51 +31,127 @@ This depends on your OS:
     `ruby25`.  If you previously had `ruby31` installed, you can also uninstall
     it.
 
+* **On Windows**, first download and install the [RubyInstaller with
+  DevKit](https://rubyinstaller.org/downloads/).  Start at the top of the "WITH
+  DEVKIT" list, and choose the first one where the version number starts with
+  "3.2" and ends with "(x64)".  As of today, that is "3.2.3-1 (x64)".  Select
+  the default installation options.
+
+  After the Ruby installer finishes, when you click the "Finish" button, a
+  second program ("RubyInstaller2 for Windows") will launch.  This second
+  program installs non-Ruby software needed to install Ruby packages (called
+  "gems") on Windows.  Press the Return key to accept the default (installing
+  MSYS2 and the MINGW development toolchain).  After a few minutes, you should
+  see the message "Install MSYS2 and MINGW development toolchain succeeded".
+  You might also see some warnings, but as long as you see the "… toolchain
+  succeeded" message, that's OK.  Press the Return key to close the installer
+  window.
+
+  To finish the Ruby installation, launch PowerShell, and run the command `gem
+  update --system`.  You should now have a fully up-to-date Ruby installation.
+  Close PowerShell, and continue on to installing Git.
+
+  For Git, you need to install two pacakges.
+
+  First, download and install [Git for Windows](https://gitforwindows.org).
+  The installer will ask many questions; here is the guide on how to answer
+  them:
+
+  * For the list of components to install, the default list is fine.
+
+  * For the text editor to use, select whichever plain text editor you would
+    like to use.  The "Notepad" option will use the Windows Notepad text
+    editor.
+
+  * For the SSH executable to use, select "Use external OpenSSH".
+
+  * For the HTTPS transport backend, select "Use the native Windows Secure
+    Channel library".
+
+  * For all other installer questions, choose the default option.
+
+  Lastly, install the [GitHub CLI](https://cli.github.com).  This installer
+  should not ask any questions; if it does, select the default answer.
+
 * **On Linux**, install the `bundler` and `gh` packages.  On Febora, the
   `bundler` package is called `rubygem-bundler`.  On current-generation
-  Debian/Ubuntu/Fedora distros, this will bring in Ruby 3.1.   If your Linux
-  distribution does not provide a `gh` package, you can use [GitHub's own
+  Debian/Ubuntu/Fedora distros, this will bring in Ruby 3.1, which is new
+  enough.   If your Linux distribution does not provide a `gh` package, you can
+  use [GitHub's own
   repo](https://github.com/cli/cli/blob/trunk/docs/install_linux.md).
 
-_You will only need to do this once._
+Once you have all the software installed, launch your terminal (or PowerShell
+on Windows) and run two commands:
+
+```
+git config --global user.email "sunetid@stanford.edu"
+git config --global user.name "Your Name"
+```
+
+In the commands above, replace `sunetid` with your SUNetID, and replace `Your
+Name` with your name.  Git will add that information to each commit you make.
 
 ## Step 2: Get the repo
 
-Check out this repository to your computer.
+**If you have never used the GitHub CLI** (the `gh` command), run `gh auth
+login` to log in to GitHub.  You will be asked a number of questions; here are
+the answers:
 
-* **On macOS and Linux**, `cd` to wherever you would like the
-  repository to live on your computer, and then run `gh repo clone
-  stanford-rc/globus.stanford.edu`.
+* Choose to log in to "GitHub.com".
 
-  If you already have the repository checked out, `cd` to the root of the
-  repository and use `gh repo sync` to pull in updates.
+* For the preferred protocol, if you have a preference of SSH instead of HTTPS,
+  you can select SSH.  If you don't care, select HTTPS.
+
+* When asked to authenticate Git with your GitHub credentials, enter `Y`.
+
+* When asked how you would like to authenticate, choose "Login with a web
+  browser".
+
+You will be shown a unique, one-time code.  When prompted, press the Return key
+to open your web browser, which will take you to the GitHub login page: Log in
+to GitHub, and then enter the one-time code.
+
+Once the one-time code is entered, after a short delay, the GitHub CLI should
+say "Authentication complete" and "Logged in".
+
+**One you have authenticated to GitHub**, you should now `cd` to wherever you
+would like the repository to live, and then run `gh repo clone
+stanford-rc/globus.stanford.edu` to clone the repository to your computer.
+
+**If you already have the repository cloned to your machine**, you do not need
+to clone it again.  Insted, you can update your existing clone.  `cd` to the
+repository, and run `gh repo sync`.
 
 ## Step 3: Get the dependencies
 
-*This section applies to both **macOS** and **Linux**.*
+All of these commands are run in your terminal (or PowerShell on Windows).
+First, `cd` to your cloned repository.
 
-In your Terminal, `cd` to the root of the repositry.  Then, run `bundle config
-set --local path 'vendor/bundle'`.  That will set the local path where Ruby
-dependencies will be installed.
+**If you have just cloned the repository from GitHub**, there is a setup step
+you need to complete:
 
-NOTE: If you are using MacPorts, the command is `bundle3.2 config set --local
-path 'vendor/bundle'`.  You should use `bundle3.2` anytime you see `bundle`.
+* **On macOS with MacPorts**, run `bundle3.2 config set --local path 'vendor/bundle'`.
 
-Then, run `bundle install`.  This will download and install all of the
-necessary Ruby software.
+* **On Windows**, run `bundle config set --local path 'vendor\bundle'`.
 
-NOTE: If you are updating a local copy that already had dependencies installed,
-you can run `bundle update` instead of `bundle install`.
+* **On Linux, and macOS with HomeBrew**, run `bundle config set --local path 'vendor/bundle'`
 
-The software it downloads will be installed to the local Git directory, in a
-way that will not interact with the rest of the software on your computer.
+This one-time setting will ensure Ruby dependencies are installed inside the
+cloned repository.
+
+Finally, run `bundle install` (if you are using MacPorts, run `bundle3.2
+install`).  This will download the Ruby software needed to work on this web
+site.  The software will be installed inside the clone directory, so it will
+not modify your Ruby installation.
+
+You should run `bundle install` any time you make a new clone, and also
+after pulling in changes from the repository (using `gh repo sync`).
 
 ## Step 4: Run Jekyll
 
-*This section applies to both **macOS** and **Linux**.*
-
-In your Terminal, `cd` to the root of the repository.  Then, run `bundle exec
-jekyll serve`.  This will run Jekyll, which will build the site.
+In your Terminal (or PowerShell on Windows), `cd` to the root of the
+repository.  Then, run `bundle exec jekyll serve`.  This will run Jekyll, which
+will build the site.
 
 NOTE: If you are using MacPorts, the command is `bundle3.2 exec jekyll serve`.
 
@@ -86,4 +162,6 @@ site!
 You can now make edits.  As you save your changes, you will see Jekyll
 rebuilding the static HTML pages.
 
-When you are done, press Control-C to stop the temporary Jekyll server.
+When you are done, press Control-C to stop the temporary Jekyll server.  On
+Windows, you will twice be asked if you want to "Terminate batch job?"  Answer
+`Y` both times, and the temporary Jekyll server will exit.
