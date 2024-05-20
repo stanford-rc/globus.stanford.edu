@@ -1,5 +1,5 @@
 ---
-layout: wide
+layout:  post
 title: Policies, Terms, and Privacy
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout:      wide
+layout:  post
 title:       IPv6 Support and Deployment Changes
 excerpt:     Globus now supports IPv6!  You should seriously start looking at IPv6 support.  And there's a change in the deployment process.
 ---

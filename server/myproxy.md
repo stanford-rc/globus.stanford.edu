@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Legacy MyProxy Authentication
-title_line:  false
+
 description: How to configure legacy MyProxy authentication in Globus Connect Server version 4.
 ---
 
@@ -170,6 +171,6 @@ Now that Globus Connect Server (or, more specifically, MyProxy and GridFTP) is
 (are) up and running, you should [finish configuration]({{ "server/finish.html"
 | relative_url }}).
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

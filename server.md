@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server version 4
-title_line:  false
+
 description: Main page for Globus server information, for the deprecated version 4.
 ---
 
@@ -53,6 +54,6 @@ Globus Connect Server requires:
 Once you have the above items, you should read the [Pre-Installation Planning]({{ "server/pre-install.html" | relative_url }}) guide for information
 on how to prepare your system, and how to install Globus Connect Server.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

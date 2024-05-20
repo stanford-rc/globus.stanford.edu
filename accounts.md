@@ -1,10 +1,11 @@
 ---
-layout:     left-sidebar
+layout:      page
+toc:  false
 title:      Globus Accounts
-title_line: false
+see-also: true
+id: accounts
 ---
 
-# About Globus Accounts
 
 As a first-time user, it is worth knowing a little bit about how Globus handles
 identities and authentication.
@@ -28,6 +29,7 @@ Karl, or add him to a group, they can do so using any of his linked email
 addresses (not just his Stanford address).
 
 {% include info-box.html
+   icon = "user"
    header="Got an XSEDE Allocation?"
    content="If you have access to any XSEDE resources, you should link your XSEDE account.  All XSEDE clusters use XSEDE accounts for authentication."
 %}
@@ -39,6 +41,7 @@ an entire group), and for software leveraging the Globus infrastructure.  It is
 also the last-resort option if you want to link a personal email address.
 
 {% include info-box.html
+   icon = "user"
    header="Google or ORCID"
    content="If you have a Google or ORCID account—even if you registered with your personal email address—you can link them.  This is preferable to creating a Globus ID."
 %}
@@ -46,9 +49,9 @@ also the last-resort option if you want to link a personal email address.
 Globus IDs for entities are covered more in the [Globus ID]({{
 "accounts/globusid.html" | relative_url }}) page.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="accounts" %}
+
+
 
 <a name="example"></a>
 {% include hero-image.html

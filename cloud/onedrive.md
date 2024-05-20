@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus and Microsoft OneDrive
-title_line:  false
+
 description: Globus works with Microsoft OneDrive, but with a number of restrictions.
 ---
 
@@ -307,6 +308,6 @@ access:
   that you can access.  You can use this path to access files stored within
   accessible SharePoint sites.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="cloud" %}
+
+

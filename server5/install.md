@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server 5 Site Prep and Installation
-title_line:  false
+
 description: Instructions on how to prepare your environment for Globus Connect Server 5.
 ---
 
@@ -168,6 +169,6 @@ instructions from [Globus Connect Server installation guide Section
 Once packages are installed, you are ready for [initial configuration]({{
 "server/configure.html" | relative_url }})!
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server5" %}
+
+

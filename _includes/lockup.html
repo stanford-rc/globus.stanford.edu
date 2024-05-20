@@ -1,0 +1,88 @@
+{% comment %}
+/**
+ * @file
+ * Lockup Component.
+ *
+ * A lockup with the Stanford wordmark logo and department/site name. It links to the homepage of the department/unit.
+ *
+ * Default class for the lockup:
+ * - .su-lockup - Lockup with one line to the right of the wordmark.
+ *
+ * Available variants for the lockup:
+ * - .su-lockup--option-a
+ * - .su-lockup--option-b
+ * - .su-lockup--option-c
+ * - .su-lockup--option-d
+ * - .su-lockup--option-e
+ * - .su-lockup--option-f
+ * - .su-lockup--option-g
+ * - .su-lockup--option-h
+ * - .su-lockup--option-i
+ * - .su-lockup--option-j
+ * - .su-lockup--option-k
+ * - .su-lockup--option-l
+ * - .su-lockup--option-m
+ * - .su-lockup--option-n
+ * - .su-lockup--option-o
+ * - .su-lockup--option-p
+ * - .su-lockup--option-q
+ * - .su-lockup--option-r
+ * - .su-lockup--option-s
+ * - .su-lockup--option-t
+ *
+ * Available variables:
+ * - attributes: For additional HTML attributes not already provided.
+ * - modifier_class: Additional css classes to change look and behaviour.
+ * - link: The URL that the lockup links to.
+ * - line1: Line 1 of the unit/site name text (to the right of the wordmark).
+ * - line2: Line 2 of the unit/site name text (to the right of the wordmark).
+ * - line3: Line 3 of the unit/site name text (to the right of the wordmark).
+ * - line4: Line 4 of the unit/site name text (under the wordmark).
+ * - line5: Line 5 of the unit/site name text (at the bottom part of the lockup).
+ * - region_attributes: Attributes for each region variable
+ */
+#}
+{% endcomment %}
+
+{% assign link = site.lockup_link %}
+{% assign line1 = site.lockup_line1 %}
+{% assign line2 = site.lockup_line2 %}
+{% assign line3 = site.lockup_line3 %}
+{% assign line4 = site.lockup_line4 %}
+{% assign modifier_class = site.lockup_modifier_class %}
+
+
+<div class="su-lockup {{ modifier_class }}">
+  {% if link and link != '' %}
+  <a href="{{ page.link }}" {{ link_attributes }}>
+  {% endif %}
+  <div class="su-lockup__cell1">
+      <div class="su-lockup__wordmark-wrapper">
+        <span class="su-lockup__wordmark">Stanford</span>
+        {% if line4 and line4 != '' %}
+          <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
+        {% endif %}
+      </div>
+  </div>
+
+
+  {% if line1 or line2 or line3 %}
+  <div class="su-lockup__cell2">
+    {% if line1 and line1 != '' %}
+    <span class="su-lockup__line1" {{ region_attributes.line1 }}>{{ line1 }}</span>
+    {% endif %}
+
+    {% if line2 and line2 != '' %}
+    <span class="su-lockup__line2" {{ region_attributes.line2 }}>{{ line2 }}</span>
+    {% endif %}
+
+    {% if line3 and line3 != '' %}
+    <span class="su-lockup__line3" {{ region_attributes.line3 }}>{{ line3 }}</span>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if link and link != '' %}
+    </a>
+  {% endif %}
+</div>

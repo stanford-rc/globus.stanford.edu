@@ -1,0 +1,43 @@
+
+{% if page.see-also == true %}
+{% include sidebar-see-also.html id=page.id %}
+{% endif %}
+
+{% if page.toc == true %}
+{% include sidebar-toc.html %}
+{% endif %}
+
+{% if page.sidebar-box %}
+{% capture custom_box_title %}
+{{page.sidebar-box-title}}
+{% endcapture %}
+{% capture custom_box_content %}
+{{page.sidebar-box}}
+{% endcapture %}
+{% include sidebar-box.html title=custom_box_title content=custom_box_content %}
+{% endif %}
+
+{% if page.sidebar-box2 %}
+{% capture custom_box_title2 %}
+{{page.sidebar-box-title2}}
+{% endcapture %}
+{% capture custom_box_content2 %}
+{{page.sidebar-box2}}
+{% endcapture %}
+{% include sidebar-box.html title=custom_box_title2 content=custom_box_content2 %}
+{% endif %}
+
+{% if page.sidebar-box3 %}
+{% capture custom_box_title3 %}
+{{page.sidebar-box-title3}}
+{% endcapture %}
+{% capture custom_box_content3 %}
+{{page.sidebar-box3}}
+{% endcapture %}
+{% include sidebar-box.html title=custom_box_title3 content=custom_box_content3 %}
+{% endif %}
+
+{% if page.home != true %}
+{% include sidebar-box.html title="Support is Available" content="<a href='/help-and-support.html' class='more-link'><i class='fa fa-chevron-circle-right'></i> Ask Us Anything</a>" %}
+{% endif %}
+

@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       CILogon Authentication
-title_line:  false
+
 description: How to configure CILogon authentication.
 ---
 
@@ -143,6 +144,6 @@ Now that Globus Connect Server (or, more specifically, MyProxy and GridFTP) is
 (are) up and running, you should [finish configuration]({{ "server/finish.html"
 | relative_url }}).
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

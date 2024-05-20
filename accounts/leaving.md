@@ -1,7 +1,8 @@
 ---
-layout:     left-sidebar
+layout:      page
+toc:  true
 title:      Leaving Stanford
-title_line: false
+
 ---
 
 # Leaving Stanford
@@ -208,6 +209,6 @@ Follow the steps in the [Globus Security
 FAQ](https://docs.globus.org/faq/security/#how_can_i_delete_my_globus_account)
 to complete the account deletion.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="accounts" %}
+
+

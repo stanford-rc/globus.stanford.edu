@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server version 4 Pre-Installation Planning
-title_line:  false
+
 description: Instructions on how to prepare your environment for Globus Connect Server version 4.
 ---
 
@@ -460,6 +461,6 @@ defining your sharing regime.
 Once packages are installed, you are ready for [installation]({{
 "server/install.html" | relative_url }})!
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

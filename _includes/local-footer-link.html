@@ -1,0 +1,13 @@
+    <li>
+      {% if item.new_url %}
+      <a href="{{item.new_url}}" target="_blank" class="su-link su-link--new" >{{item.title}}</a>
+      {% elsif item.email and item.email != '' %}
+      <a href="mailto:{{item.email}}" class="su-link su-link--email">{{item.title}}</a>
+      {% elsif item.external_url %}
+      <a href="{{item.external_url}}" target="_blank"  class="su-link su-link--external">{{item.title}}</a>
+      {% elsif item.url %}
+      <a href="{{item.url | remove: "/"}}" class="su-link">{{item.title}}</a>
+      {% else %}
+      {{item.title}}
+      {% endif %}
+    </li>

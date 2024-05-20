@@ -1,10 +1,10 @@
 # coding: utf-8
 
 Gem::Specification.new do |spec|
-  spec.name          = "jekyll-theme-stanford-lagunita"
-  spec.version       = "201509181"
-  spec.authors       = ["A. Karl Kornel"]
-  spec.email         = ["akkornel@stanford.edu"]
+  spec.name          = "jekyll-theme-stanford-decanter"
+  spec.version       = "1.0"
+  spec.authors       = ["Sara Cook"]
+  spec.email         = ["saracook@stanford.edu"]
 
   spec.summary       = %q{Stanford's Lagunita web site theme, in Jekyll form.}
   spec.homepage      = "https://github.com/akkornel/lagunita"

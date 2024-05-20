@@ -1,7 +1,8 @@
 ---
-layout:     left-sidebar
+layout:      page
+toc:  true
 title:      Globus Account Creation
-title_line: false
+
 ---
 
 # Create a Globus Account
@@ -93,6 +94,6 @@ Click the _Allow_ button, and you will be taken to the Globus transfer page.
 Congratulations!  You have successfully logged in to Globus, and your Stanford
 account has been associated with an identity.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="accounts" %}
+
+

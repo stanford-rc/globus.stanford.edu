@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus and Box
-title_line:  false
+
 description: Globus works with Stanford Box, but with a number of restrictions.
 ---
 
@@ -136,6 +137,6 @@ consent—you should be greeted with a list of your files on Box.
 All files on Box—both your own items and those shared with you—appear in the
 same listing.  You are now able to transfer data to and from Box!
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="cloud" %}
+
+

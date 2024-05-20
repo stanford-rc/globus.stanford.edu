@@ -1,8 +1,10 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Install Globus Connect Personal
-title_line:  false
+
 description: Installation instructions for the Globus client.
+permalink: install.html
 ---
 
 # Installing Globus Connect Personal
@@ -202,6 +204,6 @@ If you would like to share files from your collection with other people, you
 should now proceed to [enable Globus Plus]({{ "client/plus.html" | relative_url
 }}).
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="client" %}
+
+

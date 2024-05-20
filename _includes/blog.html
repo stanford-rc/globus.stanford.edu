@@ -9,26 +9,17 @@
 {% endif %}
 
 {% for post in post_list %}
-<div class="postcard-left">
-  {% if post.image != nil %}
-  <div class="postcard-image"><img src="{{ post.image | absolute_url }}" alt="" /></div>
-  {% endif %}
-  <div class="postcard-text">
+{% if forloop.index < 3 %}
+<div class="post">
     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    {% if post.author != nil %}
-    <p class="descriptor">{{ post.date | date: "%B %e, %Y" }} by {{ post.author }}</p>
-    {% else %}
-    <p class="descriptor">{{ post.date | date: "%B %e, %Y" }}</p>
-    {% endif %}
-    {{ post.excerpt }}
-    <p><a href="{{ post.url | relative_url }}">Read More</a></p>
-  </div>
+    <p class="date">{{ post.date | date: "%B %e, %Y" }}</p>
+    <p class="excerpt">{{ post.excerpt }}
+    <a href="{{ post.url | relative_url }}" class="more-link">[...]</a></p>
 </div>
+{% endif %}
 {% endfor %}
 
-{% if paginator.previous_page %}
-  <a href="{{ paginator.previous_page_path | relative_url }}" title="Read Newer Announcements"><i class="fa fa-arrow-left fa-2x"></i></a>
-{% endif %}
-{% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path | relative_url }}" title="Read Older Announcements" ><i class="fa fa-arrow-right fa-2x"></i></a>
-{% endif %}
+
+  <a href="/posts.html" title="Read All Announcements" class="more-link"><i class="fa fa-chevron-circle-right"></i> Older Announcements</a>
+
+

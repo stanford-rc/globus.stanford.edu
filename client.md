@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Personal
-title_line:  false
+
 description: Main page for Globus client information.
 ---
 
@@ -43,6 +44,6 @@ To begin, read the [Install and Activate]({{ "client/install.html" |
 relative_url }}) guide for instructions on how to set up Globus Connect
 Personal on your desktop or laptop.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="client" %}
+
+

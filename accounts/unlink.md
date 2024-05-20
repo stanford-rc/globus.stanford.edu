@@ -1,7 +1,8 @@
 ---
-layout:     left-sidebar
+layout:      page
+toc:  true
 title:      Unlinking and Demoting Identities
-title_line: false
+
 ---
 
 # Unlinking and Demoting Identities
@@ -147,6 +148,6 @@ you will need to log back in to them, so that fetch new Globus credentials.
 Congratulations, the identity-demotion process is complete!  You may now
 re-activate endpoints, and return to normal life.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="accounts" %}
+
+

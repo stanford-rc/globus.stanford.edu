@@ -1,8 +1,10 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Plus
-title_line:  false
+
 description: Enabling Globus Plus
+permalink: plus.html
 ---
 
 # Globus Plus
@@ -175,6 +177,6 @@ That's it!  You should now be sharing part of your endpoint with others.
    content="Your Shared Endpoint will only work when Globus Connect Personal is running, and your laptop or desktop is awake and connected to a network.  If your endpoint does fall asleep, any in-progress transfers will automatically resume once it wakes up."
 %}
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="client" %}
+
+

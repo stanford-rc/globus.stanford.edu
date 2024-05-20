@@ -1,5 +1,5 @@
 ---
-layout:      wide
+layout:  post
 title:       Google Drive quotas, and using Globus for Drive migrations.
 excerpt:     University IT is implementing a 50 GB quota on Google Drive spaces.  This will limit how much you can transfer in to Google Drive, and will trigger many migrations of data out of Google Drive.  Read on to learn how Globus is affected, and how to prepare for a migration.
 ---

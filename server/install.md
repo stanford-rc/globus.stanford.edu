@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server version 4 Installation
-title_line:  false
+
 description: Instructions on how to actually install Globus Connect Server version 4.
 ---
 
@@ -146,6 +147,6 @@ instructions from [Globus Connect Server installation guide Section
 Now that packages are installed, you are ready for [initial configuration]({{
 "server/configure.html" | relative_url }})!
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

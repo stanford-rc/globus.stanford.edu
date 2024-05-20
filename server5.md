@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server
-title_line:  false
+
 description: Main page for Globus server information for versions 5.4 and later.
 ---
 
@@ -77,6 +78,6 @@ Once you have the above items, you should read the **Terminology Guide**, as
 GCSv5 brings some new terms compared to GCSv4.  After that, you should read the
 **Pre-Installation Planning** guide to prepare your environment for GCSv5.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server5" %}
+
+

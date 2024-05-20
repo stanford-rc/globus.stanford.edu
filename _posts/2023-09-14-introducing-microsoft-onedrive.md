@@ -1,5 +1,5 @@
 ---
-layout:      wide
+layout:  post
 title:       Introducing Support for Microsoft OneDrive
 excerpt:     You can now use Globus to access Stanford University files stored in Microsoft OneDrive!  Read on for instructions and limitations.
 ---

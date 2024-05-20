@@ -1,7 +1,8 @@
 ---
-layout:     left-sidebar
+layout:      page
+toc:  true
 title:      Globus Account Creation
-title_line: false
+
 ---
 
 # Linking Additional Identities
@@ -81,9 +82,9 @@ with the newly-linked identity listed in the _linked identities_ section.
    content="If you want to 'move' a linked identity, you will need to un-link the identity from the 'losing' primary, before you link it to the 'gaining' primary."
 %}
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="accounts" %}
+
+
 
 <a name="example"></a>
 {% include hero-image.html

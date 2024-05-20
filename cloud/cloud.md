@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:        true
 title:       Globus and Google Cloud
-title_line:  false
+
 description: Globus works with Google Clous Storage!
 ---
 
@@ -19,7 +20,3 @@ collection.
 
 Google Cloud is one of the easiest cloud services to access, but more
 documentation will be forthcoming!
-
-{% include left-sidebar/transition.md %}
-
-{% include toc.html id="cloud" %}

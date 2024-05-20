@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server version 4 Final Configuration
-title_line:  false
+
 description: Finish your Globus Connect Server version 4 Installation
 ---
 
@@ -378,6 +379,6 @@ removed.
 SRCC, the contributors to this site, and other Stanford Globus users hope that
 you will make good use of your new endpoint.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

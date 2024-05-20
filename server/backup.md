@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Configuration Backup & Restore
-title_line:  false
+
 description: Describes how to backup and restore a Globus Connect Server version 4 configuration.
 ---
 
@@ -276,6 +277,6 @@ follow these steps:
 
 Congratulations!  Your DTN has been restored, and should now be operational.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

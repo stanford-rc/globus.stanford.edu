@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server version 4 firewalld Configuration
-title_line:  true
+
 description: Instructions on how to configure firewalld to work with Globus Connect Server version 4.
 ---
 
@@ -114,6 +115,6 @@ activate them.
 Your inbound host firewall configuration is now complete!  You should now go
 back to continue the installation procedure.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:          true
 title:       Globus Connect Server 4 to 5 Transition
-title_line:  false
+
 description: Transitioning from Globus Connect Server 4 to Globus Connect Server 5
 ---
 
@@ -171,6 +172,6 @@ should email [srcc-support@stanford.edu](mailto:srcc-support@stanford.edu), to
 report that you are no longer using your Globus ID.  SRCC will assist you in
 deleting your Globus ID from Globus.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server5" %}
+
+

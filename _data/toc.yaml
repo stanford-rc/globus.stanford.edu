@@ -5,7 +5,7 @@
 #
 # NOTE: All keys are required!
 #
-# * "id" is a simple string.  When you use {% include toc.html id="..." %}
+# * "id" is a simple string.  When you use 
 #   to bring the ToC into your page, this is what identifies which ToC you want
 #   to bring in.
 #

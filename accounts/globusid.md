@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus ID
-title_line:  false
+
 description: Information on Globus IDs, and how to get one.
 ---
 
@@ -67,6 +68,6 @@ Here are some thing to keep in mind as you fill in the form:
    Guide](https://uit.stanford.edu/service/accounts/passwords/quickguide) to
    find out how long your password should be.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="accounts" %}
+
+

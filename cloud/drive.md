@@ -1,7 +1,8 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus and Google Drive
-title_line:  false
+
 description: Globus works with Google Drive, but with a number of restrictions.
 ---
 
@@ -364,6 +365,6 @@ have not yet been deleted.
    content="You should expect listings of the Starred, Shared With Me, and Trash folders to take longer than normal, because these 'folders' do not have any form of hierarchical organization."
 %}
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="cloud" %}
+
+
