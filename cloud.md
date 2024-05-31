@@ -3,7 +3,8 @@ layout:      page
 toc:  true
 permalink: cloud.html
 title:       Globus and the Cloud
-
+see-also: true
+id: cloud
 description: Stanford has licensed various cloud add-ons for Globus, described here.
 ---
 

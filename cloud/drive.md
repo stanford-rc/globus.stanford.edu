@@ -2,7 +2,8 @@
 layout:      page
 toc:  true
 title:       Globus and Google Drive
-
+see-also: true
+id: cloud
 description: Globus works with Google Drive, but with a number of restrictions.
 ---
 

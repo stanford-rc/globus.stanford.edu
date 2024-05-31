@@ -2,7 +2,8 @@
 layout:      page
 toc:  true
 title:       Globus and Microsoft OneDrive
-
+see-also: true
+id: cloud
 description: Globus works with Microsoft OneDrive, but with a number of restrictions.
 ---
 

@@ -2,7 +2,8 @@
 layout:      page
 toc:  true
 title:       Globus and Box
-
+see-also: true
+id: cloud
 description: Globus works with Stanford Box, but with a number of restrictions.
 ---
 

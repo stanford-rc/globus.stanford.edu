@@ -2,8 +2,9 @@
 layout:      page
 toc:        true
 title:       Globus and Google Cloud
-
-description: Globus works with Google Clous Storage!
+see-also: true
+id: cloud
+description: Globus works with Google Cloud Storage!
 ---
 
 {% include info-box.html
