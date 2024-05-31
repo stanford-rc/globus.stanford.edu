@@ -34,8 +34,8 @@
   url: "/cloud.html"
 - title: "Help & About"
   folderitems:
-    - title: "About Globus"
-      url: "/about.html"
+#    - title: "About Globus"
+#      url: "/about.html"
     - title: "Policies"
       url: "/policies.html"
     - title: "Support"

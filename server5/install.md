@@ -2,7 +2,8 @@
 layout:      page
 toc:  true
 title:       Globus Connect Server 5 Site Prep and Installation
-
+see-also: true
+id: server5
 description: Instructions on how to prepare your environment for Globus Connect Server 5.
 ---
 

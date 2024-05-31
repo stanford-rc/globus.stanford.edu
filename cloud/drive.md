@@ -196,7 +196,7 @@ If this is the first time you are accessing this collection, you will be asked
 to give consent for Globus to store your Google credentials.  Click 'Continue'.
 
 {% include hero-image.html
-   src="/assets/Consentidentityselection.png"
+   src="/assets/cloud/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"
@@ -263,7 +263,7 @@ only applies to this specific Globus installation, not installations run by
 others.  Click 'Allow'.
 
 {% include hero-image.html
-   src="/assets/cloud/Drive/DriveCollectioncredentials.png"
+   src="/assets/cloud/DriveCollectioncredentials.png"
    alt="A Globus screen showing Google Drive credentials."
    caption-overlay=true
    caption-header="Drive collection with credentials loaded"
@@ -309,7 +309,7 @@ credentials for you.  Now, you are giving Globus consent to actually use those
 credentials to talk to Google Drive.  Click the "Continue" button.
 
 {% include hero-image.html
-   src="/assets/Consentidentityselection.png"
+   src="/assets/cloud/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"

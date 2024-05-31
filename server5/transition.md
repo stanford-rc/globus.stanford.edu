@@ -2,7 +2,8 @@
 layout:      page
 toc:          true
 title:       Globus Connect Server 4 to 5 Transition
-
+see-also: true
+id: server5
 description: Transitioning from Globus Connect Server 4 to Globus Connect Server 5
 ---
 

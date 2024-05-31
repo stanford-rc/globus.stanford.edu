@@ -145,7 +145,7 @@ to give consent for Globus to store your OneDrive credentials.  Click
 'Continue'.
 
 {% include hero-image.html
-   src="/assets/Consentidentityselection.png"
+   src="/assets/cloud/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"
@@ -203,7 +203,7 @@ authorization only applies to this specific Globus installation, not
 installations run by others.  Click "Accept".
 
 {% include hero-image.html
-   src="/assets/cloud/OneDrive/OneDriveCollectioncredentials.png"
+   src="/assets/cloud/OneDriveCollectioncredentials.png"
    alt="A Globus screen showing Microsoft OneDrive credentials."
    caption-overlay=true
    caption-header="OneDrive collection with credentials loaded"
@@ -253,7 +253,7 @@ Microsoft OneDrive.  Now, you need to give the Globus web site consent to
 actually use those credentials.  Click the "Continue" button.
 
 {% include hero-image.html
-   src="/assets/Consentidentityselection.png"
+   src="/assets/cloud/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"

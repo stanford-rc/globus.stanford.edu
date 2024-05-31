@@ -2,7 +2,8 @@
 layout:      page
 toc:  false
 title:       Globus Connect Server
-
+see-also: true
+id: server5
 description: Main page for Globus server information for versions 5.4 and later.
 ---
 

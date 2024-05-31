@@ -29,7 +29,7 @@
 #   hilighted.
 
 - id: "accounts"
-  header: "Globus Account Topics"
+  header: "Globus Accounts"
   items:
     - name: "About Globus Accounts"
       target: "accounts"
@@ -95,3 +95,7 @@
   items:
     - name: "About Globus Connect Server"
       target: "server5"
+    - name: "Site Prep and Installation"
+      target: "server5/install"
+    - name: "Migrate from Server 4"
+      target: "server5/transition"

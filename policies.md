@@ -1,6 +1,8 @@
 ---
-layout:  post
+layout:  page
 title: Policies, Terms, and Privacy
+toc:  true
+permalink: policies.html
 ---
 
 <div class="well">
@@ -9,7 +11,7 @@ refer to many products.  This page spells out exactly what is available, who
 can use it, and under what conditions.
 </div>
 
-# What is provided?
+## What is provided?
 
 The following Globus services are available for free from Globus, without a
 subscription:
@@ -59,7 +61,7 @@ Our subscription expires on May 25, 2024.  Continued funding by the University
 will depend on us demonstrating use of, and continued need for, the service.
 So, please [keep in touch]({{ "support.html" | absolute_url }}).
 
-# Who can use it?
+## Who can use it?
 
 The free Globus services can be used by anyone.  If you have a SUNetID, you
 should feel free to use it to access Globus services.
@@ -92,7 +94,7 @@ can use Globus plus!   If you do not have Stanford email, ask your Stanford
 contact about getting a [full sponsored
 account](https://uit.stanford.edu/service/sponsorship/sponsoredservices).
 
-# Data Collection & Privacy
+## Data Collection & Privacy
 
 By using Globus, certain data are collected by Globus and by Stanford.  This
 section talks about data collected by Stanford; the next section talks about
@@ -136,7 +138,7 @@ also to justify continuing to pay for the subscription.
 All information logged is handled in accordance with [Admin Guide Chapter
 6](https://adminguide.stanford.edu/chapter-6).
 
-# Other Policies & Agreements
+## Other Policies & Agreements
 
 **Only Low and Moderate Risk data may be accessed using Globus.**  Globus has
 not been evaluated for handling data rated as High Risk.  As always, it is up
