@@ -2,11 +2,11 @@
 layout:      page
 toc:  true
 title:       Globus ID
-
+id: accounts
+see-also: true
 description: Information on Globus IDs, and how to get one.
 ---
 
-# The Globus ID
 
 Normally, Globus identifies people using their institutional identity.  That
 is, their institution's login page is used for authentication, and the
@@ -47,13 +47,12 @@ If you have decided to create a Globus ID, go to
 [globusid.org](https://www.globusid.org) and select _create a Globus ID_.  A
 form will be displayed for you to complete.
 
-{% include hero-image.html
-   src="assets/server/GlobusID Create.png"
+{% include figure.html
+   src="/assets/server/GlobusIDCreate.png"
    alt="The 'Create a Globus ID' page, with fields filled in."
-   caption-overlay=true
-   caption-header="Globus ID Creation"
-   caption-text=""
+   caption="Globus ID Creation"
 %}
+
 
 Here are some thing to keep in mind as you fill in the form:
 

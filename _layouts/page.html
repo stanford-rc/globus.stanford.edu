@@ -2,7 +2,7 @@
 ---
 
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
   {% include head.html %}
@@ -28,7 +28,7 @@
         {% endunless %}
 
         <!-- Content Column -->
-        <div class="{{content_col_size}}">
+        <div class="content {{content_col_size}}">
           <h1 class="post-title-main">{{ page.title }}</h1>
           {{ content | inject_anchors }}
         </div>

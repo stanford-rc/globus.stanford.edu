@@ -1,0 +1,11 @@
+{% comment %}
+Usage:
+include figure.html
+   src="/assets/images/mycat.jpg"
+   max-width = "300px" <---if you want to restrict size on desktop
+   align = "float-md-end" <--- use any of the values in https://getbootstrap.com/docs/5.0/utilities/float/#responsive, float-md-end to right-align a figure
+   alt="An orange kitten looks at the camera with utter disbelief" <--required
+   caption="He's orange, he can't help it"
+{% endcomment %}
+
+<figure class="figure m-4 border border-light-subtle p-4 {% if {{include.align}} %}{{include.align}}{% endif %}" {% if {{include.max-width}} %}style="max-width: {{include.max-width}}"{% endif %}>{% if {{include.url}} %}<a class="no_icon" target="_blank" href="{{include.url}}">{% endif %}<img class="figure-img img-fluid rounded mx-auto" src="{{include.src}}" alt="{{include.alt}}" />{% if {{include.url}} %}</a>{% endif %}{% if {{include.caption}} %} <figcaption class="figure-caption">{{include.caption}}</figcaption>{% endif %}</figure>

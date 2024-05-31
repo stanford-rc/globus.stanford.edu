@@ -7,13 +7,10 @@
     {% break %}
   {% endif %}
 {% endfor %}
-
+  {% if toc_found != false %}
 <div class="sidebar-toc">
-  {% if toc_found == false %}
-  <b>TOC {{ include.id }} not found!</b>
-  {% else %}
-  <h3>{{ header }}</h3>
-  <ul class="nav" role="navigation">
+  <h2>{{ header }}</h2 >
+  <ul class="nav">
     {% for item in items %}
       {% if item.target == "" %}
         {% assign target="index" %}
@@ -49,12 +46,12 @@
         {% comment %}
           Escaping quotes can be annoying sometimes, so we do a capture here.
         {% endcomment %}
-        {% capture a_class %} class="toc_current"{% endcapture %}
+        {% capture a_class %} class="toc-current"{% endcapture %}
       {% else %}
         {% assign a_class = "" %}
       {% endif %}
-      <li><a href="{{ target | append: ".html" | absolute_url }}"{{ a_class }}>{{ item.name }}</a></li>
+      <li {{ a_class }}><a href="{{ target | append: ".html" | absolute_url }}">{{ item.name }}</a></li>
     {% endfor %}
   </ul>
-{% endif %}
 </div>
+{% endif %}

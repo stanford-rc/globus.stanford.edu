@@ -2,11 +2,12 @@
 layout:      page
 toc:  true
 title:       CILogon Authentication
-
+see-also: true
+id: server
 description: How to configure CILogon authentication.
 ---
 
-# CILogon Authentication
+
 
 {% include info-box.html
    icon="ghost"

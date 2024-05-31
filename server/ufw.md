@@ -2,7 +2,8 @@
 layout:      page
 toc:  true
 title:       Globus Connect Server version 4 ufw Configuration
-
+see-also: true
+id: server
 description: Instructions on how to configure ufw to work with Globus Connect Server version 4.
 ---
 

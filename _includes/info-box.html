@@ -4,11 +4,11 @@
   {% assign icon = include.icon %}
 {% endif %}
 
-<div class="alert alert-light d-flex align-items-center note info-box" role="alert"><i class="fa-solid fa-{{ icon }} fa-2xl"></i><div>
+<aside class="alert alert-light d-flex align-items-center note info-box"><i class="fa-solid fa-{{ icon }} fa-2xl"></i><div>
     {% if include.raw != nil %}
       {{ include.raw }}
     {% else %}
-    <h4>{{ include.header }}</h4>
+    <p class="h4">{{ include.header }}</p>
     <p>{{ include.content }}</p>
     {% endif %}
-</div></div>
+</div></aside>

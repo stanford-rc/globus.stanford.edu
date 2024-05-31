@@ -1,12 +1,12 @@
 ---
 layout:      page
-toc:  true
+toc:  false
 title:       Globus Connect Personal
-
+id: client
 description: Main page for Globus client information.
+see-also: true
 ---
 
-# Globus Connect Personal
 
 **Globus Connect Personal** is the name of the software used to create Globus
 Connect Personal endpoints, for sharing files with other users.  It is meant to
@@ -40,7 +40,7 @@ outbound connections to certain ports on the outside Internet.
    header="Blocked?  Try the VPN"
    content="If you are at a location that limits outside connectivity (such as a hotel), try using the <em>Full Traffic (non-split-tunnel)</em> <a href=\"https://uit.stanford.edu/service/vpn\">VPN</a> to bypass the block." %}
 
-To begin, read the [Install and Activate]({{ "client/install.html" |
+To begin, read the [Install and Activate]({{ "install.html" |
 relative_url }}) guide for instructions on how to set up Globus Connect
 Personal on your desktop or laptop.
 

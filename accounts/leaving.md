@@ -2,10 +2,10 @@
 layout:      page
 toc:  true
 title:      Leaving Stanford
+id: accounts
+see-also: true
 
 ---
-
-# Leaving Stanford
 
 When the time comes to leave Stanford, there are several Globus-related steps
 you should take, either to make sure your Globus account is terminated cleanly,
@@ -72,7 +72,7 @@ Globus account.
 First, you should check on the endpoints you administer.  [Log in to Globus](https://www.globus.org/app/transfer), and you will be taken to the transfer page.
 
 {% include hero-image.html
-   src="assets/accounts/Transfer Page.png"
+   src="/assets/accounts/TransferPage.png"
    alt="Globus 'Transfer' page"
    caption-overlay=true
    caption-header=""
@@ -107,7 +107,7 @@ Click on the **Endpoints** option (also located in the left-side menu).  You
 should be taken to the list of recently-used endpoints.
 
 {% include hero-image.html
-   src="assets/server/Recent Endpoints.png"
+   src="/assets/server/RecentEndpoints.png"
    alt="Globus 'Endpoints' page, showing recently-used endpoints"
    caption-overlay=true
    caption-header="Recently-used endpoints"
@@ -118,7 +118,7 @@ At the top of the list, is the link _Administered by me_.  Click on the link to
 see endpoints which you administer.
 
 {% include hero-image.html
-   src="assets/server/Administered Endpoints.png"
+   src="/assets/server/AdministeredEndpoints.png"
    alt="Globus 'Endpoints' page, showing endpoints you administer"
    caption-overlay=true
    caption-header="Endpoints you administer"
@@ -145,7 +145,7 @@ To delete an endpoint, click on the endpoint's name.  You will be
 taken to the endpoint's overview page.
 
 {% include hero-image.html
-   src="assets/server/Endpoint Overview.png"
+   src="/assets/server/EndpointOverview.png"
    alt="A Globus endpoint's 'Overview' page, showing endpoint details"
    caption-overlay=true
    caption-header="Endpoint overview"
@@ -156,7 +156,7 @@ Next, click on the **<i class="fas fa-times-circle"></i>Delete Endpoint** button
 page.  A warning will appear.
 
 {% include hero-image.html
-   src="assets/server/Delete Endpoint.png"
+   src="/assets/server/DeleteEndpoint.png"
    alt="The confirmation window that appears when you try to delete an endpoint."
    caption-overlay=true
    caption-header="Endpoint deletion confirmation"
@@ -176,7 +176,7 @@ To transfer an endpoint to someone else, click on the endpoint's name.  You
 will be taken to the endpoint's overview page.
 
 {% include hero-image.html
-   src="assets/server/Endpoint Overview.png"
+   src="/assets/server/EndpointOverview.png"
    alt="A Globus endpoint's 'Overview' page, showing endpoint details"
    caption-overlay=true
    caption-header="Endpoint overview"
@@ -186,7 +186,7 @@ will be taken to the endpoint's overview page.
 Next, click on the _Roles_ tab, to see who currently administers the endpoint.
 
 {% include hero-image.html
-   src="assets/server/Endpoint Roles.png"
+   src="/assets/server/EndpointRoles.png"
    alt="A list of an endpoint's roles.  That is, people who have some control over the endpoint."
    caption-overlay=true
    caption-header="Endpoint roles"

@@ -10,6 +10,14 @@ id: accounts
 As a first-time user, it is worth knowing a little bit about how Globus handles
 identities and authentication.
 
+{% include figure.html
+   src="/assets/accounts/IdentityDiagram.svg"
+   max-width = "300px"
+   align = "float-md-end"
+   alt="A diagram of one human with a Stanford account, a Google account, and an Ohio State account."
+   caption="Three accounts, one identity. This person has accounts at two instutions, plus Google, but Globus recognizes this as one Human."
+%}
+
 Globus recognizes that many people have multiple accounts, not just the account
 at their primary institution.  For example, if you do work at
 [CERN](https://home.cern), then you probably have a CERN account.  Globus
@@ -43,7 +51,7 @@ also the last-resort option if you want to link a personal email address.
 {% include info-box.html
    icon = "user"
    header="Google or ORCID"
-   content="If you have a Google or ORCID account—even if you registered with your personal email address—you can link them.  This is preferable to creating a Globus ID."
+   content="If you have a Google or ORCID account—even if you registered with your personal email address—you can link them. This is preferable to creating a Globus ID."
 %}
 
 Globus IDs for entities are covered more in the [Globus ID]({{
@@ -51,12 +59,3 @@ Globus IDs for entities are covered more in the [Globus ID]({{
 
 
 
-
-
-<a name="example"></a>
-{% include hero-image.html
-   src="assets/accounts/Identity Diagram.svg"
-   alt="A diagram of one human with a Stanford account, a Google account, and an Ohio State account."
-   caption-header="Three accounts, one identity"
-   caption-text="This person has accounts at two instutions, plus Google, but Globus recognizes this as one Human."
-%}

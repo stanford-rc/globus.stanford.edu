@@ -1,12 +1,14 @@
 ---
 layout:      page
-toc:  true
+toc:  false
+see-also: true
+id: server
 title:       Globus Connect Server version 4
 
 description: Main page for Globus server information, for the deprecated version 4.
 ---
 
-# Globus Connect Server version 4
+
 
 {% include info-box.html
    icon="ghost"

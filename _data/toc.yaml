@@ -33,6 +33,8 @@
   items:
     - name: "About Globus Accounts"
       target: "accounts"
+    - name: "The Globus ID"
+      target: "accounts/globusid"
     - name: "Create a Globus Account"
       target: "accounts/create"
     - name: "Link Identities"
@@ -41,8 +43,6 @@
       target: "accounts/unlink"
     - name: "Leaving Stanford"
       target: "accounts/leaving"
-    - name: "The Globus ID"
-      target: "accounts/globusid"
 
 - id: "client"
   header: "Globus Connect Personal"
@@ -69,7 +69,7 @@
       target: "cloud/onedrive"
 
 - id: "server"
-  header: "Globus Connect Server v4"
+  header: "Globus Connect Server v4 (deprecated)"
   items:
     - name: "About Globus Connect Server v4"
       target: "server"

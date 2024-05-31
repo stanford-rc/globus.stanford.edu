@@ -7,6 +7,10 @@
 {% include sidebar-toc.html %}
 {% endif %}
 
+{% if page.toc-min == true %}
+{% include sidebar-toc-min.html %}
+{% endif %}
+
 {% if page.sidebar-box %}
 {% capture custom_box_title %}
 {{page.sidebar-box-title}}

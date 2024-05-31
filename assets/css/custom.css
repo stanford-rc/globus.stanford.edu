@@ -19,7 +19,8 @@ h3 {
   margin-top: 1em;
 }
 p+h2,
-div+h2 {
+div+h2,
+div.section-head {
   margin-top: 1.5em;
 }
 .su-main-nav ul.su-main-nav__menu-lv1>li:last-child>ul {
@@ -35,13 +36,15 @@ samp {
   font-family: Menlo, "Roboto Mono", Monaco, Consolas, "Courier New", monospace;
 }
 
-pre.highlight {
+pre {
   padding: 6px;
   background-color: #f4f4f4;
   margin: 12px 0;
+  display: block;
 }
 code {
-  color: #E04F39;
+  color: black;
+  background-color: #f4f4f4;
 }
 .su-local-footer__action-links a.su-link--email:after {
   height: 1em;
@@ -75,7 +78,7 @@ footer {
 }
 
 .sidebar>div,
-.sidebar>div.alert {
+.sidebar>.alert {
   margin: 1em 2em 1em 0;
   display: block;
 }
@@ -91,13 +94,15 @@ footer {
   padding: 1em;
 }
 
-.sidebar h3 {
-  font-weight: 400;
+.sidebar h3,.sidebar h2 {
+  font-weight: 600;
+  font-size: 1.2em;
 }
 .sidebar ul {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
+  display: block;
 }
 
 .sidebar ul li ul {
@@ -108,6 +113,11 @@ footer {
   border-bottom: 1px solid #d9d9d9;
   padding: 10px 0;
   margin-bottom: 0;
+  &.toc-current {
+    border-left: 2px solid black;
+    padding-left: 1em;
+
+  }
 }
 .sidebar ul li ul li {
   border-bottom: none;
@@ -117,11 +127,11 @@ footer {
 .sidebar ul a {
   color: #2e2d29;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .sidebar ul li ul li a {
-  font-weight: 500;
+  font-weight: 400;
 }
 .sidebar ul a:hover {
   text-decoration: underline;
@@ -133,9 +143,14 @@ footer {
 .sidebar .alert .fa-solid {
   margin: 0 12px 0 2px;
 }
-div.alert {
+.alert {
   margin: 1.5em 0;
+
 }
+.alert   p.h4{
+    font-size:1.2em;
+    font-weight: 600;
+  }
 .alert code {
   color: inherit;
   background: rgba(255, 255, 255, 0.4);
@@ -167,8 +182,8 @@ div.alert {
 }
 
 /* this part adds an icon after external links in #page-content, using FontAwesome*/
-#page-content a[href^="http://"]:after,
-#page-content a[href^="https://"]:after {
+#page-content .content a[href^="http://"]:after,
+#page-content .content a[href^="https://"]:after {
   content: "\f08e";
   font-family: FontAwesome;
   font-weight: normal;
@@ -241,16 +256,53 @@ div.text-chunk .post {
     margin-bottom: .5em;
   }
 }
-.accordion-header:hover{
-    background-color:#ababab;
-}
-.accordion button,.accordion button:hover,.accordion button:focus {
-    padding: 12.5px;
+
+.toggle-all:focus{
+    text-decoration: none;
     background-color: transparent;
     color: #333;
-    box-shadow:none
+}
+.accordion button.accordion-button {
+  background-color: transparent;
+  display: flex;
+  padding: 1em;
+  color: #333;
+  width: 100%;
+  text-align: left;
+  &.collapsed{
+    background-color: transparent;
+  }
+  &::after {
+    background-color: transparent;
+    display: flex;
+    color: #333;
+    background-position: top right;
+  }
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    background-color: #f4f4f4;
+  }
+}
+.accordion button.accordion-button:not(.collapsed){
+    background-color: #f4f4f4;
+}
+.accordion {
+  h3 {
+    margin-top: 0
+  }
+  --bs-accordion-btn-icon-width: 20px;
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'%3e%3cpath fill-rule='evenodd' stroke = 'black' stroke-width='1px' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'%3e%3cpath fill-rule='evenodd' stroke = 'black' stroke-width='1px' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
-.accordion button:focus {
-    text-decoration:none;
+.btn {
+  --bs-btn-padding-y: 8px;
+  --bs-btn-padding-x: 12px;
+  --bs-btn-font-size: 18px;
+}
+
+figure.hero-image .h4{
+    font-size:1.2em;
+    font-weight:600;
 }

@@ -2,11 +2,12 @@
 layout:      page
 toc:  true
 title:       Legacy MyProxy Authentication
-
+see-also: true
+id: server
 description: How to configure legacy MyProxy authentication in Globus Connect Server version 4.
 ---
 
-# Legacy MyProxy Authentication
+
 
 The legacy MyProxy authentication method exchanges end-user credentials for
 special, time-limited credentials that Globus uses to perform transfer-related

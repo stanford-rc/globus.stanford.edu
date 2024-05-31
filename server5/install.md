@@ -6,7 +6,6 @@ title:       Globus Connect Server 5 Site Prep and Installation
 description: Instructions on how to prepare your environment for Globus Connect Server 5.
 ---
 
-# Site Prep and Installation
 
 This page explains how to prepare your environment for Globus Connect Server 5.
 Most of this work can be done within an hour, but in some cases (when you need

@@ -6,7 +6,7 @@ title:       Globus Connect Server 4 to 5 Transition
 description: Transitioning from Globus Connect Server 4 to Globus Connect Server 5
 ---
 
-# Conceptual Changes
+## Conceptual Changes
 
 With Globus Connect Server 4, the term _Endpoint_ meant one of three things:
 

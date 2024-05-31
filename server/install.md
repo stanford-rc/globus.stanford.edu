@@ -2,11 +2,12 @@
 layout:      page
 toc:  true
 title:       Globus Connect Server version 4 Installation
-
+see-also: true
+id: server
 description: Instructions on how to actually install Globus Connect Server version 4.
 ---
 
-# Installation
+
 
 This page explains how to install Globus Connect Server.  It assumes that you
 have already followed the instructions on the [Pre-Installation Planning]({{

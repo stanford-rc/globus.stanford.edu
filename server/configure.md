@@ -2,11 +2,12 @@
 layout:      page
 toc:  true
 title:       Globus Connect Server Initial Configuration
-
+see-also: true
+id: server
 description: Instructions on how to start configuring Globus Connect Server.
 ---
 
-# Globus Connect Server Configuration
+
 
 {% include info-box.html
    icon="ghost"

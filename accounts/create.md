@@ -2,10 +2,10 @@
 layout:      page
 toc:  true
 title:      Globus Account Creation
-
+id: accounts
+see-also: true
 ---
 
-# Create a Globus Account
 
 {% include info-box.html
    icon="envelope"
@@ -20,7 +20,7 @@ To begin, go to [app.globus.org](https://app.globus.org/).  You will be
 presented with the login page:
 
 {% include hero-image.html
-   src="assets/accounts/Login Page.png"
+   src="/assets/accounts/LoginPage.png"
    alt="Globus login screen"
    caption-overlay=true
    caption-header="The Globus login screen"
@@ -37,7 +37,7 @@ After logging in, you will be asked if this will be used as a _primary
 identity_, or if you want to link this login to a different identity.
 
 {% include hero-image.html
-   src="assets/accounts/Login Identity.png"
+   src="/assets/accounts/LoginIdentity.png"
    alt="First-time login screen"
    caption-overlay=true
    caption-header="First-Time login confirmation"
@@ -55,7 +55,7 @@ After clicking the _Continue_ button, you will be asked for some more
 information (such as if you plan on using the service for commercial purposes.
 
 {% include hero-image.html
-   src="assets/accounts/Login Information Gathering.png"
+   src="/assets/accounts/Login/LoginInformationGathering.png"
    alt="Globus login screen"
    caption-overlay=true
    caption-header="First-Time user information collection"
@@ -69,7 +69,7 @@ site using Globus authentication, Globus' authentication site will want to
 confirm that it is OK to share your information with the site.
 
 {% include hero-image.html
-   src="assets/accounts/Login Consent.png"
+   src="/assets/accounts/LoginConsent.png"
    alt="Globus Web App consent screen"
    caption-overlay=true
    caption-header="Asking permission"
@@ -84,7 +84,7 @@ providing information to _any_ other service.
 Click the _Allow_ button, and you will be taken to the Globus transfer page.
 
 {% include hero-image.html
-   src="assets/accounts/Transfer Page.png"
+   src="/assets/accounts/TransferPage.png"
    alt="Globus transfer screen"
    caption-overlay=true
    caption-header="The Globus 'Transfer Files' screen"

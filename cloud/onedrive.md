@@ -121,7 +121,7 @@ to log in; if so, log in through *Stanford University*.
 You should arrive at a page which looks like this:
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive Collection with Credentials.png"
+   src="/assets/cloud/OneDriveCollectionwithCredentials.png"
    alt="The Microsoft OneDrive collection, with the Credentials tab hilighted."
    caption-overlay=true
    caption-header="Microsoft OneDrive collection"
@@ -132,7 +132,7 @@ When you go to the link at the top of this page, you will be taken to the main
 page for the collection.  Click on the 'Credentials' tab.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive Collection credentials consent 1.png"
+   src="/assets/cloud/OneDriveCollectioncredentialsconsent1.png"
    alt="A prompt to give Globus consent to manage your Microsoft OneDrive credentials."
    caption-overlay=true
    caption-header="Microsoft OneDrive credentials consent required"
@@ -144,7 +144,7 @@ to give consent for Globus to store your OneDrive credentials.  Click
 'Continue'.
 
 {% include hero-image.html
-   src="assets/Consent identity selection.png"
+   src="/assets/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"
@@ -155,7 +155,7 @@ Some institutions allow you to have multiple accounts.  Stanford only allows
 one SUNetID per person, so click on your SUNetID.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive Collection credentials consent 2.png"
+   src="/assets/cloud/OneDriveCollectioncredentialsconsent2.png"
    alt="A prompt to give consent to the Globus Web app to manage your Google credentials in the Google Drive collection."
    caption-overlay=true
    caption-header="Consent required to manage Google credentials"
@@ -167,7 +167,7 @@ First, Globus will need consent to get & store credentials for
 Microsoft OneDrive.  Click "Allow" to give Globus permission to do this.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive Collection credential confirmation.png"
+   src="/assets/cloud/OneDriveCollectioncredentialconfirmation.png"
    alt="A Globus screen showing your SUNetID, asking you to confirm that this is your Microsoft account."
    caption-overlay=true
    caption-header="Microsoft Account selection confirmation"
@@ -179,7 +179,7 @@ tell Microsoft that it is OK for it to give your credentials to Globus.  Click
 "Continue" to be sent to Microsoft's web site.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive Microsoft consent 1.png"
+   src="/assets/cloud/OneDriveMicrosoftconsent1.png"
    alt="A Microsoft screen, redirecting you to Stanford Login."
    caption-overlay=true
    caption-header="Microsoft Stanford Login"
@@ -190,7 +190,7 @@ If you have not used any Microsoft web sites today, the Microsoft web site may
 send you through Stanford Login.  If this happens, you should log in as normal.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive Microsoft consent 2.png"
+   src="/assets/cloud/OneDriveMicrosoftconsent2.png"
    alt="A Microsoft screen asking for permission to allow access to your data."
    caption-overlay=true
    caption-header="Microsoft OneDrive consent"
@@ -202,7 +202,7 @@ authorization only applies to this specific Globus installation, not
 installations run by others.  Click "Accept".
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive Collection credentials.png"
+   src="/assets/cloud/OneDrive/OneDriveCollectioncredentials.png"
    alt="A Globus screen showing Microsoft OneDrive credentials."
    caption-overlay=true
    caption-header="OneDrive collection with credentials loaded"
@@ -224,7 +224,7 @@ collection.  You might be asked to log in; if so, log in through *Stanford
 University*.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive Collection with Overview and File Manager.png"
+   src="/assets/cloud/OneDriveCollectionwithOverviewandFileManager.png"
    alt="The Microsoft OneDrive collection, with the Overview tab and File Manager buttons hilighted."
    caption-overlay=true
    caption-header="OneDrive collection"
@@ -240,7 +240,7 @@ The first time you access the Microsoft OneDrive collection, you will be asked
 for consent.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive File Manager with consent screen.png"
+   src="/assets/cloud/OneDriveFileManagerwithconsentscreen.png"
    alt="The Microsoft OneDrive collection, saying that consent is required."
    caption-overlay=true
    caption-header="OneDrive collection requesting consent"
@@ -252,7 +252,7 @@ Microsoft OneDrive.  Now, you need to give the Globus web site consent to
 actually use those credentials.  Click the "Continue" button.
 
 {% include hero-image.html
-   src="assets/Consent identity selection.png"
+   src="/assets/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"
@@ -263,7 +263,7 @@ Some institutions allow you to have multiple accounts.  Stanford only allows
 one SUNetID per person, so click on your SUNetID.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive Collection access consent.png"
+   src="/assets/cloud/OneDriveCollectionaccessconsent.png"
    alt="A prompt to give consent to the Globus Web app to access Microsoft OneDrive on your behalf."
    caption-overlay=true
    caption-header="OneDrive collection consent screen"
@@ -280,7 +280,7 @@ provided consent—you should be greeted with the contents of the *My Files* par
 of OneDrive.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive File Manager default directory with up one folder.png"
+   src="/assets/cloud/OneDrive File Manager default directory with up one folder.png"
    alt="The File Manager showing the list of 'My Files'."
    caption-overlay=true
    caption-header="The list of 'My Files' in OneDrive, with names obscured"
@@ -291,7 +291,7 @@ The *My Files* area is a listing all of your OneDrive files and directories.
 To get to other parts of OneDrive, click the *up one folder* button.
 
 {% include hero-image.html
-   src="assets/cloud/OneDrive File Manager root.png"
+   src="/assets/cloud/OneDriveFileManagerroot.png"
    alt="The File Manager showing the root of the OneDrive collection."
    caption-overlay=true
 %}

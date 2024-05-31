@@ -2,9 +2,10 @@
 layout:      page
 toc:  true
 title:       Globus Plus
-
+id: client
 description: Enabling Globus Plus
 permalink: plus.html
+see-also: true
 ---
 
 # Globus Plus
@@ -51,7 +52,7 @@ When SRCC Support processes your request, you will receive an invitation to
 join the _Stanford University Globus Plus Group_.
 
 {% include hero-image.html
-   src="assets/client/Globus Plus Group Join Email.png"
+   src="/assets/client/GlobusPlusGroupJoinEmail.png"
    alt="Part of an email from Globus, inviting the recipient to join the 'Stanford University Globus Plus Group'"
    caption-overlay=true
    caption-header=""
@@ -63,7 +64,7 @@ in with your Stanford credentials), where you will be be asked to confirm your
 information and read & agree to terms.
 
 {% include hero-image.html
-   src="assets/client/Globus Plus Group Join Confirmation.png"
+   src="/assets/client/GlobusPlusGroupJoinConfirmation.png"
    alt="The Globus web site, showing the Groups page, and displaying a screen asking the user to confirm that they want to join a group."
    caption-overlay=true
    caption-header="Create Globus Connect Personal Endpoint"
@@ -79,7 +80,7 @@ You can confirm that Globus Plus is enabled by going to your [Globus account
 page](https://www.globus.org/app/account).
 
 {% include hero-image.html
-   src="assets/client/Globus Account with Plus.png"
+   src="/assets/client/GlobusAccountwithPlus.png"
    alt="The 'Globus Account' page, showing that Globus Plus is active."
    caption-overlay=false
    caption-header="This person has access to Globus Plus."
@@ -100,7 +101,7 @@ which directories _might_ be shared.  To do this, right-click on the Globus
 icon in the toolbar, and choose _Options_ from the pop-up menu.
 
 {% include hero-image.html
-   src="assets/client/Globus Connect Personal Toolbar Pop-Up.png"
+   src="/assets/client/GlobusConnectPersonalToolbarPop-Up.png"
    alt="The pop-up menu that appears when right-clicking on the Globus icon in the toolbar"
    caption-overlay=true
    caption-header="Globus Connect Personal toolbar pop-up"
@@ -111,7 +112,7 @@ When you select _Options_ from the pop-up menu, the options window opens.  Go
 to the _Access_ tab.
 
 {% include hero-image.html
-   src="assets/client/Globus Connect Personal Access.png"
+   src="/assets/client/GlobusConnectPersonalAccess.png"
    alt="The Globus Connect Personal options window, with the Access tab selected, showing one directory."
    caption-overlay=true
    caption-header="Globus Connect Personal Options"

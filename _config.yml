@@ -6,7 +6,7 @@
 # "null" (_without_ the quotes).
 title: "Globus @ Stanford"
 slogan: "Research data management simplified.  For you.  For free."
-image: "assets/globus_square.png"
+image: "/assets/globus_square.png"
 site-title: "Globus @ Stanford"
 
 # This section has site owner information.  It is used in a few places:
