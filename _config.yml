@@ -137,7 +137,7 @@ exclude:
 timezone: America/Los_Angeles
 encoding: utf-8
 safe: true
-theme: src
+# theme: src
 
 lockup_line2: Globus
 lockup_link: /index.html
