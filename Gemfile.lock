@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/saracook/jekyll-theme-src.git
+  remote: git@github.com:saracook/jekyll-theme-src.git
   revision: 5228369eb7031321a0aebee0c12d175a395a4016
   specs:
     src (0.2.0)
@@ -289,8 +289,6 @@ DEPENDENCIES
   jekyll
   jekyll-gist
   jekyll-paginate
-  kramdown
-  minima
   src (>= 0.1.0)!
   tzinfo (>= 1, < 3)
   tzinfo-data
