@@ -11,3 +11,4 @@ vendor
 
 # Local Netlify folder
 .netlify
+Gemfile.lock
