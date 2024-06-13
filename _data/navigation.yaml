@@ -33,9 +33,10 @@
 - title: "Cloud"
   url: "/cloud.html"
 - title: "Help & About"
+  url: "/about.html"
   folderitems:
-#    - title: "About Globus"
-#      url: "/about.html"
+    - title: "About Globus at Stanford"
+      url: "/about.html"
     - title: "Policies"
       url: "/policies.html"
     - title: "Support"

@@ -1,5 +1,10 @@
 ---
 layout:  post
+news: true
+toc: false
+   
+news: true
+toc: false
 title:       Google Drive quotas, and using Globus for Drive migrations.
 excerpt:     University IT is implementing a 50 GB quota on Google Drive spaces.  This will limit how much you can transfer in to Google Drive, and will trigger many migrations of data out of Google Drive.  Read on to learn how Globus is affected, and how to prepare for a migration.
 ---
@@ -33,7 +38,7 @@ react one of two ways, depending on the transfer setting "Fail on quota
 errors".
 
 {% include figure.html
-   src="/assets/posts/2024/Transfer/TransferSyncoption.png"
+   src="/assets/posts/2024/TransferSyncoption.png"
    alt="A Globus File Manager window, showing transfer and sync options.  The 'Fail on quota errors' option is hilighted."
    caption="Controlling what happens when there is a quota error."
 %}

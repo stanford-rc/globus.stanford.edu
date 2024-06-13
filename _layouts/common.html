@@ -22,19 +22,19 @@
     <div class="layout centered-container">
       <!-- Content Row -->
       <div class="row">
-        {% assign content_col_size = "col-md-12" %}
+        {% assign content_col_size = "" %}
         {% unless page.hide_sidebar %}
-        {% assign content_col_size = "col-md-9 col-8" %}
+        {% assign content_col_size = "col-lg-9" %}
         {% endunless %}
 
         <!-- Content Column -->
-        <div class="{{content_col_size}}  order-md-2">
+        <div class="content {{content_col_size}} order-lg-2">
           <h1 class="post-title-main">{{ page.title }}</h1>
           {{ content | inject_anchors }}
         </div>
         {% unless page.hide_sidebar %}
         <!-- Sidebar Column -->
-        <div class="col-md-3 col-4 sidebar  order-md-1">
+        <div class="col-lg-3 sidebar order-lg-1">
           {% include sidebar.html %}
         </div>
         {% endunless %}

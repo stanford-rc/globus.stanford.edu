@@ -7,6 +7,10 @@
 {% include sidebar-toc.html %}
 {% endif %}
 
+{% if page.news == true %}
+{% include sidebar-blog.html max=4 %}
+{% endif %}
+
 {% if page.toc-min == true %}
 {% include sidebar-toc-min.html %}
 {% endif %}
@@ -42,6 +46,6 @@
 {% endif %}
 
 {% if page.home != true %}
-{% include sidebar-box.html title="Support is Available" content="<a href='/help-and-support.html' class='more-link'><i class='fa fa-chevron-circle-right'></i> Ask Us Anything</a>" %}
+{% include sidebar-box.html title="Support is Available" content="<a href='/support.html' class='more-link'><i class='fa fa-chevron-circle-right'></i> Ask Us Anything</a>" %}
 {% endif %}
 

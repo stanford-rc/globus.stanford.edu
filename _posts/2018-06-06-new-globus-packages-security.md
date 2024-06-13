@@ -1,5 +1,8 @@
 ---
-layout:      no-sidebars
+layout:  post
+news: true
+toc: false
+   
 title:       New Globus Packages Improve Security
 excerpt:     Recent Globus updates improve the security of data transfer and OAuth authentication.  Read on for details, and be sure to upgrade your Globus Connect Server installation soon!
 ---

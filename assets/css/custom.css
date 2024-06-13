@@ -248,6 +248,13 @@ code {
   border: 1px solid #b6b1a9
 }
 
+.sidebar .news-list{
+  background-color: white;
+  .date{
+    font-size:.8em;
+  }
+}
+
 .sidebar>.alert,
 .sidebar>div {
   margin: 1em 2em 1em 0;
