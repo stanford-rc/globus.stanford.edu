@@ -49,12 +49,6 @@ footer {
   margin-top: 2em
 }
 
-@media (max-width:769px) {
-  .sidebar {
-    font-size: 16px
-  }
-}
-
 .sidebar>div.alert {
   margin: 1em 2em 1em 0;
   display: block
@@ -104,7 +98,7 @@ div.alert {
 #page-content .content a[href^="https://"]:after,
 #page-content a[href^="http://"]:after,
 #page-content a[href^="https://"]:after {
-  content: "";
+  content: '\f35d';
   font-family: FontAwesome;
   font-weight: 400;
   font-style: normal;
@@ -239,10 +233,13 @@ code {
 }
 
 .su-local-footer__action-links a.su-link--external:after {
-  height: .7em;
-  width: .7em;
   -webkit-mask: url(../assets/arrow-up-right.svg)no-repeat 0 0;
-  mask: url(../assets/arrow-up-right.svg)no-repeat 0 0
+  mask: url(../assets/arrow-up-right.svg)no-repeat 0 0;
+  mask-size: .7em .7em;
+}
+
+.su-local-footer ul {
+  padding-bottom: 0;
 }
 
 .sidebar .action-box {
@@ -255,6 +252,16 @@ code {
 .sidebar>div {
   margin: 1em 2em 1em 0;
   display: block
+}
+
+@media (max-width:769px) {
+  .sidebar {
+    font-size: 16px
+  }
+  .sidebar>.alert,
+  .sidebar>div {
+    margin: 1em 0;
+  }
 }
 
 .sidebar-right>div {
@@ -445,4 +452,3 @@ button.accordion-button:not(.collapsed)::after {
 .accordion-button:focus::after {
   background-color: transparent;
 }
-
