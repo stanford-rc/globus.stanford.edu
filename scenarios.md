@@ -509,13 +509,10 @@ Research Network">Stanford Research Network</a>.</p>
 and Globus.  All transfer operations—except for the actual data being
 transferred—goes through this connection.</p>
 
+To fix this, you will need to reach out to your IT person. For students (undergrads and grads), reach out to Student Technical Support at the Lathrop Learning Hub.  For everyone else, go to your LNA.
+
 <p>Globus Connect Personal must be able to make outbound connections to
-relay.globusonline.org on TCP port 2223.  If that is blocked, then you will not
-be able to perform directory listings or start new transfers, and existing
-transfers will stop working.  To fix this, you will need to reach out to your
-IT person.  For undergrads, that is your RCC; for grads, go to the <a
-href="https://library.stanford.edu/contacts/tech-desk" title="Lathrop Tech
-Desk">Lathrop Tech Desk</a>; for everyone else, go to your <a
+relay.globusonline.org on TCP port 2223.  To fix this, you will need to reach out to your IT person. For students (undergrads and grads), reach out to <a href="https://thehub.stanford.edu/services/student-technical-support">Student Technical Support</a> at the <a href="https://thehub.stanford.edu/">Lathrop Learning Hub</a>.  For everyone else, go to your <a
 href="https://web.stanford.edu/group/networking/dist/sunet.reports/LNA.html"
 title="Local Network Administrators by Department">LNA</a>.</p>
 
