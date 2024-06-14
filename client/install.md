@@ -4,7 +4,7 @@ toc:  true
 title:       Installing Globus Connect Personal
 id: client
 description: Installation instructions for the Globus client.
-permalink: install.html
+permalink: /client/install.html
 see-also: true
 ---
 
