@@ -8,8 +8,9 @@ $(document).ready(function() {
       $(myAccordion).collapse('hide');
       $(this).data("lastState", 1);
       $(this).html('<i class="fa-solid fa-plus"></i> Open All');
-    } else {
-      $(myAccordion).collapse('show');
+    } else {//1 or undefined
+     //doing this instead of .collapse because .collapse gets confused if some are expanded
+      $(myAccordion).addClass('show');
       $(myAccordionBtns).removeClass('collapsed');
       $(this).data("lastState", 0);
       $(this).html('<i class="fa-solid fa-minus"></i> Close All');
