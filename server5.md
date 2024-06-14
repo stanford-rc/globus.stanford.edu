@@ -44,7 +44,7 @@ entirely on December 18.  Refer to the <a href="{{
 "2023/07/07/gcsv4-deprecation.html" | relative_url }}" title="Globus Connect
 Server version 4 Ends in December 2023">news post</a> for more information.</p>
 
-<p>The old Globus @ Stanford documentation <a href="{{ "server.html" |
+<p>The old Globus @ Stanford documentation <a href="{{ "server4.html" |
 relative_url }}" title="Globus Connect Server version 4">is still
 available</a>, though it is not being maintained.</p>
 
