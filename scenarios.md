@@ -57,7 +57,7 @@ Accounts">learn about how Globus accounts work</a>, and how to
 identies together</a>.</p>
 
 <p>(Here is a side challenge: If you have already registered for <a
-href="https://library.stanford.edu/myorcid" title ="Stanford Libraries: My
+href="https://library.stanford.edu/orcid-id" title ="Stanford Libraries: My
 ORCID">your ORCID iD</a>, try linking it to your Stanford Globus identity!)</p>
 
 <p>Now that you have your Globus account, you need to access either the
