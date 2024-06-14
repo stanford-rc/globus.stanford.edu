@@ -86,7 +86,7 @@ machine.
 At the end of the setup, you were shown a _Setup Successful_ screen, with a
 link to "show collection details".  Click on that link.
 
-{% include hero-image.html
+{% include figure.html
    src="/assets/client/SetupComplete.png"
    alt="The Globus Connect Personal setup screen, showing a successful setup."
    caption-overlay=true
@@ -99,8 +99,8 @@ page.  The only things filled in will be the name and (optionally) the
 description you entered during initial setup, as well as your Globus identity
 (as the owner of the collection).
 
-{% include hero-image.html
-   src="/assets/client/New/NewEndpointOverview.png"
+{% include figure.html
+   src="/assets/client/NewEndpointOverview.png"
    alt="The collection overview screen, showing a newly-created personal collection."
    caption-overlay=true
    caption-header="A New Personal Collection"
@@ -168,7 +168,7 @@ title="plus"></i> button to add an entry.  Once added, use the _Writeable_ box
 to give write access; if that box is not checked, the access will be read-only.
 
 The <em>Shareable</em> checkbox is used to allow sharing for a directory.  This
-feature is only available as part of <a href="{{ "client/plus.html" |
+feature is only available as part of <a href="{{ "/client/plus.html" |
 relative_url }}" title="Globus Plus">Globus Plus</a>.
 
 To remove an entry, click on it to select the entry, and then click on the <i
@@ -200,7 +200,7 @@ That's it!  You now have Globus Connect Personal fully configured.  You can now
 make transfers from—and, if your allowed write access, _to_—your collection!
 
 If you would like to share files from your collection with other people, you
-should now proceed to [enable Globus Plus]({{ "plus.html" | relative_url
+should now proceed to [enable Globus Plus]({{ "/client/plus.html" | relative_url
 }}).
 
 
