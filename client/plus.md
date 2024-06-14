@@ -8,8 +8,6 @@ permalink: /client/plus.html
 see-also: true
 ---
 
-# Globus Plus
-
 If you would like to give other people access to content that is only
 accessible with Globus Connect Personal (for example, because that content
 lives on your laptop or desktop), you will need to create a _Shared endpoint_.
