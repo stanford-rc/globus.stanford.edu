@@ -4,7 +4,7 @@ toc:  true
 title:       Globus Plus
 id: client
 description: Enabling Globus Plus
-permalink: plus.html
+permalink: /client/plus.html
 see-also: true
 ---
 
