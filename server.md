@@ -4,7 +4,7 @@ toc:  false
 see-also: true
 id: server
 title:       Globus Connect Server version 4
-
+permalink: server4.html
 description: Main page for Globus server information, for the deprecated version 4.
 ---
 
@@ -13,7 +13,8 @@ description: Main page for Globus server information, for the deprecated version
 {% include info-box.html
    icon="ghost"
    header="Globus Connect Server v4 ends in December 2023"
-   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  Refer to the <a href='/2023/07/07/gcsv4-deprecation.html' title='Globus Connect
+   Server version 4 Ends in December 2023'>news post</a> for more information."
 %}
 
 <b>Globus Connect Server</b> is the name of the software used to create Globus
