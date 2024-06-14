@@ -4,7 +4,7 @@ toc:  false
 see-also: true
 id: server
 title:       Globus Connect Server version 4
-permalink: server4.html
+permalink: server.html
 description: Main page for Globus server information, for the deprecated version 4.
 ---
 
