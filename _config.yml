@@ -14,7 +14,7 @@ site-title: "Globus @ Stanford"
 # * The "Connect With Us" block at the bottom of each page.
 owner:
   # The owner name must be provided.
-  name: "Stanford Research Computing Center"
+  name: "Stanford Research Computing"
 
   # Next up is social media handles.  If you don't have one, use the word
   # "null", but without the quotes.
@@ -109,7 +109,7 @@ defaults:
         # The title to use when Twitter et al show a link to your site.
         # When set to null, Jekyll will generate the string
         # "PAGE_TITLE — SITE_TITLE".
-        title: null
+        title: Globus at Stanford
 
         # The image to show when someone expands a Twitter post with your page
         # linked.  This should be a path relative to your site root.  If not
