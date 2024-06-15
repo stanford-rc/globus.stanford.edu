@@ -298,6 +298,10 @@ code {
   font-weight: 500
 }
 
+#page-content .sidebar ul a:after {
+    content: '';
+}
+
 .sidebar ul li ul li a {
   font-weight: 400
 }
