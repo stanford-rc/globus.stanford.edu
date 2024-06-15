@@ -1,0 +1,18 @@
+section1:
+    links:
+    - title: Research at Stanford
+      new_url: http://www.stanford.edu/research/
+    - title: Stanford News
+      new_url: http://news.stanford.edu/
+section2:
+    head: Contact
+    links:
+    - title: srcc-support@stanford.edu
+      email: srcc-support@stanford.edu
+section3:
+    head: Resources
+    links:
+    - title: SRCC Twitter
+      external_url: https://twitter.com/StanfordCompute
+    - title: Work at Research Computing
+      new_url: https://srcc.stanford.edu/work-research-computing

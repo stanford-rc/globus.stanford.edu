@@ -1,5 +1,7 @@
 ---
-layout:      no-sidebars
+layout:  post
+news: true
+toc: false
 title:       SRCC Hosting Globus Workshop
 excerpt:     The Globus World Tour two-day workshop is coming to Stanford!  Learn about setting up Globus Connect endpoints, and how to automate data transfers using the Globus API.  February 8 and 9, 2018.
 ---

@@ -1,7 +1,9 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server version 4 ufw Configuration
-title_line:  true
+see-also: true
+id: server
 description: Instructions on how to configure ufw to work with Globus Connect Server version 4.
 ---
 
@@ -45,6 +47,6 @@ immediately.
 Your inbound firewall configuration is now complete!  You should now go back
 and continue to the installation procedure.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

@@ -1,15 +1,18 @@
 ---
-layout:      wide
-title:       Support
-title_line:  false
+layout:  page
+title:   Globus Support
+customjs: ./assets/js/faq.js
+toc: false
+toc-min: true
 description: How to get help using Globus at Stanford.
 ---
+Have questions about setting up or using Globus? We are here to help.
 
-<h1>How Can We Help You?</h1>
-
-<p>General information is available for broad categories of issues:</p>
-
-<div class="panel-group" id="support" role="tablist" aria-multiselectable="true">
+<div class="section-head d-flex">
+<h2 id="accountshead" class="p-2 flex-grow-1">Common Help Topics</h2>
+<button class="btn btn-default align-self-end toggle-all p-2" data-segment="support"><i class="fa-solid fa-plus"></i> Open All</button>
+</div>
+<div class="accordion" id="support">
 
 {% capture s1 %}
 
@@ -32,11 +35,12 @@ Stanford, <a href="{{ "accounts/leaving.html" | relative_url }}" title="Leaving
 Stanford">we have a page for that, too</a>!</p>
 
 <p>If you are still having issues, reach out to your <a href="#local">local
-    support contact</a>.  When you reach out, please tell us what you are
+ support contact</a>.  When you reach out, please tell us what you are
 trying to do, the problems you are having (error messages and screen shots are
 helpful!), and what goal you are trying to achieve.</p>
 
 {% endcapture %}
+
 
 {% include panel.html
    parent="support"
@@ -51,7 +55,7 @@ helpful!), and what goal you are trying to achieve.</p>
 to check is, is GCP able to communicate with Globus?  To
 check this, go to the <a href="https://www.globus.org/app">Globus Web Site</a>
 and try to access your endpoint.  When you attempt an access, the GCP icon
-<img src="{{ "assets/client/Toolbar Icon.png" | relative_url }}" alt="" />
+<img src="{{ "/assets/client/ToolbarIcon.png" | relative_url }}" alt="" />
 should start to animate.  If the Globus web site returns an error, and you do
 not see the icon animating, then GCP is not properly
 communicating with Globus.  Try quitting and re-launching GCP.</p>
@@ -77,9 +81,7 @@ for you, and that you have enabled sharing in GCP.  See the
 <a href="{{ "client/plus.html" | relative_url }}" title="Globus Plus">Globus Plus
 instructions</a> for more information.</p>
 
-<p>If none of that helps, the next place to go for help is the Globus <a
-    href="https://groups.google.com/a/globus.org/forum/#!forum/user-discuss/home">User
-    Discuss list</a>.  This is a Google group, which you can join using your
+<p>If none of that helps, the next place to go for help is the Globus <a href="https://groups.google.com/a/globus.org/forum/#!forum/user-discuss/home">User Discuss list</a>.  This is a Google group, which you can join using your
 Stanford University Google account, or (if you have one) your personal Google
 account.  Other users, as well as Globus staff, monitor this list.</p>
 
@@ -107,7 +109,7 @@ should be able to.</p>
 directly.  To do that, look at the endpoint's information page.</p>
 
 {% include hero-image.html
-   src="assets/server/Endpoint Overview.png"
+   src="/assets/server/EndpointOverview.png"
    alt="A Globus endpoint's 'Overview' page, showing endpoint details"
    caption-overlay=true
    caption-header="Endpoint overview"
@@ -118,11 +120,11 @@ directly.  To do that, look at the endpoint's information page.</p>
     E-mail</em>.  That is who you should email for assistance.</p>
 
 <p>If no contact email is listed, or the email address did not work, then what
-you should do depends on if the endpoint is a Stanford endpoint.</p>
+you should do depends on if the endpoint is a Stanford endpoint.
 
 {% capture endpoints-list %}
-<p>If an endpoint's <em>Owner</em> is on the following list, it is a
-Stanford University endpoint:</p>
+If an endpoint's <em>Owner</em> is on the following list, it is a
+Stanford University endpoint:
 <ul>
   <li>scgpm@globusid.org</li>
   <li>srcc@globusid.org</li>
@@ -130,6 +132,7 @@ Stanford University endpoint:</p>
   <li>stanford@globusid.org</li>
 </ul>
 {% endcapture %}
+
 {% include info-box.html
    raw=endpoints-list
 %}
@@ -309,24 +312,23 @@ that we can get a ticket opened directly to Globus.  When you report your
 issue, there is some information that you <em>must</em> include:</p>
 
 <ul>
-
     <li>A pointer to the API operation that is having a problem.  That includes
         the name of the operation, and a URL to the API's <a
-            href="https://docs.globus.org/api">documentation page</a>.</li>
-
+            href="https://docs.globus.org/api">documentation page</a>.
+        </li>
     <li>A <em>reduced test case</em>.  This is a script or program, which takes
         a Globus client ID (and if appropriate, a client secret) and is able to
-        reproduce the problem in as few steps as possible.<br />
+        reproduce the problem in as few steps as possible.
 
-        When you submit your reduced test case, you should have some
-        <b>temporary</b> Globus credentials hard-coded in the test case.  You
+        <p>When you submit your reduced test case, you should have some <strong>temporary</strong> Globus credentials hard-coded in the test case.  You
     should create a fresh client ID and client secret, which you can delete
-    once your problem has been resolved.</li>
+    once your problem has been resolved.<p>
+</li>
 
 </ul>
 
-<p>With that information, we will let you know if any information is missing,
-and then open a case with Globus!</p>
+With that information, we will let you know if any information is missing,
+and then open a case with Globus!
 
 {% endcapture %}
 
@@ -337,60 +339,21 @@ and then open a case with Globus!</p>
    content=s6
 %}
 
-</div><!-- close out the panel-group -->
-
-<p>If none of that was helpful, there are several direct-support options.</p>
+</div><!-- close out the accordion -->
 
 <h2>Office Hours</h2>
 
-<p>If you would like to talk to someone in person, there are a few places on
-campus where this is available.</p>
+<p>Book a 20-minute slot with the Research Computing team to get help with Globus.</p> 
 
-<ul>
+<p>We recommend booking time during <a href="https://srcc.stanford.edu/workshops/sherlock-zoom-office-hours">Sherlock office hours</a>. Please mention Globus in your question so that we can have a Globus expert available for your appointment.</p>
 
-    <li><b>FarmShare and Sherlock office hours</b>.  The Stanford Research
-        Computing Center hosts office hours for FarmShare and Sherlock
-        computing environments, and there is normally at least one staffer
-        available who is able to help with Globus issues.<br />
+<h2 id="local">Local Support</h2>
 
-        FarmShare office hours are once a week for two hours, Autumn, Winter,
-        and Spring.  The specific day and time changes every quarter.<br />
+<p>If you plan to use Globus to access Stanford University Libraries resources, don't miss this helpful <a
+href="https://guides.library.stanford.edu/globus-quick-start"
+title="Digital Library Systems and Services">Quick Start Guide</a>.</p>
 
-        <br />
-
-        Sherlock office hours are on Tuesday and Thursday throughout the
-        calendar year, except for Winter Close.<br />
-
-        <br />
-
-        Refer to the <a
-                         href="https://srcc.stanford.edu/office-hours-and-support/support"
-                         title="Stanford Research Computing Center">SRCC web
-                         site</a> for specific information on hours and
-                 locaions.</li>
-
-</ul>
-
-<h2><a name="local"></a>Local Support Contacts</h2>
-
-<p>In order to increase responsiveness to tickets, and ease the load on any one
-group, support for Globus has been spread out across several groups on
-campus.</p>
-
-<p>If you need to reach out to someone at Stanford for support, first see if
-your group, Department, or School is on this list:</p>
-
-<ul>
-
-    <li>If you are affiliated with SUL, you should contact <a
-            href="https://library.stanford.edu/department/digital-library-systems-and-services-dlss"
-            title="Digital Library Systems and Services">DLSS</a> for
-            support.</li>
-
-</ul>
-
-<p>If none of the above local support contacts apply to you, then you should
-<a href="mailto:srcc-support@stanford.edu">contact SRCC</a>.</p>
+<p>For all other Globus questions, send an email to <a href="mailto:srcc-support@stanford.edu">Stanford Research Computing</a>.</p>
 
 {% include info-box.html
    icon="clock"

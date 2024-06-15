@@ -1,10 +1,12 @@
 ---
-layout:     left-sidebar
+layout:      page
+toc:  false
 title:      Globus Account Creation
-title_line: false
+id: accounts
+see-also: true
 ---
 
-# Linking Additional Identities
+## Linking Additional Identities
 
 As mentioned in the [introduction]({{ "accounts" | relative_url }}), Globus
 supports having multiple _identites_ per person, with one identity acting as
@@ -30,7 +32,7 @@ To link an identity, go to [app.globus.org](https://app.globus.org).  If you
 are not already logged in, then you will be presented with the login page:
 
 {% include hero-image.html
-   src="assets/accounts/Login Page.png"
+   src="/assets/accounts/LoginPage.png"
    alt="Globus login screen"
    caption-overlay=true
    caption-header="The Globus login screen"
@@ -40,7 +42,7 @@ are not already logged in, then you will be presented with the login page:
 Log in as normal, and you will arrive at the transfer page:
 
 {% include hero-image.html
-   src="assets/accounts/Transfer Page.png"
+   src="/assets/accounts/TransferPage.png"
    alt="Globus transfer screen"
    caption-overlay=true
    caption-header="The Globus 'Transfer Files' screen"
@@ -51,7 +53,7 @@ Click on the **<i class="fas fa-user-circle"></i> Account** option (near the bot
 take you to the Account Management page:
 
 {% include hero-image.html
-   src="assets/accounts/Account Management.png"
+   src="/assets/accounts/AccountManagement.png"
    alt="Globus Account Management"
    caption-overlay=true
    caption-header="Account Management"
@@ -64,7 +66,7 @@ Stanford identity) and any linked identites.
 To link a new identity, click on **<i class="fas fa-id-card"></i><i class="fas fa-plus-circle"></i> Link Another Identity**, on the right of the page.
 
 {% include hero-image.html
-   src="assets/accounts/Add Linked Identity.png"
+   src="/assets/accounts/AddLinkedIdentity.png"
    alt="Page asking you to select an institution to log in"
    caption-overlay=true
    caption-header="Selecting an Institution"
@@ -81,13 +83,13 @@ with the newly-linked identity listed in the _linked identities_ section.
    content="If you want to 'move' a linked identity, you will need to un-link the identity from the 'losing' primary, before you link it to the 'gaining' primary."
 %}
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="accounts" %}
+
+
 
 <a name="example"></a>
 {% include hero-image.html
-   src="assets/accounts/Identity Diagram.svg"
+   src="/assets/accounts/IdentityDiagram.svg"
    alt="A diagram of one human with a Stanford account, a Google account, and an Ohio State account."
    caption-header="Three accounts, one identity"
    caption-text="This person has accounts at two instutions, plus Google, but Globus recognizes this as one Human."

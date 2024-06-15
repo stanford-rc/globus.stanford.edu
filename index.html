@@ -1,87 +1,70 @@
 ---
-layout:      index
-title:       Welcome
-title_line:  false
-description: Welcome to Globus at Stanford!  This is the place to get started.
+layout: home
+home: true
+title: Welcome to Globus at Stanford
+sidebar-box-title: "What Is Globus?"
+sidebar-box: '<p>Globus is a platform for high-speed data transfer. If you have Low or Moderate Risk data, you can use Globus to share it with people in Stanford,
+with collaborators at other institutions, or with the general public.</p>
+<p><a class="more-link" href="/about.html"><i class="fa fa-chevron-circle-right"></i> More about Globus</a></p>'
+
+sidebar-box-title2: "Need Help Getting Started?"
+sidebar-box2: '<p>We have a list of common problems, with information on how they can be solved using Globus.</p>
+<p><a class="more-link" href="/scenarios.html"><i class="fa fa-chevron-circle-right"></i> See the "How Do I…?" List</a></p>'
+
+sidebar-box-title3: "Who Pays for This?"
+sidebar-box3: '<p>This service is paid for by University IT, Stanford University Libraries, and the Genetics Bioinformatics Service Center in the School of Medicine. It is administered by the Stanford Research Computing Center. There are some conditions on who can use the service, and the type of data which can be transferred using Globus.<p><a class="more-link" href="/policies.html"><i class="fa fa-chevron-circle-right"></i>Read the fine print</a></p>'
+toc: false
 ---
 
-<h2 class="headline">Welcome to Globus!</h2>
-
-<p>Globus is a high-performance data-transfer platform.  You can use Globus
-for…</p>
-
-<p>
-  <i class="fa fa-fw fa-tree"></i> Data transfers between servers in your group.<br />
-  <i class="fa fa-fw fa-laptop"></i> Data transfers between a server and your laptop.<br />
-  <i class="fas fa-fw fa-university"></i> Sharing data with researchers at other institutions.<br />
-  <i class="fas fa-fw fa-globe"></i> Sharing data with the world.<br />
-  <i class="fas fa-fw fa-clock"></i> Automate data transfers between any of the above.
-</p>
-
-<p>Transfers happen unattended, data verification is on by default, and
-on-the-wire encryption is available.</p>
-
-<p>All of this is available now, for you, for free.</p>
-
-<p>&nbsp;</p>
-
-<h2><i class="fa fa-fw fa-rocket"></i> Get Started</h2>
-
-<p><i class="fa fa-fw fa-question-circle"></i>
-  If you have a data-sharing problem, or a collaboration problem, our
-  <a href="{{ "scenarios.html" | relative_url }}" title="Globus Scenarios">
-    "How Do I…?" page
-  </a>
-  will have a solution!
-</p>
-
-<p><i class="fa fa-fw fa-laptop"></i>
-  If you know that you need the Globus client, go directly to our
-  <a href="{{ "client.html" | relative_url }}" title="Globus Client">
-    client page.
-  </a>
-</p>
-
-<p><i class="fas fa-fw fa-server"></i>
-  If you know that you need the Globus server, go directly to our
-  <a href="{{ "server.html" | relative_url }}" title="Globus Connect Server">
-    server page.
-  </a>
-</p>
-
-<p>&nbsp;</p>
+  <div class="text-chunk">
+    <p>Globus is a high-performance data-transfer platform. You can use Globus
+      for…</p>
 
 
-<h2><i class="fa fa-fw fa-newspaper"></i> Announcements</h2>
-<p>Read our recent announcements related to the Globus service.</p>
+<ul class="fa-ul" style="--fa-li-width: 2em;">
+  <li><span class="fa-li"><i class="fa fa-fw fa-tree"></i></span> Data transfers between servers in your group.</li>
+  <li><span class="fa-li"><i class="fa fa-fw fa-laptop"></i></span> Data transfers between a server and your laptop.</li>
+  <li><span class="fa-li"><i class="fas fa-fw fa-university"></i></span> Sharing data with researchers at other institutions.</li>
+  <li><span class="fa-li"><i class="fas fa-fw fa-globe"></i></span> Sharing data with the world.</li>
+  <li><span class="fa-li"><i class="fas fa-fw fa-clock"></i></span> Automate data transfers between any of the above.</li>
+</ul>
 
-{% comment %} Show the announcements {% endcomment %}
-{% include blog.html %}
+    <p>Transfers happen unattended, data verification is on by default, and
+      on-the-wire encryption is available.</p>
 
-{% comment %} Transition from main to sidebar {% endcomment %}
-{% include index/transition.html %}
+    <p>All of this is available now, for you, for free.</p>
+  </div>
+  <div class="text-chunk">
 
-<div class="well">
-  <h2>What Is Globus?</h2>
-  <p>Globus is a platform for high-speed data transfer.  If you have Low or
-  Moderate Risk data, you can use Globus to share it with people in Stanford,
-  with collaborators at other institutions, or with the general public.</p>
-  <p><a class="more-link" href="{{ "about.html" | relative_url }}"><i class="fa fa-chevron-circle-right"></i> More about Globus</a></p>
-</div>
+    <h2><i class="fa fa-fw fa-rocket"></i> Get Started</h2>
 
-<div class="well">
-  <h2>Need Help Getting Started?</h2>
-  <p>We have a list of common problems, with information on how they can be
-  solved using Globus.</p>
-  <p><a class="more-link" href="{{ "scenarios.html" | relative_url }}"><i class="fa fa-chevron-circle-right"></i> See the "How Do I…?" List</a></p>
-</div>
+      <ul class="fa-ul" style="--fa-li-width: 2em;">
+    <li><span class="fa-li"><i class="fa fa-fw fa-question-circle"></i></span>
+      If you have a data-sharing problem, or a collaboration problem, our
+      <a href="/scenarios.html" title="Globus Scenarios">
+        "How Do I…?" page
+      </a>
+      will have a solution!
+</li>
+    <li><span class="fa-li"><i class="fa fa-fw fa-laptop"></i></span>
+      If you know that you need the Globus client, go directly to our
+      <a href="/client.html" title="Globus Client">
+        client page.
+      </a>
+</li>
+    <li><span class="fa-li"><i class="fas fa-fw fa-server"></i></span>
+      If you know that you need the Globus server, go directly to our
+      <a href="/server5.html" title="Globus Connect Server">
+        server page.
+      </a>
+    </li>
+    </ul>
+  </div>
 
-<div class="well">
-  <h2>Who Pays for This?</h2>
-  <p>This service is paid for by University IT, Stanford University Libraries,
-  and the Genetics Bioinformatics Service Center in the School of Medicine.  It
-  is administered by the Stanford Research Computing Center.  There are some
-  conditions on who can use the service, and the type of data which can be
-  transferred using Globus.
-  <p><a class="more-link" href="{{ "policies.html" | relative_url }}"><i class="fa fa-chevron-circle-right"></i>Read the fine print</a></p>
-</div>
+
+  <div class="text-chunk">
+    <h2><i class="fa fa-fw fa-newspaper"></i> Announcements</h2>
+
+    {% comment %} Show the announcements {% endcomment %}
+    {% include blog.html %}
+  </div>

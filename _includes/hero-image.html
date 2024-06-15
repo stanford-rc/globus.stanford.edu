@@ -1,11 +1,39 @@
-<div id="hero-image">
-  <img src="{{ include.src | absolute_url }}" alt="{{ include.alt }}" />
-  {% if include.caption-overlay == true %}
-  <div class="image-caption overlay">
-  {% else %}
-  <div class="image-caption">
-  {% endif %}
-    <h4>{{ include.caption-header }}</h4>
-    <p>{{ include.caption-text }}</p>
-  </div>
-</div>
+{% comment %}
+Usage:
+include hero-image.html
+   src="/assets/images/mycat.jpg"
+   caption-overlay=true <---if you want the caption to appear on hover
+   max-width = "300px" <---if you want to restrict size on desktop
+   align = "float-md-end" <--- use any of the values in https://getbootstrap.com/docs/5.0/utilities/float/#responsive, float-md-end to right-align a figure
+   alt="An orange kitten looks at the camera with utter disbelief" <--required
+   caption-header = "Silly Cat"
+   caption-text="He's orange, he can't help it"
+{% endcomment %}
+{% if include.caption-header %}
+{% capture figcaption-head %}
+  <p class='h4'>{{include.caption-header}}</p>
+{% endcapture %}
+{% endif %}
+
+{% if include.caption-text %}
+{% capture figcaption-text %}
+  <p>{{include.caption-text}}</p>
+{% endcapture %}
+{% endif %}
+
+{% capture figcaption %}
+{{figcaption-head}} {{figcaption-text}}
+{% endcapture %}
+
+
+{% if include.caption-overlay == true %}
+  {% assign overlay = "overlay" %}
+{% endif %}
+
+<figure class="figure flex-wrap hero-image mt-4 mb-4 border border-light-subtle p-4 d-flex {% if {{include.align}} %}{{include.align}}{% endif %}" {% if {{include.max-width}} %}style="max-width: {{include.max-width}}"{% endif %}>
+  {% if {{include.url}} %}
+  <a class="no_icon" target="_blank" href="{{include.url}}">
+    {% endif %}
+    <img class="figure-img img-fluid rounded align-self-start flex-shrink-0 ms-md-3 me-md-3 mt-md-3 border-light-subtle border" src="{{include.src}}" alt="{{include.alt}}" />
+  {% if {{include.url}} %}</a>{% endif %}
+  {% if {{figcaption}} %} <figcaption class="figure-caption align-self-start flex-grow-2 pt-3 ms-md-3">{{figcaption}}</figcaption>{% endif %}</figure>

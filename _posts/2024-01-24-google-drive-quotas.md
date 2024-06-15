@@ -1,5 +1,10 @@
 ---
-layout:      wide
+layout:  post
+news: true
+toc: false
+   
+news: true
+toc: false
 title:       Google Drive quotas, and using Globus for Drive migrations.
 excerpt:     University IT is implementing a 50 GB quota on Google Drive spaces.  This will limit how much you can transfer in to Google Drive, and will trigger many migrations of data out of Google Drive.  Read on to learn how Globus is affected, and how to prepare for a migration.
 ---
@@ -24,7 +29,7 @@ the changes are…
 * Policies for shared drive creation and lifecycle management will be announced
   ssoon.
 
-# Globus Transfers with Google Drive quotas
+## Globus Transfers with Google Drive quotas
 
 **Globus will still work to transfer data to & from Google
 Drive**, even after the transition.  Globus already supports platforms that
@@ -32,12 +37,10 @@ have storage quotas.  If you hit a storage quota during a transfer, Globus will
 react one of two ways, depending on the transfer setting "Fail on quota
 errors".
 
-{% include hero-image.html
-   src="assets/posts/2024/Transfer Sync option.png"
+{% include figure.html
+   src="/assets/posts/2024/TransferSyncoption.png"
    alt="A Globus File Manager window, showing transfer and sync options.  The 'Fail on quota errors' option is hilighted."
-   caption-overlay=true
-   caption-header="Controlling what happens when there is a quota error."
-   caption-text=""
+   caption="Controlling what happens when there is a quota error."
 %}
 
 When you are preparing a Globus transfer, if you go to the *Transfer & Timer
@@ -55,7 +58,7 @@ additional quota, etc.) and restart the transfer.  In this case you might want
 to enable the "sync" option to only transfer files that were not already
 transferred.
 
-# Using Globus for data migration
+## Using Globus for data migration
 
 This announcement will likely trigger data migrations off of Google Drive.  If
 you are planning to migrate data off of Google Drive, Globus might be an option
@@ -100,7 +103,7 @@ should take before a migration.
   has some of the strictest transfer quotas and bandwidth limits.  Transfers
   may end up taking longer than you expect.
 
-# Questions and Migration support
+## Questions and Migration support
 
 If you have questions about the Google Drive changes, check out the [transition
 announcement](https://uit.stanford.edu/news/transitioning-sustainable-google-workspace)

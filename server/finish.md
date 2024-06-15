@@ -1,11 +1,13 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server version 4 Final Configuration
-title_line:  false
+see-also: true
+id: server
 description: Finish your Globus Connect Server version 4 Installation
 ---
 
-# Finishing Configuration
+
 
 {% include info-box.html
    icon="ghost"
@@ -79,7 +81,7 @@ site](https://app.globus.org/).
 Log in, and go to the **Endpoints** page.
 
 {% include hero-image.html
-   src="assets/server/Recent Endpoints.png"
+   src="/assets/server/RecentEndpoints.png"
    alt="The list of recently-used endpoints."
    caption-overlay=true
    caption-header="Recently-Used Endpoints"
@@ -91,7 +93,7 @@ on **Administered By You**.  The list of endpoints will switch to show endpoints
 administered by your Globus ID.
 
 {% include hero-image.html
-   src="assets/server/Administered Endpoints.png"
+   src="/assets/server/AdministeredEndpoints.png"
    alt="The list of endpoints which you administer."
    caption-overlay=true
    caption-header="Endpoints You Administer"
@@ -107,7 +109,7 @@ Click on the **Edit Attributes** button, so that you can fill in the missing
 endpoint information.
 
 {% include hero-image.html
-   src="assets/server/Endpoint Information Editable.png"
+   src="/assets/server/EndpointInformationEditable.png"
    alt="A list of endpoint attributes, with information already filled in."
    caption-overlay=true
    caption-header="Endpoint Information"
@@ -177,7 +179,7 @@ The _Server_ tab contains information on how users are authenticated, server
 location & performance, and server connection details.
 
 {% include hero-image.html
-   src="assets/server/Endpoint Server.png"
+   src="/assets/server/EndpointServer.png"
    alt="An endpoint's server information tab."
    caption-overlay=true
    caption-header="Endpoint Server Information"
@@ -261,7 +263,7 @@ The _Roles_ tab shows all of the accounts which have special access to your
 endpoint.
 
 {% include hero-image.html
-   src="assets/server/Endpoint Roles.png"
+   src="/assets/server/EndpointRoles.png"
    alt="An endpoint's roles tab, showing two accounts which have administrator access, and one account which has 'activity monitor' access."
    caption-overlay=true
    caption-header="Endpoint Roles"
@@ -378,6 +380,6 @@ removed.
 SRCC, the contributors to this site, and other Stanford Globus users hope that
 you will make good use of your new endpoint.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

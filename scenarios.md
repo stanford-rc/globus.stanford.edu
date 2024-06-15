@@ -1,23 +1,29 @@
 ---
-layout:      wide
+layout:      page
 title:       How Do I … ?
 description: Describes different data transfer scenarios, and how Globus can help.
+permalink: scenarios.html
+customjs: ./assets/js/faq.js
+toc: false
+toc-min: true
 ---
 
 <p>Everyone who wants to use Globus has to start somewhere, and that place is
 here.  You might have been told "Oh, you need to do X", or you might not be
-sure what you need to do.  This page is for you!</p>
+sure what you need to do. This page is for you!</p>
 
 <p>This page contains common Globus scenarios and questions.  Each answer
 either contains a direct answer to your question
 or a link to a different part of the site.</p>
 
-<p>The entries are grouped into four sections: <a href="#accounts">Accounts
-(and Globus ID)</a>, the <a href="#web">Globus Web Site</a>, the <a
-href="#client">Globus Client</a> (better known as <em>Globus Connect
-Personal</em>, and which includes <em>Globus Plus</em>), and the <a
-href="#server">Globus Server</a> (<em>Globus Connect Server</em>).  Start in
-the section that best describes what you want, and read on.</p>
+<p>The entries are grouped into sections: </p>
+<ul className="list-unstyled">
+  <li><a href="#accountshead">Accounts/Globus ID</a></li>
+  <li>Transfers in the browsers via the <a href="#webhead">Globus Web Application</a></li>
+  <li>Transfers via <a href="#clienthead">Globus Client</a> software</li>
+  <li>Using <a href="#serverhead">Globus Server</a></li>
+  <li><a href="#policieshead">Policies and Support options</a></li>
+</ul>
 
 <p>After reading here, you should also take a look at the section of the site
 specific to your needs: <a href="{{ "accounts.html" | relative_url }}"
@@ -28,11 +34,12 @@ Finally, if you still have questions, you should reach out to <a href="{{
 "support.html" | relative_url }}" name="Globus @ Stanford,
 Support">Support</a>.</p>
 
-<p><b>Good luck!</b></p>
 
-<div class="panel-group" id="scenario" role="tablist" aria-multiselectable="true">
 
-  {% capture z1 %}
+<h2 id="starthead">Start Here</h2>
+
+
+{% capture z1 %}
 
 <p>You are probably here because you've heard about Globus and you want to use
 it for something!</p>
@@ -50,7 +57,7 @@ Accounts">learn about how Globus accounts work</a>, and how to
 identies together</a>.</p>
 
 <p>(Here is a side challenge: If you have already registered for <a
-href="https://library.stanford.edu/myorcid" title ="Stanford Libraries: My
+href="https://library.stanford.edu/orcid-id" title ="Stanford Libraries: My
 ORCID">your ORCID iD</a>, try linking it to your Stanford Globus identity!)</p>
 
 <p>Now that you have your Globus account, you need to access either the
@@ -58,7 +65,7 @@ collection or the endpoint which has the data you want.
 Every endpoint and collection can be identified either by name, or by unique
 ID.  You can search for both on the <a href="https://app.globus.org/endpoints"
 title="Endpoints">Endpoints search page</a>.  Be careful when searching by
-name, because names are not guaranteed to be unique.
+name, because names are not guaranteed to be unique.</p>
 
 <p>If the source or destination is a server, ask the server administrator for a
 link to the appropriate collection.  (For example, see <a
@@ -87,21 +94,24 @@ connections.</p>
 title="How To Log In and Transfer Files with Globus">Globus instructions</a>
 are very helpful here.</p>
 
-  {% endcapture %}
+{% endcapture %}
+<div class="accordion" id="started">
 
-  {% include panel.html
-     parent="scenario"
+{% include panel.html
+     parent="started"
      id="z1"
      scenario="How do I get started?"
      content=z1
-  %}
+%}
 
-<!-- Next item is z2 -->
+</div>
 
-<p>&nbsp;</p>
 
-<h2><a name="accounts">Accounts and Globus ID</a></h3>
-
+<div class="section-head d-flex">
+<h2 id="accountshead" class="p-2 flex-grow-1">Accounts and Globus ID</h2>
+<button class="btn btn-default align-self-end toggle-all p-2" data-segment="scenario"><i class="fa-solid fa-plus"></i> Open All</button>
+</div>
+<div class="accordion" id="scenario">
   {% capture a1 %}
 
 <p>Creating a Globus account is easy!  If you have never used Globus before,
@@ -113,12 +123,14 @@ credentials, and <a href="{{ "accounts/link.html" | relative_url }}"
 title="Link Identities">link your Stanford identity</a>.</p>
 
   {% endcapture %}
+
   {% include panel.html
      parent="scenario"
      id="a1"
      scenario="How do I get access to Globus?"
      content=a1
   %}
+
 
   {% capture a2 %}
 
@@ -184,12 +196,13 @@ relative_url }}" title="Globus ID">Globus ID</a> page.</p>
   %}
 
 <!-- Next item is a5 -->
-
-<p>&nbsp;</p>
-
-<h2><a name="web">The Globus Web Site</a></h2>
-
-	{% capture w1 %}
+</div>
+<div class="section-head d-flex">
+<h2 id="webhead" class="p-2 flex-grow-1">The Globus Web Site</h2>
+<button class="btn btn-default align-self-end toggle-all p-2" data-segment="web"><i class="fa-solid fa-plus"></i> Open All</button>
+</div>
+<div class="accordion" id="web">
+{% capture w1 %}
 
 <p>There are several ways to refer to an endpoint: By short name, by full name,
 or by UUID.  You can look up an endpoint on the Globus web site using each of
@@ -229,15 +242,15 @@ In the above URL, <code>db57ddde-6d04-11e5-ba46-22000b92c6ec</code> is the
 endpoint's unique ID.  You should make a note of it, as that unique ID will
 not change (unless the endpoint is deleted).</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="web"
      id="w1"
      scenario="Someone gave me access to a Globus endpoint.  How do I access it?"
      content=w1
   %}
 
-	{% capture w2 %}
+{% capture w2 %}
 <p>If you are getting a <em>permission denied</em> error when trying to login
 to the endpoint, then you should check which credentials you are using.  For
 example, endpoints normally only accept logins through their institution.  So,
@@ -247,7 +260,7 @@ credentials will not let you in to a Stanford endpoint.</p>
 <p>(If you have multiple logins to Globus, you might be logged in with the
 wrong one.  You should <a href="{{
 "accounts/link.html" | relative_url }}" title="Link Identities">Link
-Identities</a> to keep that from happening again.)
+Identities</a> to keep that from happening again.)</p>
 
 <p>If your credentials are being accepted; but you are getting <em>permission
 denied</em> when you try to do a directory listing, or when you are trying to
@@ -266,15 +279,15 @@ directory.  You either need to talk to the endpoint administrator (for Shared
 endpoints and Globus Connect Server endpoints), or check your endpoint
 configuration (for Globus Connect Personal endpoints).</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="web"
      id="w2"
      scenario="I am getting <em>Permission Denied</em> errors when I try accessing an endpoint.  How do I get access?"
      content=w2
   %}
 
-	{% capture w5 %}
+{% capture w5 %}
 <p>Shared endpoints do not exist on their own.  They require a <em>host
 endpoint</em>, which is either a Globus Connect Personal endpoint or a Globus
 Connect Server endpoint.</p>
@@ -306,15 +319,15 @@ make sure that you have Globus Plus, and that sharing is explicitly enabled.
 And if your host endpoint is running Globus Connect Server, you need to talk
 to the administrator of your host endpoint.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="web"
      id="w5"
      scenario="I am getting <em>Permission Denied</em> errors when I try making a shared endpoint.  How do I fix this?"
      content=w5
   %}
 
-	{% capture w3 %}
+{% capture w3 %}
 
 <p>Transfers between endpoints can be paused by endpoint administrators.  If
 you got an email saying your transfer has been paused—and you didn't pause the
@@ -330,15 +343,15 @@ endpoint restart).</p>
 happen, you should reach out to the administrator of the endpoint who paused
 your transfer.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="web"
      id="w3"
      scenario="I got an email saying my transfer has been paused.  How do I restart it?"
      content=w3
   %}
 
-	{% capture w4 %}
+{% capture w4 %}
 
 <p>In order to transfer files, Globus needs your credentials at both ends of
 the transfer.  Giving Globus these credentials is called <em>activating an
@@ -361,22 +374,22 @@ resume.</p>
 <p>Transfers already started will continue to attempt to run for up to a day
 before being terminated.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="web"
      id="w4"
      scenario="I got an email saying my credentials have expired.  How do I fix it?"
      content=w4
   %}
-
-<!-- Next item is w6 -->
-
-<p>&nbsp;</p>
-
-<h2><a name="client">The Globus Client (better known as Globus Connect
-Personal), and Globus Plus</a></h2>
-
-	{% capture c1 %}
+</div>
+<!-- Next item is Globus Client -->
+<div class="section-head d-flex">
+<h2 id="clienthead" class="p-2 flex-grow-1">The Globus Client (Globus Connect
+Personal) and Globus Plus</h2>
+<button class="btn btn-default align-self-end toggle-all p-2" data-segment="client"><i class="fa-solid fa-plus"></i> Open All</button>
+</div>
+<div class="accordion" id="client">
+{% capture c1 %}
 
 <p><em>Globus Connect Personal</em> (the proper name for the Globus client
 software) is how you can use Globus to transfer files to/from your
@@ -387,9 +400,9 @@ endpoints.</p>
 <p>Read more about <a href="{{ "client.html" | relative_url }}"
 title="Globus Connect Personal">Globus Connect Personal </a>.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="client"
      id="c1"
      scenario="Someone told me that I need the Globus client.  What even is it?  How do I get it?"
      content=c1
@@ -419,13 +432,13 @@ you are still interested!</p>
 
     {% endcapture %}
     {% include panel.html
-       parent="scenario"
+       parent="client"
        id="c8"
        scenario="My laptop or desktop handles High Risk (including PCI / PHI) data.  Can I use Globus on it?"
        content=c8
   %}
 
-	{% capture c5 %}
+{% capture c5 %}
 
 <p>No, but if you firewall outbound connection, then some ports will need to be
 opened.  Globus Connect Personal does not need to accept connections from the
@@ -441,15 +454,15 @@ title="Stanford University IT VPN Service">Stanford VPN</a>, but you
 must use <em>Full Traffic (non-split-tunnel)</em> mode, which sends all
 traffic (even non-Stanford traffic) through the VPN.</p>
 
-	{% endcapture %}
-	{% include panel.html
-		 parent="scenario"
+{% endcapture %}
+{% include panel.html
+		 parent="client"
 		 id="c5"
 		 scenario="Do I need to open ports for Globus Connect Personal to work?"
 		 content=c5
 	%}
 
-	{% capture c2 %}
+{% capture c2 %}
 
 <p>Globus Connect Personal already works to transfer data as quickly as
 possible, without making your Internet connection unusable.  That being said,
@@ -482,27 +495,22 @@ consider taking advantage of the <a
 href="https://srcc.stanford.edu/stanford-research-network-srn" title="Stanford
 Research Network">Stanford Research Network</a>.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="client"
      id="c2"
      scenario="I am transferring data to/from my laptop/desktop.  How do I make my transfer go faster?"
      content=c2
   %}
 
-	{% capture c4 %}
+{% capture c4 %}
 
 <p><em>relay.globusonline.org</em> is the link between Globus Connect Personal
 and Globus.  All transfer operations—except for the actual data being
 transferred—goes through this connection.</p>
 
 <p>Globus Connect Personal must be able to make outbound connections to
-relay.globusonline.org on TCP port 2223.  If that is blocked, then you will not
-be able to perform directory listings or start new transfers, and existing
-transfers will stop working.  To fix this, you will need to reach out to your
-IT person.  For undergrads, that is your RCC; for grads, go to the <a
-href="https://library.stanford.edu/contacts/tech-desk" title="Lathrop Tech
-Desk">Lathrop Tech Desk</a>; for everyone else, go to your <a
+relay.globusonline.org on TCP port 2223.  To fix this, you will need to reach out to your IT person. For students (undergrads and grads), reach out to <a href="https://thehub.stanford.edu/services/student-technical-support">Student Technical Support</a> at the <a href="https://thehub.stanford.edu/">Lathrop Learning Hub</a>.  For everyone else, go to your <a
 href="https://web.stanford.edu/group/networking/dist/sunet.reports/LNA.html"
 title="Local Network Administrators by Department">LNA</a>.</p>
 
@@ -515,9 +523,9 @@ traffic (even non-Stanford traffic) through the VPN.</p>
 <p>Transfers already started will continue to attempt to run for up to a day
 before being terminated.</p>
 
-	{% endcapture %}
-	{% include panel.html
-		 parent="scenario"
+{% endcapture %}
+{% include panel.html
+		 parent="client"
 		 id="c4"
 		 scenario="I am getting errors connecting to relay.globusonline.org.  How do I fix this?"
 		 content=c4
@@ -534,11 +542,7 @@ OK.</p>
 <p>If ESnet transfers are also reporting 'connection failed', then the most
 likely problem is a network-level block.  Globus Connect Personal needs to be
 able to make outbound connections to TCP ports 50000 through 51000.  If that is
-blocked, then you will be able to start transfers, but they will not run.  In
-that case, you need to check with your IT person.  For undergrads, that is your
-RCC; for grads, go to the <a
-href="https://library.stanford.edu/contacts/tech-desk" title="Lathrop Tech
-Desk">Lathrop Tech Desk</a>; for everyone else, go to your <a
+blocked, then you will be able to start transfers, but they will not run.  To fix this, you will need to reach out to your IT person. For students (undergrads and grads), reach out to <a href="https://thehub.stanford.edu/services/student-technical-support">Student Technical Support</a> at the <a href="https://thehub.stanford.edu/">Lathrop Learning Hub</a>.  For everyone else, go to your <a
 href="https://web.stanford.edu/group/networking/dist/sunet.reports/LNA.html"
 title="Local Network Administrators by Department">LNA</a>.</p>
 
@@ -551,9 +555,9 @@ traffic (even non-Stanford traffic) through the VPN.</p>
 <p>Your transfer will continue to attempt to run for up to a day before being
 terminated.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-		 parent="scenario"
+		 parent="client"
 		 id="c3"
 		 scenario="All of my transfers are saying 'connection failed'.  How do I fix this?"
 		 content=c3
@@ -580,11 +584,11 @@ this is by putting both endpoints onto the
 <a href="https://uit.stanford.edu/service/vpn"
 title="Stanford University IT VPN Service">Stanford VPN</a>.  If that still
 does not work, try using the <em>Full Traffic (non-split-tunnel) mode</em>,
-which routes all network traffic through the VPN.
+which routes all network traffic through the VPN.</p>
 
     {% endcapture %}
     {% include panel.html
-       parent="scenario"
+       parent="client"
        id="c6"
        scenario="I am having problems transferring files between two Globus Connect Personal endpoints.  How do I fix this?"
        content=c6
@@ -602,20 +606,22 @@ title="Globus Plus">Read about Globus Plus</a>.</p>
 
     {% endcapture %}
     {% include panel.html
-       parent="scenario"
+       parent="client"
        id="c7"
        scenario="How do I allow sharing?"
        content=c7
     %}
+</div>
+<!-- Next item is Globus Server -->
 
-<!-- Next item is c9 -->
+<div class="section-head d-flex">
+  <h2 class="p-2 flex-grow-1" id="serverhead">The Globus Server (aka Globus Connect Server)</h2>
+  <button class="btn btn-default align-self-end toggle-all p-2" data-segment="server"><i class="fa-solid fa-plus"></i> Open All</button>
+</div>
 
-<p>&nbsp;</p>
+<div class="accordion" id="server">
 
-<h2><a name="server">The Globus Server (better known as Globus Connect
-Server)</a></h2>
-
-	{% capture s1 %}
+{% capture s1 %}
 
 <p>You will need to <a href="{{ "server.html" | relative_url }}" title="Globus Connect
 Server">install Globus Connect Server</a> onto a system that has access to the
@@ -642,15 +648,15 @@ desktop), they will need Globus Connect Personal.  You should point your users
 to this page, and the question <em>Someone told me that I need the Globus
 client.  What even is it? How do I get it?</em>.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s1"
      scenario="I want my users to be able to transfer files using Globus.  How do I do this?"
      content=s1
   %}
 
-	{% capture s21 %}
+{% capture s21 %}
 
 <p>This can be done, but it has to be done in two steps:</p>
 
@@ -660,7 +666,7 @@ client.  What even is it? How do I get it?</em>.</p>
 Server">install Globus Connect Server</a> onto a system that has access to the
 data your users wish to share.  As you follow the process, make sure to watch
 out for sections that talk about enabling sharing.  In the end, you will have
-an endpoint URL.  It will look something like this:<br />
+an endpoint URL.  It will look something like this:
 
 <pre>https://www.globus.org/app/endpoints/96a13ae8-1fb5-11e7-bc36-22000b9a448b/overview</pre>
 
@@ -672,16 +678,17 @@ How do I access it?</em> for alternative ways of discovering your endpoint).
 The endpoint's web page will have a <em>My Shares</em> tab; where users can
 authenticate, create a share, and give others access (read-only or read-write)
 to the share.</li>
+</ol>
+{% endcapture %}
 
-	{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s21"
      scenario="I want my users to be able to share files with others (who do not have local accounts).  How do I do this?"
      content=s21
   %}
 
-	{% capture s8 %}
+{% capture s8 %}
 
 <p>Globus Connect Server works fine with storage that is accessed via NFS.
 With NFSv3, no changes are needed.  With NFSv4, you will need to use
@@ -689,15 +696,15 @@ With NFSv3, no changes are needed.  With NFSv4, you will need to use
 with Globus, because Globus has no way of getting Kerberos credentials for
 users.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s8"
      scenario="How can I use Globus Connect Server with NFS?"
      content=s8
   %}
 
-	{% capture s11 %}
+{% capture s11 %}
 
 <p>To meet the requirements for Moderate Risk data, simply follow the normal
 installation instructions on the <a href="{{ "server.html" | relative_url }}">
@@ -705,15 +712,15 @@ Globus Connect Server</a> pages, but <em>be sure to use SUNetID Auth with
 CILogon</em>.  Other than that, the installation instructions will mention the
 settings which need to be in place for Moderate Risk environments.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s11"
      scenario="How do I use Globus for Moderate Risk data?"
      content=s11
   %}
 
-	{% capture s12 %}
+{% capture s12 %}
 
 <p>There is no ready-made, pre-approved solution for using Globus with High
 Risk data.  Stanford does not have a BAA with Globus or the University of
@@ -734,15 +741,15 @@ bear substantial costs in both money and time.  <a
 href="mailto:srcc-support@stanford.edu" title="Contact SRCC">Reach out</a> if
 you are still interested!</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s12"
      scenario="How do I use Globus for High Risk (including PCI / PHI) data?"
      content=s12
   %}
 
-	{% capture s2 %}
+{% capture s2 %}
 
 <p>Beyond the documentation on the <a href="{{ "server/pre-install.html" | relative_url }}" title="Globus Connect Server Pre-Installation Planning">Pre-Installation Planning</a> page, there is a simple checklist for determining which authentication method to use:</p>
 
@@ -764,15 +771,15 @@ handle your user's credentials, then use legacy MyProxy.</li>
 
 </ol>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s2"
      scenario="How do I know which authentication method to use?"
      content=s2
   %}
 
-	{% capture s3 %}
+{% capture s3 %}
 
 <p>In general, if you follow <a
 href="https://uit.stanford.edu/guide/securitystandards" title="Stanford Minimum
@@ -793,15 +800,15 @@ same as if you were authenticating using CILogon.</p>
 open to the world, as long as you follow proper installation and patching
 procedures, you should remain reasonably secure.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s3"
      scenario="How is MyProxy OAuth better than legacy MyProxy if they both use MyProxy?"
      content=s3
   %}
 
-	{% capture s4 %}
+{% capture s4 %}
 
 <p>Right now, it is not possible to handle Moderate Risk data in Globus without
 using CILogon.  The reason is, <a
@@ -815,27 +822,27 @@ Globus activities are interactive.</p>
 MyProxy or MyProxy OAuth) support any form of multi-factor authentication, due
 to the limitations of the MyProxy protocol.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s4"
      scenario="How can I handle Moderate Risk data without using CILogon?"
      content=s4
   %}
 
-	{% capture s5 %}
+{% capture s5 %}
 
 <p>Not easily, no.  At least, not without a sizeable amount of effort.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s5"
      scenario="Can I use CILogon without using SUNetIDs?"
      content=s5
   %}
 
-	{% capture s6 %}
+{% capture s6 %}
 
 <p>OK, yes, it <em>is</em> possible, but it will either require constant
 maintenance and setup work, or will require software development.</p>
@@ -845,7 +852,7 @@ person.  That client cert includes a <em>Distinguished Name</em> (or
 <em>DN</em>) to identify the user, as well as an
 <em>eduPersonPrincipalName</em> (or <em>EPPN</em>) attribute that contains the
 user's "scoped username" (that is, their username in the context of the
-institution), which for Stanford is always <code>sunetid@stanford.edu</code>.
+institution), which for Stanford is always <code>sunetid@stanford.edu</code>.</p>
 
 <p>For example, to see your CILogon distinguished name, go to <a
 href="https://cilogon.org" title="CILogon">CILogon</a> and log in with your
@@ -875,15 +882,15 @@ GitHub</a>.</p>
 
 <p>Unfortunately, due to the complexity involved in this process, must Stanford-based support groups are unable to provide free support for custom gridmaps.  Your first call for support should be the <a href="https://groups.google.com/a/globus.org/forum/#!forum/developer-discuss" title="Globus Developer Discuss forum">Globus "Developer Discuss" forum</a> on Google Groups, which you can join using your Stanford Google account.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s6"
      scenario="Can I <em>really</em> not use CILogon without SUNetIDs?"
      content=s6
   %}
 
-	{% capture s7 %}
+{% capture s7 %}
 
 <p>Happily, in this scenario, nothing else needs to be done!  That is because,
 with CILogon, the authentication and authorization functions are separate.</p>
@@ -899,15 +906,15 @@ is needed.</p>
 authorization function (which determines what the user can access) is still
 handled by the operating system.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s7"
      scenario="My users coincidentally use SUNetIDs already, but not for passwords.  How can I use CILogon?"
      content=s7
   %}
 
-	{% capture s9 %}
+{% capture s9 %}
 
 <p>Globus Connect Server works even when users are not able to log in directly.
 The server just needs to be able to identify users, and rely on the OS'
@@ -916,15 +923,15 @@ authorization mechanisms to verify permissions.</p>
 <p>See also the question <em>How do I allow sharing when my users don't have
 home directories?</em></p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s9"
      scenario="How can I run Globus Connect Server on a server where users cannot log in?"
      content=s9
   %}
 
-	{% capture s10 %}
+{% capture s10 %}
 
 <p>Files uploaded to a Globus Connect Server endpoint are owned by the user
 who activated the endpoint.  Files uploaded to a shared endpoint are owned by
@@ -935,7 +942,7 @@ owning user's primary group.</p>
 default permissions.  GridFTP's default permissions are <code>644</code>
 (read/write for owner; read-only for everyone else).  To change GridFTP's
 default permissions, edit <code>/etc/gridftp.conf</code>, adding the following
-line:
+line:</p>
 
 <pre>
 perms 664
@@ -987,15 +994,15 @@ what you want.</li>
 <p>This work is required because GridFTP does not have a built-in way to change
 its umask.  Once the changes are made, restart GridFTP, and test.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s10"
      scenario="How do I control permissions for uploaded files?"
      content=s10
   %}
 
-	{% capture s13 %}
+{% capture s13 %}
 
 <p>When the 'encrypt transfer' box is checked, at the start of a transfer,
 Globus generates a 2048-bit RSA key, and a temporary SSL certificate valid for
@@ -1012,15 +1019,15 @@ AES symmetric encryption.</p>
 <p>If necessary (for example, for transfers which take more than two days to
 complete), Globus will automatically generate a new key and cert.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s13"
      scenario="How does Globus encrypt data traffic when encryption is requested?"
      content=s13
   %}
 
-	{% capture s14 %}
+{% capture s14 %}
 
 <p>The control traffic between Globus and you (used for directory listings and
 to control data transfer) also uses TLS.  When an endpoint is created, Globus
@@ -1037,15 +1044,15 @@ for the OS-provided Python 2 <a
 href="https://docs.python.org/2/library/ssl.html" title="ssl - TLS/SSL wrapper
 for socket objects">ssl module</a>.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s14"
      scenario="How does Globus encrypt other traffic?"
      content=s14
   %}
 
-	{% capture s15 %}
+{% capture s15 %}
 
 <p>First, you need to set up a managed Globus Connect Server endpoint.  Start
 at the <a href="{{ "server/pre-install.html" | relative_url }}" title="Globus
@@ -1054,15 +1061,15 @@ and go from there.</p>
 
 <p>In that section, you will learn about the different sharing capabilities, how to enable them, and how to limit them.  That will have the information you need!</p> 
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s15"
      scenario="How do I allow sharing?"
      content=s15
   %}
 
-	{% capture s16 %}
+{% capture s16 %}
 
 <p>When a user creates a shared endpoint, Globus Connect Server must write some
 sensitive data related to the share; this data must only be accessible by the
@@ -1077,28 +1084,28 @@ section of the Globus Connect Server
 title="Globus Connect Server Initial Configuation">Initial Configuration</a>
 page.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s16"
      scenario="How do I allow sharing when my users don't have home directories?"
      content=s16
   %}
 
-	{% capture s17 %}
+{% capture s17 %}
 
 <p>This is the unique ID of the Stanford Globus Statistics Gateway.  See the
 next question for more information.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s17"
      scenario="What is 503fc893-67ba-44d2-94f4-3c6365c5a9c7@clients.auth.globus.org ?"
      content=s17
   %}
 
-	{% capture s18 %}
+{% capture s18 %}
 
 <p>The Stanford Globus Statistics Gateway is a program that is operated by
 <a href="https://srcc.stanford.edu/" title="Stanford Research Computing
@@ -1113,29 +1120,29 @@ subscription.</p>
 access to your Globus Connect Server endpoints.  This gives read-only access,
 both to your endpoint and to shared endpoints hosted by your endpoint.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s18"
      scenario="What is the Stanford Globus Statistics Gateway?  Why do I need to give it access to my stuff?"
      content=s18
   %}
 
-	{% capture s19 %}
+{% capture s19 %}
 
 <p>This is the unique ID of the old Stanford Globus Statistics Gateway, which
 was active during the time this site was initially being developed.  It has
 been retired, and you can remove its access from your endpoints.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s19"
      scenario="What is aa57f001-4ec4-424b-93f0-9b0c73b0d0b0@clients.auth.globus.org?"
      content=s19
   %}
 
-	{% capture s20 %}
+{% capture s20 %}
 
 <p>This is a complex question, because there are lots of factors that influence
 transfer speed, and only some of those factors can be adjusted on your end;
@@ -1209,20 +1216,22 @@ href="https://www.globus.org/app/transfer?destination_id=db57ddde-6d04-11e5-ba46
 title="Globus web site, ready to transfer from ESnet Sunnyvale">ESnet Sunnyvale
 endpoint</a> to test transfer performance to your storage.</p>
 
-	{% endcapture %}
+{% endcapture %}
   {% include panel.html
-     parent="scenario"
+     parent="server"
      id="s20"
      scenario="How do I make transfers to/from my endpoints go faster?"
      content=s20
   %}
+</div>
+<!-- Next item is Policies &amp; Support -->
 
-<!-- Next item is s22 -->
+<div class="section-head d-flex">
+  <h2 class="p-2 flex-grow-1" id="policieshead">Policies &amp; Support</h2>
+  <button class="btn btn-default align-self-end toggle-all p-2" data-segment="support"><i class="fa-solid fa-plus"></i> Open All</button>
+</div>
 
-<p>&nbsp;</p>
-
-<h2><a name="policies">Policies &amp; Support</a></h2>
-
+<div class="accordion" id="support">
 
     {% capture p2 %}
 
@@ -1239,7 +1248,7 @@ transferring PHI—levels.</p>
     {% endcapture %}
 
   {% include panel.html
-     parent="scenario"
+     parent="support"
      id="p2"
      scenario="What does Stanford pay for?"
      content=p2
@@ -1262,12 +1271,11 @@ of our campus subscription!</p>
 <p>For full details, see the <a href="{{ "policies.html" | relative_url }}"
 title="Globus @ Stanford Policies & Agreements">policies page</a>.</p>
 
-<p>
 
     {% endcapture %}
 
   {% include panel.html
-     parent="scenario"
+     parent="support"
      id="p1"
      scenario="Who can use this?"
      content=p1
@@ -1298,7 +1306,7 @@ imposed by your storage space, and your network connection.</p>
     {% endcapture %}
 
   {% include panel.html
-     parent="scenario"
+     parent="support"
      id="p3"
      scenario="Are there any limits on the type or quantity of data that I can transfer?"
      content=p3
@@ -1312,7 +1320,7 @@ title="Globus and the Cloud">Cloud page</a> to see what we have licensed.</p>
     {% endcapture %}
 
   {% include panel.html
-     parent="scenario"
+     parent="support"
      id="p4"
      scenario="Can I use this with Amazon S3, GCP, or other cloud services?"
      content=p4
@@ -1330,7 +1338,7 @@ are several people on-campus who have direct access to Globus support.</p>
     {% endcapture %}
 
   {% include panel.html
-     parent="scenario"
+     parent="support"
      id="p5"
      scenario="Where do I go for support?"
      content=p5
@@ -1346,7 +1354,7 @@ Center</a>, a joint effort of the <a href="https://doresearch.stanford.edu/offic
 title="Office of the Vice Provost and Dean of Research">Dean of Research</a>
 and <a href="http://uit.stanford.edu" title="University IT">University IT</a>;
 and <a href="http://library.stanford.edu" title="Stanford Libraries">Stanford
-Libraries</a>.
+Libraries</a>.</p>
 
 <p>The funding for the S3 connector—supporting Amazon S3, Wasabi, and other
 S3-compatible platforms—comes from the <a href="http://gbsc.stanford.edu"
@@ -1356,12 +1364,12 @@ comes from the <a href="https://uit.stanford.edu/project/box-migration"
 title="Stanford University Box Migration">Box Migration project</a>, run by the
 <a href="https://uit.stanford.edu/organization/service-strategy"
 title"Service Strategy">Service Strategy unit</a> within <a href="http://uit.stanford.edu"
-title="University IT">University IT</a>.
+title="University IT">University IT</a>.</p>
 
     {% endcapture %}
 
   {% include panel.html
-     parent="scenario"
+     parent="support"
      id="p6"
      scenario="Who pays for this?"
      content=p6

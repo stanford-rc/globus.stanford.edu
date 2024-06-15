@@ -1,10 +1,11 @@
 ---
-layout:     left-sidebar
+layout:      page
+toc:  true
 title:      Unlinking and Demoting Identities
-title_line: false
+id: accounts
+see-also: true
 ---
 
-# Unlinking and Demoting Identities
 
 Beyond [linking identities]({{ "accounts/link.html" | relative_url }}), you
 might also wish to unlink identities which you have linked.  Or, you might be
@@ -31,7 +32,7 @@ To unlink an identity, [log in to Globus](https://app.globus.org/)
 and click on the **<i class="fas fa-user-circle"></i> Account** link (near the bottom-right corner of the page).
 
 {% include hero-image.html
-   src="assets/accounts/Transfer Page.png"
+   src="/assets/accounts/TransferPage.png"
    alt="Globus transfer screen"
    caption-overlay=true
    caption-header="The Globus 'Transfer Files' screen"
@@ -42,7 +43,7 @@ The Account page displays your primary and linked identities.  Near the
 upper-right of the page, locate and click on the **<i class="fas fa-id-card"></i> Manage Identities** link.
 
 {% include hero-image.html
-   src="assets/accounts/Account Management.png"
+   src="/assets/accounts/AccountManagement.png"
    alt="Globus transfer screen"
    caption-overlay=true
    caption-header="The Globus 'Account' screen"
@@ -54,7 +55,7 @@ identity will have a large <i class="fas fa-times" title="letter X"></i> to the
 right of the identity.
 
 {% include hero-image.html
-   src="assets/accounts/Identities.png"
+   src="/assets/accounts/Identities.png"
    alt="Globus account identities screen"
    caption-overlay=true
    caption-header="The Globus 'Identities' list"
@@ -66,7 +67,7 @@ fa-times" title="letter X"></i>.  You will then be asked if you are sure about
 unlinking the identity.
 
 {% include hero-image.html
-   src="assets/accounts/Unlinking Confirmation.png"
+   src="/assets/accounts/UnlinkingConfirmation.png"
    alt="Globus screen confirming that is it OK to unlink an identity"
    caption-overlay=true
    caption-header="Your linked identity's point of no return"
@@ -110,7 +111,7 @@ endpoints—are excluded from this step, because they can not have multiple
 administrators.
 
 {% include hero-image.html
-   src="assets/server/Endpoint Roles.png"
+   src="/assets/server/EndpointRoles.png"
    alt="A Globus Connect Personal endpoint, showing the list of roles."
    caption-overlay=false
    caption-header="An example Globus Connect Personal endpoint"
@@ -147,6 +148,6 @@ you will need to log back in to them, so that fetch new Globus credentials.
 Congratulations, the identity-demotion process is complete!  You may now
 re-activate endpoints, and return to normal life.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="accounts" %}
+
+

@@ -1,5 +1,7 @@
 ---
-layout:      no-sidebars
+layout:  post
+news: true
+toc: false
 title:       Download Globus Connect Personal 3 for Improved TLS Support
 excerpt:     Globus Connect Personal version 3 includes a security improvement, and should be downloaded by anyone working with Moderate Risk data.  It's an easy upgrade!
 ---

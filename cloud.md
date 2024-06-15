@@ -1,7 +1,10 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
+permalink: cloud.html
 title:       Globus and the Cloud
-title_line:  true
+see-also: true
+id: cloud
 description: Stanford has licensed various cloud add-ons for Globus, described here.
 ---
 
@@ -34,8 +37,7 @@ name for more information.
 {% capture collection-under-construction %}
 <h2>Under Construction</h2>
 <p>This collection is still under construction, and is likely going to change
-in the future.  If you run into problems accessing it, check the announcements
-(on the home page) to see if things have changed!</p>
+in the future.  If you run into problems accessing it, contact us for <a href="support.html">support.</a></p>
 {% endcapture %}
 
 # Amazon S3
@@ -310,8 +312,7 @@ created through Stanford University IT are placed into the us-west-1 region by
 default.  If you need access to a different region, [let us
 know](mailto:srcc-support@stanford.edu).
 
-[Go here for detailed information on how to use Globus with Wasabi]({{ "cloud/wasabi.html" | absolute_url }}).
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="cloud" %}
+
+

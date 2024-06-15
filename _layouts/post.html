@@ -1,0 +1,50 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% include head.html %}
+</head>
+
+<body>
+  <header class="su-site-header su-masthead su-masthead--right">
+    {% include skiplink.html %}
+    {% include brand-bar.html %}
+    <section class="masthead">
+      {% include lockup.html %}
+
+      {% include navigation.html %}
+    </section>
+  </header>
+  <main class="page-content" id="page-content">
+    <div class="layout centered-container">
+      <div class="row">
+        {% assign content_col_size = "" %}
+        {% unless page.hide_sidebar %}
+        {% assign content_col_size = "col-lg-9" %}
+        {% endunless %}
+
+        <!-- Content Column -->
+        <div class="content {{content_col_size}} order-lg-2">
+          <h1 class="post-title-main">{{ page.title }}</h1>
+          {{ content | inject_anchors }}
+        </div>
+        {% unless page.hide_sidebar %}
+        <!-- Sidebar Column -->
+        <div class="col-lg-3 sidebar order-lg-1">
+          {% include sidebar.html %}
+        </div>
+        {% endunless %}
+      </div>
+      <!-- /.row -->
+    </div>
+  </main>
+  <footer>
+    {% include local-footer.html %}
+    {% include global-footer.html %}
+  </footer>
+</body>
+
+</html>

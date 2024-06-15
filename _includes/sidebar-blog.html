@@ -1,0 +1,32 @@
+<div class="action-box news-list" role="alert" markdown="1">
+<h2>Recent Announcements</h2>
+{% comment %}
+  We don't know if we are using pagination or not.  So, grab whichever post
+  list is appropriate.
+{% endcomment %}
+{% if paginator.posts %}
+  {% assign post_list = paginator.posts %}
+{% else %}
+  {% assign post_list = site.posts %}
+{% endif %}
+{% assign posts = post_list | where_exp:"post","post.url != page.url" %}
+
+{% if include.max %}
+  {% assign max = include.max %}
+{% else %}
+  {% assign max = 3 %}
+{% endif %}
+
+<ul>
+{% for post in posts %}
+{% if forloop.index <= max %}
+<li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <p class="date">{{ post.date | date: "%B %e, %Y" }}</p>
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+
+

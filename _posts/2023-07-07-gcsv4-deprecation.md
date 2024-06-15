@@ -1,5 +1,7 @@
 ---
-layout:      no-sidebars
+layout:  post
+news: true
+toc: false
 title:       Globus Connect Server version 4 Ends in December 2023
 excerpt:     Globus Connect Server version 4 has been deprecated, and will stop working at the end of calendar year 2023.  You should upgrade to GCSv5.
 ---
@@ -31,7 +33,7 @@ the menubar (or system tray), and select "Check For Updates".
 
 Compared to version 4, Globus Connect Server version 5 has a very different
 installation procedure.  That means this site's existing [Server
-documentation]({{ "server.html" | relative_url }})
+documentation]({{ "server4.html" | relative_url }})
 is no longer valid.
 
 All of the existing server pages will be updated with a note saying
