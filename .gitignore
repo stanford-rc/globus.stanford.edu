@@ -8,3 +8,7 @@ vendor
 
 # Ignore editor files
 *.swp
+
+# Local Netlify folder
+.netlify
+Gemfile.lock

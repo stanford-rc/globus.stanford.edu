@@ -1,0 +1,15 @@
+<div class="su-hero">
+  <div class="su-hero__media">
+    <img src="{{ page.hero-image }}" alt="{{ page.hero-alt }}" />
+  </div>
+  <article class="su-card su-hero__card">
+    <section class="su-card__contents">
+      <h2>{{ page.hero-headline }}</h2>
+      {% if page.hero-button-text %}
+      <div class="su-card__button">
+        <a href="{{ page.hero-button-url }}" class="su-link su-button">{{ page.hero-button-text }}</a>
+      </div>
+      {% endif %}
+    </section>
+  </article>
+</div>

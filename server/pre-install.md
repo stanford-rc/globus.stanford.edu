@@ -1,11 +1,12 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server version 4 Pre-Installation Planning
-title_line:  false
+see-also: true
+id: server
 description: Instructions on how to prepare your environment for Globus Connect Server version 4.
 ---
 
-# Pre-Installation Planning
 
 Before installing Globus Connect Server, you need to make a few decisions about
 how users will access your server, and what they should be allowed to access.
@@ -41,7 +42,7 @@ questions:
 
 This page will help you to answer each of those questions.
 
-# Choosing a Globus ID
+## Choosing a Globus ID
 
 People may not own Globus Connect Server endpoints directly.  Globus Connect
 Server endpoints are owned by entities, with people acting as the
@@ -102,7 +103,7 @@ Globus ID selected!  This is the first prerequisite.
 
 &nbsp;
 
-# Choosing an Authentication Method
+## Choosing an Authentication Method
 
 The [introduction to Globus accounts]({{ "accounts.html" | relative_url }})
 explained how Globus understands that individuals often have multiple
@@ -192,9 +193,8 @@ authentication method selected.  This is the second prerequisite.  The decision
 you have made here effects what you do next, as you get a public IP address and
 perform firewall configuration.
 
-&nbsp;
 
-# IP and Firewall Configuration
+## IP and Firewall Configuration
 
 Globus Connect Server requires a public IP address.  This is because Globus—and
 any non-Stanford endpoints—will need to connect to your server.  If your chosen
@@ -287,7 +287,7 @@ firewall configuration ready.
 
 &nbsp;
 
-# Access Control
+## Access Control
 
 Using the authentication method (which you should have already chosen), Globus
 translates a person's Globus identity into a local account.  Once the local
@@ -356,9 +356,8 @@ to the following questions:
 <i class="fas fa-clipboard-check"></i> *Congratulations!*  Your access control
 regime has been defined.
 
-&nbsp;
 
-# Sharing
+## Sharing
 
 Sharing is one of the most powerful features provided by Globus Connect Server
 endpoints, and is one of the features enabled by our campus-wide subscription.
@@ -460,6 +459,6 @@ defining your sharing regime.
 Once packages are installed, you are ready for [installation]({{
 "server/install.html" | relative_url }})!
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

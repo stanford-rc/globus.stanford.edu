@@ -1,11 +1,12 @@
 ---
-layout:      left-sidebar
-title:       Install Globus Connect Personal
-title_line:  false
+layout:      page
+toc:  true
+title:       Installing Globus Connect Personal
+id: client
 description: Installation instructions for the Globus client.
+permalink: /client/install.html
+see-also: true
 ---
-
-# Installing Globus Connect Personal
 
 Before you start working with Globus Connect Personal, you will need to have
 logged in to Globus.  [Read more about Globus accounts]({{ "accounts.html" |
@@ -42,7 +43,7 @@ software and your new collection.
    content="Globus Connect Personal needs to be able to make outbound Internet connections.  If Globus Connect Personal reports problems connecting, talk to your IT contact.  Connections must be allowed out to 54.237.254.192/29 port 2223 (for control traffic), and to any Internet host on TCP and UDP ports 50000-51000 (for data transfer).  Connections must also be allowed to AWS S3 on TCP port 443 (HTTPS), for the new version check to succeed."
 %}
 
-# Install Globus Connect Personal
+## Install Globus Connect Personal
 
 Globus have written a set of detailed installation guides explaining how to
 install Globus Connect Personal:
@@ -80,13 +81,13 @@ machine.
    content="At this time, Stanford does not have the Globus subscription needed to support High Risk data.  So, please leave the <em>high assurance</em> option off for now, and do not install Globus Connect Personal on a system containing High Risk data."
 %}
 
-# Configure your Endpoint
+## Configure your Endpoint
 
 At the end of the setup, you were shown a _Setup Successful_ screen, with a
 link to "show collection details".  Click on that link.
 
-{% include hero-image.html
-   src="assets/client/Setup Complete.png"
+{% include figure.html
+   src="/assets/client/SetupComplete.png"
    alt="The Globus Connect Personal setup screen, showing a successful setup."
    caption-overlay=true
    caption-header="Successful Globus Connect Personal installation"
@@ -98,8 +99,8 @@ page.  The only things filled in will be the name and (optionally) the
 description you entered during initial setup, as well as your Globus identity
 (as the owner of the collection).
 
-{% include hero-image.html
-   src="assets/client/New Endpoint Overview.png"
+{% include figure.html
+   src="/assets/client/NewEndpointOverview.png"
    alt="The collection overview screen, showing a newly-created personal collection."
    caption-overlay=true
    caption-header="A New Personal Collection"
@@ -128,7 +129,7 @@ read on.  If you would like to give other people access to files on your
 machine, first give Globus Connect Personal access to those directories, and
 then [enable Globus Plus]({{ "client/plus.html" | relative_url }}).
 
-# Add Allowed Paths
+## Add Allowed Paths
 
 When Globus wants to perform an operation on your system (such as a write, or
 listing the contents of a directory), two security checks are performed:
@@ -140,11 +141,11 @@ listing the contents of a directory), two security checks are performed:
 * Globus Connect Personal must allow access to the directory.
 
 To change the list of allowed paths, click on the Globus toolbar (or menu bar)
-icon <img src="{{ "assets/client/Toolbar Icon.png" |
+icon <img src="{{ "/assets/client/ToolbarIcon.png" |
 relative_url }}" alt="" /> to bring up the Globus Connect Personal menu:
 
 {% include hero-image.html
-   src="assets/client/Globus Connect Personal Menu.png"
+   src="/assets/client/GlobusConnectPersonalMenu.png"
    alt="The Globus Connect Personal application menu, which appears when you click on the Globus Connect Personal icon."
    caption-overlay=true
    caption-header="The Globus Connect Personal menu"
@@ -155,7 +156,7 @@ In the Globus Connect Personal menu, choose _Preferences_; when the Preferences
 window appears, go to the _Access_ tab.
 
 {% include hero-image.html
-   src="assets/client/Globus Connect Personal Access.png"
+   src="/assets/client/GlobusConnectPersonalAccess.png"
    alt="The Globus Connect Personal access configuration screen."
    caption-overlay=true
    caption-header="Globus Connect Personal Access Configuration"
@@ -167,7 +168,7 @@ title="plus"></i> button to add an entry.  Once added, use the _Writeable_ box
 to give write access; if that box is not checked, the access will be read-only.
 
 The <em>Shareable</em> checkbox is used to allow sharing for a directory.  This
-feature is only available as part of <a href="{{ "client/plus.html" |
+feature is only available as part of <a href="{{ "/client/plus.html" |
 relative_url }}" title="Globus Plus">Globus Plus</a>.
 
 To remove an entry, click on it to select the entry, and then click on the <i
@@ -199,9 +200,9 @@ That's it!  You now have Globus Connect Personal fully configured.  You can now
 make transfers from—and, if your allowed write access, _to_—your collection!
 
 If you would like to share files from your collection with other people, you
-should now proceed to [enable Globus Plus]({{ "client/plus.html" | relative_url
+should now proceed to [enable Globus Plus]({{ "/client/plus.html" | relative_url
 }}).
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="client" %}
+
+

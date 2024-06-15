@@ -6,14 +6,15 @@
 # "null" (_without_ the quotes).
 title: "Globus @ Stanford"
 slogan: "Research data management simplified.  For you.  For free."
-image: "assets/globus_square.png"
-
+image: "/assets/globus_square.png"
+site-title: "Globus @ Stanford"
+# markdown: GFM
 # This section has site owner information.  It is used in a few places:
 # * Page metadata, used by search engines and social tools.
 # * The "Connect With Us" block at the bottom of each page.
 owner:
   # The owner name must be provided.
-  name: "Stanford Research Computing Center"
+  name: "Stanford Research Computing"
 
   # Next up is social media handles.  If you don't have one, use the word
   # "null", but without the quotes.
@@ -89,6 +90,7 @@ github-edit-text: "Improve This Page"
 # pagination entirely (and so have all posts appear on the main page), comment
 # out the line below.
 paginate: 3
+paginate_path: "/announcements/page:num/"
 
 # These defaults apply when a matching page variable is not set.
 # NOTE: You should set most of these in page-specific YAML.
@@ -99,13 +101,15 @@ defaults:
     values:
       title: "Page Title"
       description: null
-      layout: null
+      layout: default
       sitemap: true
+      toc: true
+      sidebar-box: null
       social:
         # The title to use when Twitter et al show a link to your site.
         # When set to null, Jekyll will generate the string
         # "PAGE_TITLE — SITE_TITLE".
-        title: null
+        title: Globus at Stanford
 
         # The image to show when someone expands a Twitter post with your page
         # linked.  This should be a path relative to your site root.  If not
@@ -118,6 +122,7 @@ defaults:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-titles-from-headings
 
 # This is a list of files that should be excluded from the _site directory.
 exclude:
@@ -125,10 +130,16 @@ exclude:
   - Gemfile.lock
   - LICENSE.txt
   - README.md
-  - jekyll-theme-stanford-lagunita.gemspec
+#  - jekyll-theme-stanford-lagunita.gemspec
   - vendor
 
 # These are some Jekyll defaults, which should be left alone.
 timezone: America/Los_Angeles
 encoding: utf-8
 safe: true
+# theme: src
+
+lockup_line2: Globus
+lockup_link: /index.html
+lockup_line1: Research Computing
+lockup_modifier_class: su-lockup--option-b

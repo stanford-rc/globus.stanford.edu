@@ -1,11 +1,13 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus Connect Server Initial Configuration
-title_line:  false
+see-also: true
+id: server
 description: Instructions on how to start configuring Globus Connect Server.
 ---
 
-# Globus Connect Server Configuration
+
 
 {% include info-box.html
    icon="ghost"
@@ -352,6 +354,6 @@ authentication method you decided to use.
 
 * [Click here to configure legacy MyProxy]({{ "server/myproxy.html" | relative_url }})
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

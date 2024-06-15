@@ -1,16 +1,20 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  false
+see-also: true
+id: server
 title:       Globus Connect Server version 4
-title_line:  false
+permalink: server.html
 description: Main page for Globus server information, for the deprecated version 4.
 ---
 
-# Globus Connect Server version 4
+
 
 {% include info-box.html
    icon="ghost"
    header="Globus Connect Server v4 ends in December 2023"
-   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  For more information, see the news post on the home page."
+   content="Globus Connect Server version 4 has been deprecated, and will stop working at the end of 2023.  This page is no longer being updated.  Refer to the <a href='/2023/07/07/gcsv4-deprecation.html' title='Globus Connect
+   Server version 4 Ends in December 2023'>news post</a> for more information."
 %}
 
 <b>Globus Connect Server</b> is the name of the software used to create Globus
@@ -53,6 +57,6 @@ Globus Connect Server requires:
 Once you have the above items, you should read the [Pre-Installation Planning]({{ "server/pre-install.html" | relative_url }}) guide for information
 on how to prepare your system, and how to install Globus Connect Server.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server" %}
+
+

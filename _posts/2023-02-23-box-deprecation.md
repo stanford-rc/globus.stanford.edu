@@ -1,5 +1,7 @@
 ---
-layout:      no-sidebars
+layout:  post
+news: true
+toc: false
 title:       Globus for Box goes dormant on February 28
 excerpt:     As part of the Stanford University Box retirement, Globus for Box will be shut down at the end of February.
 ---

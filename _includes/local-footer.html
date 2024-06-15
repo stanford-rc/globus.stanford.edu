@@ -1,0 +1,53 @@
+{% assign footer_links = site.data.local-footer %}
+
+
+<div class="su-local-footer ">
+  <div class="su-local-footer__header">
+    {% include lockup.html %}
+  </div>
+  <div class="su-local-footer__columns">
+    <div class="su-local-footer__cell1">
+      {% if footer_links.section1.head %}
+      <h2 class="su-local-footer__list-heading">{{footer_links.section1.head}}</h2>
+      {% endif %}
+      {% if footer_links.section1.links %}
+      <nav aria-label="footer primary nav">
+        <ul class="su-local-footer__action-links">
+
+          {% for item in footer_links.section1.links %}
+          {% include local-footer-link.html %}
+          {% endfor %}
+        </ul>
+      </nav>
+      {% endif %}
+
+    </div>
+    <div class="su-local-footer__cell2">
+      {% if footer_links.section2.head %}
+      <h2 class="su-local-footer__list-heading">{{footer_links.section2.head}}</h2>
+      {% endif %}
+
+      {% if footer_links.section2.links %}
+        <ul class="su-local-footer__action-links">
+          {% for item in footer_links.section2.links %}
+          {% include local-footer-link.html %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+    </div>
+    <div class="su-local-footer__cell3">
+      {% if footer_links.section3.head %}
+      <h2 class="su-local-footer__list-heading">{{footer_links.section3.head}}</h2>
+      {% endif %}
+
+      <nav aria-label="footer primary nav">
+        <ul class="su-local-footer__action-links">
+          {% for item in footer_links.section3.links %} {% include local-footer-link.html %}
+          {% endfor %}
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</div>

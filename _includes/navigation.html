@@ -1,0 +1,35 @@
+<!-- Navigation -->
+<nav class="su-main-nav su-main-nav--right" aria-label="main menu">
+  <button class="su-main-nav__toggle " aria-expanded="false">Menu</button>
+  <ul class="su-main-nav__menu-lv1">
+    {% assign static_navigation = site.data.navigation %}
+    {% for item in static_navigation %}
+      {% if item.folderitems %}
+        <li class="su-main-nav__item--parent">
+      {% else %}
+        <li {% if item.url==page.url %}class="su-main-nav__item--current" {% endif %}>
+      {% endif %}
+      {% if item.external_url %}
+      <a href="{{item.external_url}}" target="_blank">{{item.title}}</a>
+      {% else if item.url %}
+      <a href="{{item.url}}">{{item.title}}</a>
+      {% else %}
+      {{item.title}}
+      {% endif %}
+      {% if item.folderitems %}
+      <ul class="su-main-nav__menu-lv2">
+        {% for folderitem in item.folderitems %}
+        <li class = "su-multi-menu__item {% if item.url==page.url %}su-main-nav__item--current{% endif %}">
+          {% if folderitem.external_url %}
+          <a class="su-multi-menu__link" href="{{folderitem.external_url}}" target="_blank">{{folderitem.title}}</a>
+          {% else %}
+          <a class="su-multi-menu__link" href="{{folderitem.url}}">{{folderitem.title}}</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

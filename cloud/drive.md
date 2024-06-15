@@ -1,7 +1,9 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus and Google Drive
-title_line:  false
+see-also: true
+id: cloud
 description: Globus works with Google Drive, but with a number of restrictions.
 ---
 
@@ -172,7 +174,7 @@ logging in through Stanford University.</p>
 %}
 
 {% include hero-image.html
-   src="assets/cloud/Drive Collection with Credentials.png"
+   src="/assets/cloud/DriveCollectionwithCredentials.png"
    alt="The Google Drive collection, with the Credentials tab hilighted."
    caption-overlay=true
    caption-header="Google Drive collection"
@@ -183,7 +185,7 @@ When you go to the link at the top of this page, you will be taken to the main
 page for the collection.  Click on the 'Credentials' tab.
 
 {% include hero-image.html
-   src="assets/cloud/Drive Collection credentials consent 1.png"
+   src="/assets/cloud/DriveCollectioncredentialsconsent1.png"
    alt="A prompt to give Globus consent to manage your Google Drive credentials."
    caption-overlay=true
    caption-header="Google Drive credentials consent required"
@@ -194,7 +196,7 @@ If this is the first time you are accessing this collection, you will be asked
 to give consent for Globus to store your Google credentials.  Click 'Continue'.
 
 {% include hero-image.html
-   src="assets/Consent identity selection.png"
+   src="/assets/cloud/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"
@@ -205,7 +207,7 @@ Some institutions allow you to have multiple accounts.  Stanford only allows
 one SUNetID per person, so click on your SUNetID.
 
 {% include hero-image.html
-   src="assets/cloud/Drive Collection credentials consent 2.png"
+   src="/assets/cloud/DriveCollectioncredentialsconsent2.png"
    alt="A prompt to give consent to the Globus Web app to manage your Google credentials in the Google Drive collection."
    caption-overlay=true
    caption-header="Consent required to manage Google credentials"
@@ -216,7 +218,7 @@ Next, click on 'Allow' to give Globus permission to store your Google
 credentials.  This is what authorizes Globus to store your Google credentials.
 
 {% include hero-image.html
-   src="assets/cloud/Drive Collection credential confirmation.png"
+   src="/assets/cloud/DriveCollectioncredentialconfirmation.png"
    alt="A Globus screen showing your SUNetID, asking you to confirm that this is your Google account."
    caption-overlay=true
    caption-header="Google Account selection confirmation"
@@ -236,7 +238,7 @@ You will now be taken to Google, which will ask you to grant permission for
 Globus to access Google Drive on your behalf.
 
 {% include hero-image.html
-   src="assets/cloud/Drive Google consent 1.png"
+   src="/assets/cloud/DriveGoogleconsent1.png"
    alt="A Google screen, asking you to select your Stanford Google account."
    caption-overlay=true
    caption-header="More Google Account selection"
@@ -248,7 +250,7 @@ your Stanford Google account.  Once you do so, you might be redirected through
 Stanford Login.
 
 {% include hero-image.html
-   src="assets/cloud/Drive Google consent 2.png"
+   src="/assets/cloud/DriveGoogleconsent2.png"
    alt="A Google screen asking for permission to allow access to Google Drive."
    caption-overlay=true
    caption-header="Google Drive consent"
@@ -261,7 +263,7 @@ only applies to this specific Globus installation, not installations run by
 others.  Click 'Allow'.
 
 {% include hero-image.html
-   src="assets/cloud/Drive Collection credentials.png"
+   src="/assets/cloud/DriveCollectioncredentials.png"
    alt="A Globus screen showing Google Drive credentials."
    caption-overlay=true
    caption-header="Drive collection with credentials loaded"
@@ -280,7 +282,7 @@ Using the link at the top of the page, access the Google Drive collection.  You 
 asked to log in; if so, log in through *Stanford University*.
 
 {% include hero-image.html
-   src="assets/cloud/Drive Collection with Overview and File Manager.png"
+   src="/assets/cloud/DriveCollectionwithOverviewandFileManager.png"
    alt="The Google Drive collection, with the Overview tab and File Manager buttons hilighted."
    caption-overlay=true
    caption-header="Drive collection"
@@ -295,7 +297,7 @@ Manager and connect to Google Drive.
 The first time you access the Google Drive collection, you will be asked for consent.
 
 {% include hero-image.html
-   src="assets/cloud/Drive File Manager with consent screen.png"
+   src="/assets/cloud/DriveFileManagerwithconsentscreen.png"
    alt="The Google Drive collection, saying that consent is required."
    caption-overlay=true
    caption-header="Drive collection requesting consent"
@@ -307,7 +309,7 @@ credentials for you.  Now, you are giving Globus consent to actually use those
 credentials to talk to Google Drive.  Click the "Continue" button.
 
 {% include hero-image.html
-   src="assets/Consent identity selection.png"
+   src="/assets/cloud/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"
@@ -318,7 +320,7 @@ Some institutions allow you to have multiple accounts.  Stanford only allows
 one SUNetID per person, so click on your SUNetID.
 
 {% include hero-image.html
-   src="assets/cloud/Drive Collection access consent.png"
+   src="/assets/cloud/DriveCollectionaccessconsent.png"
    alt="A prompt to give consent to the Globus Web app to access Google Drive on your behalf."
    caption-overlay=true
    caption-header="Drive collection consent screen"
@@ -334,7 +336,7 @@ When you access the Google Drive collection—assuming you have previously provi
 consent—you should be greeted with a list of different parts of Google Drive.
 
 {% include hero-image.html
-   src="assets/cloud/Drive File Manager root.png"
+   src="/assets/cloud/DriveFileManagerroot.png"
    alt="The File Manager showing the root of the S3 collection, listing buckets."
    caption-overlay=true
    caption-header="The list of buckets in the local AWS Account"
@@ -364,6 +366,6 @@ have not yet been deleted.
    content="You should expect listings of the Starred, Shared With Me, and Trash folders to take longer than normal, because these 'folders' do not have any form of hierarchical organization."
 %}
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="cloud" %}
+
+

@@ -1,7 +1,9 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:  true
 title:       Globus and Box
-title_line:  false
+see-also: true
+id: cloud
 description: Globus works with Stanford Box, but with a number of restrictions.
 ---
 
@@ -71,7 +73,7 @@ Using the link at the top of the page, access the Box collection.  You might be
 asked to log in; if so, log in through *Stanford University*.
 
 {% include hero-image.html
-   src="assets/cloud/Box Collection with Overview and File Manager.png"
+   src="/assets/cloud/BoxCollectionwithOverviewandFileManager.png"
    alt="The Stanford Box collection, with the Overview tab and File Manager buttons hilighted."
    caption-overlay=true
    caption-header="Box collection"
@@ -86,7 +88,7 @@ Manager and connect to Box.
 The first time you access the Box collection, you will be asked for consent.
 
 {% include hero-image.html
-   src="assets/cloud/Box File Manager with consent screen.png"
+   src="/assets/cloud/BoxFileManagerwithconsentscreen.png"
    alt="The Box collection, saying that consent is required."
    caption-overlay=true
    caption-header="Box collection requesting consent"
@@ -99,7 +101,7 @@ you are giving Globus consent to actually use those credentials to talk to Box
 on your behalf.  Click the "Continue" button.
 
 {% include hero-image.html
-   src="assets/Consent identity selection.png"
+   src="/assets/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"
@@ -110,7 +112,7 @@ Some institutions allow you to have multiple accounts.  Stanford only allows
 one SUNetID per person, so click on your SUNetID.
 
 {% include hero-image.html
-   src="assets/cloud/Box access consent.png"
+   src="/assets/cloud/Box/Boxaccessconsent.png"
    alt="A prompt to give consent to the Globus Web app to access Google Drive on your behalf."
    caption-overlay=true
    caption-header="Drive collection consent screen"
@@ -126,7 +128,7 @@ When you access the Box collection—assuming you have previously provided
 consent—you should be greeted with a list of your files on Box.
 
 {% include hero-image.html
-   src="assets/cloud/Box File Manager root.png"
+   src="/assets/cloud/BoxFileManagerroot.png"
    alt="The File Manager showing the root of the Box collection, listing files and directories."
    caption-overlay=true
    caption-header="Files and Directories in Box"
@@ -136,6 +138,6 @@ consent—you should be greeted with a list of your files on Box.
 All files on Box—both your own items and those shared with you—appear in the
 same listing.  You are now able to transfer data to and from Box!
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="cloud" %}
+
+

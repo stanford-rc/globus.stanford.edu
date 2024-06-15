@@ -1,11 +1,13 @@
 ---
-layout:      left-sidebar
+layout:      page
+toc:          true
 title:       Globus Connect Server 4 to 5 Transition
-title_line:  false
+see-also: true
+id: server5
 description: Transitioning from Globus Connect Server 4 to Globus Connect Server 5
 ---
 
-# Conceptual Changes
+## Conceptual Changes
 
 With Globus Connect Server 4, the term _Endpoint_ meant one of three things:
 
@@ -171,6 +173,6 @@ should email [srcc-support@stanford.edu](mailto:srcc-support@stanford.edu), to
 report that you are no longer using your Globus ID.  SRCC will assist you in
 deleting your Globus ID from Globus.
 
-{% include left-sidebar/transition.md %}
 
-{% include toc.html id="server5" %}
+
+

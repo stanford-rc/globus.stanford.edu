@@ -1,13 +1,11 @@
-<div class="panel panel-default">
-  <div class="panel-heading" role="tab" id="panel-heading-{{ include.id }}">
-    <h4 class="panel-title">
-      <a role="button" data-toggle="collapse" data-parent="#{{ include.parent }}" href="#panel-{{ include.id }}" aria-expanded="false" aria-controls ="panel-{{ include.id }}">
-        {{ include.scenario }}
-      </a>
-    </h4>
-  </div>
-  <div id="panel-{{ include.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="panel-heading-{{ include.id }}">
-    <div class="panel-body">
+<div class="accordion-item">
+  <h3 class="accordion-header" id="{{ include.id }}-head">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ include.id }}" aria-expanded="false" aria-controls="{{ include.id }}">
+      {{ include.scenario }}
+    </button>
+  </h3>
+  <div id="{{ include.id }}" class="accordion-collapse collapse" aria-labelledby="{{ include.id }}" data-bs-parent="#{{ include.parent }}">
+    <div class="accordion-body">
       {{ include.content }}
     </div>
   </div>

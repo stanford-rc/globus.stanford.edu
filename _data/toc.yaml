@@ -5,7 +5,7 @@
 #
 # NOTE: All keys are required!
 #
-# * "id" is a simple string.  When you use {% include toc.html id="..." %}
+# * "id" is a simple string.  When you use 
 #   to bring the ToC into your page, this is what identifies which ToC you want
 #   to bring in.
 #
@@ -29,10 +29,12 @@
 #   hilighted.
 
 - id: "accounts"
-  header: "Globus Account Topics"
+  header: "Globus Accounts"
   items:
     - name: "About Globus Accounts"
       target: "accounts"
+    - name: "The Globus ID"
+      target: "accounts/globusid"
     - name: "Create a Globus Account"
       target: "accounts/create"
     - name: "Link Identities"
@@ -41,8 +43,6 @@
       target: "accounts/unlink"
     - name: "Leaving Stanford"
       target: "accounts/leaving"
-    - name: "The Globus ID"
-      target: "accounts/globusid"
 
 - id: "client"
   header: "Globus Connect Personal"
@@ -69,7 +69,7 @@
       target: "cloud/onedrive"
 
 - id: "server"
-  header: "Globus Connect Server v4"
+  header: "Globus Connect Server v4 (deprecated)"
   items:
     - name: "About Globus Connect Server v4"
       target: "server"
@@ -95,3 +95,7 @@
   items:
     - name: "About Globus Connect Server"
       target: "server5"
+    - name: "Site Prep and Installation"
+      target: "server5/install"
+    - name: "Migrate from Server 4"
+      target: "server5/transition"
