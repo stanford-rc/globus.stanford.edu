@@ -1,6 +1,6 @@
 ---
 layout:      page
-toc:  true
+toc:  false
 title:      Globus Account Creation
 id: accounts
 see-also: true

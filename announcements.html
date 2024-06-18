@@ -11,7 +11,7 @@ title:       All Announcements
   <div class="postcard-image"><img src="{{ post.image | absolute_url }}" alt="" /></div>
   {% endif %}
   <div class="postcard-text">
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
     {% if post.author != nil %}
     <p class="descriptor">{{ post.date | date: "%B %e, %Y" }} by {{ post.author }}</p>
     {% else %}
