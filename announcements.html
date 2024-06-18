@@ -4,7 +4,7 @@ toc:         false
 title:       All Announcements
 
 ---
-
+<div class="post-list">
 {% for post in site.posts %}
 <div class="postcard-left">
   {% if post.image != nil %}
@@ -13,12 +13,13 @@ title:       All Announcements
   <div class="postcard-text">
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
     {% if post.author != nil %}
-    <p class="descriptor">{{ post.date | date: "%B %e, %Y" }} by {{ post.author }}</p>
+    <p class="date">{{ post.date | date: "%B %e, %Y" }} by {{ post.author }}</p>
     {% else %}
-    <p class="descriptor">{{ post.date | date: "%B %e, %Y" }}</p>
+    <p class="date">{{ post.date | date: "%B %e, %Y" }}</p>
     {% endif %}
     {{ post.excerpt }}
     <p><a href="{{ post.url | relative_url }}">Read More</a></p>
   </div>
 </div>
 {% endfor %}
+</div>
