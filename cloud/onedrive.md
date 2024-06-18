@@ -281,7 +281,7 @@ provided consent—you should be greeted with the contents of the *My Files* par
 of OneDrive.
 
 {% include hero-image.html
-   src="/assets/cloud/OneDrive File Manager default directory with up one folder.png"
+   src="/assets/cloud/OneDriveFileManagerdefaultdirectorywithuponefolder.png"
    alt="The File Manager showing the list of 'My Files'."
    caption-overlay=true
    caption-header="The list of 'My Files' in OneDrive, with names obscured"

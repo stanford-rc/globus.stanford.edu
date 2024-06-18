@@ -55,7 +55,7 @@ After clicking the _Continue_ button, you will be asked for some more
 information (such as if you plan on using the service for commercial purposes.
 
 {% include hero-image.html
-   src="/assets/accounts/Login/LoginInformationGathering.png"
+   src="/assets/accounts/LoginInformationGathering.png"
    alt="Globus login screen"
    caption-overlay=true
    caption-header="First-Time user information collection"
