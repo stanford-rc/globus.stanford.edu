@@ -10,7 +10,7 @@ description: Globus works with Stanford Box, but with a number of restrictions.
 {% capture globus-ending %}
 <h2>Stanford Box has been retired…</h2>
 <p>The <b>Stanford Box service was retired</b> on February 28, 2023.
-<a href="{{ "2023/02/23/box-deprecation.html" | relative_url }}">Read the announcement</a>.
+<a href="{{ "/2023/02/23/box-deprecation.html" | relative_url }}">Read the announcement</a>.
 </p>
 <p>The instructions on this page no longer apply, but the page is being kept
 around, for those who find it via search engine.</p>
@@ -101,7 +101,7 @@ you are giving Globus consent to actually use those credentials to talk to Box
 on your behalf.  Click the "Continue" button.
 
 {% include hero-image.html
-   src="/assets/Consentidentityselection.png"
+   src="/assets/cloud/Consentidentityselection.png"
    alt="A prompt to select an identity for giving consent."
    caption-overlay=true
    caption-header="Select identity for giving consent"
@@ -112,7 +112,7 @@ Some institutions allow you to have multiple accounts.  Stanford only allows
 one SUNetID per person, so click on your SUNetID.
 
 {% include hero-image.html
-   src="/assets/cloud/Box/Boxaccessconsent.png"
+   src="/assets/cloud/Boxaccessconsent.png"
    alt="A prompt to give consent to the Globus Web app to access Google Drive on your behalf."
    caption-overlay=true
    caption-header="Drive collection consent screen"

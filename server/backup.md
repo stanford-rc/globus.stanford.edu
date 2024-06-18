@@ -81,8 +81,8 @@ Here is the procedure:
    been paused, so it will not receive any Globus traffic.
 
    If you are rebuilding the endpoint, perform all of the steps from the
-   [Pre-Installation Planning]({{ "pre-install.html" | relative_url}}) and
-   [Software Installation]({{ "install.html" | relative_url }}) sections.  This
+   [Pre-Installation Planning]({{ "/server/pre-install.html" | relative_url}}) and
+   [Software Installation]({{ "/server/install.html" | relative_url }}) sections.  This
    will reinstall the latest Globus Connect Server packages.
 
 3. Stop the `globus-gridftp-server` and `myproxy-server` services, if they are
