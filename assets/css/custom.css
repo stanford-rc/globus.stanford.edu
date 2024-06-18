@@ -463,3 +463,13 @@ button.accordion-button:not(.collapsed)::after {
 .accordion-button:focus::after {
   background-color: transparent;
 }
+
+.post-list h2{
+  font-size:1.4em;
+  margin-bottom:0;
+  margin-top:1.5em;
+}
+
+.post-list .date{
+  font-size:.8em;
+}

@@ -33,7 +33,7 @@ the menubar (or system tray), and select "Check For Updates".
 
 Compared to version 4, Globus Connect Server version 5 has a very different
 installation procedure.  That means this site's existing [Server
-documentation]({{ "server4.html" | relative_url }})
+documentation]({{ "/server.html" | relative_url }})
 is no longer valid.
 
 All of the existing server pages will be updated with a note saying
@@ -46,8 +46,12 @@ Once Globus Connect Server 5 content is available, a new news post will appear!
 
 ## Upgrading to version 5
 
-Globus have created a very detailed [migration
-guide](https://docs.globus.org/globus-connect-server/migrating-to-v5.4/migration4-guide/),
+{% include warning.html
+   content="These Globus resources are no longer available"
+%}
+
+Globus have created a very detailed migration
+guide,
 explaining how you can perform an **in-place upgrade** to Globus Connect Server
 5.4.
 

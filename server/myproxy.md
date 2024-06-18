@@ -54,7 +54,7 @@ endpoint knows who is using Globus.
 
 To use legacy MyProxy authentication, you will be making additions to the
 `globus-connect-server.conf` file that you first filled in during [initial
-configuration]({{ "server/configure.html" }}).
+configuration]({{ "/server/configure.html" }}).
 
 {% include info-box.html
    icon="hand-paper"
@@ -169,7 +169,7 @@ printed.  At this point, services have been started and are ready for use!
 %}
 
 Now that Globus Connect Server (or, more specifically, MyProxy and GridFTP) is
-(are) up and running, you should [finish configuration]({{ "server/finish.html"
+(are) up and running, you should [finish configuration]({{ "/server/finish.html"
 | relative_url }}).
 
 

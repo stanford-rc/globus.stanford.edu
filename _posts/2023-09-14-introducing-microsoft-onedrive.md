@@ -29,7 +29,7 @@ with folks outside of Stanford University, you should host the share: Create a
 folder within OneDrive, share that with outside collaborators, and use Globus
 to transfer files to/from that folder.
 
-### Got Questions?
+## Got Questions?
 
 If you have problems accessing Microsoft OneDrive through Globus, you should
 first make sure you can [access OneDrive]() directly.  If that works, check out

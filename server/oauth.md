@@ -118,7 +118,7 @@ files:
   `/etc/globus-myproxy-oauth-stylesheet.css` on the server.
 
 * Download [the all-red Block S with
-  Tree](https://identity.stanford.edu/downloads/SU_New_BlockStree_Red.png) logo
+  Tree](https://identity.stanford.edu/visual-identity/stanford-logos/block-s/) logo
   to `/etc/globus-myproxy-oauth-logo.png` on the server.
 
 The logo lives on the Stanford Identity site, which requires that you log in to

@@ -27,7 +27,7 @@ Here is how CILogon authentication works:
 
 1. The end user chooses to use your Globus Connect Server endpoint.
 
-2. Globus redirects the user to [CILogon](http://www.cilogon.org/Home), which
+2. Globus redirects the user to [CILogon](https://www.cilogon.org), which
    redirects the user to the normal [Stanford login
    page](https://login.stanford.edu).
 
