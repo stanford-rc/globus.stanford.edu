@@ -15,8 +15,20 @@ body {
 
 div,
 li,
-p {
-  line-height: 1.5
+p,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
 }
 
 h2,
@@ -248,10 +260,10 @@ code {
   border: 1px solid #b6b1a9
 }
 
-.sidebar .news-list{
+.sidebar .news-list {
   background-color: white;
-  .date{
-    font-size:.8em;
+  .date {
+    font-size: .8em;
   }
 }
 
@@ -299,7 +311,7 @@ code {
 }
 
 #page-content .sidebar ul a:after {
-    content: '';
+  content: '';
 }
 
 .sidebar ul li ul li a {
@@ -443,6 +455,10 @@ div.text-chunk .post {
   --bs-btn-font-size: 18px
 }
 
+.figure-caption {
+    --bs-secondary-color: #2e2d29;
+}
+
 figure.hero-image .h4 {
   font-size: 1.2em;
   font-weight: 600
@@ -464,12 +480,16 @@ button.accordion-button:not(.collapsed)::after {
   background-color: transparent;
 }
 
-.post-list h2{
-  font-size:1.4em;
-  margin-bottom:0;
-  margin-top:1.5em;
+.post-list h2 {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  margin-top: 1.5em;
 }
 
-.post-list .date{
-  font-size:.8em;
+.post-list .date {
+  font-size: .8em;
+}
+
+.gist .pl-c {
+    color: #000;
 }
