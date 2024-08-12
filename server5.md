@@ -58,8 +58,12 @@ Globus Connect Server requires:
 
 * A supported Linux distribution *that still receives vendor support*.
 
-  Globus Connect Server 5 supports running on Debian, Fedora, Red Hat
-  Enterprise Linux 7 through 9 (including derivatives), SuSE, and Ubuntu.
+  Globus Connect Server 5 supports running on Debian, Fedora, OpenSUSE Leap,
+  Red Hat Enterprise Linux 7 through 9, SuSE Enterprise, and Ubuntu.
+
+  For Enterprise Linux derivatives, Globus Connect Server 5 supports CentOS 7,
+  8 Stream, and 9 Stream.  Also supported are versions 8 & 9 of Alma, Oracle,
+  Rocky, and Springdale Linux.
 
   If you use Red Hat Enterprise Linux (including derivatives), you should
   expect to pull some packages from EPEL.
