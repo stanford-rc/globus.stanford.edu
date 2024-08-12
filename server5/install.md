@@ -21,15 +21,11 @@ setup to be done.
    of High Risk data (including PCI and PHI data)."
 %}
 
-"Site Prep and Installation" includes three steps:
+"Site Prep and Installation" includes two steps:
 
 * Configuring the firewall.
 
-* Getting a Globus Connect Server v5 UUID.
-
 * Installing Globus Connect Server.
-
-&nbsp;
 
 ## Firewall Configuration
 
@@ -91,63 +87,51 @@ If you also filter _outbound_ traffic, you need to open the following ports:
 * To `54.237.254.192/29` (in the `untrust` zone), on port 443.
 
   This is where Globus' API servers live in AWS.  Globus Connect Server
-  communicates back to Globus during endpoint setup and maintenance.
+  communicates back to Globus during endpoint setup and operations.
 
 If you use filter outbound traffic and wish to use the Google Drive connector,
 then you will also need to allow all outbound traffic on port 443.  The reason
 is, Google does not have a fixed set of IP ranges for Google Drive, so limiting
 is not possible.
 
-Once firewall rules have been submitted, you should proceed to get your Globus
-Connect Server v5 UUID.
-
-&nbsp;
-
-## Globus Connect Server v5 UUID
-
-Each Globus Connect Server 5 installation has a unique ID assigned for it.
-
-To , begin by going to [https://developers.globus.org](https://developers.globus.org).  Click on "Register a new Globus Connect Server v5".
-
-PIC
-
-When you click on the "Register…" link, you will be prompted to "Log in to
-Globus Auth".  Choose "Stanford University" from the list of institutions,
-click "Continue", and log in.
-
-PIC
-
-Globus Connect Server 5 uses OAuth to authenticate back to Globus, so setting
-up a new Globus Connect Server 5 installation is similar to setting up a new
-OAuth client.  Begin by clicking on "Add another project".
-
-PIC
-
-For the "Project Name", .  For the "Contact Email", use a group email address
-(such as a mailing list).  Once the project is created, you will see a note
-saying that the project is empty.
-
-
-Before you continue, you should proceed to add other team members as admins.
-You can do this by clicking on the project's "Add…" button, and choosing
-"Add/remove Admins".  Globus uses "SUNETID@stanford.edu" as the username
-format.  If you try adding someone, and Globus is unable to find them, then
-they may not have used Globus before.  Ask the user to log in to Globus, and
-then try again to add them as an admin.
-
-Now you can create a set of credentials for the 
-
-Go back to the project, click on the project's "Add…" button, and
-choose "Add new Globus Connect Server".
-
-TBD
+Once firewall rules have been submitted, you should proceed to install Globus
+Connect Server software.
 
 ## Software Installation
 
-To install the Globus Connect Server software, you will be installing the
-`globus-connect-server` package for your Linux distribution.  Follow the
-instructions from [Globus Connect Server installation guide Section
-3.1](https://docs.globus.org/globus-connect-server-installation-guide/#install_globus_connect_server).
+To install Globus Connect Server v5 software, you should follow one of two
+installation guides.  The installation guide you choose depends on if you can
+follow the "simple" process or the "complex" process.
+
+To follow the "simple" process, all of the following must be true:
+
+1. Your users are using SUNetIDs.  If you users are using other usernames, you
+   will need to use the "complex" process, following the steps to configure
+   Identity Mapping.
+
+2. Your storage is all 'POSIX storage'.  That is, the storage is either
+   directly-attached to your DTN, is clustered storage (like Lustre), or is
+   network-mounted storage (via NFS).
+
+If you will be following the "simple" process, visit [Section
+1](https://docs.globus.org/globus-connect-server/v5.4/quickstart/#gcsv5-install)
+of the [Globus Connect Server v5 Quickstart
+Guide](https://docs.globus.org/globus-connect-server/v5.4/quickstart/).  You
+will follow all of the steps of the Quickstart Guide, *except* you will be
+skipping the "Create OIDC Server" step.
+
+If you will be following the "complex" process, visit [Section
+4](https://docs.globus.org/globus-connect-server/v5.4/#install_section) of the
+[Globus Connect Server v5 Installation
+Guide](https://docs.globus.org/globus-connect-server/v5.4/).  You will need to
+follow Sections 4 and 5 of the Installation Guide.
+
+**NOTE:** During both processes, you will reach a point where you will need to
+"Set the endpoint as managed".  This involves attaching your endpoint to
+Stanford's Globus subscription.  You will need assistance in this step; send
+your endpoint's UUID to
+[srcc-support@stanford.edu](mailto:srcc-support@stanford.edu), so we can add
+the endpoint to the University's subscription.
 
 {% include info-box.html
    icon="arrow-alt-circle-up"
@@ -158,17 +142,10 @@ instructions from [Globus Connect Server installation guide Section
 {% include info-box.html
    icon="list-ul"
    header="Expect Many Packages"
-   content="The `globus-connect-server` package has a large number of dependencies, because Globus Connect Server consists of multiple products (GridFTP, MyProxy, etc.).  It may be possible to only install a subset of packages, but this has not been documented.  Assistance is welcomed in this area!"
+   content="Globus Connect Server v5 is distributed by a large number of packages, each of which implements a different part of GCSv5."
 %}
 
 {% include info-box.html
-   header="Red Hat, Fedora, CentOS, and Scientific Linux users"
-   content="On these distributions, Globus Connect Server requires the `udt` package from EPEL.  If you are not comfortable enabling the entire EPEL repository on your system, you should use the appropraite EPEL repository from [http://yum.stanford.edu](yum.stanford.edu).  The EPEL repository there is a curated subset of the entire EPEL repository, and includes the `udt` package."
+   header="Red Hat & Enterprise Linux users"
+   content="On these distributions, Globus Connect Server requires the `udt` package from EPEL.  If you are not comfortable enabling the entire EPEL repository on your system, you should use the appropraite EPEL repository from yum.stanford.edu.  The EPEL repository mirror on yum.stanford.edu is a curated subset of the entire EPEL repository, and includes the `udt` package."
 %}
-
-Once packages are installed, you are ready for [initial configuration]({{
-"server/configure.html" | relative_url }})!
-
-
-
-
