@@ -97,5 +97,3 @@
       target: "server5"
     - name: "Site Prep and Installation"
       target: "server5/install"
-    - name: "Migrate from Server 4"
-      target: "server5/transition"

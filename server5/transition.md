@@ -7,6 +7,13 @@ id: server5
 description: Transitioning from Globus Connect Server 4 to Globus Connect Server 5
 ---
 
+**This page is archived!**
+
+At the end of CY23, Globus HQ ended support for Globus Connect Server 4.  At
+that time, existing installations of Globus Connect Server 4 stopped working,
+and cannot be migrated to Globus Connect Server 5.  This page remains as a
+reference, and for archival purposes.
+
 ## Conceptual Changes
 
 With Globus Connect Server 4, the term _Endpoint_ meant one of three things:
