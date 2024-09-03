@@ -13,13 +13,9 @@ supports having multiple _identites_ per person, with one identity acting as
 the person's _primary identity_.
 
 {% include info-box.html
-   header="Got an ACCESS Allocation?"
-   content="If you have access to any ACCESS resources, you should link your ACCESS account.  All ACCESS clusters use ACCESS accounts for authentication."
-%}
-
-{% include info-box.html
-   header="Google, ORCID"
-   content="If you have an account with one of these services—even if you registered with your personal email address—you can link them.  This is the best way to use your personal email address with Globus."
+   icon = "users"
+   header="Google, ORCID, or ACCESS?  Now's the time!"
+   content="If you have a Stanford Google account, an ORCID, or an NSF ACCESS account, now is a good time to link those identities!"
 %}
 
 {% include info-box.html
