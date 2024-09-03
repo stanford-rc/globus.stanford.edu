@@ -38,8 +38,8 @@ addresses (not just his Stanford address).
 
 {% include info-box.html
    icon = "user"
-   header="Got an XSEDE Allocation?"
-   content="If you have access to any XSEDE resources, you should link your XSEDE account.  All XSEDE clusters use XSEDE accounts for authentication."
+   header="Got an ACCESS Allocation?"
+   content="If you have access to any NSF ACCESS resources, you should link your ACCESS account.  All ACCESS clusters use ACCESS accounts for authentication."
 %}
 
 For people without any institutional affiliation (or, at least, any institution
