@@ -26,11 +26,6 @@ Identities">demoting your non-Stanford identity</a>.
    content=non-stanford-globus
 %}
 
-Once you have a Globus account for your Stanford identity, you may begin to
-configure Globus Connect personal.  This downloading and installing the Globus
-Connect Personal software, performing initial setup, and configuring both the
-software and your new collection.
-
 {% include info-box.html
    icon="desktop"
    header="Admin Access Required"
@@ -43,6 +38,9 @@ software and your new collection.
    content="Globus Connect Personal needs to be able to make outbound Internet connections.  If Globus Connect Personal reports problems connecting, talk to your IT contact.  Connections must be allowed out to 54.237.254.192/29 port 2223 (for control traffic), and to any Internet host on TCP and UDP ports 50000-51000 (for data transfer).  Connections must also be allowed to AWS S3 on TCP port 443 (HTTPS), for the new version check to succeed."
 %}
 
+Once you have logged in to Globus, you may begin to install Globus Connect
+Personal.
+
 ## Install Globus Connect Personal
 
 Globus have written a set of detailed installation guides explaining how to
@@ -50,12 +48,14 @@ install Globus Connect Personal:
 
 * [Install Globus Connect Personal for **macOS**](https://docs.globus.org/how-to/globus-connect-personal-mac/)
 
-  Only Mac OS X 10.7 and later versions are supported, on Intel CPUs only.
+  Globus Connect Personal runs on Mac OS X Mavericks (10.9) and later.
 
 * [Install Globus Connect Personal for **Windows**](https://docs.globus.org/how-to/globus-connect-personal-windows/)
 
   A recent version of Windows is required.  If your version of Windows no
   longer receives patches from Microsoft, Globus Connect Personal may not work.
+  Check UIT's [Service and Software Sunset Schedule](http://sunset.stanford.edu)
+  to see when various versions of Windows will stop receiving support.
 
 * [Install Globus Connect Personal for **Linux**](https://docs.globus.org/how-to/globus-connect-personal-linux/)
 
@@ -66,8 +66,8 @@ install Globus Connect Personal:
   installed.
 
 The instructions linked above will walk you through downloading Globus Connect
-Personal, installing it, and creating a collection representing your local
-machine.
+Personal, installing it, and creating a Mapped Collection representing your
+local machine.
 
 {% include info-box.html
    icon="id-card"
@@ -116,8 +116,7 @@ Most of the fields are empty, and a few should be filled in.  Click on the
   _Department_ to be the name of your Group (such as your Lab), your
   Department, or your School.
 
-* If your machine has access to Moderate Risk data, _Force encryption_ must be
-  set to `Yes`.  Otherwise, the setting is is optional.
+* Change _Force encryption_ to `Yes`.
 
 Once you save changes, then configuration is complete!  **Congratulations!**
 
