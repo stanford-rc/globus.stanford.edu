@@ -69,28 +69,24 @@ Globus account.
 
 ### Step 1: Check Transfers
 
-First, you should check on the endpoints you administer.  [Log in to Globus](https://www.globus.org/app/transfer), and you will be taken to the transfer page.
+First, you should check on the endpoints you administer.  [Log in to Globus](https://www.globus.org/app/transfer), and you will be taken to the File Manager.
 
 {% include hero-image.html
    src="/assets/accounts/TransferPage.png"
-   alt="Globus 'Transfer' page"
-   caption-overlay=true
-   caption-header=""
-   caption-text=""
+   alt="Globus File Manager"
 %}
 
-In the left-side menu is the **Activity** option.  If any transfers are
+In the left-side menu is the **Activity** button.  If any transfers are
 in progress, a number will appear on top of the icon.  You should only continue
 when there are no transfers in progress.
 
-### Step 2: Uninstall Globus Connect
+### Step 2: Uninstall Globus Connect software
 
 If you have Globus Connect Personal installed on any computers, uninstall the
 software now.
 
 If you administer any Globus Connect Server instances, and you are planning on
-deleting those as well, uninstall the `globus-connect-server` package from the
-server.
+deleting those as well, uninstall Globus Connect Server.
 
 {% include info-box.html
    icon="asterisk"

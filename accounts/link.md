@@ -35,31 +35,34 @@ are not already logged in, then you will be presented with the login page:
    caption-text=""
 %}
 
-Log in as normal, and you will arrive at the transfer page:
+Log in as normal, and you will arrive at the File Manager:
 
 {% include hero-image.html
    src="/assets/accounts/TransferPage.png"
    alt="Globus transfer screen"
    caption-overlay=true
-   caption-header="The Globus 'Transfer Files' screen"
+   caption-header="The Globus File Manager"
    caption-text=""
 %}
 
-Click on the **<i class="fas fa-user-circle"></i> Account** option (near the bottom-left corner of the page).  This will
-take you to the Account Management page:
+Click on the **<i class="fas fa-cog"></i> Settings** button (near the
+bottom-left corner of the page).  This will take you to the Account tab on the
+Settings page:
 
 {% include hero-image.html
    src="/assets/accounts/AccountManagement.png"
    alt="Globus Account Management"
    caption-overlay=true
    caption-header="Account Management"
-   caption-text="All linked identites, and Globus Plus status, are displayed here."
+   caption-text="Your primary and all linked identites are displayed here."
 %}
 
-The Account Management page displays your current primary identity (likely your
+The Account tab displays your current primary identity (likely your
 Stanford identity) and any linked identites.
 
-To link a new identity, click on **<i class="fas fa-id-card"></i><i class="fas fa-plus-circle"></i> Link Another Identity**, on the right of the page.
+To link a new identity, click on the **<i class="fas fa-id-card"></i><i
+class="fas fa-plus-circle"></i> Link Another Identity** button (located near
+the top-right of the page).
 
 {% include hero-image.html
    src="/assets/accounts/AddLinkedIdentity.png"
@@ -77,16 +80,4 @@ with the newly-linked identity listed in the _linked identities_ section.
    icon="exclamation-triangle"
    header="Identities cannot be double-linked"
    content="If you want to 'move' a linked identity, you will need to un-link the identity from the 'losing' primary, before you link it to the 'gaining' primary."
-%}
-
-
-
-
-
-<a name="example"></a>
-{% include hero-image.html
-   src="/assets/accounts/IdentityDiagram.svg"
-   alt="A diagram of one human with a Stanford account, a Google account, and an Ohio State account."
-   caption-header="Three accounts, one identity"
-   caption-text="This person has accounts at two instutions, plus Google, but Globus recognizes this as one Human."
 %}

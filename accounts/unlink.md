@@ -29,42 +29,49 @@ When you do find yourself needing to unlink an identity, follow this procedure.
 %}
 
 To unlink an identity, [log in to Globus](https://app.globus.org/)
-and click on the **<i class="fas fa-user-circle"></i> Account** link (near the bottom-right corner of the page).
+and click on the **<i class="fas fa-user-circle"></i> Settings** button (on the
+left-side column of buttons, near the bottom).
 
 {% include hero-image.html
    src="/assets/accounts/TransferPage.png"
    alt="Globus transfer screen"
    caption-overlay=true
    caption-header="The Globus 'Transfer Files' screen"
-   caption-text="The 'Account' link is in the bottom-left corner of the page."
+   caption-text="The 'Settings' button is near the bottom-left corner of the page."
 %}
 
-The Account page displays your primary and linked identities.  Near the
-upper-right of the page, locate and click on the **<i class="fas fa-id-card"></i> Manage Identities** link.
+On the Settings page will be a list of your identities, both primary and
+linked.  Your primary identity will have a <i class="fas fa-crown"
+title="crown"></i> symbol next to it.
 
 {% include hero-image.html
    src="/assets/accounts/AccountManagement.png"
    alt="Globus transfer screen"
    caption-overlay=true
-   caption-header="The Globus 'Account' screen"
-   caption-text="The 'Manage Your Identities' link is in the upper-right quadrant of the screen."
+   caption-header="The Globus Settings page, showing the Account tab"
+   caption-text="This user has four identities.  'akkornel@stanford.edu' is the
+   primary identity; the others are linked identities."
 %}
 
+Although this page lists your identities, it does not allow you to manage them.
+To manage your identities, click on the **Manage Identities** button (on the
+top-right part of the page).
+
 You will be taken to a page listing all of your identities.  Each linked
-identity will have a large <i class="fas fa-times" title="letter X"></i> to the
+identity will have a <i class="fas fa-trash-alt" title="trash can"></i> to the
 right of the identity.
 
 {% include hero-image.html
    src="/assets/accounts/Identities.png"
    alt="Globus account identities screen"
    caption-overlay=true
-   caption-header="The Globus 'Identities' list"
-   caption-text="Click on the letter X to delete an identity."
+   caption-header="The Globus Manage Identities page"
+   caption-text="Click on the trash can to delete an identity."
 %}
 
 Locate the identity you wish to remove, and click on the <i class="fas
-fa-times" title="letter X"></i>.  You will then be asked if you are sure about
-unlinking the identity.
+fa-trash-alt" title="trash can"></i>.  You will then be asked if you are sure
+about unlinking the identity.
 
 {% include hero-image.html
    src="/assets/accounts/UnlinkingConfirmation.png"
@@ -102,22 +109,29 @@ this whenever you change your primary institutional affiliation.
    content="The steps below will cause all transfer and endpoint history to be lost.  Endpoints will also be deactivated, so you will have to sign into them again.  You should make a note of endpoints that you do not control, but which you have recently used, to reactivate them later."
 %}
 
-### Step 1: Check Your Endpoints
+### Step 1a: Check Your Admin Access
 
-Check all of the endpoints (including shared endpoints) you administer, making sure that your
-_current_ primary identity is on the list of administrators.  Globus Connect
-Personal endpoints—and shared endpoints created from Globus Connect Personal
-endpoints—are excluded from this step, because they can not have multiple
-administrators.
+If you are an owner or administrator of any Globus Connect Server endpoints, or
+of any Mapped Collections, consider adding a coworker (or a Globus Group
+containing one or more coworkers) as an Administrator.  This will ensure admin
+access can be maintained during the transition.
 
 {% include hero-image.html
    src="/assets/server/EndpointRoles.png"
-   alt="A Globus Connect Personal endpoint, showing the list of roles."
+   alt="A Globus Connect Server endpoint, showing the list of roles."
    caption-overlay=false
-   caption-header="An example Globus Connect Personal endpoint"
+   caption-header="An example Globus Connect Server endpoint"
    caption-text="This is where you should check administrators.  This is a
-   Globus Connect Personal endpoint, so only one administrator is allowed."
+   Globus Connect Server endpoint, with multiple administrators."
 %}
+
+### Step 1b: Check Your GCP
+
+If you are running Globus Connect Personal (GCP), it will remain associated
+with whichever Globus Identity you selected when you installed it.  It is not
+possible to change the ownership of a Globus Connect Personal installation, so
+if you want it associated with a new owner, you will have to do a fresh
+installation of GCP.
 
 ### Step 2: Unlink All Linked Identities
 
@@ -142,12 +156,7 @@ to link all of your other identities to your new primary identity.
 
 ### Step 5: Log in to Third-Party Sites
 
-If you had any third-party sites or program that used your Globus credentials,
+If you had any third-party sites or programs that used your Globus credentials,
 you will need to log back in to them, so that fetch new Globus credentials.
 
-Congratulations, the identity-demotion process is complete!  You may now
-re-activate endpoints, and return to normal life.
-
-
-
-
+Congratulations, the identity-demotion process is complete!
