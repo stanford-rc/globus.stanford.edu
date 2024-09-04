@@ -10,20 +10,27 @@ see-also: true
 
 If you would like to give other people access to content that is only
 accessible with Globus Connect Personal (for example, because that content
-lives on your laptop or desktop), you will need to create a _Shared endpoint_.
-In order to create a shared endpoint with Globus Connect Personal, you will
+lives on your laptop or desktop), you will need to create a _Guest Collection_.
+In order to create a Guest Collection with Globus Connect Personal, you will
 need access to a feature called _Globus Plus_.  This page explains how to
 configure Globus Plus and start sharing.
 
 {% include info-box.html
    header="Full (and full-sponsored) accounts only"
    icon="university"
-   content="Globus Plus is only available to people who have a full-service (or full-sponsored) account.  Essentially, if you have a Stanford email address, then you can use Globus Plus!"
+   content="Globus Plus is only available to people who have a full-service (or full-sponsored) account.  If you have Stanford email, then you can use Globus Plus!"
 %}
 
 {% include info-box.html
+   icon="exclamation-circle"
+   header="Stanford endpoints only"
+   content="When you create a new Globus Connect Personal endpoint, you attach it to a Globus identity.  Globus Plus will only work for Personal endpoints attached to a Stanford identity (identities ending in `@stanford.edu`)."
+%}
+
+{% include info-box.html
+   icon="question-circle"
    header="You might not need Globus Plus"
-   content="You only need Globus Plus if you want to give other people access to some of the files on your computer.  If you want to share content on a server (running Globus Connect Server), Globus Plus is not needed, because it only works with Globus Connect Personal."
+   content="You only need Globus Plus if you want to give other people access to some of the files on your computer.  If you want to share content on a server (running Globus Connect Server), Globus Plus is not needed."
 %}
 
 {% include info-box.html
@@ -36,21 +43,24 @@ The first step is to ask that Globus Plus be enabled on your account.
 
 ## Enable Globus Plus
 
-Globus Plus is a feature that has to be enabled on a user's account.  It is
-enabled by adding you to a special group in the Globus infrastructure.
+The ability to make Globus Connect Personal Guest Collections (a feature known
+originally as "Globus Plus") is granted by giving you access to premium Globus
+features.  This is implemented by adding you to a Globus Group.
 
 You only need to do this once, even if you have multiple Globus Connect
-Personal endpoints.
+Personal endpoints attached to your Stanford Identity.
 
-To get Globus Plus enabled on your account, email [srcc-support@stanford.edu](mailto:srcc-support@stanford.edu?subject=Please Enable Globus Plus&body=Hello!  My SUNetID is X.  Please add me to the Stanford Globus Plus Group, so that I can use Globus Connect Personal to share Low- and Moderate-Risk files that I have on my endpoint.).
-Provide your SUNetID, and say that you would like to be added to the Stanford
-Globus Plus group.  You should receive a response within two business days.
+To get access to our Globus subscription, email [srcc-support@stanford.edu](mailto:srcc-support@stanford.edu?subject=Please Enable Globus Plus&body=Hello!  My SUNetID is X.  Please give me access to Globus Plus through Stanford, so that I can use Globus Connect Personal to share Low- and Moderate-Risk files that I have on my endpoint.).
+Send the email from your Stanford email.  In the email, provide your SUNetID,
+and say that you would like access to Globus Plus through Stanford.  You should
+receive a response within two business days.
 
-When SRCC Support processes your request, you will receive an invitation to
-join the _Stanford University Globus Plus Group_.
+When Research Computing Support processes your request, you will receive an
+invitation to join the _Stanford_ Globus Group as a member.  Click on the link
+that says "Click here to apply for membership."
 
 {% include hero-image.html
-   src="/assets/client/GlobusPlusGroupJoinEmail.png"
+   src="/assets/client/GlobusPlusGroupJoinEmail.jpg"
    alt="Part of an email from Globus, inviting the recipient to join the 'Stanford University Globus Plus Group'"
    caption-overlay=true
    caption-header=""
@@ -58,37 +68,46 @@ join the _Stanford University Globus Plus Group_.
 %}
 
 Accepting the invitation will send you to the Globus web site (be sure to log
-in with your Stanford credentials), where you will be be asked to confirm your
+in through _Stanford University_), where you will be be asked to confirm your
 information and read & agree to terms.
 
 {% include hero-image.html
-   src="/assets/client/GlobusPlusGroupJoinConfirmation.png"
-   alt="The Globus web site, showing the Groups page, and displaying a screen asking the user to confirm that they want to join a group."
+   src="/assets/client/GlobusPlusGroupJoinRequest.png"
+   alt="The Globus web site, showing the Groups page, and displaying a screen asking the user to confirm that they want to join a group.  This involves filling in name & organization, and agreeing to terms"
    caption-overlay=true
-   caption-header="Create Globus Connect Personal Endpoint"
+   caption-header="Agreeing to terms of subscription access"
    caption-text=""
 %}
 
-Once you have accepted, you will be added to the group!  Your account should
-then be enabled for Globus Plus.  Remember, you _must accept the invitation in
+Once you accept the invitation, you will receive a confirmation that your
+membership is active.
+
+{% include hero-image.html
+   src="/assets/client/GlobusPlusGroupJoinConfirmation.png"
+   alt="The Globus web site, confirming that the user is an active member in the 'Stanford' group."
+   caption-overlay=true
+   caption-header="Confirming group membership—and subscription access—has been
+   processed"
+   caption-text=""
+%}
+
+Globus Plus will be active on your account as soon as you accept the
+invitation.  Remember, you _must accept the invitation in
 order to be added to the group_, and _your Globus Plus access will not start
 working until you join the group_!
 
-You can confirm that Globus Plus is enabled by going to your [Globus account
-page](https://www.globus.org/app/account).
+You can confirm that Globus Plus is enabled by going to the [Globus File
+Manager](https://app.globus.org/), clicking on the *Settings* button (located
+on the left-side vertical bar, near the bottom), and clicking on the
+*Subscription* tab.
 
 {% include hero-image.html
    src="/assets/client/GlobusAccountwithPlus.png"
-   alt="The 'Globus Account' page, showing that Globus Plus is active."
+   alt="The 'Globus Account' page, showing access to Stanford's subscription."
    caption-overlay=false
    caption-header="This person has access to Globus Plus."
-   caption-text="If the person was affiliated with multiple institutions, then she might have had access to Globus Plus through multiple affiliations.  In this case, only one is active (the other was used for a training session, and has been disabled)."
+   caption-text="If the person was affiliated with multiple institutions, then she might have had access to multiple Globus Subscriptions."
 %}
-
-Remember, you only need Globus Plus enabled once.  Even if you have multiple
-Globus Connect Personal endpoints, as soon as Globus Plus is enabled on your
-account, it will start working for all current (and future) Globus Connect
-Personal endpoints.
 
 You now need to go to your endpoint, to decide what you want to share.
 
@@ -156,11 +175,11 @@ You are now ready to start sharing from your endpoint!
 
 To begin sharing content from your Globus Connect Personal endpoint, follow the
 guide [How To Share Data Using
-Globus](https://docs.globus.org/how-to/share-files/), part of Globus's [How
-To](https://docs.globus.org/how-to/) series.  Globus' guide will step you
-through the process of creating a Shared Endpoint, which gives other people
-access to a limited set of directories on your Globus Connect Personal
-endpoint.
+Globus](https://docs.globus.org/guides/tutorials/manage-files/share-files/),
+part of Globus's [Guides](https://docs.globus.org/guides/) series.  Globus'
+guide will step you through the process of creating a Guest Collection, which
+gives other people access to a limited set of directories on your Globus
+Connect Personal endpoint's Managed Collection.
 
 That's it!  You should now be sharing part of your endpoint with others.
 
@@ -175,7 +194,3 @@ That's it!  You should now be sharing part of your endpoint with others.
    header="Don't Fall Asleep"
    content="Your Shared Endpoint will only work when Globus Connect Personal is running, and your laptop or desktop is awake and connected to a network.  If your endpoint does fall asleep, any in-progress transfers will automatically resume once it wakes up."
 %}
-
-
-
-
