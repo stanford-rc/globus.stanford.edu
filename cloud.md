@@ -47,8 +47,14 @@ in the future.  If you run into problems accessing it, contact us for <a href="s
    raw=collection-under-construction
 %}
 
-Amazon S3 buckets—in all regions—may be accessed through the [SRCC SCG AWS
-S3](https://app.globus.org/file-manager/collections/6122aa2f-bd3f-4474-b8bf-691c35397822/overview)
+Amazon S3 buckets—in all regions other than China—may be accessed through the
+[Stanford Amazon (AWS)
+S3](https://app.globus.org/file-manager/collections/483837a5-663b-407a-9168-9ec98f82ff36/overview)
+collection.
+
+If you need to access a requester-pays bucket, you may do so through the
+[Stanford Amazon (AWS) S3
+Requester-Pays](https://app.globus.org/file-manager/collections/f73507db-2379-4927-9f45-c91af223c794/overview)
 collection.
 
 [Go here for detailed information on how to use Globus with Amazon S3]({{ "cloud/s3.html" | absolute_url }}).
