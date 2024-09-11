@@ -42,11 +42,6 @@ in the future.  If you run into problems accessing it, contact us for <a href="s
 
 # Amazon S3
 
-{% include info-box.html
-   icon="wrench"
-   raw=collection-under-construction
-%}
-
 Amazon S3 buckets—in all regions other than China—may be accessed through the
 [Stanford Amazon (AWS)
 S3](https://app.globus.org/file-manager/collections/483837a5-663b-407a-9168-9ec98f82ff36/overview)
