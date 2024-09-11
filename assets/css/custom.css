@@ -493,3 +493,10 @@ button.accordion-button:not(.collapsed)::after {
 .gist .pl-c {
     color: #000;
 }
+
+blockquote {
+    padding: 0 1em;
+    border-left: .25em solid #7F7776;
+    color:#544948;
+    margin: 1.5em 2em;
+}
