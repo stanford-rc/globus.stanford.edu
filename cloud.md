@@ -166,10 +166,18 @@ you are interested in this.
 
 # Google Cloud Storage
 
+{% capture google-account-required %}
+<h4>Stanford Google Account Required</h4>
+<p>To access Google Cloud Storage, you need a Stanford Google account.  If you
+have Stanford email, you have a Stanford Google account.  If you do not have
+Stanford email, you & your sponsor should read about <em><a title="Stanford Google Workspace ID for Base SUNet IDs" href="https://uit.stanford.edu/service/accounts/googleworkspace-id">Stanford Google Workspace ID for Base SUNet IDs</a></em>.</p>
+{% endcapture %}
+{% comment %}
+Capture is in the Google Cloud Storage section, above
+{% endcomment %}
 {% include info-box.html
    icon="id-card"
-   header="Full SUNetID Required"
-   content="To interact with Google services through Stanford, you must have a full or full-sponsored SUNetID.  Therefore, using the Globus Google connector also requires a full (or full-sponsored) SUNetID."
+   raw=google-account-required
 %}
 
 {% include info-box.html
@@ -204,7 +212,7 @@ and other High Risk projects.
 {% include info-box.html
    icon="id-card"
    header="Full SUNetID Required"
-   content="To interact with Google services through Stanford, you must have a full or full-sponsored SUNetID.  Therefore, using the Globus Google connector also requires a full (or full-sponsored) SUNetID."
+   content="To interact with Google Drive through Stanford, you must have a full or full-sponsored SUNetID.  Therefore, using the Globus Google connector also requires a full (or full-sponsored) SUNetID."
 %}
 
 {% include info-box.html
