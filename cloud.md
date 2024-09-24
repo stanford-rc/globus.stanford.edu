@@ -21,7 +21,6 @@ name for more information.
 |---------------|-----------------------|
 | <a href="#amazon-s3">Amazon S3</a> | ✅ |
 | <a href="#s3-compatible-storage">S3-compatible storage</a> | ✅ |
-| <a href="#box">Stanford Box</a> | ❌ |
 | <a href="#box">Medicine Box</a> | ❌ |
 | <a href="#ceph">Ceph</a> | ❌ |
 | <a href="#dropbox">Dropbox</a> | ❌ |
@@ -120,25 +119,13 @@ us](mailto:srcc-support@stanford.edu) for general advice.
 
 # Box
 
-{% include info-box.html
-   icon="biohazard"
-   header="Medicine Box Unavailable"
-   content="Stanford's Globus subscription has not gone through the necessary Security & Privacy reviews for access to High Risk data, so access to Medicine Box is blocked."
-%}
+Although Stanford's subscription does support the Box connector, University IT
+does not provide Box storage as a service.
 
-**The Stanford Box service was retired** on February 28, 2023.  At that time,
-Globus for Box stopped working.  It is no longer possible to access Box through
-Stanford's Globus subscription.
-
-This collection previously gave you access to your Box files, as well as to
-folders which have been shared with you.
-
-Globus does not copy any custom metadata or permissions from files it
-downloads.  Uploaded items will inherit the permissions of the parent folder.
-
-When uploading, Globus will respect the permissions set on the destination; if
-you do not have write permission, uploads will fail with a "Permission Denied"
-error.
+The School of Medicine does offer a Box instance—known as "Medicine Box"—but
+Stanford's Globus subscription has not gone through the necessary Security &
+Privacy reviews for access to High Risk data, so access to Medicine Box is
+blocked.
 
 # Ceph
 
