@@ -35,7 +35,7 @@ name for more information.
 &nbsp;
 
 {% capture collection-under-construction %}
-<h2>Under Construction</h2>
+<h4>Under Construction</h4>
 <p>This collection is still under construction, and is likely going to change
 in the future.  If you run into problems accessing it, contact us for <a href="support.html">support.</a></p>
 {% endcapture %}
@@ -199,7 +199,7 @@ and other High Risk projects.
 # Google Drive
 
 {% capture drive-limits %}
-<h2>Incoming Google Drive limits</h2>
+<h4>Incoming Google Drive limits</h4>
 <p>Starting September 1, 2024: Google Drive spaces
 (including your 'My Drive' space and all Shared Drives) will have a 50 GB quota.
 <b><a title="Transitioning to a Sustainable Google Workspace" href="https://uit.stanford.edu/news/transitioning-sustainable-google-workspace">Read the transition announcement</a></b>.</p>

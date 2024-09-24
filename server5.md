@@ -36,7 +36,7 @@ through a user's web browser, though it is not fast.
 %}
 
 {% capture gcsv4 %}
-<h2>Looking for Globus Connect Server version 4?</h2>
+<h4>Looking for Globus Connect Server version 4?</h4>
 
 <p>Globus Connect Server version 4 was deprecated in 2023: It stops receiving
 non-security updates on August 1, and GCSv4 endpoints will stop working

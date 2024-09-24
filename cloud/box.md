@@ -8,7 +8,7 @@ description: Globus works with Stanford Box, but with a number of restrictions.
 ---
 
 {% capture globus-ending %}
-<h2>Stanford Box has been retired…</h2>
+<h4>Stanford Box has been retired…</h4>
 <p>The <b>Stanford Box service was retired</b> on February 28, 2023.
 <a href="{{ "/2023/02/23/box-deprecation.html" | relative_url }}">Read the announcement</a>.
 </p>

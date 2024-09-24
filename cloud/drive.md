@@ -8,7 +8,7 @@ description: Globus works with Google Drive, but with a number of restrictions.
 ---
 
 {% capture drive-limits %}
-<h2>Incoming Google Drive limits</h2>
+<h4>Incoming Google Drive limits</h4>
 <p>Starting September 1, 2024: Google Drive spaces
 (including your 'My Drive' space and all Shared Drives) will have a 50 GB quota.
 <b><a title="Transitioning to a Sustainable Google Workspace" href="https://uit.stanford.edu/news/transitioning-sustainable-google-workspace">Read the transition announcement</a></b>.</p>
@@ -158,7 +158,7 @@ collection, using the link at the top of the page.  You might be asked to log
 in; if so, log in through *Stanford University*.
 
 {% capture not-google-login %}
-<h2>Avoid Sign in With Google</h2>
+<h4>Avoid Sign in With Google</h4>
 <p>Globus supports "Sign in with Google"; if you use Sign in with Google, even
 if you selected your Stanford email address, you will get a different Globus
 account compared to signing in via Stanford University.<br />
