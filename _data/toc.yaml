@@ -61,6 +61,8 @@
       target: "cloud"
     - name: "Amazon S3 Details"
       target: "cloud/s3"
+    - name: "Google Cloud Details"
+      target: "cloud/cloud"
     - name: "Google Drive Details"
       target: "cloud/drive"
     - name: "Microsoft OneDrive Details"
