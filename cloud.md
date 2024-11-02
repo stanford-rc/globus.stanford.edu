@@ -177,11 +177,12 @@ Google Cloud Storage may be accessed through the [Stanford Google
 Cloud](https://app.globus.org/file-manager/collections/1a7d4931-986a-42f5-80fc-1fafe28f9826/overview)
 collection.
 
+[Go here for detailed information on how to use Globus with Google Cloud Storage]({{ "cloud/cloud.html" | absolute_url }}).
+
 When using Google Cloud Storage, Globus will act on your behalf.  You will be
 able to access any buckets outside of the VPC Service Perimeter.  In other
 words, you will not be able to access buckets associated with Nero projects,
 and other High Risk projects.
-
 
 # Google Drive
 
