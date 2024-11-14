@@ -5,7 +5,7 @@ toc: false
    
 news: true
 toc: false
-title:       Google Drive quotas, and using Globus for Drive migrations.
+title:       Google Drive quotas, and using Globus for Drive migrations
 excerpt:     Future changes to Google Drive quotas will not prevent users from using Globus to transfer data. Learn about migrating data from Google Drive with Globus.
 ---
 {% include note.html
