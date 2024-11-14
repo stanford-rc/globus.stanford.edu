@@ -6,8 +6,15 @@ toc: false
 news: true
 toc: false
 title:       Google Drive quotas, and using Globus for Drive migrations.
-excerpt:     University IT is implementing a 50 GB quota on Google Drive spaces.  This will limit how much you can transfer in to Google Drive, and will trigger many migrations of data out of Google Drive.  Read on to learn how Globus is affected, and how to prepare for a migration.
+excerpt:     Future changes to Google Drive quotas will not prevent users from using Globus to transfer data. Learn about migrating data from Google Drive with Globus.
 ---
+{% include note.html
+   content=
+'The information below may be out-of-date. Check [Transitioning to a
+Sustainable Google
+Workspace](https://uit.stanford.edu/news/transitioning-sustainable-google-workspace) for the latest updates.' 
+%}
+
 
 On January 23, University IT posted the news article [Transitioning to a
 Sustainable Google
@@ -17,8 +24,9 @@ the changes are…
 
 * A 50 GB storage limit will be applied to My Drive and each shared drive.
 
-* Starting Sept. 1, 2024, the storage limit will be enforced for drives with
+* Starting ~~Sept. 1, 2024~~, the storage limit will be enforced for drives with
   more than 500 GB.
+  ***Updated Aug. 7, 2024:*** The enforcement of any storage limit for Google My Drive and shared drives will begin no sooner than March 1, 2025, with billing deferred accordingly. During this period, drives will not switch to "read-only."
 
 * Starting Sept. 1, 2025, the storage limit will be enforced for drives with
   more than 50 GB.
@@ -27,7 +35,7 @@ the changes are…
   per GB per year in Fiscal Year 2025.
 
 * Policies for shared drive creation and lifecycle management will be announced
-  ssoon.
+  soon.
 
 ## Globus Transfers with Google Drive quotas
 
@@ -38,9 +46,9 @@ react one of two ways, depending on the transfer setting "Fail on quota
 errors".
 
 {% include figure.html
-   src="/assets/posts/2024/TransferSyncoption.png"
-   alt="A Globus File Manager window, showing transfer and sync options.  The 'Fail on quota errors' option is hilighted."
-   caption="Controlling what happens when there is a quota error."
+   src='/assets/posts/2024/TransferSyncoption.png'
+   alt='A Globus File Manager window, showing transfer and sync options.  The _Fail on quota errors_ option is highlighted.'
+   caption='Controlling what happens when there is a quota error.'
 %}
 
 When you are preparing a Globus transfer, if you go to the *Transfer & Timer
