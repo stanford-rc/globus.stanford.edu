@@ -34,21 +34,45 @@ Each step is described in detail below.
 
 ## Service Limitations
 
-{% include info-box.html
-   icon="weight-hanging"
-   header="Big Data is Best"
-   content="Elm works best with large files (hundreds of megabytes and larger).  If you are thinking of uploading smaller files, you may wish to combine them into a larger `.tar` or `.zip` file before you upload them to Elm."
-%}
+Globus has a number of limitations when working with Elm.  These
+limits might affect your use case—especially when dealing with research data or
+shared content—so you should review them before starting to use Globus with
+OneDrive.
 
-{% include info-box.html
-   icon="hourglass"
-   header="Expect Slow Restores"
-   content="Data on Elm are eventually sent to tape.  File listing will be fast, but downloads from Elm will be slower than expected, and you may see timeouts."
-%}
+### Elm Limitations
 
-Globus has a number of limitations when working with Elm.  These limits
-do not affect most common use cases, but they might affect you, so you should
-review them before starting to use Globus with Elm.
+Even though Elm is accessed through the S3 protocol, it has a number of
+limitations compared to Amazon S3.  In particular…
+
+* Big Data is Best: Elm works best with large files (hundreds of megabytes and
+  larger).  If you are thinking of uploading smaller files, you may wish to
+  combine them into a larger `.tar` or `.zip` file before you copy them to Elm.
+
+* Expect Slow Restores: Data on Elm are eventually sent to tape.  Directory
+  listings will be fast, but downloads from Elm will be slower than expected,
+  and you may see timeouts.
+
+* Workgroups Rule: Even if you give Globus full read, write, and delete access,
+  your workgroup membership will limit what Globus can do.  Specifically…
+
+  * You must be a member of your bucket's main workgroup to have _any_ access.
+
+  * You must be a member of your bucket's "Writers" workgroup to have
+    read/write access.
+
+  * You must be a member of your bucket's "Editors" workgroup to have full
+    access.
+
+* No Cross-Account Access: Elm does not support S3 cross-account bucket access.
+  Instead, you should add users to the appropriate work, so they can create
+  their own access keys.
+
+### Globus Limitations
+
+The Globus File Manager only supports one access key per Mapped Collection, but
+it is possible to have a separate access key for each bucket.  If you are
+someone who has multiple buckets on Elm, [contact
+us](mailto:srcc-support@stanford.edu?subject=Elm/Globus%20Multiple%20Buckets%20Assistance) for assistance.
 
 Globus for Elm does not support the following S3 features:
 
