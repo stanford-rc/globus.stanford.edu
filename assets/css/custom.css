@@ -500,3 +500,15 @@ blockquote {
     color:#544948;
     margin: 1.5em 2em;
 }
+
+.form-check label {
+  width:auto;
+  padding-top:0;
+  margin-top:0;
+}
+
+textarea#resource{
+  width:100%;
+  min-width:100%;
+  max-width:100%;
+}
