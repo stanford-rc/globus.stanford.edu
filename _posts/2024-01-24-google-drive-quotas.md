@@ -8,34 +8,39 @@ toc: false
 title:       Google Drive quotas, and using Globus for Drive migrations
 excerpt:     Future changes to Google Drive quotas will not prevent users from using Globus to transfer data. Learn about migrating data from Google Drive with Globus.
 ---
-{% include note.html
+{% include important.html
    content=
-'The information below may be out-of-date. Check [Transitioning to a
+'The policy information below may be out-of-date. Check [Transitioning to a
 Sustainable Google
-Workspace](https://uit.stanford.edu/news/transitioning-sustainable-google-workspace) for the latest updates.' 
+Workspace](https://uit.stanford.edu/news/university-sets-5-tb-google-workspace-limit) for the latest updates.' 
 %}
 
 
-On January 23, University IT posted the news article [Transitioning to a
+On January 23, 2024, University IT posted the news article [Transitioning to a
 Sustainable Google
 Workspace](https://uit.stanford.edu/news/transitioning-sustainable-google-workspace).
 The article talks about changes coming to Stanford Google Drive.  At a glance,
 the changes are…
 
-* A 50 GB storage limit will be applied to My Drive and each shared drive.
+* ~~A 50 GB storage limit will be applied to My Drive and each shared drive~~.
 
-* Starting ~~Sept. 1, 2024~~, the storage limit will be enforced for drives with
-  more than 500 GB.
-  ***Updated Aug. 7, 2024:*** The enforcement of any storage limit for Google My Drive and shared drives will begin no sooner than March 1, 2025, with billing deferred accordingly. During this period, drives will not switch to "read-only."
+* ~~Starting Sept. 1, 2024, the storage limit will be enforced for drives with more than 500 GB~~.
 
-* Starting Sept. 1, 2025, the storage limit will be enforced for drives with
-  more than 50 GB.
+* ~~Starting Sept. 1, 2025, the storage limit will be enforced for drives with more than 50 GB~~.
+  {% include info-box.html icon='hard-drive'
+   header='Updated January 21,2025'
+  content='Starting September 1, 2025, a storage limit of 5 terabytes (TB) will be applied to each My Drive and shared drive.' 
+%} 
 
-* Additional storage may be purchased starting Aug. 1, 2024, at a rate of $0.15
-  per GB per year in Fiscal Year 2025.
+* ~~Additional storage may be purchased starting Aug. 1, 2024, at a rate of $0.15 per GB per year in Fiscal Year 2025~~.
 
-* Policies for shared drive creation and lifecycle management will be announced
-  soon.
+  {% include info-box.html icon='dollar-sign'
+   header='Updated January 21,2025'
+   content='Additional storage over 5TB can be purchased through the university at a rate of $0.15 per GB annually. An email will be sent to those who own or manage a My Drive or shared drive that exceeds the 5 TB storage limit when the process to purchase more storage becomes available in March 2025. ' 
+%} 
+
+
+
 
 ## Globus Transfers with Google Drive quotas
 
