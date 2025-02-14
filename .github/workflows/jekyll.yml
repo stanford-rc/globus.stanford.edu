@@ -43,7 +43,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5.0.0
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1.0.13
+          run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3.0.1
