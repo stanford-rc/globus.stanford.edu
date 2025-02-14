@@ -63,6 +63,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Fetch GitHub Pages artifact for caching
+        id: fetch-artifact
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: github-pages
+          path: ./_site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4.0.5
+      - name: Cache live Pages site
+        id: save-pages
+        uses: actions/cache/save@v4
+        with:
+          key: site
+          path: ./_site
