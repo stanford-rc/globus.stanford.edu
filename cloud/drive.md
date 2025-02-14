@@ -9,9 +9,9 @@ description: Globus works with Google Drive, but with a number of restrictions.
 
 {% capture drive-limits %}
 <h4>Incoming Google Drive limits</h4>
-<p>Starting September 1, 2024: Google Drive spaces
-(including your 'My Drive' space and all Shared Drives) will have a 50 GB quota.
-<b><a title="Transitioning to a Sustainable Google Workspace" href="https://uit.stanford.edu/news/transitioning-sustainable-google-workspace">Read the transition announcement</a></b>.</p>
+<p>Starting September 1, 2025: Google Drive spaces
+(including your 'My Drive' space and each Shared Drive) will have a 5 TB quota.
+<b><a title="Transitioning to a Sustainable Google Workspace" href="https://uit.stanford.edu/news/university-sets-5-tb-google-workspace-limit">Read the transition announcement</a></b>.</p>
 {% endcapture %}
 {% include info-box.html
    icon="compress-arrows-alt"
@@ -53,25 +53,14 @@ should review them before starting to use Globus with Drive.
 
 ### Drive Limitations
 
-First, per the changes [announced on January
-23](https://uit.stanford.edu/project/google-workspace-optimization#section_3231),
-there is now a 50 GB storage limit on your Stanford Google Drive space (the "My
-Drive" space), as well as a limit of 50 GB for each Shared Drive.  If the
-transfer causes you to hit quota, it will eventually fail.
-
-Next, there are some [limits imposed by
+There are some [limits imposed by
 Google](https://support.google.com/a/answer/172541?hl=en) on all users of
 Drive:
 
-The maximum file size on Google Drive is 5 TB.  However, since the quota for
-all Drive spaces is 50 GB, the maximum file size on Google Drive is effectively
-50 GB.
+The maximum file size on Google Drive is 5 TB.
 
-Users are limited to uploading 750 GB of data to Google Drive per calendar day.
-That includes both your own personal Drive, and all Shared Drive spaces.
-Although individual Drive spaces (your own Google Drive, and Shared drives)
-have a 50 GB quota, you can still reach the upload quota if you upload to many
-different spaces per day.
+Users are limited to uploading 750 GB of data to Google Drive across all spaces (personal Drive as well as Shared Drives) per calendar day.
+
 Transfers that involve moving more than 750 GB of data into Drive will be
 automatically paused when this limit is reached, and resumed when your limit is
 reset.  Google does not explicitly define when the calendar day resets.
