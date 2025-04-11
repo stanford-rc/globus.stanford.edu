@@ -55,17 +55,19 @@ limitations compared to Amazon S3.  In particular…
 * Workgroups Rule: Even if you give Globus full read, write, and delete access,
   your workgroup membership will limit what Globus can do.  Specifically…
 
-  * You must be a member of your bucket's main workgroup to have _any_ access.
+  * You must be a member of your bucket's main workgroup to have read access.
+    If you are in either the "Uploader" or the "Editor" workgroup, you are
+    automatically part of this workgroup.
 
-  * You must be a member of your bucket's "Writers" workgroup to have
+  * You must be a member of your bucket's "Uploader" workgroup to have
     read/write access.
 
-  * You must be a member of your bucket's "Editors" workgroup to have full
-    access.
+  * You must be a member of your bucket's "Editor" workgroup to have full
+    read/write/delete access.
 
 * No Cross-Account Access: Elm does not support S3 cross-account bucket access.
-  Instead, you should add users to the appropriate work, so they can create
-  their own access keys.
+  Instead, you should add users to the appropriate workgroup, so they can
+  create their own access keys.
 
 ### Globus Limitations
 
@@ -181,6 +183,31 @@ The default User Policy allows more access than Globus needs.  So, you should
 change it to a policy that restricts Globus to just the buckets, and actions,
 that you want to allow.
 
+On the Create Access Key page, MinIO will provide a default policy in the
+Current User Policy box:
+
+{% include hero-image.html
+   src="/assets/cloud/ElmCreateAccessKeyWithPolicyDefault.png"
+   alt="The Create Access Key page, with a name and policy filled in."
+   caption-overlay=false
+   caption-header=""
+   caption-text="A default policy (in red) will be provided.  You need to delete this."
+%}
+
+To start, delete that default policy, so that the Current User Policy box is
+empty.
+
+{% include hero-image.html
+   src="/assets/cloud/ElmCreateAccessKeyWithPolicyDeleted.png"
+   alt="The Create Access Key page, with the policy deleted."
+   caption-overlay=false
+   caption-header=""
+   caption-text=""
+%}
+
+Next, you will need to provide a policy that allows Globus to do only what you
+want it to do.
+
 Below, fill in the names of the buckets you want to access through Globus, and
 choose if you want to allow Globus to upload and/or delete files.
 
@@ -226,12 +253,12 @@ choose if you want to allow Globus to upload and/or delete files.
 }
 ```
 
-Replace the default Current User Policy with the custom policy above, and click
-"Create":
+Take the policy you created above, copy/paste it into the Current User
+Policy box, and then click "Create":
 
 {% include hero-image.html
-   src="/assets/cloud/ElmCreateAccessKeyWithPolicy.png"
-   alt="The Create Access Key page, with a name and policy filled in."
+   src="/assets/cloud/ElmCreateAccessKeyWithPolicyReplaced.png"
+   alt="The Create Access Key page, with the policy updated."
    caption-overlay=false
    caption-header=""
    caption-text=""
