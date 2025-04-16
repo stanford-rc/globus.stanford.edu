@@ -48,9 +48,37 @@ limitations compared to Amazon S3.  In particular…
   larger).  If you are thinking of uploading smaller files, you may wish to
   combine them into a larger `.tar` or `.zip` file before you copy them to Elm.
 
+* Be Aware of Quotas: Elm rentals come with both a *storage quota*—a limit on
+  how much data (TiB) you can store—and an *objects quota*—a limit on how many
+  objects (files) you can store.  If you exceed either quota, you will start
+  seeing "Permission Denied" errors on all uploads.
+
+  Even though Globus transfers do have the "Fail on quota errors" option, it
+  has no effect here: The S3 protocol does not have a way to represent "Quota
+  Exceeded", so the Elm developers instead represent the error as "Permission
+  Denied".
+
+  If you suddenly start seeing "Permissions Denied" errors on transfers to Elm,
+  check to see if you have exceeded quota.  To see your current storage & inode
+  usage, check your Elm Grafana Dashboard.  To get a link to your Elm Grafana
+  Dashboard, go to Elm's [Getting Started
+  guide](https://docs.elm.stanford.edu/getting-started/#accessing-your-elm-bucket)
+  and enter your bucket name.  If you get your quota increased before a
+  transfer's deadline, once quota is added, the transfer will continue
+  automatically.
+
 * Expect Slow Restores: Data on Elm are eventually sent to tape.  Directory
-  listings will be fast, but downloads from Elm will be slower than expected,
-  and you may see timeouts.
+  listings will be fast, but downloads from Elm will be much slower than
+  expected, and you will see timeouts.  The workaround is to leave the transfer
+  alone: Elm will continue restoring files to disk in the background, and files
+  will slowly transfer.
+
+  For the same reason, you should avoid using the "where the checksum is
+  different" type of sync transfer in Globus: In order to perform the checksum,
+  Elm must have your files on disk.  If the files have already been sent to
+  tape, this will result in a restore from tape.  There is one exception: A
+  checksum-sync transfer is OK to perform immediately after you upload data to
+  Elm.
 
 * Workgroups Rule: Even if you give Globus full read, write, and delete access,
   your workgroup membership will limit what Globus can do.  Specifically…
@@ -71,10 +99,14 @@ limitations compared to Amazon S3.  In particular…
 
 ### Globus Limitations
 
-The Globus File Manager only supports one access key per Mapped Collection, but
-it is possible to have a separate access key for each bucket.  If you are
-someone who has multiple buckets on Elm, [contact
-us](mailto:srcc-support@stanford.edu?subject=Elm/Globus%20Multiple%20Buckets%20Assistance) for assistance.
+If you are planning on a large (or long) transfer to Globus, we strongly
+recommend that you enable the "Skip files on source with errors" option.  This
+will keep the transfer moving, even in the face of "File not found" or
+"Permission denied" errors on the sending side.
+
+If you turn on the "sync" option for your transfer, expect to see a long delay
+at the start of the transfer.  This is due to how Globus structures sync
+transfers internally.
 
 Globus for Elm does not support the following S3 features:
 
@@ -103,8 +135,10 @@ Access Key, which Globus will need to interact with Elm.
 ## Creating an Access Key
 
 Once your Elm bucket is created, and you have been given access to the
-appropriate workgroup, you should [log in to
-Elm](https://campus.elm.stanford.edu:9001/browser).  After going through
+appropriate workgroup, you should log in to the MinIO Console URL provided on
+Elm's [Getting Started
+guide](https://docs.elm.stanford.edu/getting-started/#accessing-your-elm-bucket)
+(enter your bucket name to get the MinIO Console URL).  After going through
 Stanford Login, you will see your buckets.
 
 {% include hero-image.html
