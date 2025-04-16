@@ -7,6 +7,12 @@ id: cloud
 description: Globus works with Elm, but with a number of restrictions.
 ---
 
+{% include info-box.html
+   icon="biohazard"
+   header="No High Risk Access allowed"
+   content="Some Elm buckets are allowed to store High Risk data (including PHI).  You are not allowed to use Globus with those buckets."
+%}
+
 Elm may be accessed through the [Stanford Elm Storage (project:
 campus)](https://app.globus.org/file-manager/collections/0e458bf0-7fde-42bb-8622-42a5d00c5b61/overview)
 collection.
