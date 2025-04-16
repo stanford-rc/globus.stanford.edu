@@ -7,6 +7,16 @@ id: cloud
 description: Globus works with Elm, but with a number of restrictions.
 ---
 
+{% capture collection-under-construction %}
+<h4>Under Construction</h4>
+<p>This page is still under construction, and is likely going to change in the future.  If you run into problems, contact us for <a href="support.html">support.</a></p>
+{% endcapture %}
+
+{% include info-box.html
+   icon="wrench"
+   raw=collection-under-construction
+%}
+
 {% include info-box.html
    icon="biohazard"
    header="No High Risk Access allowed"
