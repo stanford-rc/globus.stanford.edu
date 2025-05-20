@@ -187,7 +187,7 @@ You will now be taken to Google, which will ask you to grant permission for
 Globus to access Google Cloud Storage on your behalf.
 
 {% include hero-image.html
-   src="/assets/cloud/CloudGoogleconsent1.png"
+   src="/assets/cloud/CloudGoogleConsent1.png"
    alt="A Google screen, asking you to select your Stanford Google account."
    caption-overlay=true
    caption-header="Selecting your Stanford Google Account"
@@ -199,7 +199,7 @@ your Stanford Google account.  Once you do so, you might be redirected through
 Stanford Login.
 
 {% include hero-image.html
-   src="/assets/cloud/CloudGoogleconsent2.png"
+   src="/assets/cloud/CloudGoogleConsent2.png"
    alt="A Google screen asking for permission to share information about you with Globus."
    caption-overlay=true
    caption-header="Google Cloud Storage consent, part 1"
@@ -210,7 +210,7 @@ Next, Google will ask for permission to share your basic information (like your
 name) with Globus.  Click 'Continue'.
 
 {% include hero-image.html
-   src="/assets/cloud/CloudGoogleconsent3.png"
+   src="/assets/cloud/CloudGoogleConsent3.png"
    alt="A Google screen asking for permission to allow access to Google Cloud Storage."
    caption-overlay=true
    caption-header="Google Cloud Storage consent, part 2"
