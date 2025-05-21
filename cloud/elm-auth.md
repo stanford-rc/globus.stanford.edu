@@ -10,14 +10,14 @@ customjs: /assets/js/connect.js
 
 <div>
   <h2>Buckets </h2>
-  <p>Enter the Amazon Resource Name (ARN) of your bucket, and then assign permissions to Globus. Read-Only means that Globus can access and copy from your bucket, but cannot make changes to any objects/files.</p>
+  <p>Enter the name of your bucket, and then assign permissions to Globus. Read-Only means that Globus can access and copy from your bucket, but cannot make changes to any objects/files.</p>
   <p>You can choose to allow Globus to alter your bucket's contents by uploading or deleting objects.</p>
   <hr>
   <form class="form-inline" id="elm-fieldset">
     <div class="form-row row">
       <div class="col-5">
         <label for="bucket" class="sr-only">Bucket</label>
-        <input type="text" class="form-control bucket" name="bucket" id="bucket1" placeholder="Bucket example: arn:aws:s3:::allcats" />
+        <input type="text" class="form-control bucket" name="bucket" id="bucket1" placeholder="Bucket example: allcats" />
       </div>
       <div class="form-check col-auto row-1">
         <input type="checkbox" class="checkbox" id="read1" name="read"/>

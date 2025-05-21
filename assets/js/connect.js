@@ -4,11 +4,13 @@ $(document).ready(function() {
   bindEvents();
   const elmForm = $("#elm-fieldset");
   startupCheckSession();
+  var arnPrefix = "arn:aws:s3:::"
+  var versionMarker = "2012-10-17"
 
   function newFieldset() {
     fieldCounter = fieldCounter + 1;
     const newFieldset = document.createElement("div");
-    newFieldset.className = "form-row row row-" + fieldCounter;
+    newFieldset.className = "form-row row row-added row-" + fieldCounter;
     const bucketWrapper = document.createElement("div");
     bucketWrapper.className = "col-5";
     const label = document.createElement("label");
@@ -82,7 +84,7 @@ $(document).ready(function() {
     if (index > catLength) {
       index = index - catLength;
     }
-    catString = "arn:aws:s3:::" + catContent[index] + "cats";
+    catString = catContent[index] + "cats";
     return catString;
   }
 
@@ -109,6 +111,154 @@ $(document).ready(function() {
       copyTextToClipboard(text);
     })
   }
+
+  function getRow() {
+    let statements = [];
+    var rowValue = "";
+    var rowValueList = "";
+    let autoEntry = {};
+    autoEntry["Effect"] = "Allow";
+    autoEntry["Action"] = "s3:ListAllMyBuckets";
+    autoEntry["Resource"] = "*";
+    console.log('autoEntry', autoEntry);
+
+    statements.push(autoEntry);
+    for (var i = 1; i <= fieldCounter; i++) {
+      var bucket = $('#bucket' + i).val();
+      if (bucket) {
+        rowValueList = writeRowScriptList(bucket);
+        statements.push(rowValueList);
+
+        var readCheck = isChecked('read' + i);
+        var deleteCheck = isChecked('delete' + i);
+        var uploadCheck = isChecked('uploads' + i);
+        rowValue = writeRowScript(bucket, deleteCheck, uploadCheck);
+        saveRow(bucket, readCheck, deleteCheck, uploadCheck, i);
+        evalCheckboxes(readCheck, deleteCheck, uploadCheck, i);
+        console.log('sending index', i);
+        statements.push(rowValue);
+      }
+    }
+    return statements;
+  }
+
+  function writeRowScriptList(bucket) {
+    let jsonRow = {};
+    let listAction = [];
+
+    listAction.push(
+      "s3:ListBucket",
+      "s3:ListBucketMultipartUploads",
+    );
+    let resource = [];
+    resource.push(bucket);
+    var bucketArn = arnPrefix + bucket;
+    // Add key-value pairs
+    jsonRow["Effect"] = "Allow";
+    jsonRow["Action"] = listAction;
+    jsonRow["Resource"] = bucketArn;
+    console.log('jsonRow', jsonRow);
+    return jsonRow;
+  }
+
+
+  function writeRowScript(bucket, deleteCheck, uploadCheck) {
+    let jsonRow = {};
+    let contentsAction = [];
+    let listAction = [];
+
+    contentsAction.push(
+      "s3:GetObject",
+      "s3:ListMultipartUploadParts",
+    )
+    if (deleteCheck) {
+      contentsAction.push(
+        "s3:DeleteObject"
+      );
+    }
+    if (uploadCheck) {
+      contentsAction.push(
+        "s3:PutObject",
+        "s3:AbortMultipartUpload",
+      );
+    }
+    let resource = [];
+    resource.push(bucket);
+    console.log('jsonRow bucket', bucket);
+    var bucketArn = arnPrefix + bucket;
+    // Add key-value pairs
+    jsonRow["Effect"] = "Allow";
+    jsonRow["Action"] = contentsAction;
+    jsonRow["Resource"] = bucketArn + "/*";
+
+    console.log('jsonRow', jsonRow);
+    return jsonRow;
+  }
+
+  function generateScript() {
+    let output = {};
+    output["Version"] = versionMarker;
+    var guts = getRow();
+    console.log('guts', guts);
+    output["Statement"] = guts;
+    console.log('output', output);
+    var jsonPretty = JSON.stringify(output, null, '\t');
+    //make size of textarea auto-grow
+    $('#resource').height('auto').empty();
+    $('#resource').val(jsonPretty);
+    var slurmHeight = $('#resource').height();
+    var scroll = $('#resource').prop('scrollHeight');
+    if (slurmHeight != "auto") {
+      if (scroll > slurmHeight) {
+        $('#resource').height(scroll + "px");
+      }
+    }
+  }
+
+  $(document).on('input', '.autoresizing', function(e) {
+    generateScript();
+    this.style.height = 'auto';
+    this.style.height =
+      (this.scrollHeight) + 'px';
+  });
+
+  function startupCheckSession() {
+    sessionData = Object(sessionStorage);
+    console.log('sessionData', sessionData);
+    if (sessionData.length > 0) {
+      //find the number of fieldset rows needed, subtract one for the row that is already there
+      var fieldsets = sessionData.length / 4 - 1;
+      console.log('fieldsets', fieldsets);
+      for (var i = 1; i <= fieldsets; i++) {
+        newFieldset();
+      }
+
+      $.each(sessionData, function(k, v) {
+        if (v == "true") { //boolean for checkboxes
+          $('#' + k).attr("checked", "checked");
+        } else {
+          $('#' + k).val(v);
+          $('#' + k).trigger('change');
+        }
+      });
+      generateScript();
+    }
+  }
+
+  function saveToSession(fieldId, fieldValue) {
+    sessionStorage.setItem(fieldId, fieldValue);
+    //console.log('fieldId', fieldId);
+    //console.log('fieldValue', fieldValue);
+  }
+
+  function saveRow(bucket, readCheck, deleteCheck, uploadCheck, index) {
+    saveToSession('bucket' + index, bucket);
+    saveToSession('read' + index, readCheck);
+    saveToSession('uploads' + index, uploadCheck);
+    saveToSession('delete' + index, deleteCheck);
+  }
+
+  //utilities for copying the script
 
   async function copyTextToClipboard(text) {
     try {
@@ -150,113 +300,13 @@ $(document).ready(function() {
     $('#copyBtn i').addClass('fa-regular fa-clipboard');
   }
 
-  function getRow() {
-    let statements = [];
-    var rowValue = "";
-    for (var i = 1; i <= fieldCounter; i++) {
-      var bucket = $('#bucket' + i).val();
-      if (bucket) {
-        var readCheck = isChecked('read' + i);
-        var deleteCheck = isChecked('delete' + i);
-        var uploadCheck = isChecked('uploads' + i);
-        rowValue = writeRowScript(bucket, deleteCheck, uploadCheck);
-        saveRow(bucket, readCheck, deleteCheck, uploadCheck, i);
-        evalCheckboxes(readCheck, deleteCheck, uploadCheck, i);
-        console.log('sending index',i);
-        statements.push(rowValue);
-      }
-    }
-    return statements;
+  //a bunch of utilities to handle checking and unchecking boxes, because this is why we crawled out of the ocean and became monkeys.
+
+  function resetAllFields() {
+    elmForm[0].reset();
+    $("input[type=checkbox").attr("checked", false).attr("disabled", false);
+    sessionStorage.clear();
   }
-
-  function writeRowScript(bucket, deleteCheck, uploadCheck) {
-    let jsonRow = {};
-    let listAction = [];
-
-    listAction.push("s3:ListAllMyBuckets",
-      "s3:GetBucketLocation",
-      "s3:ListBucket",
-      "s3:ListBucketMultipartUploads",
-      "s3:GetObject");
-    if (deleteCheck) {
-      listAction.push("s3:DeleteObject");
-    }
-    if (uploadCheck) {
-      listAction.push("s3:PutObject");
-    }
-    let resource = [];
-    resource.push(bucket);
-    // Add key-value pairs
-    jsonRow["Effect"] = "Allow";
-    jsonRow["Action"] = listAction;
-    jsonRow["Resource"] = resource;
-
-    console.log('jsonRow', jsonRow);
-    return jsonRow;
-  }
-
-  function generateScript() {
-    let version = getVersionDate();
-    let output = {};
-    output["Version"] = getVersionDate();
-    var guts = getRow();
-    console.log('guts', guts);
-    output["Statement"] = guts;
-    console.log('output', output);
-    var jsonPretty = JSON.stringify(output, null, '\t');
-    //make size of textarea auto-grow
-    $('#resource').height('auto').empty();
-    $('#resource').val(jsonPretty);
-    var slurmHeight = $('#resource').height();
-    var scroll = $('#resource').prop('scrollHeight');
-    if (slurmHeight != "auto") {
-      if (scroll > slurmHeight) {
-        $('#resource').height(scroll + "px");
-      }
-    }
-  }
-
-  $(document).on('input', '.autoresizing', function(e) {
-    generateScript();
-    this.style.height = 'auto';
-    this.style.height =
-      (this.scrollHeight) + 'px';
-  });
-
-  function startupCheckSession() {
-    sessionData = Object(sessionStorage);
-    console.log('sessionData', sessionData);
-    if (sessionData.length > 0) {
-      //find the number of fieldset rows needed, subtract one for the row that is already there
-      var fieldsets = sessionData.length/4 - 1;
-      console.log('fieldsets', fieldsets);
-      for (var i = 1; i <= fieldsets; i++) {
-        newFieldset();
-      }
-
-      $.each(sessionData, function(k, v) {
-        if (v == "true") { //boolean for checkboxes
-          $('#' + k).attr("checked", "checked");
-        } else {
-          $('#' + k).val(v);
-          $('#' + k).trigger('change');
-        }
-      });
-      generateScript();
-    }
-  }
-
-  function saveToSession(fieldId, fieldValue) {
-    sessionStorage.setItem(fieldId, fieldValue);
-    //console.log('fieldId', fieldId);
-    //console.log('fieldValue', fieldValue);
-  }
-
-function resetAllFields(){
-  elmForm[0].reset();
-  $("input[type=checkbox").attr("checked",false).attr("disabled",false);
-  sessionStorage.clear();
-}
 
   function isChecked(selector) {
     const node = document.getElementById(selector);
@@ -264,13 +314,6 @@ function resetAllFields(){
       return true;
     }
     return false;
-  }
-
-  function saveRow(bucket, readCheck, deleteCheck, uploadCheck, index) {
-    saveToSession('bucket' + index, bucket);
-    saveToSession('read' + index, readCheck);
-    saveToSession('uploads' + index, uploadCheck);
-    saveToSession('delete' + index, deleteCheck);
   }
 
   function evalCheckboxes(readCheck, deleteCheck, uploadCheck, index) {
@@ -283,22 +326,22 @@ function resetAllFields(){
       uncheckRead(readId);
       if (deleteCheck || uploadCheck) {
         disableRead(readId);
-      }else{
-        resetCheckboxes(uploadId, deleteId,readId);
+      } else {
+        resetCheckboxes(uploadId, deleteId, readId);
       }
     }
   }
 
   function setReadOnly(uploadId, deleteId) {
-    console.log("setReadOnly",deleteId);
+    console.log("setReadOnly", deleteId);
     uncheckUploads(uploadId);
     disableUploads(uploadId);
     uncheckDelete(deleteId);
     disableDelete(deleteId);
   }
 
-  function resetCheckboxes(uploadId, deleteId,readId) {
-    console.log("resetCheckboxes",deleteId);
+  function resetCheckboxes(uploadId, deleteId, readId) {
+    console.log("resetCheckboxes", deleteId);
     uncheckRead(readId);
     uncheckUploads(uploadId);
     uncheckDelete(deleteId)
@@ -317,7 +360,7 @@ function resetAllFields(){
     readBox.prop('disabled', false);
   }
 
-    function uncheckRead(readId) {
+  function uncheckRead(readId) {
     const readBox = $(readId);
     readBox.prop('checked', false);
   }
@@ -339,31 +382,21 @@ function resetAllFields(){
   }
 
   function uncheckDelete(deleteId) {
-    console.log("uncheckDelete",deleteId);
+    console.log("uncheckDelete", deleteId);
     const deleteBox = $(deleteId);
     deleteBox.prop('checked', false);
   }
 
   function disableDelete(deleteId) {
-    console.log("disableDelete",deleteId);
+    console.log("disableDelete", deleteId);
     const deleteBox = $(deleteId);
     deleteBox.prop('disabled', true);
   }
 
   function enableDelete(deleteId) {
-    console.log("enableDelete",deleteId);
+    console.log("enableDelete", deleteId);
     const deleteBox = $(deleteId);
     deleteBox.prop('checked', false).prop('disabled', false);
-  }
-
-  function getVersionDate() {
-    var tdate = new Date();
-    var dd = tdate.getDate(); //yields day
-    var MM = tdate.getMonth(); //yields month
-    var yyyy = tdate.getFullYear(); //yields year
-    var currentDate = yyyy + "-" + (MM + 1) + "-" + dd;
-
-    return currentDate;
   }
 
 });
