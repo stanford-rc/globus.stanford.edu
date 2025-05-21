@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
   var fieldCounter = 1;
-  bindEvents();
   const elmForm = $("#elm-fieldset");
-  startupCheckSession();
   var arnPrefix = "arn:aws:s3:::"
   var versionMarker = "2012-10-17"
+  bindEvents();
+  startupCheckSession();
 
   function newFieldset() {
     fieldCounter = fieldCounter + 1;
@@ -105,7 +105,6 @@ $(document).ready(function() {
     });
 
     $("#copyBtn").click(function() {
-      //console.log("copy clicked");
       var textToCopy = $("#resource");
       var text = textToCopy.val();
       copyTextToClipboard(text);
@@ -116,26 +115,24 @@ $(document).ready(function() {
     let statements = [];
     var rowValue = "";
     var rowValueList = "";
+    //create allow list rule for *
     let autoEntry = {};
     autoEntry["Effect"] = "Allow";
     autoEntry["Action"] = "s3:ListAllMyBuckets";
     autoEntry["Resource"] = "*";
-    console.log('autoEntry', autoEntry);
-
     statements.push(autoEntry);
+    //loop through fields
     for (var i = 1; i <= fieldCounter; i++) {
       var bucket = $('#bucket' + i).val();
       if (bucket) {
         rowValueList = writeRowScriptList(bucket);
         statements.push(rowValueList);
-
         var readCheck = isChecked('read' + i);
         var deleteCheck = isChecked('delete' + i);
         var uploadCheck = isChecked('uploads' + i);
         rowValue = writeRowScript(bucket, deleteCheck, uploadCheck);
         saveRow(bucket, readCheck, deleteCheck, uploadCheck, i);
         evalCheckboxes(readCheck, deleteCheck, uploadCheck, i);
-        console.log('sending index', i);
         statements.push(rowValue);
       }
     }
@@ -157,7 +154,6 @@ $(document).ready(function() {
     jsonRow["Effect"] = "Allow";
     jsonRow["Action"] = listAction;
     jsonRow["Resource"] = bucketArn;
-    console.log('jsonRow', jsonRow);
     return jsonRow;
   }
 
@@ -184,14 +180,11 @@ $(document).ready(function() {
     }
     let resource = [];
     resource.push(bucket);
-    console.log('jsonRow bucket', bucket);
     var bucketArn = arnPrefix + bucket;
     // Add key-value pairs
     jsonRow["Effect"] = "Allow";
     jsonRow["Action"] = contentsAction;
     jsonRow["Resource"] = bucketArn + "/*";
-
-    console.log('jsonRow', jsonRow);
     return jsonRow;
   }
 
@@ -199,9 +192,7 @@ $(document).ready(function() {
     let output = {};
     output["Version"] = versionMarker;
     var guts = getRow();
-    console.log('guts', guts);
     output["Statement"] = guts;
-    console.log('output', output);
     var jsonPretty = JSON.stringify(output, null, '\t');
     //make size of textarea auto-grow
     $('#resource').height('auto').empty();
@@ -222,13 +213,13 @@ $(document).ready(function() {
       (this.scrollHeight) + 'px';
   });
 
+// local storage
+
   function startupCheckSession() {
     sessionData = Object(sessionStorage);
-    console.log('sessionData', sessionData);
     if (sessionData.length > 0) {
       //find the number of fieldset rows needed, subtract one for the row that is already there
       var fieldsets = sessionData.length / 4 - 1;
-      console.log('fieldsets', fieldsets);
       for (var i = 1; i <= fieldsets; i++) {
         newFieldset();
       }
@@ -238,7 +229,6 @@ $(document).ready(function() {
           $('#' + k).attr("checked", "checked");
         } else {
           $('#' + k).val(v);
-          $('#' + k).trigger('change');
         }
       });
       generateScript();
@@ -247,8 +237,6 @@ $(document).ready(function() {
 
   function saveToSession(fieldId, fieldValue) {
     sessionStorage.setItem(fieldId, fieldValue);
-    //console.log('fieldId', fieldId);
-    //console.log('fieldValue', fieldValue);
   }
 
   function saveRow(bucket, readCheck, deleteCheck, uploadCheck, index) {
@@ -263,7 +251,6 @@ $(document).ready(function() {
   async function copyTextToClipboard(text) {
     try {
       await navigator.clipboard.writeText(text);
-      //console.log('Text copied to clipboard', text);
       notifyCopy();
     } catch (err) {
       console.error('Failed to copy: ', err);
@@ -271,7 +258,6 @@ $(document).ready(function() {
   }
 
   function notifyCopy() {
-    //console.log('notifyCopy');
     baseWidth = $('#copyBtn').width();
     $('#copyBtn').width(baseWidth);
     copyBling();
@@ -281,7 +267,6 @@ $(document).ready(function() {
   }
 
   function copyBling() {
-    //console.log('copyBling');
     $('#copyBtn').addClass('funkytown');
     $('.fancy-copy').addClass('copied');
     $('#copyBtn span').text(' Copied!');
@@ -291,7 +276,6 @@ $(document).ready(function() {
   }
 
   function copyUnBling() {
-    //console.log('copyUnBling');
     $('#copyBtn').removeClass('funkytown');
     $('.fancy-copy').removeClass('copied');
     $('#copyBtn span').text(' Copy to Clipboard');
