@@ -25,10 +25,11 @@ customjs: /assets/js/connect.js
       <span class="bg-success text-dark bg-opacity-25 input-group-text" id="icon1">
         <i aria-hidden="true" class="fa fa-eye"></i>
       </span>
+      <div class="remove-btn" id="remove1"><i class="fa-solid fa-xmark"></i></div>
     </div>
   </form>
-  <a class="flex-shrink-1 btn btn-outline-secondary btn-sm" id="clearButton"><i class="fa-solid fa-xmark"></i><span> Clear Form</span></a>
-  <a class="flex-shrink-1 btn btn-outline-dark btn-sm float-end" id="addButton"><i class="fa-regular fa-plus"></i><span> Add A Bucket</span></a>
+  <a class="flex-shrink-1 btn btn-outline-secondary" id="clearButton"><i class="fa-solid fa-xmark"></i><span> Clear Form</span></a>
+  <a class="flex-shrink-1 btn btn-outline-dark float-end" id="addButton"><i class="fa-regular fa-plus"></i><span> Add A Bucket</span></a>
 </div>
 <div class="">
   <div class="form-horizontal">

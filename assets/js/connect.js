@@ -38,6 +38,15 @@ $(document).ready(function() {
     iconBlock.id = "icon" + fieldCounter;
     iconBlock.append(icon);
     newFieldset.appendChild(iconBlock);
+
+    const removeButton= document.createElement("div");
+    removeButton.className = "remove-btn";
+    removeButton.id = "remove" + fieldCounter;
+    const removeIcon = document.createElement("i");
+    removeIcon.ariaHidden = true;
+    removeIcon.className = "fa-solid fa-xmark";
+    removeButton.append(removeIcon);
+    newFieldset.appendChild(removeButton);
     elmForm.append(newFieldset);
     const selectOptionList = selectOptionCreate(selectOptions, select.id);
     bindEvents()
@@ -75,6 +84,10 @@ $(document).ready(function() {
   function bindEvents() {
     $("body").on("click", "input", function(e) {
       generateScript();
+    });
+
+    $(".remove-btn").on("click", function(e) {
+      console.log('remove',e);
     });
 
     $("input").on("blur", function(e) {
@@ -230,6 +243,10 @@ $(document).ready(function() {
   function saveRow(bucket, permissions, index) {
     saveToSession('bucket' + index, bucket);
     saveToSession('permissions' + index, permissions);
+  }
+
+  function deleteRow(index) {
+    TODO
   }
 
   function resetAllFields() {

@@ -504,11 +504,13 @@ blockquote {
 form .input-group,
 form .bucket,
 form .form-select,
-form .input-group-text {
+form .input-group-text,
+form .remove-btn {
   font-size:16px;
   height:40px;
   margin-top:0;
   margin-bottom:.5em;
+  align-items:center;
 }
 
 
@@ -530,4 +532,18 @@ form .input-group input.bucket{
 
 .input-group-text {
   min-width:20px;
+}
+
+form .remove-btn {
+  display: flex;
+}
+
+form .remove-btn i{
+  margin-left:16px;
+  opacity:.5;
+  padding:0;
+}
+
+form .remove-btn i:hover{
+  opacity:1;
 }
