@@ -14,8 +14,8 @@ customjs: /assets/js/connect.js
   <p>You can choose to allow Globus to alter your bucket's contents by uploading or deleting objects.</p>
   <hr>
   <form class="form-inline" id="elm-fieldset">
-    <label for="bucket1" class="sr-only">Bucket</label>
     <div class="input-group row-1">
+      <label for="bucket1" class="sr-only">Bucket</label>
       <input type="text" id="bucket1" name="bucket" class="form-control bucket" placeholder="Bucket example: allcats">
       <select id="permissions1" class="form-select permissions" data-row="1">
         <option value="read" data-icon="eye">Read-Only</option>
@@ -25,7 +25,7 @@ customjs: /assets/js/connect.js
       <span class="bg-success text-dark bg-opacity-25 input-group-text" id="icon1">
         <i aria-hidden="true" class="fa fa-eye"></i>
       </span>
-      <div class="remove-btn" id="remove1"><i class="fa-solid fa-xmark"></i></div>
+      <div class="remove-btn" id="remove1" data-remove="1"><i class="fa-solid fa-xmark"></i></div>
     </div>
   </form>
   <a class="flex-shrink-1 btn btn-outline-secondary" id="clearButton"><i class="fa-solid fa-xmark"></i><span> Clear Form</span></a>

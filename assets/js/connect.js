@@ -7,27 +7,29 @@ $(document).ready(function() {
   const selectOptions = [{ "name": "Read-Only", "icon": "eye", "value": "read", "class": "bg-success text-dark bg-opacity-25" }, { "name": "Read + Write", "icon": "pencil", "value": "upload", "class": "bg-warning text-dark bg-opacity-25" }, { "name": "Read + Write + Delete", "icon": "warning", "value": "delete", "class": "bg-danger text-dark bg-opacity-25" }];
   startupCheckSession();
   bindEvents();
+  bindNew();
 
-  function newFieldsetSelect() {
-    fieldCounter = fieldCounter + 1;
+  function newFieldsetSelect(index) {
+    //console.log('fieldcounter', index);
     const label = document.createElement("label");
     label.className = "sr-only";
-    label.htmlFor = "bucket" + fieldCounter;
+    label.htmlFor = "bucket" + index;
     label.textContent = "Bucket";
     const newFieldset = document.createElement("div");
-    newFieldset.className = "input-group row-" + fieldCounter;
+    newFieldset.prepend(label);
+    newFieldset.className = "row-added input-group row-" + index;
     const input = document.createElement("input");
     input.type = "text";
-    input.id = "bucket" + fieldCounter;
+    input.id = "bucket" + index;
     input.name = "bucket";
     input.className = "form-control bucket";
-    input.placeholder = getPlaceholder(fieldCounter);
+    input.placeholder = getPlaceholder(index);
     newFieldset.appendChild(input);
 
     const select = document.createElement("select");
-    select.id = "permissions" + fieldCounter;
+    select.id = "permissions" + index;
     select.className = "form-select permissions"
-    select.dataset.row = fieldCounter;
+    select.dataset.row = index;
     newFieldset.appendChild(select);
 
     const iconBlock = document.createElement("span");
@@ -35,21 +37,24 @@ $(document).ready(function() {
     const icon = document.createElement("i");
     icon.ariaHidden = true;
     icon.className = "fa fa-eye";
-    iconBlock.id = "icon" + fieldCounter;
+    iconBlock.id = "icon" + index;
     iconBlock.append(icon);
+    //console.log('iconBlock', iconBlock);
     newFieldset.appendChild(iconBlock);
 
-    const removeButton= document.createElement("div");
+    const removeButton = document.createElement("div");
     removeButton.className = "remove-btn";
-    removeButton.id = "remove" + fieldCounter;
+    removeButton.id = "remove" + index;
+    removeButton.dataset.remove = index;
     const removeIcon = document.createElement("i");
     removeIcon.ariaHidden = true;
     removeIcon.className = "fa-solid fa-xmark";
     removeButton.append(removeIcon);
     newFieldset.appendChild(removeButton);
+    //console.log('newFieldset', newFieldset);
     elmForm.append(newFieldset);
     const selectOptionList = selectOptionCreate(selectOptions, select.id);
-    bindEvents()
+    bindNew();
   }
 
   function selectOptionCreate(selectOptions, selector) {
@@ -57,7 +62,7 @@ $(document).ready(function() {
     let i = 0;
     var option = "";
     let select = $('#' + selector);
-    console.log('select', select);
+    //console.log('select', select);
 
     while (selectOptions[i]) {
       var thisOption = selectOptions[i];
@@ -65,7 +70,7 @@ $(document).ready(function() {
       optionLine.value = thisOption.value;
       optionLine.text = thisOption.name;
       optionLine.dataset.icon = thisOption.icon;
-      console.log('optionLine', optionLine);
+      //console.log('optionLine', optionLine);
       select.append(optionLine);
       i++;
     }
@@ -81,31 +86,13 @@ $(document).ready(function() {
     return catString;
   }
 
-  function bindEvents() {
-    $("body").on("click", "input", function(e) {
-      generateScript();
-    });
+  function bindEvents() { //this fires once
 
-    $(".remove-btn").on("click", function(e) {
-      console.log('remove',e);
-    });
-
-    $("input").on("blur", function(e) {
-      generateScript();
-      console.log('aaron blur, sir', e);
-    });
-
-    $(".permissions").on("change", function(e) {
-      var icon = e.target.selectedOptions[0].dataset.icon;
-      var id = e.target.id;
-      var row = e.target.dataset.row;
-      generateScript();
-      checkIcon(id, row, icon);
-    });
-
-    $("#addButton").on("click", function() {
-      newFieldsetSelect();
-      generateScript();
+    $("#addButton").on("click", function(e) {
+      //make sure it's an integer
+      fieldCounter = parseInt(fieldCounter, 10);
+      fieldCounter = fieldCounter + 1;
+      newFieldsetSelect(fieldCounter);
     });
 
     $("#clearButton").on("click", function() {
@@ -119,6 +106,26 @@ $(document).ready(function() {
       copyTextToClipboard(text);
     });
 
+  }
+
+  function bindNew() { //this fires when new fields are added
+
+    $(".remove-btn").on("click", function(e) {
+      //console.log('remove', e.currentTarget.dataset.remove);
+      var removeTag = e.currentTarget.dataset.remove;
+      removeRow(removeTag);
+    });
+    $(".bucket").on("input", function(e) {
+      generateScript();
+    });
+
+    $(".permissions").on("change", function(e) {
+      var icon = e.target.selectedOptions[0].dataset.icon;
+      var id = e.target.id;
+      var row = e.target.dataset.row;
+      generateScript();
+      checkIcon(id, row, icon);
+    });
   }
 
   function getRow() {
@@ -144,6 +151,16 @@ $(document).ready(function() {
       }
     }
     return statements;
+  }
+
+  function removeRow(id) {
+    var exitRow = $('.row-' + id);
+    var exitBucket = "bucket" + id;
+    var exitLabel = $("label[for=" + exitBucket + "]");
+    exitRow.remove();
+    exitLabel.remove();
+    //remove from storage
+    deleteRow(id);
   }
 
   function writeRowScriptList(bucket, bucketPermissions) {
@@ -216,22 +233,56 @@ $(document).ready(function() {
 
   // local storage
 
+  function getStoredRows(rows) {
+    //console.log('sessionData', rows);
+    let maxKey = 0;
+    //get all the row keys
+    var filtered = {}
+    for (key in rows) {
+      if (key.match(/^row/)) filtered[key] = rows[key];
+    }
+    //console.log('sessionData filtered', filtered);
+    for (const [key, value] of Object.entries(filtered)) {
+      //console.log(key, value);
+      if (value > maxKey) {
+        //console.log(value, maxKey);
+        maxKey = value
+      }
+    }
+    //console.log('maxKey', maxKey)
+    //set fieldset equal to maxKey
+    fieldCounter = maxKey;
+    return maxKey;
+  }
+
   function startupCheckSession() {
     sessionData = Object(sessionStorage);
     if (sessionData.length > 0) {
-      //find the number of fieldset rows needed, subtract one for the row that is already there
-      var fieldsets = sessionData.length / 4 - 1;
-      for (var i = 1; i <= fieldsets; i++) {
-        newFieldsetSelect();
-      }
+      //get the highest row number of the stored fields - this may not equal the count because rows can be removed
+      var rowNumber = getStoredRows(sessionData);
+      for (var i = 1; i <= rowNumber; i++) {
+        var bucketID = 'bucket' + i;
+        //is there a saved item for this?
+        if (sessionData[bucketID]) {
+          //console.log('got it', bucketID);
+          var rowID = 'row-' + i;
+          var bucketVal = sessionData[bucketID];
+          var permID = 'permissions' + i;
+          var permVal = sessionData[permID];
+          //is there already an element with that id?
+          if ($('#' + bucketID).length) {
+            //console.log('element exists',bucketID)
 
-      $.each(sessionData, function(k, v) {
-        if (v == "true") { //boolean for checkboxes
-          $('#' + k).attr("checked", "checked");
-        } else {
-          $('#' + k).val(v);
-        }
-      });
+          } else {
+            newFieldsetSelect(i);
+          }
+          $('#' + bucketID).val(bucketVal);
+          $('#' + permID).val(permVal);
+          var thisIcon = getIconByValue(permVal);
+          checkIcon(rowID, i, thisIcon);
+          generateScript()
+        } //end have bucket
+      } //end for loop
       generateScript();
     }
   }
@@ -241,12 +292,15 @@ $(document).ready(function() {
   }
 
   function saveRow(bucket, permissions, index) {
+    saveToSession('row-' + index, index);
     saveToSession('bucket' + index, bucket);
     saveToSession('permissions' + index, permissions);
   }
 
   function deleteRow(index) {
-    TODO
+    sessionStorage.removeItem('row-' + index);
+    sessionStorage.removeItem('bucket' + index)
+    sessionStorage.removeItem('permissions' + index)
   }
 
   function resetAllFields() {
@@ -293,9 +347,20 @@ $(document).ready(function() {
     $('#copyBtn i').addClass('fa-regular fa-clipboard');
   }
 
-  // change icon
+  // icon utilities
+
+  function getIconByValue(value) {
+    const option = selectOptions.find(option => option.value === value);
+    return option ? option.icon : undefined;
+  }
+
+  function getIconClassByIcon(icon) {
+    const option = selectOptions.find(option => option.icon === icon);
+    return option ? option.class : undefined;
+  }
 
   function checkIcon(id, row, icon) {
+    //console.log('checkIcon', id, row, icon);
     var rowValue = "read";
     var iconSpan = $(".input-group-text");
     var iconTag = $(".input-group-text i");
@@ -305,8 +370,9 @@ $(document).ready(function() {
       iconTag = $('#icon' + row + ' i');
     }
     //looking up the css for the icon
-    const iconInfo = selectOptions.filter((option) => option.value == rowValue);
-    iconSpanClass = iconInfo[0].class + " input-group-text";
+    var iconColorClass = getIconClassByIcon(icon);
+    //console.log('iconColorClass', iconColorClass);
+    iconSpanClass = iconColorClass + " input-group-text";
     iconSpan.removeClass().addClass(iconSpanClass);
     //the <i> tag where the icon lives
     var iconClass = 'fa fa-' + icon;
