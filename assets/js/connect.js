@@ -4,78 +4,62 @@ $(document).ready(function() {
   const elmForm = $("#elm-fieldset");
   var arnPrefix = "arn:aws:s3:::"
   var versionMarker = "2012-10-17"
-  bindEvents();
+  const selectOptions = [{ "name": "Read-Only", "icon": "eye", "value": "read", "class": "bg-success text-dark bg-opacity-25" }, { "name": "Read + Write", "icon": "pencil", "value": "upload", "class": "bg-warning text-dark bg-opacity-25" }, { "name": "Read + Write + Delete", "icon": "warning", "value": "delete", "class": "bg-danger text-dark bg-opacity-25" }];
   startupCheckSession();
+  bindEvents();
 
-  function newFieldset() {
+  function newFieldsetSelect() {
     fieldCounter = fieldCounter + 1;
-    const newFieldset = document.createElement("div");
-    newFieldset.className = "form-row row row-added row-" + fieldCounter;
-    const bucketWrapper = document.createElement("div");
-    bucketWrapper.className = "col-5";
     const label = document.createElement("label");
     label.className = "sr-only";
     label.htmlFor = "bucket" + fieldCounter;
     label.textContent = "Bucket";
+    const newFieldset = document.createElement("div");
+    newFieldset.className = "input-group row-" + fieldCounter;
     const input = document.createElement("input");
     input.type = "text";
     input.id = "bucket" + fieldCounter;
     input.name = "bucket";
     input.className = "form-control bucket";
     input.placeholder = getPlaceholder(fieldCounter);
-    //put the input and the label inside the wrapper
-    bucketWrapper.appendChild(input);
-    bucketWrapper.appendChild(label);
+    newFieldset.appendChild(input);
 
-    const readWrapper = document.createElement("div");
-    readWrapper.className = "form-check col-auto";
-    const readLabel = document.createElement("label");
-    readLabel.htmlFor = "read" + fieldCounter;
-    readLabel.textContent = "Read-Only?";
+    const select = document.createElement("select");
+    select.id = "permissions" + fieldCounter;
+    select.className = "form-select permissions"
+    select.dataset.row = fieldCounter;
+    newFieldset.appendChild(select);
 
-    const readBox = document.createElement("input");
-    readBox.type = "checkbox";
-    readBox.id = "read" + fieldCounter;
-    readBox.className = "checkbox"
-    readBox.name = "read";
-    readWrapper.appendChild(readBox);
-    readWrapper.appendChild(readLabel);
-
-    const uploadWrapper = document.createElement("div");
-    uploadWrapper.className = "form-check col-auto";
-    const uploadLabel = document.createElement("label");
-    uploadLabel.htmlFor = "uploads" + fieldCounter;
-    uploadLabel.textContent = "Allow Uploads?";
-
-    const uploadBox = document.createElement("input");
-    uploadBox.type = "checkbox";
-    uploadBox.id = "uploads" + fieldCounter;
-    uploadBox.className = "checkbox"
-    uploadBox.name = "uploads";
-    uploadWrapper.appendChild(uploadBox);
-    uploadWrapper.appendChild(uploadLabel);
-
-    const deleteWrapper = document.createElement("div");
-    deleteWrapper.className = "form-check col-auto";
-    const deleteLabel = document.createElement("label");
-    deleteLabel.htmlFor = "delete" + fieldCounter;
-    deleteLabel.textContent = "Allow Delete?";
-
-    const deleteBox = document.createElement("input");
-    deleteBox.type = "checkbox";
-    deleteBox.id = "delete" + fieldCounter;
-    deleteBox.name = "delete";
-    deleteBox.className = "checkbox"
-    deleteWrapper.appendChild(deleteBox);
-    deleteWrapper.appendChild(deleteLabel);
-
-    newFieldset.appendChild(bucketWrapper);
-    newFieldset.appendChild(readWrapper);
-    newFieldset.appendChild(uploadWrapper);
-    newFieldset.appendChild(deleteWrapper);
-
+    const iconBlock = document.createElement("span");
+    iconBlock.className = "bg-success text-dark bg-opacity-25 input-group-text";
+    const icon = document.createElement("i");
+    icon.ariaHidden = true;
+    icon.className = "fa fa-eye";
+    iconBlock.id = "icon" + fieldCounter;
+    iconBlock.append(icon);
+    newFieldset.appendChild(iconBlock);
     elmForm.append(newFieldset);
+    const selectOptionList = selectOptionCreate(selectOptions, select.id);
+    bindEvents()
+  }
 
+  function selectOptionCreate(selectOptions, selector) {
+    //loop through options
+    let i = 0;
+    var option = "";
+    let select = $('#' + selector);
+    console.log('select', select);
+
+    while (selectOptions[i]) {
+      var thisOption = selectOptions[i];
+      const optionLine = document.createElement("option");
+      optionLine.value = thisOption.value;
+      optionLine.text = thisOption.name;
+      optionLine.dataset.icon = thisOption.icon;
+      console.log('optionLine', optionLine);
+      select.append(optionLine);
+      i++;
+    }
   }
 
   function getPlaceholder(index) {
@@ -90,12 +74,24 @@ $(document).ready(function() {
 
   function bindEvents() {
     $("body").on("click", "input", function(e) {
-      var node = e.target;
       generateScript();
     });
 
+    $("input").on("blur", function(e) {
+      generateScript();
+      console.log('aaron blur, sir', e);
+    });
+
+    $(".permissions").on("change", function(e) {
+      var icon = e.target.selectedOptions[0].dataset.icon;
+      var id = e.target.id;
+      var row = e.target.dataset.row;
+      generateScript();
+      checkIcon(id, row, icon);
+    });
+
     $("#addButton").on("click", function() {
-      newFieldset();
+      newFieldsetSelect();
       generateScript();
     });
 
@@ -108,7 +104,8 @@ $(document).ready(function() {
       var textToCopy = $("#resource");
       var text = textToCopy.val();
       copyTextToClipboard(text);
-    })
+    });
+
   }
 
   function getRow() {
@@ -125,21 +122,18 @@ $(document).ready(function() {
     for (var i = 1; i <= fieldCounter; i++) {
       var bucket = $('#bucket' + i).val();
       if (bucket) {
-        rowValueList = writeRowScriptList(bucket);
+        bucketPermissions = $('#permissions' + i).val();
+        rowValueList = writeRowScriptList(bucket, bucketPermissions);
         statements.push(rowValueList);
-        var readCheck = isChecked('read' + i);
-        var deleteCheck = isChecked('delete' + i);
-        var uploadCheck = isChecked('uploads' + i);
-        rowValue = writeRowScript(bucket, deleteCheck, uploadCheck);
-        saveRow(bucket, readCheck, deleteCheck, uploadCheck, i);
-        evalCheckboxes(readCheck, deleteCheck, uploadCheck, i);
-        statements.push(rowValue);
+        rowValueContents = writeRowScriptContents(bucket, bucketPermissions);
+        statements.push(rowValueContents);
+        saveRow(bucket, bucketPermissions, i);
       }
     }
     return statements;
   }
 
-  function writeRowScriptList(bucket) {
+  function writeRowScriptList(bucket, bucketPermissions) {
     let jsonRow = {};
     let listAction = [];
 
@@ -147,8 +141,6 @@ $(document).ready(function() {
       "s3:ListBucket",
       "s3:ListBucketMultipartUploads",
     );
-    let resource = [];
-    resource.push(bucket);
     var bucketArn = arnPrefix + bucket;
     // Add key-value pairs
     jsonRow["Effect"] = "Allow";
@@ -157,29 +149,25 @@ $(document).ready(function() {
     return jsonRow;
   }
 
-
-  function writeRowScript(bucket, deleteCheck, uploadCheck) {
+  function writeRowScriptContents(bucket, bucketPermissions) {
     let jsonRow = {};
     let contentsAction = [];
-    let listAction = [];
 
     contentsAction.push(
       "s3:GetObject",
       "s3:ListMultipartUploadParts",
     )
-    if (deleteCheck) {
-      contentsAction.push(
-        "s3:DeleteObject"
-      );
-    }
-    if (uploadCheck) {
+    if (bucketPermissions == "upload" || bucketPermissions == "delete") {
       contentsAction.push(
         "s3:PutObject",
         "s3:AbortMultipartUpload",
       );
     }
-    let resource = [];
-    resource.push(bucket);
+    if (bucketPermissions == "delete") {
+      contentsAction.push(
+        "s3:DeleteObject"
+      );
+    }
     var bucketArn = arnPrefix + bucket;
     // Add key-value pairs
     jsonRow["Effect"] = "Allow";
@@ -213,7 +201,7 @@ $(document).ready(function() {
       (this.scrollHeight) + 'px';
   });
 
-// local storage
+  // local storage
 
   function startupCheckSession() {
     sessionData = Object(sessionStorage);
@@ -221,7 +209,7 @@ $(document).ready(function() {
       //find the number of fieldset rows needed, subtract one for the row that is already there
       var fieldsets = sessionData.length / 4 - 1;
       for (var i = 1; i <= fieldsets; i++) {
-        newFieldset();
+        newFieldsetSelect();
       }
 
       $.each(sessionData, function(k, v) {
@@ -239,14 +227,18 @@ $(document).ready(function() {
     sessionStorage.setItem(fieldId, fieldValue);
   }
 
-  function saveRow(bucket, readCheck, deleteCheck, uploadCheck, index) {
+  function saveRow(bucket, permissions, index) {
     saveToSession('bucket' + index, bucket);
-    saveToSession('read' + index, readCheck);
-    saveToSession('uploads' + index, uploadCheck);
-    saveToSession('delete' + index, deleteCheck);
+    saveToSession('permissions' + index, permissions);
   }
 
-  //utilities for copying the script
+  function resetAllFields() {
+    elmForm[0].reset();
+    sessionStorage.clear();
+    checkIcon("all", "all", "eye");
+  }
+
+  //utilities for copying the script to the clipboard, because this is why we crawled out of the ocean and became monkeys.
 
   async function copyTextToClipboard(text) {
     try {
@@ -284,103 +276,24 @@ $(document).ready(function() {
     $('#copyBtn i').addClass('fa-regular fa-clipboard');
   }
 
-  //a bunch of utilities to handle checking and unchecking boxes, because this is why we crawled out of the ocean and became monkeys.
+  // change icon
 
-  function resetAllFields() {
-    elmForm[0].reset();
-    $("input[type=checkbox").attr("checked", false).attr("disabled", false);
-    sessionStorage.clear();
-  }
-
-  function isChecked(selector) {
-    const node = document.getElementById(selector);
-    if (node && node.type === "checkbox" && node.checked) {
-      return true;
+  function checkIcon(id, row, icon) {
+    var rowValue = "read";
+    var iconSpan = $(".input-group-text");
+    var iconTag = $(".input-group-text i");
+    if (id != "all") { //this isn't coming from resetAllFields
+      rowValue = $('#' + id).val();
+      iconSpan = $('#icon' + row);
+      iconTag = $('#icon' + row + ' i');
     }
-    return false;
-  }
-
-  function evalCheckboxes(readCheck, deleteCheck, uploadCheck, index) {
-    const readId = "#read" + index;
-    const deleteId = "#delete" + index;
-    const uploadId = "#uploads" + index;
-    if (readCheck) {
-      setReadOnly(uploadId, deleteId);
-    } else {
-      uncheckRead(readId);
-      if (deleteCheck || uploadCheck) {
-        disableRead(readId);
-      } else {
-        resetCheckboxes(uploadId, deleteId, readId);
-      }
-    }
-  }
-
-  function setReadOnly(uploadId, deleteId) {
-    console.log("setReadOnly", deleteId);
-    uncheckUploads(uploadId);
-    disableUploads(uploadId);
-    uncheckDelete(deleteId);
-    disableDelete(deleteId);
-  }
-
-  function resetCheckboxes(uploadId, deleteId, readId) {
-    console.log("resetCheckboxes", deleteId);
-    uncheckRead(readId);
-    uncheckUploads(uploadId);
-    uncheckDelete(deleteId)
-    enableRead(readId);
-    enableUploads(uploadId);
-    enableDelete(deleteId);
-  }
-
-  function disableRead(readId) {
-    const readBox = $(readId);
-    readBox.prop('disabled', true);
-  }
-
-  function enableRead(readId) {
-    const readBox = $(readId);
-    readBox.prop('disabled', false);
-  }
-
-  function uncheckRead(readId) {
-    const readBox = $(readId);
-    readBox.prop('checked', false);
-  }
-
-  function uncheckUploads(uploadId) {
-    const uploadBox = $(uploadId);
-    uploadBox.prop('checked', false);
-  }
-
-  function disableUploads(uploadId) {
-    const uploadBox = $(uploadId);
-    uploadBox.prop('disabled', true);
-    console.log('disableUploads', uploadId);
-  }
-
-  function enableUploads(uploadId) {
-    const uploadBox = $(uploadId);
-    uploadBox.prop('disabled', false);
-  }
-
-  function uncheckDelete(deleteId) {
-    console.log("uncheckDelete", deleteId);
-    const deleteBox = $(deleteId);
-    deleteBox.prop('checked', false);
-  }
-
-  function disableDelete(deleteId) {
-    console.log("disableDelete", deleteId);
-    const deleteBox = $(deleteId);
-    deleteBox.prop('disabled', true);
-  }
-
-  function enableDelete(deleteId) {
-    console.log("enableDelete", deleteId);
-    const deleteBox = $(deleteId);
-    deleteBox.prop('checked', false).prop('disabled', false);
+    //looking up the css for the icon
+    const iconInfo = selectOptions.filter((option) => option.value == rowValue);
+    iconSpanClass = iconInfo[0].class + " input-group-text";
+    iconSpan.removeClass().addClass(iconSpanClass);
+    //the <i> tag where the icon lives
+    var iconClass = 'fa fa-' + icon;
+    iconTag.removeClass().addClass(iconClass);
   }
 
 });

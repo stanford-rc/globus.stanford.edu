@@ -501,23 +501,16 @@ blockquote {
     margin: 1.5em 2em;
 }
 
-.form-check {
-  padding-left:1em;
-
-  min-height:auto;
-}
-
-.form-check label {
-  width:auto;
-  padding-top:0;
+form .input-group,
+form .bucket,
+form .form-select,
+form .input-group-text {
+  font-size:16px;
+  height:40px;
   margin-top:0;
-  font-size;16px;
+  margin-bottom:.5em;
 }
 
-form .row{
-    margin-bottom:.5em;
-      align-items: center;
-}
 
 form .row-added{
   border-top:1px solid #D4D1D1;
@@ -529,4 +522,12 @@ textarea#resource{
   width:100%;
   min-width:100%;
   max-width:100%;
+}
+
+form .input-group input.bucket{
+  flex-grow:3;
+}
+
+.input-group-text {
+  min-width:20px;
 }

@@ -14,27 +14,20 @@ customjs: /assets/js/connect.js
   <p>You can choose to allow Globus to alter your bucket's contents by uploading or deleting objects.</p>
   <hr>
   <form class="form-inline" id="elm-fieldset">
-    <div class="form-row row">
-      <div class="col-5">
-        <label for="bucket" class="sr-only">Bucket</label>
-        <input type="text" class="form-control bucket" name="bucket" id="bucket1" placeholder="Bucket example: allcats" />
-      </div>
-      <div class="form-check col-auto row-1">
-        <input type="checkbox" class="checkbox" id="read1" name="read"/>
-        <label for="read1">Read-Only?</label>
-      </div>
-      <div class="form-check col-auto">
-        <input type="checkbox" name="uploads" id="uploads1" />
-        <label for="uploads1">Allow Uploads?</label>
-      </div>
-      <div class="form-check col-auto">
-        <input type="checkbox" class="checkbox" id="delete1" name="delete" />
-        <label for="delete1">Allow Delete?</label>
-      </div>
+    <label for="bucket1" class="sr-only">Bucket</label>
+    <div class="input-group row-1">
+      <input type="text" id="bucket1" name="bucket" class="form-control bucket" placeholder="Bucket example: allcats">
+      <select id="permissions1" class="form-select permissions" data-row="1">
+        <option value="read" data-icon="eye">Read-Only</option>
+        <option value="upload" data-icon="pencil">Read + Write</option>
+        <option value="delete" data-icon="warning">Read + Write + Delete</option>
+      </select>
+      <span class="bg-success text-dark bg-opacity-25 input-group-text" id="icon1">
+        <i aria-hidden="true" class="fa fa-eye"></i>
+      </span>
     </div>
   </form>
   <a class="flex-shrink-1 btn btn-outline-secondary btn-sm" id="clearButton"><i class="fa-solid fa-xmark"></i><span> Clear Form</span></a>
-
   <a class="flex-shrink-1 btn btn-outline-dark btn-sm float-end" id="addButton"><i class="fa-regular fa-plus"></i><span> Add A Bucket</span></a>
 </div>
 <div class="">
