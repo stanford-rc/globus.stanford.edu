@@ -239,6 +239,7 @@ $(document).ready(function() {
   function getStoredRows(rows) {
     //console.log('sessionData', rows);
     let maxKey = 0;
+    let minKey = 2;
     //get all the row keys
     var filtered = {}
     for (key in rows) {
@@ -248,14 +249,28 @@ $(document).ready(function() {
     for (const [key, value] of Object.entries(filtered)) {
       //console.log(key, value);
       if (value > maxKey) {
-        //console.log(value, maxKey);
         maxKey = value
       }
+      if (value < minKey) {
+        minKey = value
+      }
     }
-    //console.log('maxKey', maxKey)
+    if (minKey > 1) {
+      //first restored value's row number is >1, remove row 1
+      removeTopRows(minKey);
+    }
     //set fieldset equal to maxKey
     fieldCounter = maxKey;
     return maxKey;
+  }
+
+  function removeTopRows(index) {
+    //remove row before the first restored row
+    var removeRows = index - 1;
+    for (var i = 1; i <= removeRows; i++) {
+      var selector = '.input-group.row-' + i;
+      $(selector).remove();
+    }
   }
 
   function startupCheckSession() {
