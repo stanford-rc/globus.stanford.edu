@@ -39,7 +39,6 @@ $(document).ready(function() {
     icon.className = "fa fa-eye";
     iconBlock.id = "icon" + index;
     iconBlock.append(icon);
-    //console.log('iconBlock', iconBlock);
     newFieldset.appendChild(iconBlock);
 
     const removeButton = document.createElement("div");
@@ -89,13 +88,17 @@ $(document).ready(function() {
     return catString;
   }
 
+  function makeRow() {
+    //make sure global fieldCounter is an integer
+    fieldCounter = parseInt(fieldCounter, 10);
+    fieldCounter = fieldCounter + 1;
+    newFieldsetSelect(fieldCounter);
+  }
+
   function bindEvents() { //this fires once
 
     $("#addButton").on("click", function(e) {
-      //make sure it's an integer
-      fieldCounter = parseInt(fieldCounter, 10);
-      fieldCounter = fieldCounter + 1;
-      newFieldsetSelect(fieldCounter);
+      makeRow();
     });
 
     $("#clearButton").on("click", function() {
@@ -255,20 +258,24 @@ $(document).ready(function() {
         minKey = value
       }
     }
+    //set fieldCounter equal to maxKey
+    fieldCounter = maxKey;
+    console.log('fieldCounter',fieldCounter);
     if (minKey > 1) {
       //first restored value's row number is >1, remove row 1
       removeTopRows(minKey);
     }
-    //set fieldset equal to maxKey
-    fieldCounter = maxKey;
     return maxKey;
   }
 
   function removeTopRows(index) {
+    console.log('removeTop',index);
     //remove row before the first restored row
     var removeRows = index - 1;
+        console.log('removeRows',removeRows);
     for (var i = 1; i <= removeRows; i++) {
       var selector = '.input-group.row-' + i;
+          console.log('selector',selector);
       $(selector).remove();
     }
   }
@@ -290,7 +297,6 @@ $(document).ready(function() {
           //is there already an element with that id?
           if ($('#' + bucketID).length) {
             //console.log('element exists',bucketID)
-
           } else {
             newFieldsetSelect(i);
           }
@@ -298,9 +304,10 @@ $(document).ready(function() {
           $('#' + permID).val(permVal);
           var thisIcon = getIconByValue(permVal);
           checkIcon(rowID, i, thisIcon);
-          generateScript()
+          //generateScript();
         } //end have bucket
       } //end for loop
+      makeRow();
       generateScript();
     }
   }
