@@ -83,9 +83,8 @@ $(document).ready(function() {
     if (index > catLength) {
       index = index - catLength;
     }
-    if (catContent[index] != "undefined") {
+    if (catContent[index] != undefined) {
       catString = catContent[index] + "cats";
-
     }
     return catString;
   }
