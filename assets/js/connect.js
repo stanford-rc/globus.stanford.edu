@@ -79,10 +79,13 @@ $(document).ready(function() {
   function getPlaceholder(index) {
     const catContent = ["silly", "tiny", "many", "some", "orange", "black", "omg.so.many.", "smol", "lorge", "chonky", "calico", "cow", "baby"];
     let catLength = catContent.length - 1;
+    var catString = "bucket-of-cats";
     if (index > catLength) {
       index = index - catLength;
     }
-    catString = catContent[index] + "cats";
+    if (catContent[index]) {
+      catString = catContent[index] + "cats";
+    }
     return catString;
   }
 
