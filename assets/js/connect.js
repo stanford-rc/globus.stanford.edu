@@ -18,11 +18,15 @@ $(document).ready(function() {
     const newFieldset = document.createElement("div");
     newFieldset.prepend(label);
     newFieldset.className = "row-added input-group row-" + index;
+    newFieldset.dataset.row = index;
     const input = document.createElement("input");
     input.type = "text";
     input.id = "bucket" + index;
     input.name = "bucket";
     input.className = "form-control bucket";
+    input.spellcheck = false;
+    input.autocorrect = false;
+    input.autocapitalize = false;
     input.placeholder = getPlaceholder(index);
     newFieldset.appendChild(input);
 
@@ -76,7 +80,7 @@ $(document).ready(function() {
   }
 
   function getPlaceholder(index) {
-    const catContent = ["silly", "tiny", "many", "some", "orange", "black", "omg.so.many.", "smol", "lorge", "chonky", "calico", "cow", "baby"];
+    const catContent = ["silly", "tiny", "many", "some", "orange", "black", "omg-so-many-", "smol", "lorge", "chonky", "calico", "cow", "baby"];
     let catLength = catContent.length - 1;
     var catString = "bucket-of-cats";
     if (index > catLength) {
@@ -212,7 +216,32 @@ $(document).ready(function() {
     return jsonRow;
   }
 
+  function validateFormNoSpaces() {
+    var rows = $('.input-group');
+    var rowCount = rows.length;
+    for (var i = 0; i <= rowCount; i++) {
+      var row = rows[i];
+      if (row) {
+        var rowIndex = row.dataset.row;
+        var bucketSelector = '#bucket' + rowIndex;
+        var bucket = $(bucketSelector);
+        if (bucket) {
+          var bucketText = bucket.val();
+          var bucketSplit = bucketText.split(' ');
+          if (bucketSplit.length > 1) {
+            $(bucketSelector).addClass('border border-danger has-space');
+            $('.space-warning').show();
+          } else {
+            $(bucketSelector).removeClass('border border-danger has-space');
+          }
+        }
+      }
+    }
+  }
+
   function generateScript() {
+    $('.space-warning').hide();
+    validateFormNoSpaces();
     let output = {};
     output["Version"] = versionMarker;
     var guts = getRow();
@@ -260,7 +289,7 @@ $(document).ready(function() {
     }
     //set fieldCounter equal to maxKey
     fieldCounter = maxKey;
-    console.log('fieldCounter',fieldCounter);
+    console.log('fieldCounter', fieldCounter);
     if (minKey > 1) {
       //first restored value's row number is >1, remove row 1
       removeTopRows(minKey);
@@ -269,13 +298,13 @@ $(document).ready(function() {
   }
 
   function removeTopRows(index) {
-    console.log('removeTop',index);
+    console.log('removeTop', index);
     //remove row before the first restored row
     var removeRows = index - 1;
-        console.log('removeRows',removeRows);
+    console.log('removeRows', removeRows);
     for (var i = 1; i <= removeRows; i++) {
       var selector = '.input-group.row-' + i;
-          console.log('selector',selector);
+      console.log('selector', selector);
       $(selector).remove();
     }
   }

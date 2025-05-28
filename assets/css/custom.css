@@ -550,7 +550,21 @@ input:placeholder-shown {
   background-color:#ededed;
 } 
 
-input::placeholder {
-  color: red;
-  opacity: 0.5;
+input:focus::placeholder {
+  opacity: .5;
 }
+
+input.has-space{
+  margin-right:1px;
+}
+
+.space-warning {
+  flex-basis: 100%;
+  font-size:.8em;
+  display:none;
+}
+
+#elm-fieldset{
+  margin-bottom:1em;
+}
+

@@ -13,8 +13,11 @@ customjs: /assets/js/connect.js
   <p>Enter the name of your bucket, and then assign permissions to Globus. Read-Only means that Globus can access and copy from your bucket, but cannot make changes to any objects/files.</p>
   <p>You can choose to allow Globus to alter your bucket's contents by uploading or deleting objects.</p>
   <hr>
-  <form class="form-inline" id="elm-fieldset">
-    <div class="input-group row-1">
+  <form class="form-inline" id="elm-fieldset" spellcheck="false" autocorrect="off" autocapitalize="off">
+    <div class="alert alert-danger space-warning" role="alert">
+      Bucket names cannot have spaces
+    </div>
+    <div class="input-group row-1" data-row="1">
       <label for="bucket1" class="sr-only">Bucket</label>
       <input type="text" id="bucket1" name="bucket" class="form-control bucket" placeholder="Bucket example: allcats">
       <select id="permissions1" class="form-select permissions" data-row="1">
