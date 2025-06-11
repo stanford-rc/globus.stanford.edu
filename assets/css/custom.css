@@ -500,3 +500,71 @@ blockquote {
     color:#544948;
     margin: 1.5em 2em;
 }
+
+form .input-group,
+form .bucket,
+form .form-select,
+form .input-group-text,
+form .remove-btn {
+  font-size:16px;
+  height:40px;
+  margin-top:0;
+  margin-bottom:.5em;
+  align-items:center;
+}
+
+
+form .row-added{
+  margin-top:1em;
+}
+
+textarea#resource{
+  width:100%;
+  min-width:100%;
+  max-width:100%;
+}
+
+form .input-group input.bucket{
+  flex-grow:3;
+}
+
+.input-group-text {
+  min-width:20px;
+}
+
+form .remove-btn {
+  display: flex;
+}
+
+form .remove-btn i{
+  margin-left:16px;
+  opacity:.5;
+  padding:0;
+}
+
+form .remove-btn i:hover{
+  opacity:1;
+}
+
+input:placeholder-shown {
+  background-color:#ededed;
+} 
+
+input:focus::placeholder {
+  opacity: .5;
+}
+
+input.has-space{
+  margin-right:1px;
+}
+
+.space-warning {
+  flex-basis: 100%;
+  font-size:.8em;
+  display:none;
+}
+
+#elm-fieldset{
+  margin-bottom:1em;
+}
+
