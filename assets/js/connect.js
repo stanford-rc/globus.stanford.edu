@@ -4,7 +4,7 @@ $(document).ready(function() {
   const elmForm = $("#elm-fieldset");
   var arnPrefix = "arn:aws:s3:::"
   var versionMarker = "2012-10-17"
-  const selectOptions = [{ "name": "Read-Only", "icon": "eye", "value": "read", "class": "bg-success text-dark bg-opacity-25" }, { "name": "Read + Write", "icon": "pencil", "value": "upload", "class": "bg-warning text-dark bg-opacity-25" }, { "name": "Read + Write + Delete", "icon": "warning", "value": "delete", "class": "bg-danger text-dark bg-opacity-25" }];
+  const selectOptions = [{ "name": "Read-Only", "icon": "eye", "value": "read", "class": "bg-success text-dark bg-opacity-25" }, { "name": "Read + Write", "icon": "file-circle-plus", "value": "upload", "class": "bg-primary text-dark bg-opacity-25" }, { "name": "Read + Write + Delete", "icon": "file-circle-minus", "value": "delete", "class": "bg-warning text-dark bg-opacity-25" }];
   startupCheckSession();
   bindEvents();
   bindNew();
@@ -225,15 +225,22 @@ $(document).ready(function() {
         var rowIndex = row.dataset.row;
         var bucketSelector = '#bucket' + rowIndex;
         var bucket = $(bucketSelector);
-        if (bucket) {
-          var bucketText = bucket.val();
-          var bucketSplit = bucketText.split(' ');
-          if (bucketSplit.length > 1) {
-            $(bucketSelector).addClass('border border-danger has-space');
-            $('.space-warning').show();
-          } else {
-            $(bucketSelector).removeClass('border border-danger has-space');
+        var rawBucket = bucket.val().trim();
+        if (rawBucket) {
+          let sanitizedBucket = rawBucket
+            .toLowerCase()
+            .replace(/\s+/g, '-') // Convert spaces to dashes
+            .replace(/[^A-Za-z0-9-]/g, ''); // Remove disallowed chars
+          if (sanitizedBucket !== rawBucket) {
+            bucket.val(sanitizedBucket);
           }
+
+          // If the sanitized bucket name is empty, clear the results
+          if (!sanitizedBucket) {
+            bucket.empty();
+            return;
+          }
+
         }
       }
     }
@@ -289,7 +296,7 @@ $(document).ready(function() {
     }
     //set fieldCounter equal to maxKey
     fieldCounter = maxKey;
-    console.log('fieldCounter', fieldCounter);
+    //console.log('fieldCounter', fieldCounter);
     if (minKey > 1) {
       //first restored value's row number is >1, remove row 1
       removeTopRows(minKey);

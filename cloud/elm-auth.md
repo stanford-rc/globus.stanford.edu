@@ -12,6 +12,7 @@ customjs: /assets/js/connect.js
   <h2>Buckets </h2>
   <p>Enter the name of your bucket, and then assign permissions to Globus. Read-Only means that Globus can access and copy from your bucket, but cannot make changes to any objects/files.</p>
   <p>You can choose to allow Globus to alter your bucket's contents by uploading or deleting objects.</p>
+  <p>This tool does not confirm that a listed bucket exists; please enter bucket names carefully.
   <hr>
   <form class="form-inline" id="elm-fieldset" spellcheck="false" autocorrect="off" autocapitalize="off">
     <div class="alert alert-danger space-warning" role="alert">
@@ -33,7 +34,7 @@ customjs: /assets/js/connect.js
   </form>
   <a class="flex-shrink-1 btn btn-outline-secondary" id="clearButton"><i class="fa-solid fa-xmark"></i><span> Clear Form</span></a>
   <a class="flex-shrink-1 btn btn-outline-dark float-end" id="addButton"><i class="fa-regular fa-plus"></i><span> Add A Bucket</span></a>
-</div>
+
 <div class="">
   <div class="form-horizontal">
     <h2><label for="resource">Local Permissions Summary</label> </h2>
