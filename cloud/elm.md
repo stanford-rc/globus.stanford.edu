@@ -259,43 +259,16 @@ empty.
 Next, you will need to provide a policy that allows Globus to do only what you
 want it to do.
 
-Below, fill in the names of the buckets you want to access through Globus, and
-choose if you want to allow Globus to upload and/or delete files.
+### User Policy Generator
+
+Below, fill in the names of the buckets you want to access through Globus. Read-Only means that Globus can access and copy from your bucket, but cannot make changes to any objects/files.
 
 
-<div>
-  <p>Enter the name of your bucket, and then assign permissions to Globus. Read-Only means that Globus can access and copy from your bucket, but cannot make changes to any objects/files.</p>
-  <p>You can choose to allow Globus to alter your bucket's contents by uploading or deleting objects.</p>
-  <p>This tool does not confirm that a listed bucket exists; please enter bucket names carefully.
-  <hr>
-  <form class="form-inline" id="elm-fieldset" spellcheck="false" autocorrect="off" autocapitalize="off">
-    <div class="input-group row-1" data-row="1">
-      <label for="bucket1" class="sr-only">Bucket</label>
-      <input type="text" id="bucket1" name="bucket" class="form-control bucket" placeholder="Bucket example: allcats">
-      <select id="permissions1" class="form-select permissions" data-row="1">
-        <option value="read" data-icon="eye">Read-Only</option>
-        <option value="upload" data-icon="pencil">Read + Write</option>
-        <option value="delete" data-icon="warning">Read + Write + Delete</option>
-      </select>
-      <span class="bg-success text-dark bg-opacity-25 input-group-text" id="icon1">
-        <i aria-hidden="true" class="fa fa-eye"></i>
-      </span>
-      <div class="remove-btn" id="remove1" data-remove="1"><i class="fa-solid fa-xmark"></i></div>
-    </div>
-  </form>
-  <a class="flex-shrink-1 btn btn-outline-secondary" id="clearButton"><i class="fa-solid fa-xmark"></i><span> Clear Form</span></a>
-  <a class="flex-shrink-1 btn btn-outline-dark float-end" id="addButton"><i class="fa-regular fa-plus"></i><span> Add A Bucket</span></a>
+You can choose to allow Globus to alter your bucket's contents by uploading or deleting objects.
 
-<div class="">
-  <div class="form-horizontal">
-    <h4><label for="resource">Generated User Policy</label> </h4>
-    <a class="flex-shrink-1 btn btn-outline-success btn-sm" id="copyBtn"><i class="fa-solid fa-copy"></i><span> Copy to Clipboard</span></a>
-    <div class="fancy-copy">
-      <textarea id="resource" class="form-control" rows="16" readonly></textarea>
-      <i id="copyOverlay" class="fa-solid fa-clipboard-check"></i>
-    </div>
-  </div>
-</div>
+This tool does not confirm that a listed bucket exists; please enter bucket names carefully.
+
+{% include elm-generator.html %}
 
 Take the policy you created above, copy/paste it into the Current User
 Policy box, and then click "Create":
@@ -325,12 +298,18 @@ note of these, to load into Globus.
    content="This is the only time you will be shown the Secret Key.  Keep that information somewhere safe."
 %}
 
+
+
 ## Loading Credentials into Globus
+
+
 
 With an Access Key configured, you can now upload your credentials to Globus.
 
 Using the link at the top of the page, access the Elm collection.  You might be
 asked to log in; if so, log in through *Stanford University*.
+
+
 
 {% include hero-image.html
    src="/assets/cloud/ElmCollectionwithCredentials.png"
