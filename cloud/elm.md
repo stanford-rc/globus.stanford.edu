@@ -5,6 +5,7 @@ title:       Globus and Elm
 see-also: true
 id: cloud
 description: Globus works with Elm, but with a number of restrictions.
+customjs: /assets/js/connect.js
 ---
 
 {% capture collection-under-construction %}
@@ -258,50 +259,16 @@ empty.
 Next, you will need to provide a policy that allows Globus to do only what you
 want it to do.
 
-Below, fill in the names of the buckets you want to access through Globus, and
-choose if you want to allow Globus to upload and/or delete files.
+### User Policy Generator
+
+Below, fill in the names of the buckets you want to access through Globus. Read-Only means that Globus can access and copy from your bucket, but cannot make changes to any objects/files.
 
 
-```
-{
- "Version": "2012-10-17",
- "Statement": [
-  {
-   "Effect": "Allow",
-   "Action": [
-    "s3:ListAllMyBuckets",
-    "s3:GetBucketLocation"
-   ],
-   "Resource": [
-    "arn:aws:s3:::*"
-   ]
-  },
-  {
-   "Effect": "Allow",
-   "Action": [
-    "s3:ListBucket",
-    "s3:ListBucketMultipartUploads"
-   ],
-   "Resource": [
-    "arn:aws:s3:::allcats" <------ ONE LINE PER BUCKET
-   ]
-  },
-  {
-   "Effect": "Allow",
-   "Action": [
-    "s3:DeleteObject",               <------- If allowing deletions
-    "s3:PutObject",                  <------\
-    "s3:ListMultipartUploadParts",   <------|- If allowing uploads
-    "s3:AbortMultipartUpload",       <------/
-    "s3:GetObject"
-   ],
-   "Resource": [
-    "arn:aws:s3:::allcats/*" <------ ONE LINE PER BUCKET
-   ]
-  }
- ]
-}
-```
+You can choose to allow Globus to alter your bucket's contents by uploading or deleting objects.
+
+This tool does not confirm that a listed bucket exists; please enter bucket names carefully.
+
+{% include elm-generator.html %}
 
 Take the policy you created above, copy/paste it into the Current User
 Policy box, and then click "Create":
@@ -331,12 +298,18 @@ note of these, to load into Globus.
    content="This is the only time you will be shown the Secret Key.  Keep that information somewhere safe."
 %}
 
+
+
 ## Loading Credentials into Globus
+
+
 
 With an Access Key configured, you can now upload your credentials to Globus.
 
 Using the link at the top of the page, access the Elm collection.  You might be
 asked to log in; if so, log in through *Stanford University*.
+
+
 
 {% include hero-image.html
    src="/assets/cloud/ElmCollectionwithCredentials.png"
