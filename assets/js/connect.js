@@ -146,7 +146,7 @@ $(document).ready(function() {
     let autoEntry = {};
     autoEntry["Effect"] = "Allow";
     autoEntry["Action"] = "s3:ListAllMyBuckets";
-    autoEntry["Resource"] = "*";
+    autoEntry["Resource"] = "arn:aws:s3:::*";
     statements.push(autoEntry);
     //loop through fields
     for (var i = 1; i <= fieldCounter; i++) {
