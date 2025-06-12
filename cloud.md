@@ -160,12 +160,12 @@ collection.
 
 [Go here for detailed information on how to use Globus with Elm]({{ "cloud/elm.html" | absolute_url }}).
 
-Using Globus with Elm requires an Access Key with appropriate permissions
-to list buckets, list objects within buckets, download objects, (optionally)
-upload objects (which includes managing multi-part uploads), and (optionally)
-delete objects.  Globus' documentation [has an example IAM
-Policy](https://docs.globus.org/premium-storage-connectors/v5.4/aws-s3/#permissions-anchor),
-or [see the step-by-step instructions]({{ "cloud/elm.html" | absolute_url }}).
+Using Globus with Elm requires an Access Key with appropriate permissions to
+list buckets, list objects within buckets, and download objects.  You can
+optionally provide permission to upload objects and delete objects.  The
+[step-by-step instructions]({{ "cloud/elm.html" | absolute_url }}) has a [User
+Policy Generator]({{ "cloud/elm.html#user-policy-generator" | absolute_url }}),
+which will create the appropriate IAM policy for you.
 
 Elm works best with large files (hundreds of megabytes and larger).  If you are
 thinking of uploading smaller files, you may wish to combine them into a larger
