@@ -202,6 +202,70 @@ If you would like to share files from your collection with other people, you
 should now proceed to [enable Globus Plus]({{ "/client/plus.html" | relative_url
 }}).
 
+## On Windows, (possibly) enable Long Paths
 
+{% include info-box.html
+   icon="sticky-note"
+   header="This section is Windows only!"
+   content="This section only applies to folks running Globus Connect Personal on Windows.  If you are running on macOS or Linux, ignore this section!"
+%}
 
+On Windows machines, most file operations (creating files, opening them, etc.)
+have a path-length limit of 260 characters.  That is, the full path to the
+file—from the `C:\` to the end of the file's extension—must be 260 characters
+long (or less).  For folks working with certain data sets with long file and
+directory names, this can cause issues.
 
+Globus Connect Personal supports paths up to 4,096 characters long, but on
+Windows you will need to make an OS-level configuration change (a registry
+change) to enable long-path support.
+
+{% include info-box.html
+   icon="info"
+   header="You probably do not need this"
+   content="This configuration change is only needed if you expect to be working with really-long paths.  If you expect to be working with really long paths (for example, in genomics data sets), continue reading.  Otherwise, ignore this section."
+%}
+
+{% include info-box.html
+   icon="headset"
+   header="Unsure?  Ask for help!"
+   content="Making a registry change is not for the faint of heart!  The instructions (and .reg file) provided make the change safer, but not 100% safe.  If you are at all unsure about making this change, ask your local IT support for help first!"
+%}
+
+First, download the <a download href="{{ "assets/client/long_path.reg" |
+relative_url }}">long-path registry file</a> to your computer.  You will get a
+file named `long_path.reg`:
+
+{% include figure.html
+   src="/assets/client/LongPathDownloads.png"
+   alt="The 'Downloads' folder on Windows, showing the file 'long\_path.reg'."
+   caption-overlay=false
+   caption-header=""
+   caption-text=""
+%}
+
+Double-click on the `long_path.reg` file.  A warning message will appear:
+
+{% include figure.html
+   src="/assets/client/LongPathConfirmation.png"
+   alt="The Globus Connect Personal setup screen, showing a successful setup."
+   caption-overlay=false
+   caption-header="Successful Globus Connect Personal installation"
+   caption-text="Clicking 'show collection details' will allow you to view the collection you just created."
+%}
+
+Click "Yes".  A new message will appear, confirming the change was made:
+
+{% include figure.html
+   src="/assets/client/LongPathApplied.png"
+   alt="The Globus Connect Personal setup screen, showing a successful setup."
+   caption-overlay=false
+   caption-header="Successful Globus Connect Personal installation"
+   caption-text="Clicking 'show collection details' will allow you to view the collection you just created."
+%}
+
+The change will not be seen by running programs, so to ensure everything
+(including Globus) is aware of the change, restart your computer.  You can also
+delete the `long_path.reg` file.
+
+Congratulations, Windows long-path support is now enabled!
