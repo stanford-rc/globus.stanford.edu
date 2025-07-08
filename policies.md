@@ -40,8 +40,8 @@ Stanford's Globus subscription covers the following services:
 * The premium connectors for Amazon S3 (including S3-compatible storage
   systems), Box, Ceph, Dropbox, Google Cloud Storage, Google Drive, HDFS, iRODS,
   Micosoft Azure Blob Storage, Microsoft OneDrive, Quantum ActiveScale, and
-  Spectra BlackPearl.  Since Wasabi speaks the S3 protocol, Wasabi is also
-  supported.
+  Spectra BlackPearl.  Since Oracle Cloud Infrastructure (OCI) Object Storage
+  and Wasabi speak the S3 protocol, they are also supported.
 
 There are no limits on the above services.  You can have an unlimited number of
 endpoints, make as many transfers as you want, and transfer as much data as you
