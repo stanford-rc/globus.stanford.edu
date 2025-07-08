@@ -24,6 +24,7 @@ name for more information.
 | <a href="#box">Medicine Box</a> | ❌ |
 | <a href="#ceph">Ceph</a> | ❌ |
 | <a href="#dropbox">Dropbox</a> | ❌ |
+| <a href="#elm">Elm</a> | ✅ |
 | <a href="#google-cloud-storage">Google Cloud Storage</a> | ✅ |
 | <a href="#google-drive">Google Drive</a> | ✅ |
 | <a href="#irods">iRODS</a> | ❌ |
@@ -151,6 +152,28 @@ Some groups within the University do use Dropbox.  If you use Dropbox, you may
 be able to [run your own Globus endpoint]({{ "server5.html" | relative_url }})
 with the Dropbox connector.  [Contact us](mailto:srcc-support@stanford.edu) if
 you are interested in this. 
+
+# Elm
+
+Elm may be accessed through the [Stanford Elm Storage (project:
+campus)](https://app.globus.org/file-manager/collections/0e458bf0-7fde-42bb-8622-42a5d00c5b61/overview)
+collection.
+
+[Go here for detailed information on how to use Globus with Elm]({{ "cloud/elm.html" | absolute_url }}).
+
+Using Globus with Elm requires an Access Key with appropriate permissions to
+list buckets, list objects within buckets, and download objects.  You can
+optionally provide permission to upload objects and delete objects.  The
+[step-by-step instructions]({{ "cloud/elm.html" | absolute_url }}) has a [User
+Policy Generator]({{ "cloud/elm.html#user-policy-generator" | absolute_url }}),
+which will create the appropriate IAM policy for you.
+
+Elm works best with large files (hundreds of megabytes and larger).  If you are
+thinking of uploading smaller files, you may wish to combine them into a larger
+`.tar` or `.zip` file before you upload them to Elm.
+
+Globus also does not support custom metadata/tags, ACLs, and additional checksum
+algorithms.  Only the latest version of objects will be accessed.
 
 # Google Cloud Storage
 
