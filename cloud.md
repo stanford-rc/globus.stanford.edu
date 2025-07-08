@@ -30,6 +30,7 @@ name for more information.
 | <a href="#irods">iRODS</a> | ❌ |
 | <a href="#microsoft-azure-blob-storage">Microsoft Azure Blob Storage</a> | ❌ |
 | <a href="#microsoft-onedrive">Microsoft OneDrive</a> | ✅ |
+| <a href="#oracle-cloud-infrastructure-oci-object-storage">Oracle Cloud (OCI) Object Storage</a> | ❌ |
 | <a href="#wasabi">Wasabi</a> | ✅ |
 
 &nbsp;
@@ -309,6 +310,18 @@ will inherit the permissions of the parent folder.
 **Globus is not able to access non-University content**.  That includes things
 shared by folks outside of Stanford University, and it also includes things
 shared by members of Stanford Health Care and Stanford Children's Health.
+
+# Oracle Cloud Infrastructure (OCI) Object Storage
+
+Although Stanford's subscription does support the Oracle Cloud Infrastructure
+(OCI) Object Storage connector, University IT does not provide Oracle Cloud as
+a service.
+
+OCI Object Storage uses the S3 protocol, and Globus has validated its use with
+OCI.  If you use OCI Object Storage, you may be able to [run your own Globus
+endpoint]({{ "server5.html" | relative_url }}) with the S3 connector,
+configured to talk to OCI Object Storage.  [Contact
+us](mailto:srcc-support@stanford.edu) if you are interested in this.
 
 # Wasabi
 
