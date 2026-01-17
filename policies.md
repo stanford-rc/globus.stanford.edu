@@ -145,6 +145,8 @@ not been evaluated for handling data rated as High Risk.  As always, it is up
 to the data owners to determine the [Risk
 Classification](http://dataclass.stanford.edu/) for their data. 
 
+**NIH Controlled Access Data** can be accessed using Globus in  [environments that have NIH certification](https://uit.stanford.edu/guide/riskclassifications#security-approved-environments). 
+
 Globus Connect Server and Globus Connect Personal services are made available
 to us under the [Globus Terms of Service](https://www.globus.org/legal/terms),
 and the Globus Customer Agreement negotiated between the University of Chicago
