@@ -1,0 +1,94 @@
+# This workflow runs on PRs only.  It builds the static site, using
+# all-relative links, in a form that folks should be able to download & open
+# locally.  It's intended to make it easier for folks to review changes before
+# they go live.
+name: Build the site for PR review
+
+on:
+  # The workflow will run on all branch pushes.
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# The PR needs read access for the repo, and for Pages.  It needs write
+# permission on PRs in order to post a comment, and it needs the ID token in
+# order to auth to GitHub for comment posting.
+permissions:
+  contents: read
+  pages: read
+  id_token: write
+  pull-requests: write
+
+# Make sure only once instance of this workflow can be in progress across all PRs
+concurrency: pr-review
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.219.0
+        with:
+          ruby-version: '3.2' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5.0.0
+
+      - name: Build static site, using PR-specific configuration
+        run: |
+            bundle exec jekyll build --config _config.yml,_config_pr.yml --baseurl "${{ steps.pages.outputs.base_path }}" --future
+
+      - name: Update static-site links
+        # This Ruby snippet rewrites paths like "/assets/..." to "./assets/..." 
+        # or "../../assets/..." depending on the file depth.
+        run: |
+          ruby -e '
+            require "fileutils"
+            Dir.glob("_site/**/*.html").each do |path|
+              depth = path.split("/").size - 2
+              prefix = depth == 0 ? "./" : "../" * depth
+              content = File.read(path)
+              # Replace root-relative links (starting with /) with the relative prefix
+              content.gsub!(/ (href|src)="\/([^"]*)"/, " \\1=\"#{prefix}\\2\"")
+              File.write(path, content)
+            end
+          '
+
+      - name: Get current date/time
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+        env:
+          TZ: America/Los_Angeles
+
+      - name: Upload the built site for review
+        id: upload
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: site-${{ steps.date.outputs.date }}
+          path: _site
+          retention-days: 7
+          if-no-files-found: fail
+          overwrite: false
+
+      - name: Post comment to PR
+        run: |
+          gh pr comment $PR_NUMBER --body "**Static-site build available!**
+
+          The static site build for branch `${GITHUB_REF}` (commit `${GITHUB_SHA}`) is now available at URL [$ARTIFACT_URL]($ARTIFACT_URL).
+
+          The build was completed on ${ARTIFACT_DATE}; it will be deleted after seven days.
+
+          **NOTE**: We cannot guarantee the build will look exactly like the site.  Always look at the *actual* commit, not just this build!"
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+          ARTIFACT_DATE: ${{ steps.date.outputs.date }}
