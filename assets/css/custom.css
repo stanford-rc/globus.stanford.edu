@@ -238,15 +238,15 @@ code {
   width: 1em;
   display: inline-block;
   content: "";
-  -webkit-mask: url(../assets/email.svg)no-repeat 0 0;
-  mask: url(../assets/email.svg)no-repeat 0 0;
+  -webkit-mask: url({{ "/assets/email.svg" | relative_url }})no-repeat 0 0;
+  mask: url({{ "/assets/email.svg" | relative_url }})no-repeat 0 0;
   -webkit-mask-size: contain;
   mask-size: contain
 }
 
 .su-local-footer__action-links a.su-link--external:after {
-  -webkit-mask: url(../assets/arrow-up-right.svg)no-repeat 0 0;
-  mask: url(../assets/arrow-up-right.svg)no-repeat 0 0;
+  -webkit-mask: url({{ "/assets/arrow-up-right.svg" | relative_url }})no-repeat 0 0;
+  mask: url({{ "/assets/arrow-up-right.svg" | relative_url }})no-repeat 0 0;
   mask-size: .7em .7em;
 }
 
