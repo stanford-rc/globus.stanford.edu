@@ -284,6 +284,7 @@ DEPENDENCIES
   jekyll
   jekyll-gist
   jekyll-paginate
+  jekyll-relative-links
   tzinfo (>= 1, < 3)
   tzinfo-data
   webrick
