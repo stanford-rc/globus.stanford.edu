@@ -19,7 +19,7 @@ on:
 permissions:
   contents: read
   pages: read
-  id_token: write
+  id-token: write
   pull-requests: write
 
 # Make sure only once instance of this workflow can be in progress across all PRs
