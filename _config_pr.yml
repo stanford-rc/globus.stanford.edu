@@ -1,0 +1,11 @@
+# This is an additional configuration file, which should only be included in PR
+# builds of the site (used for review).
+
+# This configuration adds and enables the jekyll-relative-links plugin.
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
