@@ -76,7 +76,7 @@ jobs:
           name: site-${{ steps.date.outputs.date }}
           path: _site
           retention-days: 7
-          if-no-files-found: fail
+          if-no-files-found: error
           overwrite: false
 
       - name: Post comment to PR
