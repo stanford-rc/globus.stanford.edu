@@ -83,7 +83,7 @@ jobs:
         run: |
           gh pr comment $PR_NUMBER --body "**Static-site build available!**
 
-          The static site build for branch `${GITHUB_REF}` (commit `${GITHUB_SHA}`) is now available at URL [$ARTIFACT_URL]($ARTIFACT_URL).
+          The static site build for branch \`${GITHUB_REF}\` (commit \`${GITHUB_SHA}\`) is now available at URL [$ARTIFACT_URL]($ARTIFACT_URL).
 
           The build was completed on ${ARTIFACT_DATE}; it will be deleted after seven days.
 
