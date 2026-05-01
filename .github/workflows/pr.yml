@@ -89,6 +89,7 @@ jobs:
 
           **NOTE**: We cannot guarantee the build will look exactly like the site.  Always look at the *actual* commit, not just this build!"
         env:
+          GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
           ARTIFACT_DATE: ${{ steps.date.outputs.date }}
