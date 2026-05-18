@@ -31,7 +31,6 @@ name for more information.
 | <a href="#microsoft-azure-blob-storage">Microsoft Azure Blob Storage</a> | ❌ |
 | <a href="#microsoft-onedrive">Microsoft OneDrive</a> | ✅ |
 | <a href="#oracle-cloud-infrastructure-oci-object-storage">Oracle Cloud (OCI) Object Storage</a> | ❌ |
-| <a href="#wasabi">Wasabi</a> | ✅ |
 
 &nbsp;
 
@@ -80,9 +79,11 @@ The Globus S3 connector supports more than just Amazon S3.  If you run a
 storage platform that supports the S3 API, the Globus-for-S3 add-on may support
 it.
 
-As of this page's last update, besides Amazon S3, we are aware of the Globus S3
-connector being used with Dell EMC ECS on-prem, and with Wasabi (as mentioned
-later on this page).
+See Globus' web site for the list of [supported S3-compatible storage
+systems](https://www.globus.org/connectors/connecting-s3-compatible-storage).
+
+Besides Amazon S3, we are aware of the Globus S3 connector being used with Dell
+ObjectScale (formerly known as "ECS"), and with Wasabi.
 
 If you would like to use the Globus S3 connector with your own storage
 platform, you may do so!  You will need to set up a [Globus Connect Server v5
@@ -322,30 +323,3 @@ OCI.  If you use OCI Object Storage, you may be able to [run your own Globus
 endpoint]({{ "server5.html" | relative_url }}) with the S3 connector,
 configured to talk to OCI Object Storage.  [Contact
 us](mailto:srcc-support@stanford.edu) if you are interested in this.
-
-# Wasabi
-
-{% include info-box.html
-   icon="wrench"
-   raw=collection-under-construction
-%}
-
-{% include info-box.html
-   icon="biohazard"
-   header="No High Risk Access allowed"
-   content="Some Wasabi accounts are allowed to store High Risk data (including PHI).  Such accounts are not allowed to use Globus."
-%}
-
-Access to Wasabi is possible throguh region-specific collections:
-
-* **us-west-1**: [SRCC Oak Wasabi S3](https://app.globus.org/file-manager/collections/0ffbca77-d3ca-463f-b564-690366dd2625/overview)
-
-**You must use the collection specific to your Wasabi region.**  Wasabi accounts
-created through Stanford University IT are placed into the us-west-1 region by
-default.  If you need access to a different region, [let us
-know](mailto:srcc-support@stanford.edu).
-
-
-
-
-
