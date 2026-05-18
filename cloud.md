@@ -79,9 +79,11 @@ The Globus S3 connector supports more than just Amazon S3.  If you run a
 storage platform that supports the S3 API, the Globus-for-S3 add-on may support
 it.
 
-As of this page's last update, besides Amazon S3, we are aware of the Globus S3
-connector being used with Dell EMC ECS on-prem, and with Wasabi (as mentioned
-later on this page).
+See Globus' web site for the list of [supported S3-compatible storage
+systems](https://www.globus.org/connectors/connecting-s3-compatible-storage).
+
+Besides Amazon S3, we are aware of the Globus S3 connector being used with Dell
+ObjectScale (formerly known as "ECS"), and with Wasabi.
 
 If you would like to use the Globus S3 connector with your own storage
 platform, you may do so!  You will need to set up a [Globus Connect Server v5
