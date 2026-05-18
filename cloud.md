@@ -31,7 +31,6 @@ name for more information.
 | <a href="#microsoft-azure-blob-storage">Microsoft Azure Blob Storage</a> | ❌ |
 | <a href="#microsoft-onedrive">Microsoft OneDrive</a> | ✅ |
 | <a href="#oracle-cloud-infrastructure-oci-object-storage">Oracle Cloud (OCI) Object Storage</a> | ❌ |
-| <a href="#wasabi">Wasabi</a> | ✅ |
 
 &nbsp;
 
@@ -322,30 +321,3 @@ OCI.  If you use OCI Object Storage, you may be able to [run your own Globus
 endpoint]({{ "server5.html" | relative_url }}) with the S3 connector,
 configured to talk to OCI Object Storage.  [Contact
 us](mailto:srcc-support@stanford.edu) if you are interested in this.
-
-# Wasabi
-
-{% include info-box.html
-   icon="wrench"
-   raw=collection-under-construction
-%}
-
-{% include info-box.html
-   icon="biohazard"
-   header="No High Risk Access allowed"
-   content="Some Wasabi accounts are allowed to store High Risk data (including PHI).  Such accounts are not allowed to use Globus."
-%}
-
-Access to Wasabi is possible throguh region-specific collections:
-
-* **us-west-1**: [SRCC Oak Wasabi S3](https://app.globus.org/file-manager/collections/0ffbca77-d3ca-463f-b564-690366dd2625/overview)
-
-**You must use the collection specific to your Wasabi region.**  Wasabi accounts
-created through Stanford University IT are placed into the us-west-1 region by
-default.  If you need access to a different region, [let us
-know](mailto:srcc-support@stanford.edu).
-
-
-
-
-
