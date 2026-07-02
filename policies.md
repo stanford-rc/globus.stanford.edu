@@ -164,6 +164,11 @@ If you use Globus to interact with Amazon S3, that access is governed by the
 [AWS Service Terms](https://aws.amazon.com/service-terms/), as modified by any
 agreements made between Amazon Web Services and Stanford.
 
+If you use Globus to interact with Backblaze B2, that access is governed by the
+[Backblaze Terms of
+Service](https://www.backblaze.com/company/policy/terms-of-service), as
+modified by any agreements made between Backblaze and Stanford.
+
 If you use Globus to interact with Box, that access is governed by the [Box
 Terms of Service](https://www.box.com/legal/termsofservice), as modified by any
 agreements made between Box and Stanford.
