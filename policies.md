@@ -164,6 +164,11 @@ If you use Globus to interact with Amazon S3, that access is governed by the
 [AWS Service Terms](https://aws.amazon.com/service-terms/), as modified by any
 agreements made between Amazon Web Services and Stanford.
 
+If you use Globus to interact with Backblaze B2, that access is governed by the
+[Backblaze Terms of
+Service](https://www.backblaze.com/company/policy/terms-of-service), as
+modified by any agreements made between Backblaze and Stanford.
+
 If you use Globus to interact with Box, that access is governed by the [Box
 Terms of Service](https://www.box.com/legal/termsofservice), as modified by any
 agreements made between Box and Stanford.
@@ -181,10 +186,6 @@ as modified by any agreements made between Google and Stanford.
 If you use Globus to interact with Microsoft Azure Blob Storage or Microsoft
 OneDrive, that access is governed by the agreements made between Microsoft and
 Stanford.
-
-If you use Globus to interact with Wasabi, that access is governed by the terms
-on the [Wasabi Legal page](https://wasabi.com/legal/), as modified by any
-agreements made between Wasabi Technologies and Stanford.
 
 This web site is hosted on GitHub Pages, which has its own [terms of
 service](https://help.github.com/articles/github-terms-of-service/) and
