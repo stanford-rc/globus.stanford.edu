@@ -7,17 +7,6 @@ id: cloud
 description: Globus works with Google Drive, but with a number of restrictions.
 ---
 
-{% capture drive-limits %}
-<h4>Incoming Google Drive limits</h4>
-<p>Starting September 1, 2025: Google Drive spaces
-(including your 'My Drive' space and each Shared Drive) will have a 5 TB quota.
-<b><a title="Transitioning to a Sustainable Google Workspace" href="https://uit.stanford.edu/news/university-sets-5-tb-google-workspace-limit">Read the transition announcement</a></b>.</p>
-{% endcapture %}
-{% include info-box.html
-   icon="compress-arrows-alt"
-   raw=drive-limits
-%}
-
 {% include info-box.html
    icon="id-card"
    header="Full SUNetID Required"
