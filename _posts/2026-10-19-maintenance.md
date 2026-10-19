@@ -27,9 +27,9 @@ perspective, here is what the downtime means:
   be able to start new transfers during the downtime.  You should avoid
   launching new elm-archive runs until after the downtime.
 
-* Web sites which use Globus might not work.  For example, the Stanford Digital
-  Repository self-deposit web site may not work properly.
+* Websites which use Globus might not work.  For example, the Stanford Digital
+  Repository self-deposit site may not work properly.
 
 If you experience problems after the downtime is complete, please let Globus
 Support know.  You can email Globus support at
-[mailto:support@globus.org](support@globus.org).
+[support@globus.org](mailto:support@globus.org).
