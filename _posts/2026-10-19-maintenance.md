@@ -23,6 +23,10 @@ perspective, here is what the downtime means:
 
 * The Globus CLI will stop working during the downtime.
 
+* Programs which Globus will not work.  For example, elm-archive will not
+  be able to start new transfers during the downtime.  You should avoid
+  launching new elm-archive runs until after the downtime.
+
 * Web sites which use Globus might not work.  For example, the Stanford Digital
   Repository self-deposit web site may not work properly.
 
