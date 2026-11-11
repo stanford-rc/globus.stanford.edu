@@ -57,8 +57,8 @@ available:
   have one of these platforms and are interested in using Globus, please [reach
   out]({{ "support.html" | absolute_url }})!
 
-Our subscription expires on May 25, 2024.  Continued funding by the University
-will depend on us demonstrating use of, and continued need for, the service.
+Our subscription renews every year in May.  Continued funding by the University
+depends on us demonstrating use of, and continued need for, the service.
 So, please [keep in touch]({{ "support.html" | absolute_url }}).
 
 ## Who can use it?
