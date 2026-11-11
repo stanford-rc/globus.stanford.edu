@@ -1,6 +1,6 @@
 ---
 layout:      page
-toc:  true
+toc:  false
 permalink: cloud.html
 title:       Globus and the Cloud
 see-also: true
