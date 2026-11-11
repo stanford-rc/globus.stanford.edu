@@ -18,6 +18,12 @@ Stanford email, you & your sponsor should read about <em><a title="Stanford Goog
    raw=google-account-required
 %}
 
+{% include info-box.html
+   icon="hourglass-end"
+   header="Guest Collection inactivity policy"
+   content="This Mapped Collection supports Guest Collections.  If your Guest Collection is not used for 18 months, it will be deleted."
+%}
+
 # Google Cloud Storage
 
 Google Cloud Storage may be accessed through the [Stanford Google Cloud
