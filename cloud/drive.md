@@ -13,6 +13,12 @@ description: Globus works with Google Drive, but with a number of restrictions.
    content="To interact with Google Drive through Stanford, you must have a full or full-sponsored SUNetID.  Therefore, using the Globus Google connector also requires a full (or full-sponsored) SUNetID."
 %}
 
+{% include info-box.html
+   icon="hourglass-end"
+   header="Guest Collection inactivity policy"
+   content="This Mapped Collection supports Guest Collections.  If your Guest Collection is not used for 18 months, it will be deleted."
+%}
+
 # Google Drive
 
 Google Drive may be accessed through the [Stanford Google Drive

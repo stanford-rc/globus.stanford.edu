@@ -1,6 +1,6 @@
 ---
 layout:      page
-toc:  true
+toc:  false
 permalink: cloud.html
 title:       Globus and the Cloud
 see-also: true
@@ -32,13 +32,11 @@ name for more information.
 | <a href="#microsoft-onedrive">Microsoft OneDrive</a> | ✅ |
 | <a href="#oracle-cloud-infrastructure-oci-object-storage">Oracle Cloud (OCI) Object Storage</a> | ❌ |
 
-&nbsp;
-
-{% capture collection-under-construction %}
-<h4>Under Construction</h4>
-<p>This collection is still under construction, and is likely going to change
-in the future.  If you run into problems accessing it, contact us for <a href="support.html">support.</a></p>
-{% endcapture %}
+{% include info-box.html
+   icon="hourglass-end"
+   header="Guest Collection inactivity policy"
+   content="Many of the Mapped Collections on this page support Guest Collections.  If your Guest Collection is not used for 18 months, it will be deleted."
+%}
 
 # Amazon S3
 
